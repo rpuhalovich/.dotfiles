@@ -1,0 +1,36 @@
+[user]
+	email = reanpuhalovich@gmail.com
+	name = Ryan Puhalovich
+[init]
+	defaultBranch = main
+[core]
+	editor = vim
+[diff]
+	tool = vimdiff
+[advice]
+	detachedHead = false
+[alias]
+	a = add .
+	b = branch -a
+	bl = blame
+	c = commit -am
+	ch = checkout
+	rclone = clone --recursive
+	l = log
+	lo = log --oneline
+	lg = log --graph --topo-order --abbrev-commit --date=short --decorate --all --boundary --pretty=format:'%C(bold blue)<%cn> %Cgreen%ad %Cred%h%Creset -%C(yellow)%d%Creset %s %Creset'
+	m = merge
+	r = rebase
+	s = status
+	subup = submodule update --init --recursive
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential

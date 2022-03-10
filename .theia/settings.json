@@ -1,0 +1,16 @@
+{
+  "workbench.colorTheme": "Monokai",
+  "workbench.iconTheme": "theia-file-icons",
+  "workbench.statusBar.visible": true,
+  "sap.ux.applicationModeler.disableMigrationPrompt": true,
+  "gitlens.currentLine.enabled": false,
+  "welcome.showOnStartup": false,
+  "editor.wordWrap": "on",
+  "xml.format.splitAttributes": true,
+  "xml.format.splitAttributesIndentSize": 1,
+  "editor.renderWhitespace": "all",
+  "editor.rulers": [
+    120
+  ],
+  "redhat.telemetry.enabled": false
+}
