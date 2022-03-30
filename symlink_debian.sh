@@ -5,7 +5,7 @@ echo "Linking configurations..."
 homeConfig=$HOME/.config
 thisConfig=$PWD/.config
 
-for i in alacritty bspwm sxhkd polybar nvim; do
+for i in alacritty bspwm sxhkd polybar nvim i3; do
     rm -rf $homeConfig/$i
     mkdir -p $homeConfig/$i
     ln -s $thisConfig/$i/* $homeConfig/$i/
