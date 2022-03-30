@@ -168,11 +168,12 @@ bindsym $mod+F12	        exec $term -e nmtui
 
 # #---Arrow Keys---# #
 # Resizing windows
-set $size 1
-bindsym $mod+Shift+Left   resize shrink width $size px or $size ppt
-bindsym $mod+Shift+Down   resize shrink height $size px or $size ppt
-bindsym $mod+Shift+Up     resize grow height $size px or $size ppt
-bindsym $mod+Shift+Right  resize grow width $size px or $size ppt
+set $sizepx 25
+set $sizeppt 1
+bindsym $mod+Shift+Left   resize shrink width $sizepx px or $sizeppt ppt
+bindsym $mod+Shift+Down   resize shrink height $sizepx px or $sizeppt ppt
+bindsym $mod+Shift+Up     resize grow height $sizepx px or $sizeppt ppt
+bindsym $mod+Shift+Right  resize grow width $sizepx px or $sizeppt ppt
 
 bindsym $mod+Left		      focus left
 bindsym $mod+Ctrl+Left		move workspace to output right
