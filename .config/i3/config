@@ -15,8 +15,8 @@ smart_borders on
 set $inner_gaps 15
 set $outer_gaps 0
 set $term --no-startup-id alacritty 
-set $mod Mod4
-set $alt Mod1
+set $mod Mod1
+set $alt Mod4
 set $shutdown sudo -A shutdown -h now
 set $reboot sudo -A reboot
 set $lock i3lock
@@ -38,7 +38,6 @@ bindsym $mod+Shift+Return	       exec $term --working-directory  $(xcwd)
 bindsym $mod+Escape	             exec --no-startup-id dm-tool switch-to-greeter
 bindsym $mod+Shift+Escape	       exec --no-startup-id $hibernate
 
-# bindsym $mod+BackSpace
 # bindsym $mod+Shift+BackSpace	   exec --no-startup-id prompt "Reboot computer?" $reboot
 
 # space
@@ -48,9 +47,6 @@ bindsym $mod+space 			            exec --no-startup-id rofi -show drun
 bindsym $mod+q			            [con_id="__focused__" instance="^(?!dropdown_).*$"] kill
 bindsym $mod+Shift+q		        [con_id="__focused__" instance="^(?!dropdown_).*$"] exec --no-startup-id kill -9 `xdotool getwindowfocus getwindowpid`
 
-# w
-bindsym $mod+w 			            exec --no-startup-id firefox
-
 # c
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -59,41 +55,20 @@ bindsym $mod+Shift+o restart
 #bindsym $mod+c 			            exec --no-startup-id lock
 #bindsym $mod+Shift+c		        exec --no-startup-id $suspend
 
-# e
-bindsym $mod+e 			            exec --no-startup-id code-insiders -n
-bindsym $mod+Shift+e		        exec $term -e code-insiders
-
 # r
 #bindsym $mod+r 			            exec $term -e ranger
 #bindsym $mod+Shift+r		        exec --no-startup-id winresize
-
-# t
-bindsym $mod+t 			            exec $term -e ytop
-bindsym $mod+Shift+t            focus mode_toggle
 
 # y
 bindsym $mod+y			            exec --no-startup-id flameshot gui -p ~/Pictures/screenshots
 bindsym $mod+Shift+y		        exec --no-startup-id flameshot full -p ~/Pictures/screenshots
 
-# u
-bindsym $mod+u                  [urgent=latest] focus
-
 # i
-bindsym $mod+i                  fullscreen disable; floating enable; resize set 300 200; sticky enable; move position 4792 53
-
-# o
-bindsym $mod+o			            exec --no-startup-id $term -e nvim ~/Repos/blog/content
-# bindsym $mod+Shift			        exec --no-startup-id $term -e nvim ~/Repos
-
-# a
-bindsym $mod+a		              exec $term -e alsamixer
+bindsym $mod+i                  fullscreen disable; floating enable; resize set 500 500; sticky enable; move position 4792 53
 
 # s
 bindsym $mod+s        			    sticky toggle;
 bindsym $mod+Shift+s			      split toggle
-
-# d
-bindsym $mod+d                  exec --no-startup-id dmenu
 
 # f
 bindsym $mod+f			            fullscreen toggle
@@ -123,11 +98,6 @@ bindsym $mod+l			            focus right
 bindsym $mod+Shift+l		        move right 30
 bindsym $mod+Ctrl+l		          move workspace to output right
 
-bindsym $mod+semicolon 			    exec --no-startup-id skippy-xd
-
-# z
-bindsym $mod+z			            exec --no-startup-id $term -e nvim ~/.zshrc
-
 # x
 bindsym $mod+x 			            exec --no-startup-id $reboot
 bindsym $mod+Shift+x		        exec --no-startup-id $shutdown
@@ -135,21 +105,6 @@ bindsym $mod+Shift+x		        exec --no-startup-id $shutdown
 # p
 bindsym $mod+p			            exec --no-startup-id picom -b
 bindsym $mod+Shift+p		        exec --no-startup-id killall picom
-
-# v
-bindsym $mod+v			            exec --no-startup-id mpv /dev/video0
-
-# b
-bindsym $mod+b			            exec --no-startup-id feh --bg-fill --randomize ~/Pictures/wallpapers/*
-
-# n
-bindsym $mod+n			            exec --no-startup-id neovide
-bindsym $mod+Shift+n			            exec --no-startup-id kill -s USR1 $(pidof deadd-notification-center)
-
-# m
-bindsym $mod+m		              exec --no-startup-id spotify
-bindsym $mod+Shift+m		        exec --no-startup-id discord
-
 
 # #---Workspace Bindings---# #
 # bindsym $mod+Tab		            exec --no-startup-id rofi-menu-windows
@@ -176,7 +131,6 @@ set $ws10 "10"
 # assign [class="Chromium"] $ws2
 assign [class="discord"] $ws8
 for_window [class="Spotify"] move to workspace $ws9
-assign [class="obs"] $ws10
 
 # Assigning autofloat
 for_window [title=".*Emulator.*"] floating enable
@@ -205,20 +159,16 @@ bindsym $mod+Shift+8	move container to workspace $ws8
 bindsym $mod+Shift+9	move container to workspace $ws9
 bindsym $mod+Shift+0	move container to workspace $ws10
 
-for_window [title="GIMP Startup"] move workspace $ws5
-for_window [class="Gimp"] move workspace $ws5
 for_window [window_role="GtkFileChooserDialog"] resize set 800 600
 for_window [window_role="GtkFileChooserDialog"] move position center
 
 # #---Function Buttons---# #
 bindsym $mod+F1		        restart
-bindsym $mod+F2		        exec --no-startup-id screenkey -s small --scr 1 -p fixed -g 600x100+2573+1330 --opacity .9 --font-color white
-bindsym $mod+F3	          exec --no-startup-id killall screenkey
 bindsym $mod+F12	        exec $term -e nmtui
 
 # #---Arrow Keys---# #
 bindsym $mod+Left		      focus left
-bindsym $mod+Shift+Left   resize shrink width 5 px or 5 ppt
+bindsym $mod+Shift+Left   resize shrink width 1 px or 1 ppt
 bindsym $mod+Ctrl+Left		move workspace to output right
 bindsym $mod+Down		      focus down
 bindsym $mod+Shift+Down   resize shrink height 5 px or 5 ppt
