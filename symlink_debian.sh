@@ -7,7 +7,7 @@ usrConfig=$HOME/.config
 homeConfig=$PWD/.home
 thisConfig=$PWD/.config
 
-for i in alacritty bspwm sxhkd polybar nvim i3 picom; do
+for i in alacritty bspwm sxhkd polybar nvim i3 picom rofi; do
     rm -rf $usrConfig/$i
     mkdir -p $usrConfig/$i
     ln -s $thisConfig/$i/* $usrConfig/$i/
