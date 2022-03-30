@@ -1,13 +1,13 @@
-# vim: filetype=i3config
+# #---Initialization---# #
 
-# This config file will use environment variables such as $BROWSER and $TERMINAL.
-
-bar {
-        position top
-        status_command i3status
-}
+# bar {
+#         position top
+#         status_command i3status
+# }
 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always --no-startup-id /usr/bin/setxkbmap -option "caps:escape"
+exec_always --no-startup-id nitrogen --restore
 
 # #---Basic Definitions---# #
 smart_gaps on
@@ -32,8 +32,8 @@ gaps inner $inner_gaps
 gaps outer $outer_gaps
 
 # #---Basic Bindings---# #
-bindsym $mod+Return 		         exec $term
-bindsym $mod+Shift+Return	       exec $term --working-directory  $(xcwd)
+bindsym $mod+Return exec $term
+bindsym $mod+Shift+Return exec $term --working-directory  $(xcwd)
 
 bindsym $mod+Escape	             exec --no-startup-id dm-tool switch-to-greeter
 bindsym $mod+Shift+Escape	       exec --no-startup-id $hibernate
