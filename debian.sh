@@ -7,7 +7,8 @@
 sudo apt update -y
 sudo apt upgrade -y
 sudo apt install -y xorg nitrogen vim dunst git npm unzip snapd neovim lxappearance curl tree fonts-firacode # base
-sudo apt install -y polybar bspwm sxhkd picom rofi # rice
+sudo apt install -y htop # base
+sudo apt install -y polybar bspwm sxhkd picom rofi neofetch # rice
 sudo apt install -y firefox-esr # apps
 
 # snap install stuff

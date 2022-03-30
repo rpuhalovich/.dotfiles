@@ -12,7 +12,7 @@ exec_always --no-startup-id nitrogen --restore
 # #---Basic Definitions---# #
 # smart_gaps on
 smart_borders on
-set $inner_gaps 15
+set $inner_gaps 20
 set $outer_gaps 0
 set $term --no-startup-id alacritty 
 set $mod Mod1
