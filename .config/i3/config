@@ -14,7 +14,7 @@ smart_gaps on
 smart_borders on
 set $inner_gaps 15
 set $outer_gaps 0
-set $term --no-startup-id i3-sensible-terminal
+set $term --no-startup-id alacritty 
 set $mod Mod4
 set $alt Mod1
 set $shutdown sudo -A shutdown -h now
@@ -42,7 +42,7 @@ bindsym $mod+Shift+Escape	       exec --no-startup-id $hibernate
 # bindsym $mod+Shift+BackSpace	   exec --no-startup-id prompt "Reboot computer?" $reboot
 
 # space
-bindsym $mod+space 			            exec --no-startup-id dmenu_run
+bindsym $mod+space 			            exec --no-startup-id rofi -show drun
 
 # #---Letter Key Bindings---# #
 bindsym $mod+q			            [con_id="__focused__" instance="^(?!dropdown_).*$"] kill

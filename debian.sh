@@ -6,8 +6,8 @@
 # apt install stuff
 sudo apt update -y
 sudo apt upgrade -y
-sudo apt install -y xorg nitrogen vim dunst git npm unzip snapd neovim lxappearance # base
-sudo apt install -y polybar bspwm sxhkd picom # rice
+sudo apt install -y xorg nitrogen vim dunst git npm unzip snapd neovim lxappearance curl # base
+sudo apt install -y polybar bspwm sxhkd picom rofi # rice
 sudo apt install -y firefox-esr # apps
 
 # snap install stuff
