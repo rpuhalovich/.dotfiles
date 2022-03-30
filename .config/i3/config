@@ -10,7 +10,7 @@ exec_always --no-startup-id /usr/bin/setxkbmap -option "caps:escape"
 exec_always --no-startup-id nitrogen --restore
 
 # #---Basic Definitions---# #
-smart_gaps on
+# smart_gaps on
 smart_borders on
 set $inner_gaps 15
 set $outer_gaps 0
@@ -107,8 +107,8 @@ bindsym $mod+p			            exec --no-startup-id picom -b
 bindsym $mod+Shift+p		        exec --no-startup-id killall picom
 
 # #---Workspace Bindings---# #
-# bindsym $mod+Tab		            exec --no-startup-id rofi-menu-windows
-bindsym $mod+Tab		          workspace next
+bindsym $mod+Tab		          exec --no-startup-id rofi -show window
+# bindsym $mod+Tab		          workspace next
 bindsym $mod+Shift+Tab		      workspace previous
 bindsym $mod+apostrophe		      split horizontal ;; exec $term
 bindsym $mod+slash		          split vertical ;; exec $term
@@ -167,17 +167,20 @@ bindsym $mod+F1		        restart
 bindsym $mod+F12	        exec $term -e nmtui
 
 # #---Arrow Keys---# #
+# Resizing windows
+set $size 1
+bindsym $mod+Shift+Left   resize shrink width $size px or $size ppt
+bindsym $mod+Shift+Down   resize shrink height $size px or $size ppt
+bindsym $mod+Shift+Up     resize grow height $size px or $size ppt
+bindsym $mod+Shift+Right  resize grow width $size px or $size ppt
+
 bindsym $mod+Left		      focus left
-bindsym $mod+Shift+Left   resize shrink width 1 px or 1 ppt
 bindsym $mod+Ctrl+Left		move workspace to output right
 bindsym $mod+Down		      focus down
-bindsym $mod+Shift+Down   resize shrink height 5 px or 5 ppt
 bindsym $mod+Ctrl+Down		move workspace to output up
 bindsym $mod+Up			      focus up
-bindsym $mod+Shift+Up     resize grow height 5 px or 5 ppt
 bindsym $mod+Ctrl+Up		  move workspace to output down
 bindsym $mod+Right 		    focus right
-bindsym $mod+Shift+Right  resize grow width 5 px or 5 ppt
 bindsym $mod+Ctrl+Right		move workspace to output left
 
 # Pulse Audio controls
