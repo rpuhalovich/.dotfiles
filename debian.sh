@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# To be done from the $HOME directory
-# sudo curl https://raw.githubusercontent.com/rpuhalovich/.dotfiles/main/debian.sh | bash
-
 # apt install stuff
 sudo apt update -y
 sudo apt upgrade -y
@@ -19,4 +16,4 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
 # Dotfiles setup
-./symlink_debian.sh
+./symlink.sh

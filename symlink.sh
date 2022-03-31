@@ -13,7 +13,7 @@ for i in alacritty polybar nvim i3 picom rofi; do
     ln -s $thisConfig/$i/* $usrConfig/$i/
 done
 
-for i in .vimrc .gitconfig .bashrc; do
+for i in .vimrc .gitconfig .bashrc .xprofile; do
     rm -rf $HOME/$i
     ln -s $homeConfig/$i $HOME/$i
 done
