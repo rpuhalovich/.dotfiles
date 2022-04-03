@@ -17,6 +17,8 @@ set $reboot sudo -A reboot
 set $lock i3lock
 set $suspend sudo systemctl suspend
 set $hibernate sudo -A systemctl hibernate
+set $sizepx 15
+set $sizeppt 1
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -76,22 +78,22 @@ bindsym $mod+Shift+g		        gaps inner current set 0; gaps outer current set 0
 # h
 bindsym $mod+h			            focus left
 bindsym $mod+Shift+h		        move left 30
-bindsym $mod+Ctrl+h		          move workspace to output left
+bindsym $mod+Ctrl+h     resize shrink width $sizepx px or $sizeppt ppt
 
 # j
 bindsym $mod+j			            focus down
 bindsym $mod+Shift+j		        move down 30
-bindsym $mod+Ctrl+j		          move workspace to output down
+bindsym $mod+Ctrl+j     resize shrink height $sizepx px or $sizeppt ppt
 
 # k
 bindsym $mod+k			            focus up
 bindsym $mod+Shift+k		        move up 30
-bindsym $mod+Ctrl+k		          move workspace to output up
+bindsym $mod+Ctrl+k     resize grow height $sizepx px or $sizeppt ppt
 
 # l
 bindsym $mod+l			            focus right
 bindsym $mod+Shift+l		        move right 30
-bindsym $mod+Ctrl+l		          move workspace to output right
+bindsym $mod+Ctrl+l     resize grow width $sizepx px or $sizeppt ppt
 
 # x
 bindsym $mod+x 			            exec --no-startup-id $reboot
@@ -161,33 +163,19 @@ for_window [window_role="GtkFileChooserDialog"] move position center
 bindsym $mod+F1		        restart
 bindsym $mod+F12	        exec $term -e nmtui
 
-# #---Arrow Keys---# #
-# Resizing windows
-set $sizepx 15
-set $sizeppt 1
-bindsym $mod+Shift+Left   resize shrink width $sizepx px or $sizeppt ppt
-bindsym $mod+Shift+Down   resize shrink height $sizepx px or $sizeppt ppt
-bindsym $mod+Shift+Up     resize grow height $sizepx px or $sizeppt ppt
-bindsym $mod+Shift+Right  resize grow width $sizepx px or $sizeppt ppt
-
-bindsym $mod+Left		      focus left
-bindsym $mod+Ctrl+Left		move workspace to output right
-bindsym $mod+Down		      focus down
-bindsym $mod+Ctrl+Down		move workspace to output up
-bindsym $mod+Up			      focus up
-bindsym $mod+Ctrl+Up		  move workspace to output down
-bindsym $mod+Right 		    focus right
-bindsym $mod+Ctrl+Right		move workspace to output left
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% #increase sound volume
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% #decrease sound volume
 bindsym XF86AudioMute        exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle # mute sound
-
-# Window borders
-client.focused          #4c7899 #285577 #ffffff #2e9ef4   #abb2bf
-client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
+ 
+# #---Window borders---# #
+# class                 border  backgr. text    indicator child_border
+client.focused          #ffffff #ffffff #ffffff #ffffff   #353659
+client.focused_inactive #ffffff #ffffff #ffffff #484e50   #5f676a
 client.unfocused        #333333 #222222 #888888 #292d2e   #222222
 client.urgent           #2f343a #900000 #ffffff #900000   #900000
 client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 client.background       #ffffff
+
+
