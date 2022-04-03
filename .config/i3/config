@@ -1,8 +1,9 @@
 # #---Initialization---# #
 
+exec_always --no-startup-id picom
+exec_always --no-startup-id nitrogen --restore
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id /usr/bin/setxkbmap -option "caps:escape"
-exec_always --no-startup-id nitrogen --restore
 
 # #---Basic Definitions---# #
 # smart_gaps on
