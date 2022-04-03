@@ -1,12 +1,11 @@
-window:
-  padding:
-    x: 10
-    y: 10
-
-font:
-  size: 13
-
-# Dracula colour theme.
+# Dracula theme for Alacritty
+# https://draculatheme.com/alacritty
+#
+# Color palette
+# https://spec.draculatheme.com
+#
+# Template
+# https://github.com/alacritty/alacritty/blob/master/alacritty.yml
 
 colors:
   primary:
@@ -60,4 +59,3 @@ colors:
     magenta: '#ff92df'
     cyan: '#a4ffff'
     white: '#ffffff'
-
