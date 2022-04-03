@@ -7,7 +7,7 @@ exec_always --no-startup-id nitrogen --restore
 # #---Basic Definitions---# #
 # smart_gaps on
 smart_borders on
-set $inner_gaps 20
+set $inner_gaps 15
 set $outer_gaps 0
 set $term --no-startup-id alacritty 
 set $mod Mod1
@@ -163,7 +163,7 @@ bindsym $mod+F12	        exec $term -e nmtui
 
 # #---Arrow Keys---# #
 # Resizing windows
-set $sizepx 25
+set $sizepx 15
 set $sizeppt 1
 bindsym $mod+Shift+Left   resize shrink width $sizepx px or $sizeppt ppt
 bindsym $mod+Shift+Down   resize shrink height $sizepx px or $sizeppt ppt
