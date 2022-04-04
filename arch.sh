@@ -9,5 +9,7 @@ rm -rf yay
 
 yay -S --needed - < scripts/packages.txt
 
+nitrogen --set-scaled wallpapers/pixel_dark_village.jpeg
+
 ./symlink.sh
 

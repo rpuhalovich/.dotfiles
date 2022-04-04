@@ -27,9 +27,6 @@ htop
 i3-gaps
 i3status
 libtool
-lightdm
-lightdm-gtk-greeter
-lightdm-gtk-greeter-settings
 linux
 linux-firmware
 lxappearance
@@ -41,6 +38,8 @@ mupdf
 nautilus
 neofetch
 neovim
+nerd-fonts-fira-code
+nerd-fonts-jetbrains-mono
 networkmanager
 nitrogen
 nordic-theme

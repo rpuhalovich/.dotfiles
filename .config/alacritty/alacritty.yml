@@ -4,7 +4,10 @@ window:
     y: 10
 
 font:
-  size: 13
+  normal:
+    family: FiraCode Nerd Font
+    Style: Regular
+  size: 12
 
 # Dracula colour theme.
 
