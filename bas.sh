@@ -13,8 +13,9 @@ declare dotfiles="$HOME/.dotfiles"
 setup_dotfiles() {
   rm -rf "$dotfiles"
   git clone https://github.com/rpuhalovich/.dotfiles.git "$dotfiles"
-  ln -s -f "$dotfiles/.vimrc" "$HOME/.vimrc"
-  ln -s -f "$dotfiles/.gitconfig" "$HOME/.gitconfig"
+  ln -s -f "$dotfiles/.home/.vimrc" "$HOME/.vimrc"
+  ln -s -f "$dotfiles/.home/.gitconfig" "$HOME/.gitconfig"
+  ln -s -f "$dotfiles/.home/.bashrc" "$HOME/.bashrc"
 }
 
 # Configure dev space.
