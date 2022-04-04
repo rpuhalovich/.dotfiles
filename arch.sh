@@ -11,7 +11,7 @@ sudo pacman -S --noconfirm i3-gaps alacritty xorg xorg-xset xorg-xrandr git reds
 sudo pacman -S --noconfirm firefox nautilus nitrogen rofi gnome-keyring
 sudo pacman -S --noconfirm libsecret lxappearance lxsession dunst github-cli
 
-yay -S --noconfirm teams picom-git
+yay -S --noconfirm teams picom-git ly
 
 ./symlink.sh
 
