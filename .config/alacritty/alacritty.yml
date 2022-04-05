@@ -11,7 +11,6 @@ scrolling:
   history: 10000
   multiplier: 3
 
-
 font:
   normal:
     family: JetBrains Mono Nerd Font
@@ -53,11 +52,4 @@ colors:
 
 selection:
   save_to_clipboard: false
-
-shell:
-  program: /usr/bin/zsh
-
-key_bindings:
-  - { key: Return, mods: Super|Shift, action: SpawnNewInstance }
-
 
