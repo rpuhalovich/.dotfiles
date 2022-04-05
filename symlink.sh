@@ -13,7 +13,10 @@ for i in alacritty polybar nvim i3 picom rofi dunst; do
     ln -s $thisConfig/$i/* $usrConfig/$i/
 done
 
-for i in .vimrc .gitconfig .bashrc .xprofile; do
+for i in .vimrc .gitconfig .bashrc .Xresources; do
     rm -rf $HOME/$i
     ln -s $homeConfig/$i $HOME/$i
 done
+
+sudo cp -f $HOME/.dotfiles/etc/70-synaptics.conf /etc/X11/xorg.conf.d/70-synaptics.conf
+

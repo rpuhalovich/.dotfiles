@@ -1,6 +1,6 @@
 # #---Initialization---# #
 
-exec_always --no-startup-id picom
+exec_always --no-startup-id picom --experimental-backends -b
 exec_always --no-startup-id nitrogen --restore
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id /usr/bin/setxkbmap -option "caps:escape"
@@ -33,40 +33,36 @@ gaps outer $outer_gaps
 bindsym $mod+Return exec $term
 bindsym $mod+Shift+Return exec $term --working-directory  $(xcwd)
 
-bindsym $mod+Escape               exec --no-startup-id dm-tool switch-to-greeter
-bindsym $mod+Shift+Escape         exec --no-startup-id $hibernate
+bindsym $mod+Escape exec --no-startup-id $suspend
+bindsym $mod+Shift+Escape exec --no-startup-id $hibernate
 
-# bindsym $mod+Shift+BackSpace     exec --no-startup-id prompt "Reboot computer?" $reboot
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+o restart
+
+bindsym XF86MonBrightnessUp exec --no-startup-id sudo light -A 5
+bindsym XF86MonBrightnessDown exec --no-startup-id sudo light -U 5
 
 # space
 bindsym $mod+space                   exec --no-startup-id rofi -show drun
 
 # #---Letter Key Bindings---# #
-bindsym $mod+q                  [con_id="__focused__" instance="^(?!dropdown_).*$"] kill
-bindsym $mod+Shift+q            [con_id="__focused__" instance="^(?!dropdown_).*$"] exec --no-startup-id kill -9 `xdotool getwindowfocus getwindowpid`
+bindsym $mod+q [con_id="__focused__" instance="^(?!dropdown_).*$"] kill
+bindsym $mod+Shift+q [con_id="__focused__" instance="^(?!dropdown_).*$"] exec --no-startup-id kill -9 `xdotool getwindowfocus getwindowpid`
 
 # c
-# reload the configuration file
-bindsym $mod+Shift+c reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+o restart
-#bindsym $mod+c                   exec --no-startup-id lock
-#bindsym $mod+Shift+c            exec --no-startup-id $suspend
-
-# r
-#bindsym $mod+r                   exec $term -e ranger
-#bindsym $mod+Shift+r            exec --no-startup-id winresize
 
 # y
-bindsym $mod+y                  exec --no-startup-id flameshot gui -p ~/Pictures/screenshots
-bindsym $mod+Shift+y            exec --no-startup-id flameshot full -p ~/Pictures/screenshots
+bindsym $mod+y exec --no-startup-id flameshot gui -p ~/Pictures/screenshots
+bindsym $mod+Shift+y exec --no-startup-id flameshot full -p ~/Pictures/screenshots
 
 # i
-bindsym $mod+i                  fullscreen disable; floating enable; resize set 500 500; sticky enable; move position 4792 53
+bindsym $mod+i fullscreen disable; floating enable; resize set 500 500; sticky enable; move position 4792 53
 
 # s
-bindsym $mod+s                  sticky toggle;
-bindsym $mod+Shift+s            split toggle
+bindsym $mod+s sticky toggle
+bindsym $mod+Shift+s split toggle
 
 # f
 bindsym $mod+f                  fullscreen toggle
