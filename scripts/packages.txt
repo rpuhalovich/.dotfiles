@@ -6,6 +6,8 @@ base
 binutils
 bison
 bitwarden
+cronie
+discord
 dmenu
 dunst
 efibootmgr
@@ -30,6 +32,7 @@ gzip
 htop
 i3-gaps
 i3status
+lf
 libtool
 light
 linux
@@ -51,10 +54,13 @@ nordic-theme
 npm
 pacman
 patch
+pavucontrol
 picom-git
 pkgconf
 plocate
 polybar
+pulseaudio
+pulseaudio-bluetooth
 redshift
 rofi
 sed
@@ -97,6 +103,7 @@ xorg-xdriinfo
 xorg-xev
 xorg-xgamma
 xorg-xhost
+xorg-xinit
 xorg-xinput
 xorg-xkbcomp
 xorg-xkbevd
