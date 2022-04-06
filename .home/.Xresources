@@ -1,1 +1,1 @@
-xrdb -merge ~/.Xresources
+Xft.dpi: 110

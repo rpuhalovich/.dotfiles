@@ -1,3 +1,4 @@
+acpid
 alacritty
 autoconf
 automake
@@ -7,17 +8,20 @@ bison
 bitwarden
 dmenu
 dunst
+efibootmgr
 fakeroot
 file
 findutils
 firefox
 flex
+fwupd
 gawk
 gcc
 gettext
 git
 github-cli
 gnome-keyring
+gpointing-device-settings
 grep
 groff
 grub
@@ -27,6 +31,7 @@ htop
 i3-gaps
 i3status
 libtool
+light
 linux
 linux-firmware
 lxappearance
@@ -53,6 +58,8 @@ polybar
 redshift
 rofi
 sed
+sof-firmware
+spotify
 sudo
 teams
 texinfo
@@ -61,6 +68,7 @@ vi
 vim
 visual-studio-code-bin
 which
+xf86-input-synaptics
 xf86-video-vesa
 xorg-bdftopcf
 xorg-docs
