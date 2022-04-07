@@ -1,7 +1,6 @@
 # #---Initialization---# #
 
 exec_always --no-startup-id xrdb -merge ~/.Xresources
-exec_always --no-startup-id xmodmap ~/.Xmodmap
 exec_always --no-startup-id picom --experimental-backends -b
 exec_always --no-startup-id redshift
 exec_always --no-startup-id nitrogen --restore
@@ -150,7 +149,7 @@ bindsym $mod+Shift+p            exec --no-startup-id killall picom
 # #---Workspace Bindings---# #
 bindsym $mod+backslash          exec --no-startup-id rofi -show window
 bindsym $mod+bracketleft        workspace next
-bindsym $mod+bracketright       workspace previous
+bindsym $mod+bracketright       workspace prev
 bindsym $mod+apostrophe         split horizontal ;; exec $term
 bindsym $mod+slash              split vertical ;; exec $term
 bindsym $mod+Tab                workspace back_and_forth
