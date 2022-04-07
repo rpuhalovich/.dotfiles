@@ -20,7 +20,7 @@ for i in alacritty polybar nvim i3 picom rofi dunst; do
 done
 
 # .home dotfiles
-for i in .vimrc .gitconfig .bashrc .Xresources .xinitrc .xmodmap; do
+for i in .vimrc .gitconfig .bashrc .Xresources .xinitrc; do
     rm -rf $HOME/$i
     ln -s $homeConfig/$i $HOME/$i
 done
