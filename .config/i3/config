@@ -111,8 +111,8 @@ bindsym $mod+s splitv toggle
 bindsym $mod+Shift+s layout splitv toggle
 
 # f
-bindsym $mod+f                  fullscreen toggle
-bindsym $mod+Shift+f            floating toggle
+bindsym $mod+f            floating toggle
+bindsym $mod+Shift+f                  fullscreen toggle
 
 # g
 bindsym $mod+g                  gaps inner current set $inner_gaps; gaps outer current set $outer_gaps
