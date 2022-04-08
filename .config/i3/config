@@ -14,7 +14,7 @@ exec --no-startup-id synclient VertScrollDelta=-120 HorizScrollDelta=-120
 exec --no-startup-id synclient PalmDetect=1 PalmMinWidth=20 PalmMinZ=50 
 
 # #---Basic Definitions---# #
-# smart_gaps on
+smart_gaps on
 smart_borders on
 set $inner_gaps 15
 set $outer_gaps 0
@@ -44,10 +44,11 @@ set $ws10 "10"
 
 for_window [window_role="GtkFileChooserDialog"] resize set 800 600
 for_window [window_role="GtkFileChooserDialog"] move position center
+for_window [class="Bitwarden" instance="Places"] floating enable
 
 # #---Window borders---# #
 # class                 border  backgr. text    indicator child_border
-client.focused          #ffffff #ffffff #ffffff #ffffff   #353659
+client.focused          #333333 #000000 #dddddd #ffffff   #353659
 client.focused_inactive #ffffff #ffffff #ffffff #484e50   #201f3d
 client.unfocused        #333333 #222222 #888888 #292d2e   #222222
 client.urgent           #2f343a #900000 #ffffff #900000   #900000
@@ -99,8 +100,8 @@ bindsym $mod+Shift+q [con_id="__focused__" instance="^(?!dropdown_).*$"] exec --
 bindsym $mod+a exec --no-startup-id pavucontrol
 
 # t
-bindsym $mod+shift+t layout tabbed
-bindsym $mod+t exec --no-startup-id teams --disable-seccomp-filter-sandbox
+bindsym $mod+t layout tabbed
+bindsym $mod+shift+t exec --no-startup-id teams --disable-seccomp-filter-sandbox
 
 # y
 bindsym $mod+y exec --no-startup-id flameshot gui -p ~/Pictures/screenshots
@@ -110,7 +111,7 @@ bindsym $mod+Shift+y exec --no-startup-id flameshot full -p ~/Pictures/screensho
 bindsym $mod+i fullscreen disable; floating enable; resize set 500 500; sticky enable; move position 4792 53
 
 # s
-bindsym $mod+s splitv toggle
+bindsym $mod+s splitv
 bindsym $mod+Shift+s layout splitv toggle
 
 # f
@@ -152,8 +153,8 @@ bindsym $mod+Shift+p exec --no-startup-id killall picom
 # #---Workspace Bindings---# #
 bindsym control+space           exec --no-startup-id rofi -show drun
 bindsym $mod+space              exec --no-startup-id rofi -show window
-bindsym $mod+bracketleft        workspace next
-bindsym $mod+bracketright       workspace prev
+bindsym $mod+bracketleft        workspace prev
+bindsym $mod+bracketright       workspace next
 bindsym $mod+apostrophe         split horizontal ;; exec $term
 bindsym $mod+slash              split vertical ;; exec $term
 bindsym $mod+Tab                workspace back_and_forth
