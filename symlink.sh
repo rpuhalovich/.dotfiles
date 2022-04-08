@@ -25,6 +25,3 @@ for i in .vimrc .gitconfig .bashrc .Xresources .xinitrc; do
     ln -s $homeConfig/$i $HOME/$i
 done
 
-# /etc/ stuff
-sudo cp -f $HOME/.dotfiles/etc/70-synaptics.conf /etc/X11/xorg.conf.d/70-synaptics.conf
-
