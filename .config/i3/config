@@ -44,6 +44,9 @@ set $ws10 "10"
 
 for_window [window_role="GtkFileChooserDialog"] resize set 800 600
 for_window [window_role="GtkFileChooserDialog"] move position center
+for_window [class="Blueman-manager"] floating enable
+for_window [class="Blueman-manager"] resize set 800 600
+for_window [class="Blueman-manager"] move position center
 for_window [class="Bitwarden" instance="Places"] floating enable
 
 # #---Window borders---# #
@@ -111,8 +114,8 @@ bindsym $mod+Shift+y exec --no-startup-id flameshot full -p ~/Pictures/screensho
 bindsym $mod+i fullscreen disable; floating enable; resize set 500 500; sticky enable; move position 4792 53
 
 # s
-bindsym $mod+s splitv
-bindsym $mod+Shift+s layout splitv toggle
+bindsym $mod+s splith
+bindsym $mod+Shift+s layout splith toggle
 
 # f
 bindsym $mod+f floating toggle
