@@ -20,6 +20,7 @@ set $inner_gaps 15
 set $outer_gaps 0
 set $term --no-startup-id alacritty
 set $mod Mod4
+set $alt Mod1
 set $shutdown sudo -A shutdown -h now
 set $reboot sudo -A reboot
 set $lock i3lock
@@ -102,6 +103,12 @@ bindsym $mod+Shift+q [con_id="__focused__" instance="^(?!dropdown_).*$"] exec --
 # a
 bindsym $mod+a exec --no-startup-id pavucontrol
 
+# c
+bindsym $mod+c exec --no-startup-id rofi -show calc -modi calc -no-show-match -no-sort
+
+# e
+bindsym $mod+e exec --no-startup-id rofi -show emoji
+
 # t
 bindsym $mod+t layout tabbed
 bindsym $mod+shift+t exec --no-startup-id teams --disable-seccomp-filter-sandbox
@@ -154,10 +161,10 @@ bindsym $mod+p exec --no-startup-id picom -b
 bindsym $mod+Shift+p exec --no-startup-id killall picom
 
 # #---Workspace Bindings---# #
-bindsym control+space           exec --no-startup-id rofi -show drun
-bindsym $mod+space              exec --no-startup-id rofi -show window
-bindsym $mod+bracketleft        workspace prev
-bindsym $mod+bracketright       workspace next
+bindsym $mod+space           exec --no-startup-id rofi -show drun
+bindsym control+Tab              exec --no-startup-id rofi -show window
+bindsym $alt+comma              workspace prev
+bindsym $alt+period             workspace next
 bindsym $mod+apostrophe         split horizontal ;; exec $term
 bindsym $mod+slash              split vertical ;; exec $term
 bindsym $mod+Tab                workspace back_and_forth
