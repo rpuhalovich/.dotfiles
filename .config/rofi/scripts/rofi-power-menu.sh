@@ -6,6 +6,6 @@ case "$chosen" in
 	"  Power Off") sudo shutdown now ;;
 	"  Restart") sudo reboot ;;
 	"  Logout") i3-msg exit ;;
-  "  Lock") slock ;;
+  "  Lock") betterlockscreen -l blur ;;
 	*) exit 1 ;;
 esac

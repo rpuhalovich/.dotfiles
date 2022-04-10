@@ -8,6 +8,8 @@ base
 binutils
 bison
 bitwarden
+blueman
+bluez-utils
 bolt
 cronie
 discord
@@ -26,6 +28,7 @@ gcc
 gettext
 git
 github-cli
+gnome-keyring
 google-chrome
 gpointing-device-settings
 grep
@@ -37,6 +40,7 @@ htop
 i3-gaps
 i3status
 lf
+libgnome-keyring
 libtool
 light
 linux
@@ -47,6 +51,7 @@ ly
 m4
 make
 mupdf
+nautilus
 neofetch
 neovim
 nerd-fonts-fira-code
@@ -54,6 +59,7 @@ nerd-fonts-jetbrains-mono
 networkmanager
 nitrogen
 nordic-theme
+notion-app
 npm
 pacman
 patch
@@ -66,7 +72,10 @@ pulseaudio
 pulseaudio-bluetooth
 redshift
 rofi
+rofi-calc
+rofi-emoji
 sed
+signal-desktop
 sof-firmware
 spotify
 sudo

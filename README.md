@@ -13,3 +13,6 @@ enable the following:
 `crontab -e` to get into crontab for the current user.
 `0 18 1,15 * * sh sh ~/.dotfiles/scripts/cron.sh`
 
+## Finding keybindings
+`xev -event keyboard`
+

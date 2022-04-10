@@ -23,7 +23,7 @@ set $mod Mod4
 set $alt Mod1
 set $shutdown sudo -A shutdown -h now
 set $reboot sudo -A reboot
-set $lock i3lock
+set $lock betterlockscreen -l blur
 set $suspend sudo systemctl suspend
 set $hibernate sudo -A systemctl hibernate
 set $sizepx 15
@@ -72,7 +72,8 @@ gaps outer $outer_gaps
 
 # #---Function Buttons---# #
 bindsym $mod+F1 restart
-bindsym $mod+F8 exec $term -e nmtui
+bindsym XF86WLAN exec $term -e nmtui
+bindsym XF86Bluetooth exec $term -e nmtui
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% # increase sound volume
@@ -83,8 +84,8 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ to
 bindsym $mod+Return exec $term
 bindsym $mod+Shift+Return exec $term --working-directory  $(xcwd)
 
-bindsym $mod+Escape exec --no-startup-id $suspend
-bindsym $mod+Shift+Escape exec --no-startup-id $hibernate
+bindsym $mod+Escape exec --no-startup-id $suspend && $lock
+bindsym $mod+Shift+Escape exec --no-startup-id $lock
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -161,8 +162,8 @@ bindsym $mod+p exec --no-startup-id picom -b
 bindsym $mod+Shift+p exec --no-startup-id killall picom
 
 # #---Workspace Bindings---# #
-bindsym $mod+space           exec --no-startup-id rofi -show drun
-bindsym control+Tab              exec --no-startup-id rofi -show window
+bindsym $mod+space              exec --no-startup-id rofi -show drun
+bindsym $alt+Tab                exec --no-startup-id rofi -show window
 bindsym $alt+comma              workspace prev
 bindsym $alt+period             workspace next
 bindsym $mod+apostrophe         split horizontal ;; exec $term
