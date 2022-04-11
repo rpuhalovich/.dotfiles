@@ -11,5 +11,7 @@ yay -S --needed --noconfirm - < scripts/packages.txt
 
 nitrogen --set-scaled wallpapers/pixel_dark_village.jpeg
 
-./symlink.sh
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
+./symlink.sh
