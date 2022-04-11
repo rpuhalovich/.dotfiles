@@ -9,7 +9,8 @@
 :set list
 :set listchars=tab:>-
 
-call plug#begin()
+:call plug#begin('~/.config/nvim')
+" call plug#begin()
 
 Plug 'http://github.com/tpope/vim-surround' " Surrounding ysw)
 Plug 'https://github.com/preservim/nerdtree' " NerdTree
