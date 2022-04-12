@@ -8,7 +8,7 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id /usr/bin/setxkbmap -option "caps:escape" -option "ctrl:swap_lalt_lctl"
 
 # Touchpad settings
-exec --no-startup-id synclient MinSpeed=1 MaxSpeed=1.75 AccelFactor=0.025
+exec --no-startup-id synclient MinSpeed=2 MaxSpeed=2.75 AccelFactor=0.1
 exec --no-startup-id synclient TapButton1=1 TapButton2=3 TapButton3=2
 exec --no-startup-id synclient VertScrollDelta=-120 HorizScrollDelta=-120
 exec --no-startup-id synclient PalmDetect=1 PalmMinWidth=20 PalmMinZ=50 

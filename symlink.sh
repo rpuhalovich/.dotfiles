@@ -6,12 +6,6 @@ usrConfig=$HOME/.config
 homeConfig=$PWD/.home
 thisConfig=$PWD/.config
 
-# Root .config dotfiles
-for i in redshift.conf; do
-    rm -rf $usrConfig/$i
-    ln -s $thisConfig/$i $usrConfig/$i
-done
-
 # .config sub dir dotfiles
 for i in alacritty polybar nvim i3 picom rofi dunst; do
     rm -rf $usrConfig/$i
@@ -19,8 +13,14 @@ for i in alacritty polybar nvim i3 picom rofi dunst; do
     ln -s $thisConfig/$i/* $usrConfig/$i/
 done
 
+# Root .config dotfiles
+for i in redshift.conf; do
+    rm -rf $usrConfig/$i
+    ln -s $thisConfig/$i $usrConfig/$i
+done
+
 # .home dotfiles
-for i in .vimrc .gitconfig .bashrc .Xresources .xinitrc; do
+for i in .vimrc .gitconfig .bashrc .Xresources .xinitrc .xprofile; do
     rm -rf $HOME/$i
     ln -s $homeConfig/$i $HOME/$i
 done
