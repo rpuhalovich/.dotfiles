@@ -28,7 +28,7 @@ set $suspend sudo systemctl suspend
 set $hibernate sudo -A systemctl hibernate
 set $sizepx 15
 set $sizeppt 1
-set $monscript ~/.dotfiles/scripts/displays.sh
+set $monscript displays
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
