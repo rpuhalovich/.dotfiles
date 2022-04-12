@@ -28,6 +28,7 @@ set $suspend sudo systemctl suspend
 set $hibernate sudo -A systemctl hibernate
 set $sizepx 15
 set $sizeppt 1
+set $monscript ~/.dotfiles/.local/bin/displays.sh
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -79,6 +80,11 @@ bindsym XF86Bluetooth exec $term -e nmtui
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% # increase sound volume
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% # decrease sound volume
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle # mute sound
+
+# #---Monitor Bindings---# #
+bindsym $mod+$alt+control+1 exec $monscript --undocked
+bindsym $mod+$alt+control+2 exec $monscript --homedock
+bindsym $mod+$alt+control+3 exec $monscript --workdock
 
 # #---Special Key Bindings---# #
 bindsym $mod+Return exec $term
@@ -154,8 +160,8 @@ bindsym $mod+Shift+l move right 30
 bindsym $mod+Ctrl+l resize grow width $sizepx px or $sizeppt ppt
 
 # x
-bindsym $mod+x exec --no-startup-id $reboot
-bindsym $mod+Shift+x exec --no-startup-id $shutdown
+# bindsym $mod+x exec --no-startup-id $reboot
+# bindsym $mod+Shift+x exec --no-startup-id $shutdown
 
 # p
 bindsym $mod+p exec --no-startup-id picom -b
