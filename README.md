@@ -7,6 +7,7 @@ For setting up new systems.
 enable the following:
 - ly
 - cronie
+- bluetooth
 
 ## Cronie Settings
 

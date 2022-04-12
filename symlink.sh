@@ -2,7 +2,9 @@
 echo "Linking configurations..."
 
 usrConfig=$HOME/.config
+usrLocalBin=$HOME/.local/bin
 
+localBin=$PWD/.local/bin
 homeConfig=$PWD/.home
 thisConfig=$PWD/.config
 
@@ -23,5 +25,13 @@ done
 for i in .vimrc .gitconfig .bashrc .Xresources .xinitrc .xprofile; do
     rm -rf $HOME/$i
     ln -s $homeConfig/$i $HOME/$i
+done
+
+# .local/bin scripts
+for i in displays power-menu wifi-menu; do
+	mkdir -p $usrLocalBin/
+	if [ ! -f "$FILE" ]; then
+		ln -s $localBin/$i $usrLocalBin/$i
+	fi
 done
 
