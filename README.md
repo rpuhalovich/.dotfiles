@@ -8,6 +8,9 @@ enable the following:
 - ly
 - cronie
 - bluetooth
+- suspend\@rp.service
+
+That last one should be populated with the suspend and lock script.
 
 ## Cronie Settings
 
@@ -16,4 +19,8 @@ enable the following:
 
 ## Finding keybindings
 `xev -event keyboard`
+
+## TODO
+
+- [ ] Add systemctl and login files to handle lid close and suspend and lock.
 

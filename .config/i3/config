@@ -102,7 +102,7 @@ bindsym $mod+$alt+control+4 exec $monscript --workdock
 bindsym $mod+Return exec $term
 bindsym $mod+Shift+Return exec $term --working-directory  $(xcwd)
 
-bindsym $mod+Escape exec --no-startup-id $suspend && $lock
+bindsym $mod+Escape exec --no-startup-id $suspend
 bindsym $mod+Shift+Escape exec --no-startup-id $lock
 
 # reload the configuration file
