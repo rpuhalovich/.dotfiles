@@ -20,5 +20,3 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 
 ./symlink.sh
 
-export PATH=~/.local/bin/:$PATH
-

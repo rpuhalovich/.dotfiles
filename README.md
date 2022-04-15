@@ -15,7 +15,7 @@ That last one should be populated with the suspend and lock script.
 ## Cronie Settings
 
 `crontab -e` to get into crontab for the current user.
-`0 18 1,15 * * sh sh ~/.dotfiles/scripts/cron.sh`
+`0 17 * * * sh sh ~/.dotfiles/scripts/cron.sh`
 
 ## Finding keybindings
 `xev -event keyboard`

@@ -31,6 +31,7 @@ file
 file-roller
 findutils
 firefox
+flatpak
 flex
 fwupd
 gawk
@@ -146,7 +147,6 @@ vi
 vim
 vino
 virtualbox-bin
-visual-studio-code-bin
 which
 xdg-user-dirs-gtk
 xf86-input-synaptics
