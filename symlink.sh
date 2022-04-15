@@ -28,7 +28,7 @@ for i in .vimrc .gitconfig .bashrc .Xresources .xinitrc .xprofile; do
 done
 
 # .local/bin scripts
-for i in battery-combined-udev displays power-menu wifi-menu; do
+for i in update screenshot battery-combined-udev displays power-menu wifi-menu; do
 	mkdir -p $usrLocalBin/
 	if [ ! -f "$FILE" ]; then
 		ln -s $localBin/$i $usrLocalBin/$i

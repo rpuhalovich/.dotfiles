@@ -31,7 +31,6 @@ file
 file-roller
 findutils
 firefox
-flatpak
 flex
 fwupd
 gawk
@@ -73,6 +72,7 @@ gnome-user-share
 gnome-video-effects
 gnome-weather
 google-chrome
+gotop-bin
 gpointing-device-settings
 grep
 grilo-plugins
@@ -113,6 +113,8 @@ nitrogen
 nordic-theme
 notion-app
 npm
+ntfs-3g
+onlyoffice-bin
 orca
 pacman
 patch
@@ -122,13 +124,16 @@ picom-git
 pkgconf
 plocate
 polybar
+powertop
 pulseaudio
 pulseaudio-bluetooth
 redshift
 rofi
 rofi-calc
 rofi-emoji
+rsync
 rygel
+scrot
 sed
 signal-desktop
 simple-scan
@@ -147,7 +152,9 @@ vi
 vim
 vino
 virtualbox-bin
+visual-studio-code-bin
 which
+xclip
 xdg-user-dirs-gtk
 xf86-input-synaptics
 xf86-video-vesa

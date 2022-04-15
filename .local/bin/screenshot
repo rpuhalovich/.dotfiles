@@ -1,0 +1,12 @@
+#! /bin/sh
+output='~/Documents/screenshots/%Y-%m-%d-%T-screenshot.png'
+
+mkdir -p ~/Documents/screenshots/
+
+case "$1" in
+	"--select") scrot "$output" --select --line mode=edge || exit ;;
+	"--window") scrot "$output" --focused --border || exit ;;
+	*) scrot "$output" || exit ;;
+esac
+
+notify-send "Screenshot taken."

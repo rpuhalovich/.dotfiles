@@ -89,8 +89,8 @@ bindsym XF86WLAN exec $term -e nmtui
 bindsym XF86Bluetooth exec $term -e nmtui
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% # increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% # decrease sound volume
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% # increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% # decrease sound volume
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle # mute sound
 
 # #---Monitor Bindings---# #
@@ -133,20 +133,18 @@ bindsym $mod+e exec --no-startup-id rofi -show emoji
 
 # t
 bindsym $mod+t layout tabbed
-bindsym $mod+shift+t exec --no-startup-id teams --disable-seccomp-filter-sandbox
-
-# y
-bindsym $mod+y exec --no-startup-id flameshot gui -p ~/Pictures/screenshots
-bindsym $mod+Shift+y exec --no-startup-id flameshot full -p ~/Pictures/screenshots
+bindsym $mod+Shift+t exec --no-startup-id teams --disable-seccomp-filter-sandbox
 
 # i
 bindsym $mod+i fullscreen disable; floating enable; resize set 500 500; sticky enable; move position 4792 53
 
 # s
 bindsym $mod+s layout splith
+bindsym $mod+Shift+s exec --no-startup-id scrot "~/Documents/screenshots/" --select --line mode=edge
 
 # f
 bindsym $mod+f floating toggle
+bindsym $mod+shift+f fullscreen toggle
 
 # h
 bindsym $mod+h focus left

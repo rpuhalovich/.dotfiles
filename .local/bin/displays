@@ -13,4 +13,3 @@ case "$1" in
 	"--workdock") $nr & xrandr --output "$int" --left-of "$ext3" --auto --output "$ext1" --off --output "$ext2" --off --output "$ext3" --primary --auto ;;
 	*) exit 1 ;;
 esac
-
