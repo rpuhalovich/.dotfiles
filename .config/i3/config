@@ -143,16 +143,10 @@ bindsym $mod+Shift+y exec --no-startup-id flameshot full -p ~/Pictures/screensho
 bindsym $mod+i fullscreen disable; floating enable; resize set 500 500; sticky enable; move position 4792 53
 
 # s
-bindsym $mod+s splith
-bindsym $mod+Shift+s layout splith toggle
+bindsym $mod+s layout splith
 
 # f
 bindsym $mod+f floating toggle
-bindsym $mod+Shift+f fullscreen toggle
-
-# g
-bindsym $mod+g gaps inner current set $inner_gaps; gaps outer current set $outer_gaps
-bindsym $mod+Shift+g gaps inner current set 0; gaps outer current set 0
 
 # h
 bindsym $mod+h focus left
@@ -173,10 +167,6 @@ bindsym $mod+Ctrl+k resize grow height $sizepx px or $sizeppt ppt
 bindsym $mod+l focus right
 bindsym $mod+Shift+l move right 30
 bindsym $mod+Ctrl+l resize grow width $sizepx px or $sizeppt ppt
-
-# x
-# bindsym $mod+x exec --no-startup-id $reboot
-# bindsym $mod+Shift+x exec --no-startup-id $shutdown
 
 # p
 bindsym $mod+p exec --no-startup-id picom -b
