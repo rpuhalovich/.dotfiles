@@ -134,6 +134,8 @@ sushi
 teams
 texinfo
 totem
+touche
+touchegg
 tracker
 tracker-miners
 tree
@@ -144,6 +146,7 @@ vino
 virt-manager
 virtualbox-bin
 visual-studio-code-bin
+vlc
 which
 xclip
 xdg-user-dirs-gtk

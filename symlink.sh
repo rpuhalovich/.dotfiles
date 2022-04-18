@@ -9,7 +9,7 @@ homeConfig=$PWD/.home
 thisConfig=$PWD/.config
 
 # .config sub dir dotfiles
-for i in alacritty polybar nvim i3 picom rofi dunst; do
+for i in touchegg alacritty polybar nvim i3 picom rofi dunst; do
     rm -rf $usrConfig/$i
     mkdir -p $usrConfig/$i
     ln -s $thisConfig/$i/* $usrConfig/$i/
