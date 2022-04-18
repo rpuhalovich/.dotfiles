@@ -29,3 +29,5 @@
 [credential "https://gist.github.com"]
 	helper = 
 	helper = !/usr/bin/gh auth git-credential
+[credential]
+	helper = /home/user/.bas-git/bas-git-helper-init.sh

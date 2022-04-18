@@ -1,16 +1,62 @@
 {
-  "workbench.colorTheme": "Monokai",
-  "workbench.iconTheme": "theia-file-icons",
-  "workbench.statusBar.visible": true,
-  "sap.ux.applicationModeler.disableMigrationPrompt": true,
-  "gitlens.currentLine.enabled": false,
-  "welcome.showOnStartup": false,
-  "editor.wordWrap": "on",
-  "xml.format.splitAttributes": true,
-  "xml.format.splitAttributesIndentSize": 1,
-  "editor.renderWhitespace": "all",
-  "editor.rulers": [
-    120
-  ],
-  "redhat.telemetry.enabled": false
+    "java.jdt.ls.vmargs": "-DwatchParentProcess=false -noverify -XX:MaxDirectMemorySize=10M -XX:MaxMetaspaceSize=98632K -Xss1M -Xmx437943K -XX:+UseG1GC -XX:+UseStringDeduplication",
+    "java.configuration.checkProjectSettingsExclusions": false,
+    "java.configuration.updateBuildConfiguration": "automatic",
+    "java.autobuild.enabled": false,
+    "java.debug.settings.console": "internalConsole",
+    "java.debug.settings.forceBuildBeforeLaunch": false,
+    "java.home": "/home/user/java11",
+    "java.configuration.runtimes": [
+        {
+            "name": "JavaSE-11",
+            "path": "/usr/lib/sapmachine-jdk/sapmachine-jdk-11.0.6.0.1",
+            "default": true
+        },
+        {
+            "name": "JavaSE-1.8",
+            "path": "/usr/lib/sapjvm/sapjvm_8"
+        }
+    ],
+    "java.server.launchMode": "Standard",
+    "java.recommendations.dependency.analytics.show": false,
+    "java.semanticHighlighting.enabled": false,
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.factorypath": true,
+        "**/.project": true,
+        "**/.settings": true
+    },
+    "ports.excludeExposeNotification": {
+        "ports": [
+            8000,
+            8005,
+            8009
+        ],
+        "ranges": [
+            {
+                "from": 0,
+                "to": 0
+            }
+        ]
+    },
+    "spring-boot.ls.checkJVM": false,
+    "spring-boot.ls.java.vmargs": [
+        "-XX:MaxDirectMemorySize=10M",
+        "-XX:MaxMetaspaceSize=98632K",
+        "-Xss1M",
+        "-Xmx437943K"
+    ],
+    "workbench.colorTheme": "light",
+    "workbench.iconTheme": "theia-file-icons",
+    "workbench.statusBar.visible": true,
+    "gitlens.currentLine.enabled": false,
+    "welcome.showOnStartup": false,
+    "editor.wordWrap": "on",
+    "xml.format.splitAttributes": true,
+    "xml.format.splitAttributesIndentSize": 1,
+    "editor.renderWhitespace": "all",
+    "editor.rulers": [
+        120
+    ],
+    "redhat.telemetry.enabled": false
 }
