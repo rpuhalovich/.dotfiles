@@ -1,5 +1,5 @@
 #! /bin/sh
-output='~/Documents/screenshots/%Y-%m-%d-%T-screenshot.png'
+output="$HOME/Documents/screenshots/%Y-%m-%d-%T-screenshot.png"
 
 mkdir -p ~/Documents/screenshots/
 

@@ -6,6 +6,7 @@
 :set softtabstop=4
 :set mouse=a
 :set clipboard+=unnamedplus
+:set expandtab
 
 :set list
 :set listchars=tab:>-

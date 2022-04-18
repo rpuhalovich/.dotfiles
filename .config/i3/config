@@ -56,11 +56,17 @@ workspace "8" output DVI-I-1-1 HDMI2 eDP1
 workspace "9" output DVI-I-1-1 HDMI2 eDP1
 workspace "0" output DVI-I-1-1 HDMI2 eDP1
 
-for_window [window_role="GtkFileChooserDialog"] resize set 800 600
+for_window [window_role="GtkFileChooserDialog"] resize set 800 700
 for_window [window_role="GtkFileChooserDialog"] move position center
+
 for_window [class="Blueman-manager"] floating enable
 for_window [class="Blueman-manager"] resize set 800 600
 for_window [class="Blueman-manager"] move position center
+
+for_window [class="Pavucontrol"] floating enable
+for_window [class="Pavucontrol"] resize set 800 700
+for_window [class="Pavucontrol"] move position center
+
 for_window [class="Bitwarden" instance="Places"] floating enable
 
 # #---Window borders---# #
@@ -115,6 +121,8 @@ set $lightamt 10
 bindsym XF86MonBrightnessUp exec --no-startup-id sudo light -A $lightamt
 bindsym XF86MonBrightnessDown exec --no-startup-id sudo light -U $lightamt
 
+bindsym Print exec --no-startup-id screenshot --select
+
 # #---Letter Key Bindings---# #
 bindsym $mod+q [con_id="__focused__" instance="^(?!dropdown_).*$"] kill
 bindsym $mod+Shift+q [con_id="__focused__" instance="^(?!dropdown_).*$"] exec --no-startup-id kill -9 `xdotool getwindowfocus getwindowpid`
@@ -140,7 +148,6 @@ bindsym $mod+i fullscreen disable; floating enable; resize set 500 500; sticky e
 
 # s
 bindsym $mod+s layout splith
-bindsym $mod+Shift+s exec --no-startup-id scrot "~/Documents/screenshots/" --select --line mode=edge
 
 # f
 bindsym $mod+f floating toggle
@@ -171,13 +178,13 @@ bindsym $mod+p exec --no-startup-id picom -b
 bindsym $mod+Shift+p exec --no-startup-id killall picom
 
 # #---Workspace Bindings---# #
-bindsym $mod+space              exec --no-startup-id rofi -show drun
-bindsym $alt+Tab                exec --no-startup-id rofi -show window
+bindsym $mod+space              exec --no-startup-id rofi -show-icons -show drun
+bindsym $mod+Tab                exec --no-startup-id rofi -show-icons -show window
 bindsym $alt+comma              workspace prev
 bindsym $alt+period             workspace next
 bindsym $mod+apostrophe         split horizontal ;; exec $term
 bindsym $mod+slash              split vertical ;; exec $term
-bindsym $mod+Tab                workspace back_and_forth
+bindsym $alt+space              workspace back_and_forth
 
 # Assigning autofloat
 for_window [title=".*Emulator.*"] floating enable
