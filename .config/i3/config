@@ -52,13 +52,13 @@ workspace "2" output DVI-I-2-2 eDP1
 workspace "3" output DVI-I-2-2 eDP1
 workspace "4" output DVI-I-2-2 eDP1
 workspace "5" output DVI-I-2-2 eDP1
-workspace "6" output DVI-I-1-1 HDMI2 eDP1
-workspace "7" output DVI-I-1-1 HDMI2 eDP1
-workspace "8" output DVI-I-1-1 HDMI2 eDP1
-workspace "9" output DVI-I-1-1 HDMI2 eDP1
-workspace "0" output DVI-I-1-1 HDMI2 eDP1
+workspace "6" output DVI-I-1-1 HDMI-2 eDP1
+workspace "7" output DVI-I-1-1 HDMI-2 eDP1
+workspace "8" output DVI-I-1-1 HDMI-2 eDP1
+workspace "9" output DVI-I-1-1 HDMI-2 eDP1
+workspace "0" output DVI-I-1-1 HDMI-2 eDP1
 
-for_window [window_role="GtkFileChooserDialog"] resize set 800 700
+for_window [window_role="GtkFileChooserDialog"] resize set 1000 700
 for_window [window_role="GtkFileChooserDialog"] move position center
 
 for_window [class="Blueman-manager"] floating enable
@@ -120,8 +120,9 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+o restart
 
 set $lightamt 10
-bindsym XF86MonBrightnessUp exec --no-startup-id sudo light -A $lightamt
-bindsym XF86MonBrightnessDown exec --no-startup-id sudo light -U $lightamt
+set $fade 150000
+bindsym XF86MonBrightnessUp exec --no-startup-id sudo brillo -u $fade -A $lightamt
+bindsym XF86MonBrightnessDown exec --no-startup-id sudo brillo -u $fade -U $lightamt
 
 bindsym Print exec --no-startup-id screenshot --select
 
