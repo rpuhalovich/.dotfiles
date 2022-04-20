@@ -22,7 +22,7 @@ for i in redshift.conf; do
 done
 
 # .home dotfiles
-for i in .vimrc .gitconfig .bashrc .Xresources .xinitrc .xprofile; do
+for i in .profile .vimrc .gitconfig .bashrc .Xresources .xinitrc .xprofile; do
     rm -rf $HOME/$i
     ln -s $homeConfig/$i $HOME/$i
 done

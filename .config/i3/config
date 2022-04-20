@@ -2,11 +2,11 @@
 
 exec_always --no-startup-id xrdb -merge ~/.Xresources
 exec_always --no-startup-id picom --experimental-backends -b
-exec_always --no-startup-id redshift
+# exec_always --no-startup-id redshift
 exec_always --no-startup-id touchegg
-exec_always --no-startup-id nitrogen --restore
+# exec_always --no-startup-id nitrogen --restore
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-exec_always --no-startup-id /usr/bin/setxkbmap -option "caps:escape" -option "ctrl:swap_lalt_lctl"
+# exec_always --no-startup-id /usr/bin/setxkbmap -option "caps:escape" -option "ctrl:swap_lalt_lctl"
 
 # Touchpad settings
 exec_always --no-startup-id synclient HorizTwoFingerScroll=1
@@ -120,8 +120,9 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+o restart
 
 set $lightamt 10
-bindsym XF86MonBrightnessUp exec --no-startup-id sudo light -A $lightamt
-bindsym XF86MonBrightnessDown exec --no-startup-id sudo light -U $lightamt
+set $fade 200000
+bindsym XF86MonBrightnessUp exec --no-startup-id sudo brillo -u $fade -q -A $lightamt
+bindsym XF86MonBrightnessDown exec --no-startup-id sudo brillo -u $fade -q -U $lightamt
 
 bindsym Print exec --no-startup-id screenshot --select
 
@@ -214,3 +215,4 @@ bindsym $mod+Shift+7 move container to workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
+
