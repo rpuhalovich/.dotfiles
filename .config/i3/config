@@ -2,11 +2,8 @@
 
 exec_always --no-startup-id xrdb -merge ~/.Xresources
 exec_always --no-startup-id picom --experimental-backends -b
-# exec_always --no-startup-id redshift
 exec_always --no-startup-id touchegg
-# exec_always --no-startup-id nitrogen --restore
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-# exec_always --no-startup-id /usr/bin/setxkbmap -option "caps:escape" -option "ctrl:swap_lalt_lctl"
 
 # Touchpad settings
 exec_always --no-startup-id synclient HorizTwoFingerScroll=1
@@ -14,6 +11,7 @@ exec_always --no-startup-id synclient MinSpeed=2 MaxSpeed=2.75 AccelFactor=0.1
 exec_always --no-startup-id synclient TapButton1=1 TapButton2=3 TapButton3=0
 exec_always --no-startup-id synclient VertScrollDelta=-120 HorizScrollDelta=-120
 exec_always --no-startup-id synclient PalmDetect=1 PalmMinWidth=140 PalmMinZ=150 
+exec_always --no-startup-id synclient RightButtonAreaLeft=0 RightButtonAreaTop=0
 
 # #---Basic Definitions---# #
 smart_gaps on
@@ -119,10 +117,10 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+o restart
 
-set $lightamt 10
-set $fade 200000
-bindsym XF86MonBrightnessUp exec --no-startup-id sudo brillo -u $fade -q -A $lightamt
-bindsym XF86MonBrightnessDown exec --no-startup-id sudo brillo -u $fade -q -U $lightamt
+set $lightamt 5
+set $fade 150000
+bindsym XF86MonBrightnessUp exec --no-startup-id sudo brillo -q -u $fade -A $lightamt
+bindsym XF86MonBrightnessDown exec --no-startup-id sudo brillo -q -u $fade -U $lightamt
 
 bindsym Print exec --no-startup-id screenshot --select
 

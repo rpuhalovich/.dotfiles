@@ -1,6 +1,7 @@
 acpi
 acpid
 alacritty
+android-studio
 arandr
 arc-gtk-theme
 autoconf
@@ -16,6 +17,8 @@ blueman
 bluez-utils
 bolt
 bridge-utils
+brillo
+cmake
 cmatrix
 cronie
 discord
@@ -27,7 +30,6 @@ dunst
 efibootmgr
 eog
 epiphany
-evdi
 evince
 fakeroot
 file
@@ -36,6 +38,7 @@ findutils
 firefox
 flatpak
 flex
+fragments
 fwupd
 gawk
 gcc
@@ -58,6 +61,7 @@ gnome-session
 gnome-settings-daemon
 gnome-shell
 gnome-shell-extensions
+gnome-terminal
 google-chrome
 gotop-bin
 gpointing-device-settings
@@ -123,6 +127,7 @@ rofi-calc
 rofi-emoji
 rsync
 rygel
+sassc
 scrot
 sed
 signal-desktop
@@ -131,7 +136,6 @@ sof-firmware
 spotify
 sudo
 sushi
-teams
 texinfo
 totem
 touche
