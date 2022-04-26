@@ -6,6 +6,7 @@ arandr
 arc-gtk-theme
 autoconf
 automake
+balena-etcher
 baobab
 base
 bat
@@ -20,6 +21,7 @@ bridge-utils
 brillo
 cmake
 cmatrix
+cowsay
 cronie
 discord
 displaylink
@@ -32,6 +34,7 @@ eog
 epiphany
 evince
 fakeroot
+figlet
 file
 file-roller
 findutils
@@ -103,10 +106,12 @@ nerd-fonts-fira-code
 nerd-fonts-jetbrains-mono
 networkmanager
 nitrogen
+nodejs
 nordic-theme
 notion-app
 npm
 ntfs-3g
+obsidian
 openbsd-netcat
 orca
 pacman
@@ -143,6 +148,7 @@ touchegg
 tracker
 tracker-miners
 tree
+ttf-meslo-nerd-font-powerlevel10k
 unzip
 vi
 vim
@@ -151,6 +157,7 @@ virt-manager
 virtualbox-bin
 visual-studio-code-bin
 vlc
+wget
 which
 xclip
 xdg-user-dirs-gtk
@@ -209,3 +216,6 @@ yay
 yelp
 zathura
 zathura-pdf-poppler
+zsh
+zsh-completions
+zsh-theme-powerlevel10k-git
