@@ -32,6 +32,7 @@ set $monscript displays
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
+mouse_warping none
 
 set $ws1 "1"
 set $ws2 "2"
@@ -59,15 +60,20 @@ workspace "0" output DVI-I-1-1 HDMI-2 eDP1
 for_window [window_role="GtkFileChooserDialog"] resize set 1000 700
 for_window [window_role="GtkFileChooserDialog"] move position center
 
+for_window [class="File-roller"] foating enable
+for_window [class="File-roller"] resize set 800 600
+
 for_window [class="Blueman-manager"] floating enable
 for_window [class="Blueman-manager"] resize set 800 600
 for_window [class="Blueman-manager"] move position center
 
+for_window [class="org.gnome.Weather"] floating enable
+for_window [class="org.gnome.Weather"] resize set 1000 600
+for_window [class="org.gnome.Weather"] move position center
+
 for_window [class="Pavucontrol"] floating enable
 for_window [class="Pavucontrol"] resize set 800 700
 for_window [class="Pavucontrol"] move position center
-
-for_window [class="Bitwarden" instance="Places"] floating enable
 
 # #---Window borders---# #
 # class                 border  backgr. text    indicator child_border

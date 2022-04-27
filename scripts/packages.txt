@@ -6,7 +6,7 @@ arandr
 arc-gtk-theme
 autoconf
 automake
-balena-etcher
+autorandr
 baobab
 base
 bat
@@ -23,6 +23,7 @@ cmake
 cmatrix
 cowsay
 cronie
+darktable
 discord
 displaylink
 dmenu
@@ -48,6 +49,7 @@ gcc
 gdm
 gedit
 gettext
+gimp
 git
 github-cli
 gnome-backgrounds
@@ -65,6 +67,7 @@ gnome-settings-daemon
 gnome-shell
 gnome-shell-extensions
 gnome-terminal
+gnome-weather
 google-chrome
 gotop-bin
 gpointing-device-settings
@@ -87,6 +90,7 @@ i3status
 iptables-nft
 lf
 libgnome-keyring
+libreoffice-fresh
 libtool
 light
 linux
@@ -105,7 +109,6 @@ neovim
 nerd-fonts-fira-code
 nerd-fonts-jetbrains-mono
 networkmanager
-nitrogen
 nodejs
 nordic-theme
 notion-app
@@ -125,8 +128,8 @@ polybar
 powertop
 pulseaudio
 pulseaudio-bluetooth
-qemu-arch-extra
 redshift
+redshiftgui-bin
 rofi
 rofi-calc
 rofi-emoji
