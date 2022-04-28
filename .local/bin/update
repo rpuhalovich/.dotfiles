@@ -6,5 +6,3 @@ yay -c --noconfirm
 yay -Sc --noconfirm
 sh $HOME/.dotfiles/scripts/update_packages.sh
 
-omz update
-

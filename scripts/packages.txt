@@ -1,6 +1,7 @@
 acpi
 acpid
 alacritty
+albert-bin
 android-studio
 arandr
 arc-gtk-theme
@@ -19,6 +20,7 @@ bluez-utils
 bolt
 bridge-utils
 brillo
+chrome-gnome-shell
 cmake
 cmatrix
 cowsay
@@ -63,10 +65,12 @@ gnome-keyring
 gnome-logs
 gnome-photos
 gnome-session
+gnome-session-properties
 gnome-settings-daemon
 gnome-shell
 gnome-shell-extensions
 gnome-terminal
+gnome-tweaks
 gnome-weather
 google-chrome
 gotop-bin
@@ -90,6 +94,7 @@ i3status
 iptables-nft
 lf
 libgnome-keyring
+libinput-gestures
 libreoffice-fresh
 libtool
 light
@@ -146,7 +151,6 @@ sudo
 sushi
 texinfo
 totem
-touche
 touchegg
 tracker
 tracker-miners
@@ -164,7 +168,6 @@ wget
 which
 xclip
 xdg-user-dirs-gtk
-xf86-input-synaptics
 xf86-video-vesa
 xkeycaps
 xorg-bdftopcf
