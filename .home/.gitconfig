@@ -11,7 +11,7 @@
 	a = add .
 	b = branch -a
 	bl = blame
-	c = commit -am
+	c = commit
 	ch = checkout
 	rclone = clone --recursive
 	f = fetch --all
@@ -23,9 +23,3 @@
 	r = rebase
 	s = status
 	subup = submodule update --init --recursive
-[credential "https://github.com"]
-	helper = 
-	helper = !/usr/bin/gh auth git-credential
-[credential "https://gist.github.com"]
-	helper = 
-	helper = !/usr/bin/gh auth git-credential
