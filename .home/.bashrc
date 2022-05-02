@@ -1,4 +1,4 @@
-alias ll="ls -la"
+alias ls="ls -la --color"
 alias v="vim"
 
 set -o vi
