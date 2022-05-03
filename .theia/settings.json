@@ -1,8 +1,7 @@
 {
-  "workbench.colorTheme": "Monokai",
+  "workbench.colorTheme": "One Dark Pro",
   "workbench.iconTheme": "theia-file-icons",
   "workbench.statusBar.visible": true,
-  "sap.ux.applicationModeler.disableMigrationPrompt": true,
   "gitlens.currentLine.enabled": false,
   "welcome.showOnStartup": false,
   "editor.wordWrap": "on",
