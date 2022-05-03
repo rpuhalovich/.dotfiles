@@ -13,13 +13,12 @@
 	bl = blame
 	c = commit
 	ch = checkout
-	rclone = clone --recursive
+	clone = clone --recursive
 	fetch = fetch --prune --all 
 	l = log
 	lo = log --oneline
 	lg = log --graph --topo-order --abbrev-commit --date=short --decorate --all --boundary --pretty=format:'%C(bold blue)<%cn> %Cgreen%ad %Cred%h%Creset -%C(yellow)%d%Creset %s %Creset'
 	m = merge
 	pull = pull --prune --all
-	r = rebase
 	s = status
 	subup = submodule update --init --recursive
