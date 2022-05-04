@@ -8,6 +8,11 @@
 :set clipboard+=unnamedplus
 :set expandtab
 
+" Search down into subfolders
+:set path+=**
+" Display all matching files when we tab complete
+:set wildmenu
+
 :set list
 :set listchars=tab:>-
 

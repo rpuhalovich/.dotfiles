@@ -22,15 +22,18 @@ for i in redshift.conf; do
 done
 
 # .home dotfiles
-for i in .vimrc .gitconfig .bashrc .Xresources .xinitrc .xprofile; do
+for i in .profile .vimrc .gitconfig .bashrc .Xresources .xinitrc .xprofile; do
     rm -rf $HOME/$i
     ln -s $homeConfig/$i $HOME/$i
 done
 
 # .local/bin scripts
-for i in update screenshot battery-combined-udev displays power-menu wifi-menu; do
-	mkdir -p $usrLocalBin/
-	if [ ! -f "$FILE" ]; then
-		ln -s $localBin/$i $usrLocalBin/$i
-	fi
-done
+# for i in update screenshot battery-combined-udev displays power-menu wifi-menu; do
+# 	mkdir -p $usrLocalBin/
+# 	if [ ! -f "$FILE" ]; then
+# 		ln -s $localBin/$i $usrLocalBin/$i
+# 	fi
+# done
+
+mkdir -p $usrLocalBin/
+ln -s $localBin/* $usrLocalBin/

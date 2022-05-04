@@ -2,11 +2,8 @@
 
 exec_always --no-startup-id xrdb -merge ~/.Xresources
 exec_always --no-startup-id picom --experimental-backends -b
-exec_always --no-startup-id redshift
 exec_always --no-startup-id touchegg
-exec_always --no-startup-id nitrogen --restore
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-exec_always --no-startup-id /usr/bin/setxkbmap -option "caps:escape" -option "ctrl:swap_lalt_lctl"
 
 # Touchpad settings
 exec_always --no-startup-id synclient HorizTwoFingerScroll=1
@@ -14,6 +11,7 @@ exec_always --no-startup-id synclient MinSpeed=2 MaxSpeed=2.75 AccelFactor=0.1
 exec_always --no-startup-id synclient TapButton1=1 TapButton2=3 TapButton3=0
 exec_always --no-startup-id synclient VertScrollDelta=-120 HorizScrollDelta=-120
 exec_always --no-startup-id synclient PalmDetect=1 PalmMinWidth=140 PalmMinZ=150 
+exec_always --no-startup-id synclient RightButtonAreaLeft=0 RightButtonAreaTop=0
 
 # #---Basic Definitions---# #
 smart_gaps on
@@ -34,6 +32,7 @@ set $monscript displays
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
+mouse_warping none
 
 set $ws1 "1"
 set $ws2 "2"
@@ -52,29 +51,34 @@ workspace "2" output DVI-I-2-2 eDP1
 workspace "3" output DVI-I-2-2 eDP1
 workspace "4" output DVI-I-2-2 eDP1
 workspace "5" output DVI-I-2-2 eDP1
-workspace "6" output DVI-I-1-1 HDMI2 eDP1
-workspace "7" output DVI-I-1-1 HDMI2 eDP1
-workspace "8" output DVI-I-1-1 HDMI2 eDP1
-workspace "9" output DVI-I-1-1 HDMI2 eDP1
-workspace "0" output DVI-I-1-1 HDMI2 eDP1
+workspace "6" output DVI-I-1-1 HDMI-2 eDP1
+workspace "7" output DVI-I-1-1 HDMI-2 eDP1
+workspace "8" output DVI-I-1-1 HDMI-2 eDP1
+workspace "9" output DVI-I-1-1 HDMI-2 eDP1
+workspace "0" output DVI-I-1-1 HDMI-2 eDP1
 
-for_window [window_role="GtkFileChooserDialog"] resize set 800 700
+for_window [window_role="GtkFileChooserDialog"] resize set 1000 700
 for_window [window_role="GtkFileChooserDialog"] move position center
+
+for_window [class="File-roller"] foating enable
+for_window [class="File-roller"] resize set 800 600
 
 for_window [class="Blueman-manager"] floating enable
 for_window [class="Blueman-manager"] resize set 800 600
 for_window [class="Blueman-manager"] move position center
 
+for_window [class="org.gnome.Weather"] floating enable
+for_window [class="org.gnome.Weather"] resize set 1000 600
+for_window [class="org.gnome.Weather"] move position center
+
 for_window [class="Pavucontrol"] floating enable
 for_window [class="Pavucontrol"] resize set 800 700
 for_window [class="Pavucontrol"] move position center
 
-for_window [class="Bitwarden" instance="Places"] floating enable
-
 # #---Window borders---# #
 # class                 border  backgr. text    indicator child_border
-client.focused          #333333 #000000 #dddddd #ffffff   #353659
-client.focused_inactive #333333 #000000 #333333 #484e50   #201f3d
+client.focused          #333333 #1c2632 #dddddd #ffffff   #749fb6
+client.focused_inactive #333333 #1c2632 #333333 #484e50   #201f3d
 client.unfocused        #333333 #222222 #888888 #292d2e   #222222
 client.urgent           #2f343a #900000 #ffffff #900000   #900000
 client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
@@ -119,9 +123,10 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+o restart
 
-set $lightamt 10
-bindsym XF86MonBrightnessUp exec --no-startup-id sudo light -A $lightamt
-bindsym XF86MonBrightnessDown exec --no-startup-id sudo light -U $lightamt
+set $lightamt 5
+set $fade 150000
+bindsym XF86MonBrightnessUp exec --no-startup-id sudo brillo -q -u $fade -A $lightamt
+bindsym XF86MonBrightnessDown exec --no-startup-id sudo brillo -q -u $fade -U $lightamt
 
 bindsym Print exec --no-startup-id screenshot --select
 
@@ -214,3 +219,4 @@ bindsym $mod+Shift+7 move container to workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
+
