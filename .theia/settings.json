@@ -11,5 +11,23 @@
   "editor.rulers": [
     120
   ],
-  "redhat.telemetry.enabled": false
+"redhat.telemetry.enabled": false,
+"java.configuration.runtimes": [
+    {
+        "name": "JavaSE-11",
+        "path": "/usr/lib/sapmachine-jdk/sapmachine-jdk-11.0.6.0.1",
+        "default": true
+    },
+    {
+        "name": "JavaSE-1.8",
+        "path": "/usr/lib/sapjvm/sapjvm_8"
+    }
+],
+"java.home": "/home/user/java11",
+"files.exclude": {
+    "**/.classpath": true,
+    "**/.project": true,
+    "**/.settings": true,
+    "**/.factorypath": true
+}
 }
