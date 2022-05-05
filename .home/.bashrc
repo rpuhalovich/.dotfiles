@@ -9,4 +9,3 @@ parse_git_branch() {
 }
 
 PS1="\e[0;37m\W \[\e[91m\]\$(parse_git_branch)\e[0;37m> \e[0m"
-
