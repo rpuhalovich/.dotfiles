@@ -1,7 +1,7 @@
 " GLOBAL SETTINGS:
 
 set noundofile
-set number
+set number relativenumber
 set mouse=a
 set clipboard=unnamedplus
 set expandtab
