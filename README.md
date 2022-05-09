@@ -15,7 +15,7 @@ That last one should be populated with the suspend and lock script.
 ## Cronie Settings
 
 `crontab -e` to get into crontab for the current user.
-`0 17 * * * sh sh ~/.dotfiles/scripts/cron.sh`
+30 17 * * * /home/rp/.dotfiles/.local/bin/update && XDG_RUNTIME_DIR=/run/user/$(id -u) notify-send Cronie "System has been updated."
 
 ## Finding keybindings
 `xev -event keyboard`
