@@ -7,6 +7,7 @@ set clipboard=unnamedplus
 set expandtab
 set path+=**
 set wildmenu
+set scrolloff=13
 
 syntax on
 
@@ -35,4 +36,7 @@ cnoremap <C-Tab> <C-C>:tabnext<CR>
 noremap <C-S-Tab> :<C-U>tabprevious<CR>
 inoremap <C-S-Tab> <C-\><C-N>:tabprevious<CR>
 cnoremap <C-S-Tab> <C-C>:tabprevious<CR>
+
+" Create the 'tags' file (may need to install ctags first)
+command! MakeTags !ctags -R .
 
