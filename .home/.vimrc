@@ -2,12 +2,12 @@
 
 set noundofile
 set number relativenumber
-set mouse=a
 set clipboard=unnamedplus
+set mouse=a
 set expandtab
 set path+=**
 set wildmenu
-set scrolloff=13
+set so=13
 
 syntax on
 
@@ -22,21 +22,4 @@ let g:netrw_liststyle=3     " tree view
 " - :edit a folder to open a file browser
 " - <CR>/v/t to open in an h-split/v-split/tab
 " - check |netrw-browse-maps| for more mappings
-
-" Keybindings
-
-noremap <Leader>y "*y
-noremap <Leader>p "*p
-
-" CTRL-Tab is next tab
-noremap <C-Tab> :<C-U>tabnext<CR>
-inoremap <C-Tab> <C-\><C-N>:tabnext<CR>
-cnoremap <C-Tab> <C-C>:tabnext<CR>
-" CTRL-SHIFT-Tab is previous tab
-noremap <C-S-Tab> :<C-U>tabprevious<CR>
-inoremap <C-S-Tab> <C-\><C-N>:tabprevious<CR>
-cnoremap <C-S-Tab> <C-C>:tabprevious<CR>
-
-" Create the 'tags' file (may need to install ctags first)
-command! MakeTags !ctags -R .
 
