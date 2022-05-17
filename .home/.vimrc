@@ -3,7 +3,7 @@
 set noundofile
 set number relativenumber
 set clipboard=unnamedplus
-set mouse=a
+" set mouse=a
 set expandtab
 set path+=**
 set wildmenu
