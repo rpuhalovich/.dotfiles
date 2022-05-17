@@ -21,6 +21,7 @@ bolt
 bridge-utils
 brillo
 chrome-gnome-shell
+cloc
 cmake
 cmatrix
 cowsay
@@ -122,6 +123,7 @@ npm
 ntfs-3g
 openbsd-netcat
 orca
+p7zip
 pacman
 patch
 pavucontrol
@@ -157,6 +159,7 @@ tracker-miners
 transmission-gtk
 tree
 ttf-meslo-nerd-font-powerlevel10k
+ttf-symbola
 unzip
 vi
 vino
