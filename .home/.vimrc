@@ -7,7 +7,12 @@ set clipboard=unnamedplus
 set expandtab
 set path+=**
 set wildmenu
+<<<<<<< HEAD
 set so=13
+=======
+set scrolloff=13
+set wrap linebreak nolist
+>>>>>>> bacd9fb (Updated packages and added wallpaper.)
 
 syntax on
 
