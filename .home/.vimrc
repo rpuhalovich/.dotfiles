@@ -24,6 +24,6 @@ let g:netrw_liststyle=3     " tree view
 " - <CR>/v/t to open in an h-split/v-split/tab
 " - check |netrw-browse-maps| for more mappings
 
-:nnoremap k gk
-:nnoremap j gj
+nnoremap k gk
+nnoremap j gj
 
