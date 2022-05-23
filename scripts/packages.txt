@@ -3,7 +3,6 @@ acpid
 alacritty
 albert-bin
 android-studio
-appimagelauncher
 arc-gtk-theme
 autoconf
 autokey-git
@@ -28,6 +27,7 @@ cmatrix
 cowsay
 cronie
 darktable
+dconf-editor-git
 discord
 dnsmasq
 dunst
@@ -96,7 +96,6 @@ htop
 i3-gaps
 i3status
 iptables-nft
-kitty
 libgnome-keyring
 libinput-gestures
 libreoffice-fresh
@@ -139,6 +138,7 @@ plocate
 polybar
 powertop
 protonvpn-gui
+qdirstat
 rofi
 rofi-calc
 rofi-emoji
@@ -148,7 +148,6 @@ sassc
 scrot
 sed
 sejda-desktop
-signal-desktop
 simple-scan
 sof-firmware
 spotify
