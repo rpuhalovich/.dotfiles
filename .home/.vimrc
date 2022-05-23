@@ -7,8 +7,8 @@ set mouse=a
 set expandtab
 set path+=**
 set wildmenu
-set scrolloff=13
 set wrap linebreak nolist
+set so=999
 
 syntax on
 
@@ -23,4 +23,7 @@ let g:netrw_liststyle=3     " tree view
 " - :edit a folder to open a file browser
 " - <CR>/v/t to open in an h-split/v-split/tab
 " - check |netrw-browse-maps| for more mappings
+
+:nnoremap k gk
+:nnoremap j gj
 
