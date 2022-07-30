@@ -14,6 +14,8 @@ Plug 'Yggdroot/indentLine'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' }
 Plug 'jiangmiao/auto-pairs'
 Plug 'preservim/nerdtree'
+Plug 'maxmellon/vim-jsx-pretty'
+Plug 'pangloss/vim-javascript'
 call plug#end()
 
 autocmd vimenter * ++nested colorscheme gruvbox
@@ -29,7 +31,13 @@ set noundofile
 set noswapfile
 set nobackup
 set number
-set clipboard=unnamedplus
+
+if system('uname -s') == "Darwin\n"
+  set clipboard=unnamed " OSX
+else
+  set clipboard=unnamedplus " Linux
+endif
+
 set mouse+=a
 set expandtab
 set path+=**
@@ -73,5 +81,28 @@ nnoremap j gj
 
 let mapleader = " "
 nnoremap <leader>f :Files<CR>
+nnoremap <leader>F :Rg<CR>
+nnoremap <leader>b :Buffers<CR>
 nnoremap <leader>e :NERDTreeToggleVCS<CR>
 
+function! WrapForTmux(s)
+    if !exists('$TMUX')
+        return a:s
+    endif
+
+    let tmux_start = "\<Esc>Ptmux;"
+    let tmux_end = "\<Esc>\\"
+
+    return tmux_start . substitute(a:s, "\<Esc>", "\<Esc>\<Esc>", 'g') . tmux_end
+endfunction
+
+let &t_SI .= WrapForTmux("\<Esc>[?2004h")
+let &t_EI .= WrapForTmux("\<Esc>[?2004l")
+
+function! XTermPasteBegin()
+    set pastetoggle=<Esc>[201~
+    set paste
+    return ""
+endfunction
+
+inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
