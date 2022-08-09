@@ -39,6 +39,11 @@ else
 endif
 
 set mouse+=a
+" tmux knows to use the extended mouse mode.
+if &term =~ '^screen'
+    set ttymouse=xterm2
+endif
+
 set expandtab
 set path+=**
 set wildmenu
@@ -84,6 +89,12 @@ nnoremap <leader>f :Files<CR>
 nnoremap <leader>F :Rg<CR>
 nnoremap <leader>b :Buffers<CR>
 nnoremap <leader>e :NERDTreeToggleVCS<CR>
+
+" Fix pasting.
+" nnoremap <leader>p :set paste<CR>let g:AutoPairsFlyMode = 0<CR>"+p:set nopaste<CR>let g:AutoPairsFlyMode = 1<CR>
+
+" <leader>p for pasting instead.
+nmap <leader><leader>p <Plug>(Prettier)
 
 function! WrapForTmux(s)
     if !exists('$TMUX')
