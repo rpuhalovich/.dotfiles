@@ -1,3 +1,4 @@
+# Vi keybindings
 bindkey -v '^?' backward-delete-char
 
 alias c="git add . && git commit && sleep 3 && git push"
