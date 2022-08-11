@@ -20,7 +20,7 @@ call plug#end()
 
 autocmd vimenter * ++nested colorscheme gruvbox
 
-let g:prettier#config#print_width = '140'
+let g:prettier#config#print_width = '120'
 let g:prettier#config#tab_width = 'auto'
 let g:prettier#config#use_tabs = 'false'
 
@@ -72,6 +72,9 @@ set incsearch
 set autoindent
 set smartindent
 
+" Get vim to use coc for it's tagfunc.
+set tagfunc=CocTagFunc
+
 syntax on
 
 " File Browsing:
@@ -80,22 +83,7 @@ let g:netrw_browse_split=4 " open in prior window
 let g:netrw_altv=1 " open splits to the right
 let g:netrw_liststyle=3 " tree view
 
-" Keybinds:
-nnoremap k gk
-nnoremap j gj
-
-let mapleader = " "
-nnoremap <leader>f :Files<CR>
-nnoremap <leader>F :Rg<CR>
-nnoremap <leader>b :Buffers<CR>
-nnoremap <leader>e :NERDTreeToggleVCS<CR>
-
-" Fix pasting.
-" nnoremap <leader>p :set paste<CR>let g:AutoPairsFlyMode = 0<CR>"+p:set nopaste<CR>let g:AutoPairsFlyMode = 1<CR>
-
-" <leader>p for pasting instead.
-nmap <leader><leader>p <Plug>(Prettier)
-
+" Tmux Stuff
 function! WrapForTmux(s)
     if !exists('$TMUX')
         return a:s
@@ -117,3 +105,23 @@ function! XTermPasteBegin()
 endfunction
 
 inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
+
+" Keybinds:
+nnoremap k gk
+nnoremap j gj
+
+let mapleader = " "
+nnoremap <leader>f :Files<CR>
+nnoremap <leader>F :Rg<CR>
+nnoremap <leader>b :Buffers<CR>
+
+" closes all buffers except the currently open one.
+nnoremap <leader>B :%bd<CR>
+nnoremap <leader>e :NERDTreeToggleVCS<CR>
+
+" move among buffers with tab.
+map <tab> :bnext<CR>
+map <leader><tab> :bprev<CR>
+
+nmap <leader><leader>p <Plug>(Prettier)
+
