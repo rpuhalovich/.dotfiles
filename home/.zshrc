@@ -1,6 +1,18 @@
 # Vi keybindings
 bindkey -v '^?' backward-delete-char
 
+parse_git_branch() {
+    git branch 2> /dev/null | sed -n -e 's/^\* \(.*\)/(\1)/p'
+}
+COLOR_DEF='%f'
+COLOR_USR='%F{243}'
+COLOR_DIR='%F{249}'
+COLOR_GIT='%F{196}'
+NEWLINE=$'\n'
+setopt PROMPT_SUBST
+# export PROMPT='${COLOR_USR}%n@%M ${COLOR_DIR}%d ${COLOR_GIT}$(parse_git_branch)${COLOR_DEF}${NEWLINE}%% '
+export PROMPT='${COLOR_DEF}%d ${COLOR_GIT}$(parse_git_branch)${COLOR_DEF}${NEWLINE}> '
+
 alias c="git add . && git commit && sleep 3 && git push"
 alias ls="exa -lha"
 alias tree="exa --tree"
