@@ -7,6 +7,10 @@
 	editor = vim
 [advice]
 	detachedHead = false
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false
 [alias]
 	a = add .
 	b = branch -a
@@ -14,10 +18,10 @@
 	c = commit
 	ch = checkout
 	clone = clone --recursive
+    d = difftool
 	fetch = fetch --prune --all
 	l = log
 	lo = log --oneline
 	lg = log --graph --topo-order --abbrev-commit --date=short --decorate --all --boundary --pretty=format:'%C(bold blue)<%cn> %Cgreen%ad %Cred%h%Creset -%C(yellow)%d%Creset %s %Creset'
 	pull = pull --prune --all
 	s = status
-
