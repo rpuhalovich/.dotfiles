@@ -16,6 +16,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'preservim/nerdtree'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'pangloss/vim-javascript'
+Plug 'preservim/nerdcommenter'
 call plug#end()
 
 autocmd vimenter * ++nested colorscheme gruvbox
@@ -32,11 +33,11 @@ set noswapfile
 set nobackup
 set number
 
-if system('uname -s') == "Darwin\n"
-  set clipboard=unnamed " OSX
-else
-  set clipboard=unnamedplus " Linux
-endif
+" if system('uname -s') == "Darwin\n"
+"   set clipboard=unnamed " OSX
+" else
+"   set clipboard=unnamedplus " Linux
+" endif
 
 set mouse+=a
 " tmux knows to use the extended mouse mode.
@@ -74,6 +75,9 @@ set smartindent
 
 " Get vim to use coc for it's tagfunc.
 set tagfunc=CocTagFunc
+
+" Disable quote concealing in JSON files
+let g:vim_json_conceal=0
 
 syntax on
 
