@@ -50,7 +50,7 @@ set path+=**
 set wildmenu
 set wrap linebreak nolist
 set so=10
-set ts=4 sw=4
+set ts=2 sw=2
 set ruler
 set visualbell
 set noerrorbells
@@ -127,5 +127,9 @@ nnoremap <leader>e :NERDTreeToggleVCS<CR>
 map <tab> :bnext<CR>
 map <leader><tab> :bprev<CR>
 
-nmap <leader><leader>p <Plug>(Prettier)
+" easier copying and pasting.
+nnoremap <leader>p "+p
+vnoremap <leader>y "+y
+
+nnoremap <leader>P <Plug>(Prettier)
 
