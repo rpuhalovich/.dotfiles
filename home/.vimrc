@@ -11,12 +11,11 @@ Plug 'easymotion/vim-easymotion'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'ntpeters/vim-better-whitespace' " requires homebrew vim on macos
 Plug 'Yggdroot/indentLine'
-Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' }
 Plug 'jiangmiao/auto-pairs'
 Plug 'preservim/nerdtree'
-Plug 'maxmellon/vim-jsx-pretty'
-Plug 'pangloss/vim-javascript'
 Plug 'preservim/nerdcommenter'
+Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production'  }
+Plug 'sheerun/vim-polyglot'
 call plug#end()
 
 autocmd vimenter * ++nested colorscheme gruvbox
@@ -24,6 +23,7 @@ autocmd vimenter * ++nested colorscheme gruvbox
 let g:prettier#config#print_width = '120'
 let g:prettier#config#tab_width = 'auto'
 let g:prettier#config#use_tabs = 'false'
+let g:prettier#config#single_attribute_per_line = 'true'
 
 let NERDTreeShowHidden=1
 
@@ -50,7 +50,7 @@ set path+=**
 set wildmenu
 set wrap linebreak nolist
 set so=10
-set ts=2 sw=2
+set ts=4 sw=4
 set ruler
 set visualbell
 set noerrorbells
