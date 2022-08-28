@@ -11,6 +11,7 @@
 	tool = vimdiff
 [difftool]
 	prompt = false
+    trustExitCode = true
 [alias]
 	a = add .
 	b = branch -a
