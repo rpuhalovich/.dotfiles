@@ -76,6 +76,8 @@ set smartindent
 " Get vim to use coc for it's tagfunc.
 set tagfunc=CocTagFunc
 
+set ignorecase
+
 " Disable quote concealing in JSON files
 let g:vim_json_conceal=0
 
@@ -111,25 +113,37 @@ endfunction
 inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
 
 " Keybinds:
+let mapleader = " "
+
 nnoremap k gk
 nnoremap j gj
 
-let mapleader = " "
 nnoremap <leader>f :Files<CR>
 nnoremap <leader>F :Rg<CR>
 nnoremap <leader>b :Buffers<CR>
 
-" closes all buffers except the currently open one.
-nnoremap <leader>B :%bd<CR>
-nnoremap <leader>e :NERDTreeToggleVCS<CR>
+" closes all buffers except the currently open one
+nnoremap <leader>B :%bd\|e#\|bd#<cr>
 
-" move among buffers with tab.
-map <tab> :bnext<CR>
-map <leader><tab> :bprev<CR>
+" open nerdtree
+nnoremap <leader>e :NERDTreeToggleVCS<cr>
 
-" easier copying and pasting.
+" move among buffers with tab
+map <tab> :bnext<cr>
+map <leader><tab> :bprev<cr>
+
+" easier copying and pasting
 nnoremap <leader>p "+p
 vnoremap <leader>y "+y
 
+" prettier use
 nnoremap <leader>P <Plug>(Prettier)
+
+" insert jsx comment
+nnoremap <leader>j o{/*<cr>*/}<esc>0
+
+" better current file search
+nnoremap / :%s///ng<left><left><left><left>
+" clear highlighting for search term
+nnoremap <leader>/ :noh<cr>
 
