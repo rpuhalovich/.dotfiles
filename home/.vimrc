@@ -7,6 +7,8 @@ call plug#begin()
 Plug 'morhetz/gruvbox'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'easymotion/vim-easymotion'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'ntpeters/vim-better-whitespace' " requires homebrew vim on macos
@@ -33,12 +35,6 @@ set noswapfile
 set nobackup
 set number
 
-" if system('uname -s') == "Darwin\n"
-"   set clipboard=unnamed " OSX
-" else
-"   set clipboard=unnamedplus " Linux
-" endif
-
 set mouse+=a
 " tmux knows to use the extended mouse mode.
 if &term =~ '^screen'
@@ -57,6 +53,7 @@ set noerrorbells
 set hidden
 set nohlsearch
 set colorcolumn=120
+set noshowmode
 
 " Show status and show path
 set laststatus=2
@@ -77,6 +74,8 @@ set smartindent
 set tagfunc=CocTagFunc
 
 set ignorecase
+
+let g:airline_theme='minimalist'
 
 " Disable quote concealing in JSON files
 let g:vim_json_conceal=0
