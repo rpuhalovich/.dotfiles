@@ -2,7 +2,7 @@
 
 # Modified from: https://github.com/qmacro/dotfiles
 
-# Run: curl https://raw.githubusercontent.com/rpuhalovich/.dotfiles/main/bas.sh | bash
+# curl https://raw.githubusercontent.com/rpuhalovich/.dotfiles/main/bas.sh | bash
 
 set -o errexit
 
