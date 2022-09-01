@@ -16,7 +16,7 @@ Plug 'Yggdroot/indentLine'
 Plug 'jiangmiao/auto-pairs'
 Plug 'preservim/nerdtree'
 Plug 'preservim/nerdcommenter'
-Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production'  }
+Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' }
 Plug 'sheerun/vim-polyglot'
 call plug#end()
 
@@ -25,7 +25,6 @@ let mapleader = " "
 
 nnoremap k gk
 nnoremap j gj
-
 nnoremap <leader>f :Files<CR>
 nnoremap <leader>F :Rg<CR>
 nnoremap <leader>b :Buffers<CR>
@@ -52,6 +51,7 @@ nnoremap <leader>j o{/*<cr>*/}<esc>0
 
 " better current file search
 nnoremap / :%s///ng<left><left><left><left>
+
 " clear highlighting for search term
 nnoremap <leader>/ :noh<cr>
 
@@ -62,13 +62,6 @@ set noundofile
 set noswapfile
 set nobackup
 set number
-
-set mouse+=a
-" tmux knows to use the extended mouse mode.
-if &term =~ '^screen'
-    set ttymouse=xterm2
-endif
-
 set expandtab
 set path+=**
 set wildmenu
@@ -82,6 +75,14 @@ set hidden
 set nohlsearch
 set colorcolumn=120
 set noshowmode
+set cursorline
+set ignorecase
+set mouse+=a
+
+" tmux knows to use the extended mouse mode
+if &term =~ '^screen'
+    set ttymouse=xterm2
+endif
 
 " Show status and show path
 set laststatus=2
@@ -98,10 +99,8 @@ set incsearch
 set autoindent
 set smartindent
 
-" Get vim to use coc for it's tagfunc.
+" Get vim to use coc for it's tagfunc
 set tagfunc=CocTagFunc
-
-set ignorecase
 
 set rtp+=/opt/homebrew/opt/fzf
 
@@ -119,13 +118,13 @@ let g:airline_theme='minimalist'
 " Disable quote concealing in JSON files
 let g:vim_json_conceal=0
 
-" File Browsing:
+" File Browsing
 let g:netrw_banner=0 " disable annoying banner
 let g:netrw_browse_split=4 " open in prior window
 let g:netrw_altv=1 " open splits to the right
 let g:netrw_liststyle=3 " tree view
 
-" Tmux Stuff:
+" Tmux Stuff
 function! WrapForTmux(s)
     if !exists('$TMUX')
         return a:s
