@@ -21,7 +21,7 @@ nnoremap <leader>p "+p
 vnoremap <leader>y "+y
 vnoremap <leader>d "+d
 
-nnoremap <leader>v <C-w><C-v>:vertical-resize 109<cr>
+nnoremap <leader>v <C-w><C-v><C-w>l
 
 " better file searching
 nnoremap / :%s///ng<left><left><left><left>
