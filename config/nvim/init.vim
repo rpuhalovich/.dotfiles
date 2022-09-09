@@ -26,7 +26,6 @@ let mapleader = " "
 nnoremap k gk
 nnoremap j gj
 nnoremap <leader>f :Files<CR>
-nnoremap <leader>F :Rg<CR>
 nnoremap <leader>b :Buffers<CR>
 
 " closes all buffers except the currently open one
@@ -36,12 +35,12 @@ nnoremap <leader>B :%bd\|e#\|bd#<cr>
 nnoremap <leader>e :NERDTreeToggleVCS<cr>
 
 " move among buffers with tab
-map <tab> :bnext<cr>
-map <leader><tab> :bprev<cr>
+nnoremap <tab> :bnext<cr>
 
-" easier copying and pasting
+" easier copying, cutting and pasting
 nnoremap <leader>p "+p
 vnoremap <leader>y "+y
+vnoremap <leader>d "+d
 
 " prettier use
 nnoremap <leader>P <Plug>(Prettier)
@@ -49,10 +48,9 @@ nnoremap <leader>P <Plug>(Prettier)
 " insert jsx comment
 nnoremap <leader>j o{/*<cr>*/}<esc>0
 
-" better current file search
+" better file search
 nnoremap / :%s///ng<left><left><left><left>
-
-" clear highlighting for search term
+nnoremap ? :Rg<CR>
 nnoremap <leader>/ :noh<cr>
 
 " -------------------- Settings --------------------
@@ -65,6 +63,7 @@ set number
 set expandtab
 set path+=**
 set wildmenu
+set wildoptions+=pum
 set wrap linebreak nolist
 set so=10
 set ts=4 sw=4
@@ -113,6 +112,8 @@ let g:prettier#config#use_tabs = 'false'
 let g:prettier#config#single_attribute_per_line = 'true'
 
 let NERDTreeShowHidden=1
+let NERDTreeWinSize=45
+let NERDTreeMinimalUI=1
 
 let g:airline_theme='minimalist'
 

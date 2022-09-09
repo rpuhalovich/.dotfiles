@@ -19,5 +19,9 @@ alias ls="exa -lha"
 alias tree="exa --tree"
 alias cat="bat"
 alias vim="nvim"
-alias node14="nvm install 14.18.1 && nvm use 14.18.1"
+alias node14="nvm install 14.20.0 && nvm use 14.20.0"
 alias node16="nvm install 16.16.0 && nvm use 16.16.0"
+
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
