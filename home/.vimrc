@@ -1,8 +1,10 @@
-set nocompatible " be iMproved
+set nocompatible
 filetype off
 
 " -------------------- Keybinds --------------------
 let mapleader = " "
+
+nnoremap <leader>rc :e<space>~/.vimrc<cr>
 
 nnoremap k gk
 nnoremap j gj
@@ -21,11 +23,21 @@ nnoremap <leader>p "+p
 vnoremap <leader>y "+y
 vnoremap <leader>d "+d
 
+" easier pane navigation
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+" quick vertical split
 nnoremap <leader>v <C-w><C-v><C-w>l
+
+" insert comments
+nnoremap <leader>cxml o<!--<cr>--><esc>0
 
 " better file searching
 nnoremap / :%s///ng<left><left><left><left>
-nnoremap ? :<C-f>ivimgrep<space>""<space>\dev\ZARR_WHATIF\**\*<space>\|<space>copen<esc>02f"i
+nnoremap ? :<C-f>ivimgrep<space>""<space>**<space>\|<space>copen<esc>0f"a
 
 " clear highlighting for search term
 nnoremap <leader>/ :noh<cr>
@@ -38,9 +50,6 @@ set noswapfile
 set nobackup
 set number
 set expandtab
-set path+=**
-set wildmenu
-set wildoptions+=pum
 set wrap linebreak nolist
 set so=10
 set ts=2 sw=2
@@ -54,6 +63,11 @@ set noshowmode
 set cursorline
 set ignorecase
 set mouse+=a
+
+set path+=**
+set wildmenu
+set wildoptions+=pum
+set wildignore+=**/node_modules/**,**/.git/**
 
 " Show status and show path
 set laststatus=2

@@ -1,4 +1,4 @@
-set nocompatible " be iMproved
+set nocompatible
 filetype off
 
 " -------------------- Plugins --------------------
@@ -23,10 +23,13 @@ call plug#end()
 " -------------------- Keybinds --------------------
 let mapleader = " "
 
+nnoremap <leader>rc :e<space>~/.config/nvim/init.vim<cr>
+
 nnoremap k gk
 nnoremap j gj
 nnoremap <leader>f :Files<CR>
-nnoremap <leader>b :Buffers<CR>
+nnoremap <leader>b :buf<space>
+" nnoremap <leader>b :Buffers<CR>
 
 " closes all buffers except the currently open one
 nnoremap <leader>B :%bd\|e#\|bd#<cr>
@@ -42,11 +45,21 @@ nnoremap <leader>p "+p
 vnoremap <leader>y "+y
 vnoremap <leader>d "+d
 
+" easier pane navigation
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+" quick vertical split
+nnoremap <leader>v <C-w><C-v><C-w>l
+
 " prettier use
 nnoremap <leader>P <Plug>(Prettier)
 
-" insert jsx comment
-nnoremap <leader>j o{/*<cr>*/}<esc>0
+" insert comments
+nnoremap ,cjsx o{/*<cr>*/}<esc>0
+nnoremap ,chtml o<!--<cr>--><esc>0
 
 " better file search
 nnoremap / :%s///ng<left><left><left><left>
@@ -61,12 +74,9 @@ set noswapfile
 set nobackup
 set number
 set expandtab
-set path+=**
-set wildmenu
-set wildoptions+=pum
 set wrap linebreak nolist
 set so=10
-set ts=4 sw=4
+set ts=2 sw=2
 set ruler
 set visualbell
 set noerrorbells
@@ -78,6 +88,13 @@ set cursorline
 set ignorecase
 set mouse+=a
 set guicursor=
+set showcmd
+set showcmd
+
+set path+=**
+set wildmenu
+set wildoptions+=pum
+set wildignore+=**/node_modules/**,**/.git/**
 
 " tmux knows to use the extended mouse mode
 if &term =~ '^screen'
