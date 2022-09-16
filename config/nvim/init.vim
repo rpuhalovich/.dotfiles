@@ -18,6 +18,7 @@ Plug 'preservim/nerdtree'
 Plug 'preservim/nerdcommenter'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' }
 Plug 'sheerun/vim-polyglot'
+Plug 'simrat39/symbols-outline.nvim'
 call plug#end()
 
 " -------------------- Keybinds --------------------
@@ -28,8 +29,8 @@ nnoremap <leader>rc :e<space>~/.config/nvim/init.vim<cr>
 nnoremap k gk
 nnoremap j gj
 nnoremap <leader>f :Files<CR>
-nnoremap <leader>b :buf<space>
-" nnoremap <leader>b :Buffers<CR>
+" nnoremap <leader>b :buf<space>
+nnoremap <leader>b :Buffers<CR>
 
 " closes all buffers except the currently open one
 nnoremap <leader>B :%bd\|e#\|bd#<cr>
@@ -39,6 +40,7 @@ nnoremap <leader>e :NERDTreeToggleVCS<cr>
 
 " move among buffers with tab
 nnoremap <tab> :bnext<cr>
+nnoremap <s-tab> :bprev<cr>
 
 " easier copying, cutting and pasting
 nnoremap <leader>p "+p
@@ -51,13 +53,19 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
+" use alt + hjkl to resize windows
+nnoremap <M-j> :resize -2<CR>
+nnoremap <M-k> :resize +2<CR>
+nnoremap <M-h> :vertical resize -2<CR>
+nnoremap <M-l> :vertical resize +2<CR>
+
 " quick vertical split
 nnoremap <leader>v <C-w><C-v><C-w>l
 
 " prettier use
 nnoremap <leader>P <Plug>(Prettier)
 
-" insert comments
+" snippets and comments
 nnoremap ,cjsx o{/*<cr>*/}<esc>0
 nnoremap ,chtml o<!--<cr>--><esc>0
 
@@ -90,6 +98,10 @@ set mouse+=a
 set guicursor=
 set showcmd
 set showcmd
+set splitbelow splitright
+set backspace=indent,eol,start " Make backspace work like in most other editors
+set autoindent " auto + smart indent for code
+set smartindent
 
 set path+=**
 set wildmenu
@@ -105,21 +117,19 @@ endif
 set laststatus=2
 set statusline=%<%F\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 
-" Make backspace work like in most other editors
-set backspace=indent,eol,start
 
 " Highlight search results
 set hlsearch
 set incsearch
 
-" auto + smart indent for code
-set autoindent
-set smartindent
 
-" Get vim to use coc for it's tagfunc
+" get vim to use coc for it's tagfunc
 set tagfunc=CocTagFunc
 
 set rtp+=/opt/homebrew/opt/fzf
+
+" delete trailing whitespace on save
+autocmd BufWritePre * %s/\s\+$//e
 
 syntax on
 

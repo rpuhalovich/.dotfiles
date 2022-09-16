@@ -63,6 +63,7 @@ set noshowmode
 set cursorline
 set ignorecase
 set mouse+=a
+set splitbelow splitright
 
 set path+=**
 set wildmenu
@@ -87,6 +88,12 @@ set smartindent
 set guioptions-=T  "toolbar
 set guioptions-=r  "scrollbar
 set guioptions-=m  "scrollbar
+
+" disable automatic commenting on newlines
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
+" delete trailing whitespace on save
+autocmd BufWritePre * %s/\s\+$//e
 
 syntax on
 

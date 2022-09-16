@@ -25,3 +25,7 @@ alias node16="nvm install 16.16.0 && nvm use 16.16.0"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
+
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)
