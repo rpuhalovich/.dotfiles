@@ -1,3 +1,6 @@
+autoload -Uz compinit
+compinit
+
 bindkey -v '^?' backward-delete-char
 
 parse_git_branch() {
@@ -22,7 +25,7 @@ alias vim="nvim"
 alias node14="nvm install 14.20.0 && nvm use 14.20.0"
 alias node16="nvm install 16.16.0 && nvm use 16.16.0"
 
-nvm use 16.16.0
+nvm use 16.16.0 --silent
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 

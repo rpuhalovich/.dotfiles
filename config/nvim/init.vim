@@ -54,10 +54,10 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
 " use alt + hjkl to resize windows
-nnoremap <M-j> :resize -2<CR>
-nnoremap <M-k> :resize +2<CR>
-nnoremap <M-h> :vertical resize -2<CR>
-nnoremap <M-l> :vertical resize +2<CR>
+" nnoremap <M-j> :resize -2<CR>
+" nnoremap <M-k> :resize +2<CR>
+" nnoremap <M-h> :vertical resize -2<CR>
+" nnoremap <M-l> :vertical resize +2<CR>
 
 " quick vertical split
 nnoremap <leader>v <C-w><C-v><C-w>l
