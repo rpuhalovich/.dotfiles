@@ -1,36 +1,15 @@
 #!/bin/bash
 
-# Modified from: https://github.com/qmacro/dotfiles
-
 # curl https://raw.githubusercontent.com/rpuhalovich/.dotfiles/main/bas.sh | bash
 
-set -o errexit
+dotfiles=$HOME/.dotfiles
 
-# Global variables.
-declare dotfiles="$HOME/.dotfiles"
+rm -rf $dotfiles
+git clone https://github.com/rpuhalovich/.dotfiles.git $HOME/.dotfiles
 
-# Bring in and set up dotfiles.
-setup_dotfiles() {
-  rm -rf "$dotfiles"
-  git clone https://github.com/rpuhalovich/.dotfiles.git "$dotfiles"
-  ln -s -f "$dotfiles/home/.vimrc" "$HOME/.vimrc"
-  ln -s -f "$dotfiles/home/.gitconfig" "$HOME/.gitconfig"
-  ln -s -f "$dotfiles/home/.bashrc" "$HOME/.bashrc"
-}
+for i in .gitconfig .vimrc .bashrc .theia; do
+    rm -rf $HOME/$i
+    ln -s $HOME/.dotfiles/.home/$i $HOME/$i
+done
 
-# Configure dev space.
-modify_theia_settings() {
-  ln -s -f "$dotfiles/.theia/settings.json" "$HOME/.theia/"
-}
-
-git_open() {
-  npm i -g git-open
-}
-
-main() {
-  setup_dotfiles
-  modify_theia_settings
-  git_open
-}
-
-main "$@"
+npm i -g git-open
