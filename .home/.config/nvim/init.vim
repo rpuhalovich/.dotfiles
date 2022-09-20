@@ -25,6 +25,9 @@ let mapleader = " "
 
 nnoremap k gk
 nnoremap j gj
+
+nnoremap <leader>rc :e<space>~/.config/nvim/init.vim<cr>
+
 nnoremap <leader>f :Files<CR>
 nnoremap <leader>b :Buffers<CR>
 
@@ -34,13 +37,23 @@ nnoremap <leader>B :%bd\|e#\|bd#<cr>
 " open nerdtree
 nnoremap <leader>e :NERDTreeToggleVCS<cr>
 
+" quick vertical split
+nnoremap <leader>v <C-w><C-v><C-w>l
+
 " move among buffers with tab
-nnoremap <tab> :bnext<cr>
+noremap <tab> :bnext<cr>
+noremap <S-tab> :bprev<cr>
 
 " easier copying, cutting and pasting
 nnoremap <leader>p "+p
 vnoremap <leader>y "+y
 vnoremap <leader>d "+d
+
+" easier pane navigation
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
 
 " prettier use
 nnoremap <leader>P <Plug>(Prettier)

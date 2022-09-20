@@ -15,8 +15,8 @@ nnoremap <leader>e :Sex<cr>
 nnoremap <leader>f :find<space>
 
 " move among buffers with tab
-map <tab> :bnext<cr>
-map <leader><tab> :bprev<cr>
+nnoremap <tab> :bnext<cr>
+nnoremap <S-tab> :bprev<cr>
 
 " easier copying and pasting
 nnoremap <leader>p "+p
@@ -49,6 +49,7 @@ set noundofile
 set noswapfile
 set nobackup
 set number
+set relativenumber
 set expandtab
 set wrap linebreak nolist
 set so=10
