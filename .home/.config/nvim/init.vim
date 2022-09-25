@@ -25,14 +25,15 @@ let mapleader = " "
 
 nnoremap k gk
 nnoremap j gj
-
-nnoremap <leader>rc :e<space>~/.config/nvim/init.vim<cr>
-
+nnoremap <s-j> <c-d>
+nnoremap <s-k> <c-u>
+nnoremap <c-d> J
+nnoremap <leader>r :e<space>~/.config/nvim/init.vim<cr>
 nnoremap <leader>f :Files<CR>
 nnoremap <leader>b :Buffers<CR>
 
 " closes all buffers except the currently open one
-nnoremap <leader>B :%bd\|e#\|bd#<cr>
+nnoremap <leader>B mM:%bd\|e#\|bd#<cr>'M
 
 " open nerdtree
 nnoremap <leader>e :NERDTreeToggleVCS<cr>
@@ -63,8 +64,8 @@ nnoremap <leader>j o{/*<cr>*/}<esc>0
 
 " better file search
 nnoremap / :%s///ng<left><left><left><left>
-nnoremap ? :Rg<CR>
 nnoremap <leader>/ :noh<cr>
+nnoremap ? :Rg<CR>
 
 " -------------------- Settings --------------------
 autocmd vimenter * ++nested colorscheme gruvbox
@@ -73,19 +74,20 @@ set noundofile
 set noswapfile
 set nobackup
 set number
+set relativenumber
 set expandtab
 set path+=**
 set wildmenu
 set wildoptions+=pum
 set wrap linebreak nolist
 set so=10
-set ts=4 sw=4
+set ts=2 sw=2
 set ruler
 set visualbell
 set noerrorbells
 set hidden
 set nohlsearch
-set colorcolumn=120
+set colorcolumn=100
 set noshowmode
 set cursorline
 set ignorecase
