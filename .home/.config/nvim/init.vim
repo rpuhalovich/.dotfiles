@@ -36,7 +36,7 @@ nnoremap <leader>b :Buffers<CR>
 nnoremap <leader>B mM:%bd\|e#\|bd#<cr>'M
 
 " open nerdtree
-nnoremap <leader>e :NERDTreeToggleVCS<cr>
+nnoremap <leader>e :e .<cr>
 
 " quick vertical split
 nnoremap <leader>v <C-w><C-v><C-w>l
