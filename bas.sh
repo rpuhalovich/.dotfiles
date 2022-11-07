@@ -13,3 +13,4 @@ for i in .gitconfig .vimrc .bashrc .theia; do
 done
 
 npm i -g git-open
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.36.0/install.sh | bash
