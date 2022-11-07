@@ -16,8 +16,6 @@ Copy the following into `crontab -e`.
 # * * * * *  command_to_execute
 
 0 18 * * * brew upgrade
-0 19 * * * cd && brew bundle dump && mv ~/Brewfile ~/.dotfiles/
-```
 
 Install from the Brewfile using the following
 
