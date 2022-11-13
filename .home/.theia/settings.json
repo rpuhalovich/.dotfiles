@@ -1,4 +1,11 @@
 {
+  "vim.normalModeKeyBindingsNonRecursive": [
+    { "before": [ "<leader>", "p" ], "after": [ "\"", "+", "p" ] }
+  ],
+  "vim.visualModeKeyBindingsNonRecursive": [
+    { "before": [ "<leader>", "y" ], "after": [ "\"", "+", "y" ] },
+    { "before": [ "<leader>", "d" ], "after": [ "\"", "+", "d" ] }
+  ],
   "window.menuBarVisibility": "classic",
   "workbench.colorTheme": "Monokai",
   "workbench.iconTheme": "theia-file-icons",
