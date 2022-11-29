@@ -1,6 +1,10 @@
 {
   "vim.normalModeKeyBindingsNonRecursive": [
-    { "before": [ "<leader>", "p" ], "after": [ "\"", "+", "p" ] }
+    { "before": [ "<leader>", "p" ], "after": [ "\"", "+", "p" ] },
+    { "before": [ "<C-h>" ], "commands": ["workbench.action.navigateLeft"] },
+    { "before": [ "<C-j>" ], "commands": ["workbench.action.navigateDown"] },
+    { "before": [ "<C-k>" ], "commands": ["workbench.action.navigateUp"] },
+    { "before": [ "<C-l>" ], "commands": ["workbench.action.navigateRight"] }
   ],
   "vim.visualModeKeyBindingsNonRecursive": [
     { "before": [ "<leader>", "y" ], "after": [ "\"", "+", "y" ] },
