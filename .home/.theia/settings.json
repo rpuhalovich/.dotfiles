@@ -6,6 +6,7 @@
     { "before": [ "<leader>", "y" ], "after": [ "\"", "+", "y" ] },
     { "before": [ "<leader>", "d" ], "after": [ "\"", "+", "d" ] }
   ],
+  "editor.minimap.enabled": false,
   "window.menuBarVisibility": "classic",
   "workbench.colorTheme": "Monokai",
   "workbench.iconTheme": "theia-file-icons",
