@@ -25,9 +25,8 @@ let mapleader = " "
 
 nnoremap k gk
 nnoremap j gj
-nnoremap <s-j> <c-d>
-nnoremap <s-k> <c-u>
-nnoremap <c-d> J
+nnoremap <C-d> <C-d>zz
+nnoremap <C-d> <C-d>zz
 nnoremap <leader>r :e<space>~/.config/nvim/init.vim<cr>
 nnoremap <leader>f :Files<CR>
 nnoremap <leader>b :Buffers<CR>
@@ -81,7 +80,7 @@ set wildmenu
 set wildoptions+=pum
 set wrap linebreak nolist
 set so=10
-set ts=2 sw=2
+set ts=4 sw=4
 set ruler
 set visualbell
 set noerrorbells
