@@ -1,12 +1,28 @@
 {
+  "vim.normalModeKeyBindingsNonRecursive": [
+    { "before": [ "<leader>", "p" ], "after": [ "\"", "+", "p" ] },
+    { "before": [ "<C-h>" ], "commands": ["workbench.action.navigateLeft"] },
+    { "before": [ "<C-j>" ], "commands": ["workbench.action.navigateDown"] },
+    { "before": [ "<C-k>" ], "commands": ["workbench.action.navigateUp"] },
+    { "before": [ "<C-l>" ], "commands": ["workbench.action.navigateRight"] }
+  ],
+  "vim.visualModeKeyBindingsNonRecursive": [
+    { "before": [ "<leader>", "y" ], "after": [ "\"", "+", "y" ] },
+    { "before": [ "<leader>", "d" ], "after": [ "\"", "+", "d" ] }
+  ],
+  "editor.minimap.enabled": false,
+  "window.menuBarVisibility": "classic",
   "workbench.colorTheme": "Monokai",
   "workbench.iconTheme": "theia-file-icons",
   "workbench.statusBar.visible": true,
   "gitlens.currentLine.enabled": false,
   "welcome.showOnStartup": false,
-  "editor.wordWrap": "on",
+  "vim.smartRelativeLine": true,
   "xml.format.splitAttributes": true,
   "xml.format.splitAttributesIndentSize": 1,
+  "editor.wordWrap": "on",
+  "editor.cursorBlinking": "solid",
+  "editor.cursorStyle": "block",
   "editor.renderWhitespace": "all",
   "editor.rulers": [120],
   "redhat.telemetry.enabled": false,
