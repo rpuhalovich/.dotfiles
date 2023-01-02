@@ -16,6 +16,7 @@ Copy the following into `crontab -e`.
 # * * * * *  command_to_execute
 
 0 18 * * * brew upgrade
+```
 
 Install from the Brewfile using the following
 
