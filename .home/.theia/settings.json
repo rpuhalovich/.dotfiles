@@ -4,7 +4,9 @@
     { "before": [ "<C-h>" ], "commands": ["workbench.action.navigateLeft"] },
     { "before": [ "<C-j>" ], "commands": ["workbench.action.navigateDown"] },
     { "before": [ "<C-k>" ], "commands": ["workbench.action.navigateUp"] },
-    { "before": [ "<C-l>" ], "commands": ["workbench.action.navigateRight"] }
+    { "before": [ "<C-l>" ], "commands": ["workbench.action.navigateRight"] },
+    { "before": [ "<C-d>" ], "after": [ "<C-d>", "z", "z" ] },
+    { "before": [ "<C-u>" ], "after": [ "<C-u>", "z", "z" ] }
   ],
   "vim.visualModeKeyBindingsNonRecursive": [
     { "before": [ "<leader>", "y" ], "after": [ "\"", "+", "y" ] },
