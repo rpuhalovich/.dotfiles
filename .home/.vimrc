@@ -47,6 +47,13 @@ nnoremap ? :<C-f>ivimgrep<space>""<space>**<space>\|<space>copen<esc>0f"a
 " clear highlighting for search term
 nnoremap <leader>/ :noh<cr>
 
+" auto pairs
+inoremap {<cr> {<cr>}<Esc>O
+inoremap ( ()<Esc>i
+inoremap [ []<Esc>i
+inoremap " ""<Esc>i
+inoremap ' ''<Esc>i
+
 " -------------------- Settings --------------------
 colorscheme slate
 
@@ -102,6 +109,8 @@ set smartindent
 " set guioptions-=T  "toolbar
 set guioptions-=r  "scrollbar
 set guioptions-=m  "scrollbar
+
+set listchars=tab:>·,space:·
 
 " disable automatic commenting on newlines
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
