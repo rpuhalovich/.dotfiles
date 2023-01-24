@@ -11,6 +11,8 @@ nnoremap j gj
 nnoremap <leader>b :buf<space>
 nnoremap <leader>B :%bd\|e#\|bd#<cr>
 
+nnoremap <leader>a :%y+<cr>
+
 nnoremap <leader>e :Ex<cr>
 nnoremap <leader>f :find<space>
 
