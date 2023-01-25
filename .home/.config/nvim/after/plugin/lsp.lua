@@ -21,12 +21,12 @@ lsp.configure("sumneko_lua", {
     }
 })
 
--- require("lspconfig").clangd.setup({
---     cmd = {
---         "clangd",
---         "--header-insertion=never",
---     }
--- })
+lsp.configure("clangd", {
+    cmd = {
+        "clangd",
+        "--header-insertion=never",
+    }
+})
 
 local cmp = require("cmp")
 
