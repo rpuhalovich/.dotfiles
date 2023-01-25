@@ -31,7 +31,6 @@ return require('packer').startup(function(use)
         }
     })
     use("Yggdroot/indentLine")
-    -- use("jiangmiao/auto-pairs")
     use("Asheq/close-buffers.vim")
     use({
         "windwp/nvim-autopairs",

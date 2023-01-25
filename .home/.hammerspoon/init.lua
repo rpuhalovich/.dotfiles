@@ -16,15 +16,17 @@ wfTerminal:subscribe(hs.window.filter.windowCreated, function(window, applicatio
     applicationName == "Preview" or
     applicationName == "iTerm2" or
     applicationName == "Finder" or
-    applicationName == "Notion" then
+    applicationName == "Notion"
+  then
     window:maximize()
   end
 end)
 
--- toggle bluetooth
-hs.hotkey.bind({"cmd", "ctrl", "option"}, "b", function()
-  hs.execute("/opt/homebrew/bin/blueutil -p toggle")
-end)
+-- put the system to sleep
+hs.hotkey.bind({"cmd"}, "escape", function() hs.caffeinate.systemSleep() end)
+
+-- toggle capslock
+hs.hotkey.bind({"shift"}, "escape", function() hs.hid.capslock.toggle() end)
 
 -- maximize all windows
 hs.hotkey.bind({"cmd", "ctrl", "option"}, "up", function()
@@ -35,8 +37,8 @@ end)
 -- app shortcuts
 launch = hs.application.launchOrFocus
 hs.hotkey.bind({"cmd"}, "1", function() launch("Finder") end)
-hs.hotkey.bind({"cmd"}, "2", function() launch("Firefox") end)
-hs.hotkey.bind({"cmd"}, "3", function() launch("Visual Studio Code") end)
-hs.hotkey.bind({"cmd"}, "4", function() launch("iTerm") end)
+hs.hotkey.bind({"cmd"}, "2", function() launch("Firefox Developer Edition") end)
+hs.hotkey.bind({"cmd"}, "3", function() launch("iTerm") end)
+hs.hotkey.bind({"cmd"}, "4", function() launch("Visual Studio Code") end)
 hs.hotkey.bind({"cmd"}, "5", function() launch("Notion") end)
 hs.hotkey.bind({"cmd"}, "0", function() launch("Spotify") end)
