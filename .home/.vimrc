@@ -1,6 +1,11 @@
 set nocompatible
 filetype off
 
+" -------------------- Plugins --------------------
+call plug#begin()
+    Plug 'octol/vim-cpp-enhanced-highlight'
+call plug#end()
+
 " -------------------- Keybinds --------------------
 let mapleader = " "
 
@@ -8,8 +13,9 @@ nnoremap <leader>r :e<space>~\.vimrc<cr>
 
 nnoremap k gk
 nnoremap j gj
+
 nnoremap <leader>b :buf<space>
-nnoremap <leader>B :%bd\|e#\|bd#<cr>
+nnoremap <leader>B mm:%bd\|e#\|bd#<cr>`m
 
 nnoremap <leader>a :%y+<cr>
 
@@ -49,10 +55,8 @@ nnoremap <leader>/ :noh<cr>
 
 " auto pairs
 inoremap {<cr> {<cr>}<Esc>O
-inoremap ( ()<Esc>i
-inoremap [ []<Esc>i
-inoremap " ""<Esc>i
-inoremap ' ''<Esc>i
+" inoremap ( ()<Esc>i
+" inoremap [ []<Esc>i
 
 " -------------------- Settings --------------------
 colorscheme slate
@@ -84,12 +88,13 @@ set wildmenu
 set wildoptions+=pum
 set wildignore+=**/node_modules/**,**/.git/**
 
-set guifont=Consolas:h11:cANSI
+set guifont=Consolas:h12:cANSI
 
 highlight Cursor guifg=white guibg=black
 highlight iCursor guifg=white guibg=steelblue
-set guicursor=n-v-c-i:block-Cursor
+set guicursor=n-v-c:block-Cursor
 set guicursor+=n-v-c-i:blinkon0
+set guicursor+=i-ci:ver25-Cursor/lCursor
 
 " Show status and show path
 set laststatus=2
@@ -125,6 +130,4 @@ let g:vim_json_conceal=0
 
 " File Browsing
 let g:netrw_banner=0 " disable annoying banner
-" let g:netrw_browse_split=4 " open in prior window
-" let g:netrw_altv=1 " open splits to the right
 let g:netrw_liststyle=3 " tree view
