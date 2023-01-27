@@ -8,13 +8,14 @@ call plug#end()
 
 " -------------------- Keybinds --------------------
 let mapleader = " "
+set wildcharm=<C-z> " for tab completion in maps
 
 nnoremap <leader>r :e<space>~\.vimrc<cr>
 
 nnoremap k gk
 nnoremap j gj
 
-nnoremap <leader>b :buf<space>
+nnoremap <leader>b :buffer<space><c-z>
 nnoremap <leader>B mm:%bd\|e#\|bd#<cr>`m
 
 nnoremap <leader>a :%y+<cr>
