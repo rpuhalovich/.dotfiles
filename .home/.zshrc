@@ -3,6 +3,8 @@ alias ls="exa -lha"
 alias tree="exa --tree"
 alias cat="bat"
 alias vim="nvim"
+alias py="python3"
+alias python="python3"
 alias node14="nvm install 14.20.0 && nvm use 14.20.0"
 alias node16="nvm install 16.16.0 && nvm use 16.16.0"
 

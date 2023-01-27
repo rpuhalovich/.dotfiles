@@ -1,4 +1,4 @@
-vim.opt.guicursor = ""
+-- vim.opt.guicursor = ""
 
 vim.opt.nu = true
 vim.opt.relativenumber = true
@@ -22,6 +22,7 @@ vim.opt.undofile = true
 
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
+vim.opt.cursorline = true
 
 vim.opt.termguicolors = true
 
@@ -40,3 +41,4 @@ vim.g.netrw_banner = 0 -- disable annoying banner
 -- vim.g.netrw_browse_split = 4 -- open in prior window
 -- vim.g.netrw_altv = 1 -- open splits to the right
 vim.g.netrw_liststyle = 3 -- tree view
+vim.g.netrw_keepdir = 0 -- lets copy and move
