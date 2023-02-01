@@ -1,5 +1,5 @@
 alias c="git add . && git commit && sleep 3 && git push"
-alias ls="exa -lha"
+alias ls="exa -F1 --icons"
 alias tree="exa --tree"
 alias cat="bat"
 alias vim="nvim"
@@ -33,6 +33,3 @@ nvm use 16.16.0 --silent
 touch ~/.hushlogin
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
-# source <(ng completion script) # Load Angular CLI autocompletion.
-# source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh

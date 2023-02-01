@@ -12,13 +12,23 @@ end)
 local wfTerminal = hs.window.filter.new()
 wfTerminal:subscribe(hs.window.filter.windowCreated, function(window, applicationName)
   if
-    applicationName == "Messenger" or
     applicationName == "Preview" or
     applicationName == "iTerm2" or
     applicationName == "Finder" or
     applicationName == "Notion"
   then
     window:maximize()
+  end
+
+  -- if opening image or vid in messenger maximize immediately
+  if applicationName == "Messenger" then
+    local appcount = 0
+    for i, win in ipairs(hs.window.allWindows()) do
+      if win:application():title() == "Messenger" then appcount = appcount + 1 end
+    end
+    local time = 2
+    if appcount > 1 then time = 0 end
+    hs.timer.doAfter(time, function() window:maximize() end)
   end
 end)
 

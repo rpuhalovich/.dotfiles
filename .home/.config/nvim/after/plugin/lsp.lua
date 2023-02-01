@@ -24,6 +24,7 @@ lsp.configure("sumneko_lua", {
 lsp.configure("clangd", {
     cmd = {
         "clangd",
+        "-std=c++20",
         "--header-insertion=never",
     }
 })
