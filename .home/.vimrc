@@ -2,9 +2,11 @@ set nocompatible
 filetype off
 
 " -------------------- Plugins --------------------
+if has("gui_running") " detect if gvim
 call plug#begin()
     Plug 'octol/vim-cpp-enhanced-highlight'
 call plug#end()
+end
 
 " -------------------- Keybinds --------------------
 let mapleader = " "
@@ -32,7 +34,9 @@ nnoremap <S-tab> :bprev<cr>
 
 " easier copying and pasting
 nnoremap <leader>p "+p
+nnoremap <leader>P "+P
 vnoremap <leader>y "+y
+vnoremap <leader>Y "+Y
 vnoremap <leader>d "+d
 
 " easier pane navigation
@@ -56,8 +60,6 @@ nnoremap <leader>/ :noh<cr>
 
 " auto pairs
 inoremap {<cr> {<cr>}<Esc>O
-" inoremap ( ()<Esc>i
-" inoremap [ []<Esc>i
 
 " -------------------- Settings --------------------
 colorscheme slate
