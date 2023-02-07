@@ -35,7 +35,7 @@ end)
 -- put the system to sleep
 hs.hotkey.bind({"cmd"}, "escape", function() hs.caffeinate.systemSleep() end)
 
--- toggle capslock
+-- caps and escape swap
 hs.hotkey.bind({"shift"}, "escape", function() hs.hid.capslock.toggle() end)
 
 -- maximize all windows
@@ -50,5 +50,3 @@ hs.hotkey.bind({"cmd"}, "1", function() launch("Finder") end)
 hs.hotkey.bind({"cmd"}, "2", function() launch("Firefox Developer Edition") end)
 hs.hotkey.bind({"cmd"}, "3", function() launch("iTerm") end)
 hs.hotkey.bind({"cmd"}, "4", function() launch("Visual Studio Code") end)
-hs.hotkey.bind({"cmd"}, "5", function() launch("Notion") end)
-hs.hotkey.bind({"cmd"}, "0", function() launch("Spotify") end)

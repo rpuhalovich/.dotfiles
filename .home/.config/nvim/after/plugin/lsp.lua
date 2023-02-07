@@ -25,6 +25,7 @@ lsp.configure("clangd", {
     cmd = {
         "clangd",
         "-std=c++20",
+        "--background-index",
         "--header-insertion=never",
     }
 })

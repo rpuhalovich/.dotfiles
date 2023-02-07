@@ -4,14 +4,13 @@ vim.keymap.set("n", "k", [[gk]])
 vim.keymap.set("n", "j", [[gj]])
 
 vim.keymap.set("n", "<leader>a", ":%y+<cr>")
+-- vim.keymap.set("n", "<leader>a", ":let @+=expand(\"%:p\")<cr>")
 
 -- Center the view when going down and up
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
 vim.keymap.set("n", "<leader>r", [[:e<space>~/.config/nvim/<cr>]])
--- vim.keymap.set("n", "<leader>f", [[:Files<CR>]])
--- vim.keymap.set("n", "<leader>b", [[:Buffers<CR>]])
 
 -- Quick splits
 vim.keymap.set("n", "<leader>v", [[<C-w><C-v><C-w>l]])
