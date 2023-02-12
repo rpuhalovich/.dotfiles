@@ -9,6 +9,8 @@ return require('packer').startup(function(use)
     use('ellisonleao/gruvbox.nvim')
     use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
     use('theprimeagen/harpoon')
+    use('junegunn/fzf')
+    use('junegunn/fzf.vim')
     use({
         'VonHeikemen/lsp-zero.nvim',
         requires = {

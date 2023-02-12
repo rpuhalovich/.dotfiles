@@ -26,9 +26,11 @@ wfTerminal:subscribe(hs.window.filter.windowCreated, function(window, applicatio
     for i, win in ipairs(hs.window.allWindows()) do
       if win:application():title() == "Messenger" then appcount = appcount + 1 end
     end
-    local time = 2
-    if appcount > 1 then time = 0 end
-    hs.timer.doAfter(time, function() window:maximize() end)
+    if appcount > 1 then
+      window:maximize()
+    else
+      hs.timer.doAfter(2, function() window:maximize() end)
+    end
   end
 end)
 

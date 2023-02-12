@@ -47,4 +47,5 @@ vim.keymap.set("n", "<leader>B", [[mM:%bd\|e#\|bd#<cr>'M]])
 -- Better file search
 vim.keymap.set("n", "/", [[:%s///ng<left><left><left><left>]])
 vim.keymap.set("n", "<leader>/", [[:noh<cr>]])
+vim.keymap.set("n", "?", [[:Rg<cr>]])
 -- vim.keymap.set("n", "?", [[:Rg<CR>]])
