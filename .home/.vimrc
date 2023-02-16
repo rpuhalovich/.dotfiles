@@ -52,14 +52,17 @@ nnoremap <leader>v <C-w><C-v><C-w>l
 nnoremap <leader>cxml o<!--<cr>--><esc>0
 
 " better file searching
-nnoremap / :%s///ng<left><left><left><left>
+" nnoremap / :%s///ng<left><left><left><left>
 nnoremap ? :<C-f>ivimgrep<space>""<space>**<space>\|<space>copen<esc>0f"a
 
 " clear highlighting for search term
-nnoremap <leader>/ :noh<cr>
+nnoremap <leader>/ :noh<cr>:<esc>
 
 " auto pairs
 inoremap {<cr> {<cr>}<Esc>O
+
+" entering braces
+nnoremap <leader>nb i{<cr><esc>o}<esc>k_
 
 " -------------------- Settings --------------------
 colorscheme slate
@@ -70,7 +73,8 @@ set nobackup
 set number
 set relativenumber
 set expandtab
-set wrap linebreak nolist
+set nowrap
+set linebreak nolist
 set so=10
 set ts=4 sw=4
 set ruler
@@ -96,8 +100,7 @@ set guifont=Consolas:h12:cANSI
 highlight Cursor guifg=white guibg=black
 highlight iCursor guifg=white guibg=steelblue
 set guicursor=n-v-c:block-Cursor
-set guicursor+=n-v-c-i:blinkon0
-set guicursor+=i-ci:ver25-Cursor/lCursor
+set guicursor+=a:blinkon0
 
 " Show status and show path
 set laststatus=2
