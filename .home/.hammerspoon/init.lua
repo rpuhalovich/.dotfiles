@@ -26,16 +26,18 @@ wfTerminal:subscribe(hs.window.filter.windowCreated, function(window, applicatio
     for i, win in ipairs(hs.window.allWindows()) do
       if win:application():title() == "Messenger" then appcount = appcount + 1 end
     end
-    local time = 2
-    if appcount > 1 then time = 0 end
-    hs.timer.doAfter(time, function() window:maximize() end)
+    if appcount > 1 then
+      window:maximize()
+    else
+      hs.timer.doAfter(2, function() window:maximize() end)
+    end
   end
 end)
 
 -- put the system to sleep
 hs.hotkey.bind({"cmd"}, "escape", function() hs.caffeinate.systemSleep() end)
 
--- toggle capslock
+-- caps and escape swap
 hs.hotkey.bind({"shift"}, "escape", function() hs.hid.capslock.toggle() end)
 
 -- maximize all windows
@@ -50,5 +52,3 @@ hs.hotkey.bind({"cmd"}, "1", function() launch("Finder") end)
 hs.hotkey.bind({"cmd"}, "2", function() launch("Firefox Developer Edition") end)
 hs.hotkey.bind({"cmd"}, "3", function() launch("iTerm") end)
 hs.hotkey.bind({"cmd"}, "4", function() launch("Visual Studio Code") end)
-hs.hotkey.bind({"cmd"}, "5", function() launch("Notion") end)
-hs.hotkey.bind({"cmd"}, "0", function() launch("Spotify") end)

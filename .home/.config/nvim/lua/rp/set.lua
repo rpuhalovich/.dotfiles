@@ -13,7 +13,7 @@ vim.opt.smartindent = true
 vim.opt.listchars = { space = '·', tab = '> ' }
 vim.opt.list = true
 
-vim.opt.wrap = false
+vim.opt.wrap = true
 
 vim.opt.swapfile = false
 vim.opt.backup = false
@@ -32,7 +32,7 @@ vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
 
-vim.opt.colorcolumn = "80"
+-- vim.opt.colorcolumn = "80"
 
 vim.g.mapleader = " "
 
