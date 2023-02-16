@@ -67,6 +67,10 @@ nnoremap <leader>nb i{<cr><esc>o}<esc>k_
 " -------------------- Settings --------------------
 colorscheme slate
 
+if has("gui_running")
+au GUIEnter * simalt ~x
+end
+
 set noundofile
 set noswapfile
 set nobackup
