@@ -2,6 +2,7 @@ alias c="git add . && git commit && sleep 3 && git push"
 alias ls="exa -F1 --icons -a"
 alias tree="exa --tree"
 alias cat="bat"
+alias btop="sudo btop"
 alias vim="nvim"
 alias py="python3"
 alias python="python3"
@@ -13,6 +14,8 @@ compinit
 
 bindkey -v '^?' backward-delete-char
 bindkey '^Y' autosuggest-accept
+
+history -p
 
 parse_git_branch() {
     git branch 2> /dev/null | sed -n -e 's/^\* \(.*\)/(\1)/p'

@@ -37,7 +37,7 @@ end)
 -- put the system to sleep
 hs.hotkey.bind({"cmd"}, "escape", function() hs.caffeinate.systemSleep() end)
 
--- caps and escape swap
+-- caps enabling
 hs.hotkey.bind({"shift"}, "escape", function() hs.hid.capslock.toggle() end)
 
 -- maximize all windows
@@ -52,3 +52,25 @@ hs.hotkey.bind({"cmd"}, "1", function() launch("Finder") end)
 hs.hotkey.bind({"cmd"}, "2", function() launch("Firefox Developer Edition") end)
 hs.hotkey.bind({"cmd"}, "3", function() launch("iTerm") end)
 hs.hotkey.bind({"cmd"}, "4", function() launch("Visual Studio Code") end)
+hs.hotkey.bind({"cmd"}, "0", function() launch("Bitwarden") end)
+
+-- project keybindings
+
+project = "DART"
+
+if project == "DART" then
+  typeField = function(s)
+    hs.eventtap.keyStrokes(s)
+    hs.timer.usleep(100000)
+    hs.eventtap.keyStroke({}, "tab")
+  end
+
+  hs.hotkey.bind({}, "F3", function() 
+    typeField("user level")
+    typeField("RYANP")
+    typeField("Z_DEV_2")
+    typeField("Add")
+  end)
+end
+
+

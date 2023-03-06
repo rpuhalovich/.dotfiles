@@ -36,6 +36,10 @@ vim.opt.updatetime = 50
 
 vim.g.mapleader = " "
 
+
+-- Disable quote concealing in JSON files
+vim.g.vim_json_conceal = 0
+
 -- Netrw stuff
 vim.g.netrw_banner = 0 -- disable annoying banner
 -- vim.g.netrw_browse_split = 4 -- open in prior window
