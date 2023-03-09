@@ -13,6 +13,7 @@ local wfTerminal = hs.window.filter.new()
 wfTerminal:subscribe(hs.window.filter.windowCreated, function(window, applicationName)
   if
     applicationName == "Preview" or
+    applicationName == "Alacritty" or
     applicationName == "iTerm2" or
     applicationName == "Finder" or
     applicationName == "Notion"
@@ -50,7 +51,7 @@ end)
 launch = hs.application.launchOrFocus
 hs.hotkey.bind({"cmd"}, "1", function() launch("Finder") end)
 hs.hotkey.bind({"cmd"}, "2", function() launch("Firefox Developer Edition") end)
-hs.hotkey.bind({"cmd"}, "3", function() launch("iTerm") end)
+hs.hotkey.bind({"cmd"}, "3", function() launch("Alacritty") end)
 hs.hotkey.bind({"cmd"}, "4", function() launch("Visual Studio Code") end)
 hs.hotkey.bind({"cmd"}, "0", function() launch("Bitwarden") end)
 

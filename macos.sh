@@ -6,7 +6,7 @@ for i in .clangd .hammerspoon .gitconfig .vimrc .zshrc .tmux.conf; do
 done
 
 mkdir -p $HOME/.config/
-for i in nvim btop; do
+for i in nvim btop alacritty; do
     rm -rf $HOME/.config/$i
     ln -s $HOME/.dotfiles/.home/.config/$i $HOME/.config/$i
 done
