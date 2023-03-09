@@ -54,8 +54,23 @@ hs.hotkey.bind({"cmd"}, "3", function() launch("iTerm") end)
 hs.hotkey.bind({"cmd"}, "4", function() launch("Visual Studio Code") end)
 hs.hotkey.bind({"cmd"}, "0", function() launch("Bitwarden") end)
 
--- project keybindings
+run = false
+hs.hotkey.bind({}, "F12", function()
+  run = not run
+  if run then
+    hs.notify.new({title="hs", informativeText="moving"}):send()
+  else
+    hs.notify.new({title="hs", informativeText="stopped moving"}):send()
+  end
+end)
+timer = hs.timer.doEvery(2, function()
+  if run then
+    print("moved")
+    hs.eventtap.event.newEvent():setType(5) -- move cursor
+  end
+end)
 
+-- project keybindings
 project = "DART"
 
 if project == "DART" then
@@ -72,5 +87,3 @@ if project == "DART" then
     typeField("Add")
   end)
 end
-
-
