@@ -1,5 +1,5 @@
 alias c="git add . && git commit && sleep 3 && git push"
-alias ls="exa -F1 --icons -a"
+alias ls="exa -F1 --icons -a --group-directories-first"
 alias tree="exa --tree"
 alias cat="bat"
 alias btop="sudo btop"
