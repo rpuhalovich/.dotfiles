@@ -66,8 +66,9 @@ hs.hotkey.bind({}, "F12", function()
 end)
 timer = hs.timer.doEvery(2, function()
   if run then
-    print("moved")
-    hs.eventtap.event.newEvent():setType(5) -- move cursor
+    e = hs.eventtap.event.newEvent()
+    e:setType(5)
+    e:post()
   end
 end)
 
