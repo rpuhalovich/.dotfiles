@@ -36,7 +36,7 @@ wfTerminal:subscribe(hs.window.filter.windowCreated, function(window, applicatio
 end)
 
 -- put the system to sleep
-hs.hotkey.bind({"cmd"}, "escape", function() hs.caffeinate.systemSleep() end)
+-- hs.hotkey.bind({"cmd"}, "escape", function() hs.caffeinate.systemSleep() end)
 
 -- caps enabling
 hs.hotkey.bind({"shift"}, "escape", function() hs.hid.capslock.toggle() end)
@@ -82,10 +82,17 @@ if project == "DART" then
     hs.eventtap.keyStroke({}, "tab")
   end
 
-  hs.hotkey.bind({}, "F3", function() 
+  hs.hotkey.bind({}, "F1", function() 
     typeField("user level")
     typeField("RYANP")
     typeField("Z_DEV_2")
+    typeField("Add")
+  end)
+
+  hs.hotkey.bind({}, "F2", function() 
+    typeField("composite")
+    typeField("TestComp1")
+    typeField("Z_DEV_4")
     typeField("Add")
   end)
 end
