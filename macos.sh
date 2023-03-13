@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-for i in .clangd .hammerspoon .gitconfig .vimrc .zshrc .tmux.conf .alacritty.yml; do
+for i in .hammerspoon .gitconfig .vimrc .zshrc .tmux.conf .alacritty.yml; do
     rm -rf $HOME/$i
     ln -s $HOME/.dotfiles/.home/$i $HOME/$i
 done
