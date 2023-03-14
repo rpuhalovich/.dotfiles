@@ -1,5 +1,14 @@
 # .dotfiles
 
+## Links
+
+```
+Packer: https://github.com/wbthomason/packer.nvim
+Homebrew: https://brew.sh/
+```
+
+## Cron
+
 For setting up new systems (currently only need it for my mac).
 
 Copy the following into `crontab -e`.
@@ -17,6 +26,8 @@ Copy the following into `crontab -e`.
 
 0 18 * * * brew upgrade
 ```
+
+## Homebrew install
 
 Install from the Brewfile using the following
 
