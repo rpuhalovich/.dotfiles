@@ -2,10 +2,9 @@
 
 ## Links
 
-```
-Packer: https://github.com/wbthomason/packer.nvim
-Homebrew: https://brew.sh/
-```
+[Packer](https://github.com/wbthomason/packer.nvim)
+
+[Homebrew](https://brew.sh/)
 
 ## Cron
 
@@ -23,7 +22,6 @@ Copy the following into `crontab -e`.
 # │ │ │ │ │
 # │ │ │ │ │
 # * * * * *  command_to_execute
-
 0 18 * * * brew upgrade
 ```
 
