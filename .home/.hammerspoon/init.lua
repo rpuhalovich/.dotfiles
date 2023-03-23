@@ -21,7 +21,7 @@ wfTerminal:subscribe(hs.window.filter.windowCreated, function(window, applicatio
     window:maximize()
   end
 
-  -- if opening image or vid in messenger maximize immediately
+  -- if opening image or video in messenger maximize immediately
   if applicationName == "Messenger" then
     local appcount = 0
     for i, win in ipairs(hs.window.allWindows()) do
@@ -71,28 +71,3 @@ timer = hs.timer.doEvery(2, function()
     e:post()
   end
 end)
-
--- project keybindings
-project = "DART"
-
-if project == "DART" then
-  typeField = function(s)
-    hs.eventtap.keyStrokes(s)
-    hs.timer.usleep(100000)
-    hs.eventtap.keyStroke({}, "tab")
-  end
-
-  hs.hotkey.bind({}, "F1", function() 
-    typeField("user level")
-    typeField("RYANP")
-    typeField("Z_DEV_2")
-    typeField("Add")
-  end)
-
-  hs.hotkey.bind({}, "F2", function() 
-    typeField("composite")
-    typeField("TestComp1")
-    typeField("Z_DEV_4")
-    typeField("Add")
-  end)
-end
