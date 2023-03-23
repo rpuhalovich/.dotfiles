@@ -59,9 +59,9 @@ run = false
 hs.hotkey.bind({}, "F12", function()
   run = not run
   if run then
-    hs.notify.new({title="hs", informativeText="moving"}):send()
+    hs.alert("moving")
   else
-    hs.notify.new({title="hs", informativeText="stopped moving"}):send()
+    hs.alert("stopped moving")
   end
 end)
 timer = hs.timer.doEvery(2, function()

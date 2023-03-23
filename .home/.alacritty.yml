@@ -28,6 +28,10 @@ mouse:
 window:
   title: Terminal
 
+  dimensions:
+    columns: 200
+    lines: 100
+
 font:
   normal:
     family: JetBrainsMono Nerd Font

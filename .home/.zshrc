@@ -1,4 +1,5 @@
 alias c="git add . && git commit && sleep 3 && git push"
+alias rmds="find . -name .DS_Store -delete"
 alias ls="exa -F1a --icons --group-directories-first"
 alias tree="exa --tree"
 alias cat="bat"

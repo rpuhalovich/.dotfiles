@@ -6,6 +6,7 @@ require'nvim-treesitter.configs'.setup {
   auto_install = true,
   highlight = {
     enable = true,
+    disable = { "markdown", "json"},
     additional_vim_regex_highlighting = false,
   },
 }
@@ -18,6 +19,8 @@ vim.keymap.set("n", "k", [[gk]])
 vim.keymap.set("n", "j", [[gj]])
 
 vim.keymap.set("n", "<leader>a", ":%y+<cr>")
+
+vim.keymap.set("n", "<leader>c", ":set conceallevel=0<cr>")
 
 -- Center the view when going down and up
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
@@ -68,6 +71,8 @@ vim.keymap.set('n', '<leader>gf', builtin.git_files, {})
 vim.keymap.set('n', '<leader>b', builtin.buffers, {})
 
 --- SETS ---
+
+vim.go.conceallevel = 0
 
 vim.o.background = "dark"
 vim.cmd([[colorscheme gruvbox]])
