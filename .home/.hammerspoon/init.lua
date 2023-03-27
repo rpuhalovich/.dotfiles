@@ -56,12 +56,16 @@ hs.hotkey.bind({"cmd"}, "4", function() launch("Visual Studio Code") end)
 hs.hotkey.bind({"cmd"}, "0", function() launch("Bitwarden") end)
 
 run = false
+menuIcon = hs.menubar.new(true)
+
 hs.hotkey.bind({}, "F12", function()
   run = not run
   if run then
     hs.alert("moving")
+    menuIcon:setTitle("m")
   else
     hs.alert("stopped moving")
+    menuIcon:setTitle("")
   end
 end)
 timer = hs.timer.doEvery(2, function()
