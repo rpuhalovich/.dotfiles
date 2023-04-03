@@ -70,7 +70,7 @@ set nobackup
 set number
 set relativenumber
 set expandtab
-set nowrap
+set wrap linebreak
 set linebreak nolist
 set so=10
 set ts=4 sw=4
@@ -124,10 +124,10 @@ set listchars=tab:>·,space:·
 " disable automatic commenting on newlines
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
+syntax on
+
 " delete trailing whitespace on save
 autocmd BufWritePre * %s/\s\+$//e
-
-syntax on
 
 " Disable quote concealing in JSON files
 let g:vim_json_conceal=0
