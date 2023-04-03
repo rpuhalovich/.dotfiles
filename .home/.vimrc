@@ -1,13 +1,6 @@
 set nocompatible
 filetype off
 
-" -------------------- Plugins --------------------
-if has("gui_running") " detect if gvim
-call plug#begin()
-    Plug 'octol/vim-cpp-enhanced-highlight'
-call plug#end()
-end
-
 " -------------------- Keybinds --------------------
 let mapleader = " "
 set wildcharm=<C-z> " for tab completion in maps
@@ -56,13 +49,13 @@ nnoremap <leader>cxml o<!--<cr>--><esc>0
 nnoremap ? :<C-f>ivimgrep<space>""<space>**<space>\|<space>copen<esc>0f"a
 
 " clear highlighting for search term
-nnoremap <leader>/ :noh<cr>:<esc>
+nnoremap <leader>/ :noh<cr>
 
 " auto pairs
 inoremap {<cr> {<cr>}<Esc>O
 
 " entering braces
-nnoremap <leader>nb i{<cr><esc>o}<esc>k_
+nnoremap <leader><cr> i{<cr><esc>o}<esc>k_
 
 " -------------------- Settings --------------------
 colorscheme slate
@@ -93,6 +86,7 @@ set ignorecase
 set mouse+=a
 set splitbelow splitright
 set belloff=all
+set conceallevel=0
 
 set path+=**
 set wildmenu
@@ -121,7 +115,7 @@ set incsearch
 set autoindent
 set smartindent
 
-" set guioptions-=T  "toolbar
+set guioptions-=T  "toolbar
 set guioptions-=r  "scrollbar
 set guioptions-=m  "scrollbar
 
