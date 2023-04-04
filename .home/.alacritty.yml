@@ -29,7 +29,7 @@ window:
   title: Terminal
 
   dimensions:
-    columns: 200
+    columns: 100
     lines: 100
 
 font:
