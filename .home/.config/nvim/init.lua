@@ -112,6 +112,8 @@ vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
 
+vim.opt.statusline:append("%F")
+
 vim.g.mapleader = " "
 
 -- Disable quote concealing in JSON files

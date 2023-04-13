@@ -28,7 +28,7 @@ mouse:
 window:
   title: Terminal
   dimensions:
-    columns: 100
+    columns: 150
     lines: 100
 
 font:
