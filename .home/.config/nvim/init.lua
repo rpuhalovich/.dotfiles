@@ -33,13 +33,12 @@ vim.keymap.set("n", "j", [[gj]])
 
 vim.keymap.set("n", "<leader>a", ":%y+<cr>")
 
-vim.keymap.set("n", "<leader>c", ":set conceallevel=0<cr>")
-
 -- Center the view when going down and up
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
 vim.keymap.set("n", "<leader>r", [[:e<space>~/.config/nvim/<cr>]])
+vim.keymap.set("n", "<leader>c", [[:e<space>~/.config/nvim/cheatSheet.md<cr>]])
 
 -- Quick splits
 vim.keymap.set("n", "<leader>v", [[<C-w><C-v><C-w>l]])
