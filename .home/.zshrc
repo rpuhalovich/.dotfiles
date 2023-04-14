@@ -10,6 +10,7 @@ alias python="python3"
 alias pip="pip3"
 alias node14="nvm install 14.20.0 && nvm use 14.20.0"
 alias node16="nvm install 16.16.0 && nvm use 16.16.0"
+alias node17="nvm install 17.3.0 && nvm use 17.3.0"
 
 autoload -Uz compinit
 compinit
@@ -33,8 +34,12 @@ export PROMPT='${COLOR_DEF}%d ${COLOR_GIT}$(parse_git_branch)${COLOR_DEF}${NEWLI
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
 
-nvm use 16.16.0 --silent
+nvm use 17.3.0 --silent
 
 touch ~/.hushlogin
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+export AWS_REGION=ap-southeast-2
+
+export PATH=$PATH:~/.scripts
