@@ -1,3 +1,16 @@
+--- LSP ---
+
+-- see: https://github.com/VonHeikemen/lsp-zero.nvim for default keybindings
+
+local lsp = require('lsp-zero').preset({
+  name = 'minimal',
+  set_lsp_keymaps = true,
+  manage_nvim_cmp = true,
+  suggest_lsp_servers = false,
+})
+
+lsp.setup()
+
 --- TREE SITTER ---
 
 require'nvim-treesitter.configs'.setup {

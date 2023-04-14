@@ -34,7 +34,7 @@ export PROMPT='${COLOR_DEF}%d ${COLOR_GIT}$(parse_git_branch)${COLOR_DEF}${NEWLI
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
 
-nvm use 17.3.0 --silent
+nvm use 16.16.0 --silent
 
 touch ~/.hushlogin
 
