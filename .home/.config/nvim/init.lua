@@ -19,7 +19,7 @@ require'nvim-treesitter.configs'.setup {
   auto_install = true,
   highlight = {
     enable = true,
-    disable = { "markdown", "json"},
+    disable = { "markdown", "json" },
     additional_vim_regex_highlighting = false,
   },
 }
@@ -80,6 +80,7 @@ vim.keymap.set("n", "<leader>/", [[:noh<cr>]])
 local telescope = require('telescope.builtin')
 -- vim.keymap.set('n', '<leader>?', builtin.live_grep, {})
 vim.keymap.set('n', '?', telescope.live_grep, {})
+vim.keymap.set('v', '?', "\"+y:Telescope live_grep default_text=<C-r>+<cr>", {})
 vim.keymap.set('n', '<leader>f', ":Telescope find_files hidden=true<cr>", {})
 vim.keymap.set('n', '<leader>gf', telescope.git_files, {})
 vim.keymap.set('n', '<leader>b', telescope.buffers, {})
@@ -145,4 +146,5 @@ vim.g.netrw_keepdir = 0 -- lets copy and move
 -- NERDTree stuff
 vim.g.NERDTreeShowLineNumbers = 1
 vim.g.NERDTreeShowHidden = 1
-vim.g.NERDTreeWinSize = 45
+vim.g.NERDTreeWinSize = 40
+vim.g.NERDTreeMouseMode = 3

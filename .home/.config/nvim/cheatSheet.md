@@ -20,3 +20,8 @@
 `gl`: Show diagnostics in a floating window.
 `[d`: Move to the previous diagnostic in the current buffer.
 `]d`: Move to the next diagnostic.
+
+## NERDTree
+
+`?`: Open quickhelp.
+`i`: Open the node in a split.
