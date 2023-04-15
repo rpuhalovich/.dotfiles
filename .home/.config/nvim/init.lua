@@ -45,7 +45,8 @@ vim.keymap.set("n", "<leader>v", [[<C-w><C-v><C-w>l]])
 vim.keymap.set("n", "<leader>s", [[<C-w><C-s><C-w>j]])
 
 -- Open Explorer
-vim.keymap.set("n", "<leader>e", vim.cmd.Ex)
+-- vim.keymap.set("n", "<leader>e", vim.cmd.Ex)
+vim.keymap.set("n", "<leader>e", ":NERDTreeToggle<cr>")
 
 -- Keep cursor in place when using J
 vim.keymap.set("n", "J", "mzJ`z")
@@ -74,13 +75,14 @@ vim.keymap.set("n", "<leader>B", [[:Bdelete other<CR>]])
 
 -- Better file search
 vim.keymap.set("n", "<leader>/", [[:noh<cr>]])
-vim.keymap.set("n", "?", [[:Rg<cr>]])
+-- vim.keymap.set("n", "?", [[:Rg<cr>]])
 
-local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>?', builtin.live_grep, {})
-vim.keymap.set('n', '<leader>f', builtin.find_files, {})
-vim.keymap.set('n', '<leader>gf', builtin.git_files, {})
-vim.keymap.set('n', '<leader>b', builtin.buffers, {})
+local telescope = require('telescope.builtin')
+-- vim.keymap.set('n', '<leader>?', builtin.live_grep, {})
+vim.keymap.set('n', '?', telescope.live_grep, {})
+vim.keymap.set('n', '<leader>f', ":Telescope find_files hidden=true<cr>", {})
+vim.keymap.set('n', '<leader>gf', telescope.git_files, {})
+vim.keymap.set('n', '<leader>b', telescope.buffers, {})
 
 --- SETS ---
 
@@ -91,6 +93,8 @@ vim.cmd([[colorscheme gruvbox]])
 
 vim.opt.nu = true
 vim.opt.relativenumber = true
+vim.opt.ruler = true
+vim.opt.autochdir = false
 
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
@@ -128,6 +132,8 @@ vim.opt.statusline:append("%F")
 
 vim.g.mapleader = " "
 
+vim.opt.path:append("**")
+
 -- Disable quote concealing in JSON files
 vim.g.vim_json_conceal = 0
 
@@ -135,3 +141,8 @@ vim.g.vim_json_conceal = 0
 vim.g.netrw_banner = 0 -- disable annoying banner
 vim.g.netrw_liststyle = 3 -- tree view
 vim.g.netrw_keepdir = 0 -- lets copy and move
+
+-- NERDTree stuff
+vim.g.NERDTreeShowLineNumbers = 1
+vim.g.NERDTreeShowHidden = 1
+vim.g.NERDTreeWinSize = 45

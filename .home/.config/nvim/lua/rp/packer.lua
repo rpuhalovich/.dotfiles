@@ -8,6 +8,7 @@ return require('packer').startup(function(use)
     use('junegunn/fzf')
     use('junegunn/fzf.vim')
     use('Yggdroot/indentLine')
+    use('preservim/nerdtree')
     use('Asheq/close-buffers.vim')
     use({ 'windwp/nvim-autopairs', config = function() require('nvim-autopairs').setup {} end })
 
