@@ -9,6 +9,15 @@ local lsp = require('lsp-zero').preset({
   suggest_lsp_servers = false,
 })
 
+lsp.ensure_installed({
+  'tsserver',
+  'clangd',
+  'eslint',
+  'rust_analyzer'
+})
+
+require('lspconfig').tsserver.setup({})
+
 lsp.setup()
 
 --- TREE SITTER ---
@@ -85,6 +94,8 @@ vim.keymap.set('n', '<leader>f', ":Telescope find_files hidden=true<cr>", {})
 vim.keymap.set('n', '<leader>gf', telescope.git_files, {})
 vim.keymap.set('n', '<leader>b', telescope.buffers, {})
 
+vim.keymap.set('n', '<leader>q', ":bd<cr>:bnext<cr>:NERDTreeToggle<cr><c-w>l", {})
+
 --- SETS ---
 
 vim.go.conceallevel = 0
@@ -148,3 +159,4 @@ vim.g.NERDTreeShowLineNumbers = 1
 vim.g.NERDTreeShowHidden = 1
 vim.g.NERDTreeWinSize = 40
 vim.g.NERDTreeMouseMode = 3
+vim.g.NERDTreeMinimalUI = 1
