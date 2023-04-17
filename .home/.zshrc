@@ -19,6 +19,14 @@ bindkey -v '^?' backward-delete-char
 bindkey '^Y' autosuggest-accept
 
 history -p
+touch ~/.hushlogin
+
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
+nvm use 16.16.0 --silent
+
+export AWS_REGION=ap-southeast-2
+export PATH=$PATH:~/.scripts
 
 parse_git_branch() {
     git branch 2> /dev/null | sed -n -e 's/^\* \(.*\)/(\1)/p'
@@ -30,16 +38,3 @@ COLOR_GIT='%F{196}'
 NEWLINE=$'\n'
 setopt PROMPT_SUBST
 export PROMPT='${COLOR_DEF}%d ${COLOR_GIT}$(parse_git_branch)${COLOR_DEF}${NEWLINE}> '
-
-export NVM_DIR=~/.nvm
-source $(brew --prefix nvm)/nvm.sh
-
-nvm use 16.16.0 --silent
-
-touch ~/.hushlogin
-
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
-export AWS_REGION=ap-southeast-2
-
-export PATH=$PATH:~/.scripts
