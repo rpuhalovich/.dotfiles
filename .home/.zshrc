@@ -12,6 +12,9 @@ alias node14="nvm install 14.20.0 && nvm use 14.20.0"
 alias node16="nvm install 16.16.0 && nvm use 16.16.0"
 alias node17="nvm install 17.3.0 && nvm use 17.3.0"
 
+# cheat sheets
+alias tmuxcs="bat ~/.dotfiles/.cheatsheets/tmux.md"
+
 autoload -Uz compinit
 compinit
 

@@ -49,13 +49,17 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "<leader>r", [[:e<space>~/.config/nvim/<cr>]])
 vim.keymap.set("n", "<leader>c", [[:e<space>~/.config/nvim/cheatSheet.md<cr>]])
 
+vim.keymap.set("n", "<leader>cl", [[:set conceallevel=0<cr>]])
+
 -- Quick splits
 vim.keymap.set("n", "<leader>v", [[<C-w><C-v><C-w>l]])
 vim.keymap.set("n", "<leader>s", [[<C-w><C-s><C-w>j]])
 
 -- Open Explorer
 -- vim.keymap.set("n", "<leader>e", vim.cmd.Ex)
-vim.keymap.set("n", "<leader>e", ":NERDTreeToggle<cr>")
+-- vim.keymap.set("n", "<leader>e", ":NERDTreeToggle<cr>")
+vim.keymap.set("n", "<leader>e", ":e .<cr>")
+vim.keymap.set('n', '<leader>q', ":bd<cr>:bnext<cr>:NERDTreeToggle<cr><c-w>l")
 
 -- Keep cursor in place when using J
 vim.keymap.set("n", "J", "mzJ`z")
@@ -93,8 +97,6 @@ vim.keymap.set('v', '?', "\"+y:Telescope live_grep default_text=<C-r>+<cr>", {})
 vim.keymap.set('n', '<leader>f', ":Telescope find_files hidden=true<cr>", {})
 vim.keymap.set('n', '<leader>gf', telescope.git_files, {})
 vim.keymap.set('n', '<leader>b', telescope.buffers, {})
-
-vim.keymap.set('n', '<leader>q', ":bd<cr>:bnext<cr>:NERDTreeToggle<cr><c-w>l", {})
 
 --- SETS ---
 
