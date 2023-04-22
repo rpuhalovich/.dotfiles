@@ -88,15 +88,11 @@ vim.keymap.set("n", "<leader>B", [[:Bdelete other<CR>]])
 
 -- Better file search
 vim.keymap.set("n", "<leader>/", [[:noh<cr>]])
--- vim.keymap.set("n", "?", [[:Rg<cr>]])
-
-local telescope = require('telescope.builtin')
--- vim.keymap.set('n', '<leader>?', builtin.live_grep, {})
-vim.keymap.set('n', '?', telescope.live_grep, {})
-vim.keymap.set('v', '?', "\"+y:Telescope live_grep default_text=<C-r>+<cr>", {})
-vim.keymap.set('n', '<leader>f', ":Telescope find_files hidden=true<cr>", {})
-vim.keymap.set('n', '<leader>gf', telescope.git_files, {})
-vim.keymap.set('n', '<leader>b', telescope.buffers, {})
+vim.keymap.set("n", "/", [[:BLines<cr>]])
+vim.keymap.set('n', '?', [[:Rg<cr>]], {})
+vim.keymap.set('n', '<leader>f', ":Files<cr>", {})
+vim.keymap.set('n', '<leader>gf', ":GFiles<cr>", {})
+vim.keymap.set('n', '<leader>b', ":Buffers<cr>", {})
 
 --- SETS ---
 
@@ -165,3 +161,7 @@ vim.g.NERDTreeShowHidden = 1
 vim.g.NERDTreeWinSize = 40
 vim.g.NERDTreeMouseMode = 3
 vim.g.NERDTreeMinimalUI = 1
+
+-- fzf
+vim.g.fzf_layout = { window = { width = 0.9, height = 0.9 }}
+vim.g.fzf_preview_window = {'right'}
