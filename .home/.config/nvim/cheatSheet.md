@@ -1,5 +1,7 @@
 # Neovim Cheat Sheet
 
+[line sorting](https://webdevetc.com/blog/sort-text-in-vim/)
+
 ## lsp-zero
 
 [From here.](https://github.com/VonHeikemen/lsp-zero.nvim)

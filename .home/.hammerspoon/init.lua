@@ -18,7 +18,7 @@ wfTerminal:subscribe(hs.window.filter.windowCreated, function(window, applicatio
     return false
   end
 
-  local apps = {"Preview", "Alacritty", "iTerm2", "Finder", "Notion"}
+  local apps = {"Preview", "Alacritty", "iTerm2", "Finder", "Notion", "Code"}
   if hasValue(apps, applicationName) then
     window:maximize()
   end

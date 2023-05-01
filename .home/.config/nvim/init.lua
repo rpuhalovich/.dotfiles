@@ -88,7 +88,7 @@ vim.keymap.set("n", "<leader>B", [[:Bdelete other<CR>]])
 
 -- Better file search
 vim.keymap.set("n", "<leader>/", [[:noh<cr>]])
-vim.keymap.set("n", "/", [[:BLines<cr>]])
+-- vim.keymap.set("n", "/", [[:BLines<cr>]])
 vim.keymap.set('n', '?', [[:Rg<cr>]], {})
 vim.keymap.set('n', '<leader>f', ":Files<cr>", {})
 vim.keymap.set('n', '<leader>gf', ":GFiles<cr>", {})
@@ -130,7 +130,7 @@ vim.opt.hlsearch = false
 vim.opt.incsearch = true
 vim.opt.cursorline = true
 
--- vim.opt.guicursor = ""
+vim.opt.guicursor = ""
 
 vim.opt.termguicolors = true
 
@@ -151,9 +151,9 @@ vim.opt.path:append("**")
 vim.g.vim_json_conceal = 0
 
 -- Netrw stuff
-vim.g.netrw_banner = 0 -- disable annoying banner
-vim.g.netrw_liststyle = 3 -- tree view
-vim.g.netrw_keepdir = 0 -- lets copy and move
+vim.g.netrw_banner = 0
+vim.g.netrw_liststyle = 3
+vim.g.netrw_keepdir = 0
 
 -- NERDTree stuff
 vim.g.NERDTreeShowLineNumbers = 1
