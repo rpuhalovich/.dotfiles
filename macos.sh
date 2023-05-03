@@ -4,6 +4,7 @@ for i in .clangd .scripts .hammerspoon .gitconfig .vimrc .zshrc .tmux.conf .alac
     rm -rf $HOME/$i
     ln -s $HOME/.dotfiles/.home/$i $HOME/$i
 done
+mkdir -p $HOME/.scripts-local/
 
 mkdir -p $HOME/.config/
 for i in nvim btop; do

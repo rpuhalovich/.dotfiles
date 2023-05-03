@@ -165,3 +165,4 @@ vim.g.NERDTreeMinimalUI = 1
 -- fzf
 vim.g.fzf_layout = { window = { width = 0.9, height = 0.9 }}
 vim.g.fzf_preview_window = {'right'}
+vim.g.FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -l -g ""'
