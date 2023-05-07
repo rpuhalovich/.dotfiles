@@ -48,3 +48,8 @@ COLOR_GIT='%F{196}'
 NEWLINE=$'\n'
 setopt PROMPT_SUBST
 export PROMPT='${COLOR_DEF}%d ${COLOR_GIT}$(parse_git_branch)${COLOR_DEF}${NEWLINE}> '
+
+export PATH=$PATH:~/.scripts
+export PATH=$PATH:~/.scripts-local
+
+export AWS_REGION=ap-southeast-2
