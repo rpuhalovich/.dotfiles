@@ -4,12 +4,13 @@ return require('packer').startup(function(use)
     use('wbthomason/packer.nvim')
     use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
     use('ellisonleao/gruvbox.nvim')
-    use('junegunn/fzf')
-    use('junegunn/fzf.vim')
+    -- use('junegunn/fzf')
+    -- use('junegunn/fzf.vim')
     use('Yggdroot/indentLine')
     use('preservim/nerdtree')
     use('Asheq/close-buffers.vim')
     use({ 'windwp/nvim-autopairs', config = function() require('nvim-autopairs').setup {} end })
+    use({ 'nvim-telescope/telescope.nvim', tag = '0.1.1', requires = { {'nvim-lua/plenary.nvim'} } })
     use {
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v1.x',
