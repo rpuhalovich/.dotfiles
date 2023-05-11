@@ -20,6 +20,8 @@ require('lspconfig').tsserver.setup({})
 
 lsp.setup()
 
+require("symbols-outline").setup()
+
 --- TREE SITTER ---
 
 require'nvim-treesitter.configs'.setup {
@@ -58,9 +60,6 @@ vim.keymap.set("n", "<leader>s", [[<C-w><C-s><C-w>j]])
 -- Open Explorer
 vim.keymap.set("n", "<leader>e", ":e .<cr>")
 
--- Keep cursor in place when using J
-vim.keymap.set("n", "J", "mzJ`z")
-
 -- Move among buffers with tab
 vim.keymap.set("n", "<tab>", [[:bnext<cr>]])
 vim.keymap.set("n", "<S-tab>", [[:bprev<cr>]])
@@ -88,7 +87,10 @@ vim.keymap.set("n", "<leader>/", [[:noh<cr>]])
 vim.keymap.set('n', '?', [[:Telescope live_grep hidden=true<cr>]], {})
 vim.keymap.set('n', '<leader>f', [[:Telescope find_files hidden=true<cr>]], {})
 vim.keymap.set('n', '<leader>gf', [[:Telescope git_files hidden=true<cr>]], {})
-vim.keymap.set('n', '<leader>b', ":Buffers<cr>", {})
+vim.keymap.set('n', '<leader>b', [[:Telescope buffers hidden=true<cr>]], {})
+
+-- Symbols Outline
+vim.keymap.set('n', '<leader>sy', [[:SymbolsOutline<cr>]], {})
 
 --- SETS ---
 
