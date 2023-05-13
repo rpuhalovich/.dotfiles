@@ -20,7 +20,7 @@ require('lspconfig').tsserver.setup({})
 
 lsp.setup()
 
-require("symbols-outline").setup()
+require("symbols-outline").setup({ position = 'bottom' })
 
 --- TREE SITTER ---
 
@@ -91,6 +91,9 @@ vim.keymap.set('n', '<leader>b', [[:Telescope buffers hidden=true<cr>]], {})
 
 -- Symbols Outline
 vim.keymap.set('n', '<leader>sy', [[:SymbolsOutline<cr>]], {})
+
+-- Git Messenger
+vim.keymap.set('n', 'gb', [[:GitMessenger<cr>]], {})
 
 --- SETS ---
 

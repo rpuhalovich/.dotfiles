@@ -27,3 +27,30 @@
 
 `?`: Open quickhelp.
 `i`: Open the node in a split.
+
+## GitMessenger
+
+`:GitMessenger`
+
+`q`: Close the popup window.
+`o`: older. Back to older commit at the line.
+`O`: Opposite to o. Forward to newer commit at the line.
+`d`: Toggle unified diff hunks only in current file of the commit.
+`D`: Toggle all unified diff hunks of the commit.
+`r`: Toggle word diff hunks only in current file of the commit.
+`R`: Toggle all word diff hunks of current commit.
+`?`: Show mappings help.
+
+## symbols-outline.nvim
+
+`o`: Go to symbol location in code without losing focus.
+`Ctrl+Space`: Hover current symbol.
+`K`: Toggles the current symbol preview.
+`r`: Rename symbol.
+`a`: Code actions.
+`h`: fold symbol.
+`l`: Unfold symbol.
+`W`: Fold all symbols.
+`E`: Unfold all symbols.
+`R`: Reset all folding.
+`?`: Show help message.
