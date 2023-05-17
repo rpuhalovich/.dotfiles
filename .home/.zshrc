@@ -14,8 +14,8 @@ alias tree="exa --tree"
 alias vim="nvim"
 
 # cheatsheets
-alias cstmux="nvim ~/.dotfiles/.cheatsheets/tmux.md"
 alias csgit="nvim ~/.dotfiles/.cheatsheets/git.md"
+alias cstmux="nvim ~/.dotfiles/.cheatsheets/tmux.md"
 
 # global init stuff
 autoload -Uz compinit
@@ -37,6 +37,12 @@ source $(brew --prefix nvm)/nvm.sh
 nvm use 16.16.0 --silent
 export NVM_DIR=~/.nvm
 
+# bat
+export BAT_THEME="gruvbox-dark"
+
+# exa
+export LS_COLORS="$(vivid generate gruvbox-dark-soft)"
+
 # command line customization
 parse_git_branch() {
     git branch 2> /dev/null | sed -n -e 's/^\* \(.*\)/(\1)/p'
@@ -49,7 +55,5 @@ NEWLINE=$'\n'
 setopt PROMPT_SUBST
 export PROMPT='${COLOR_DEF}%d ${COLOR_GIT}$(parse_git_branch)${COLOR_DEF}${NEWLINE}> '
 
-export PATH=$PATH:~/.scripts
-export PATH=$PATH:~/.scripts-local
-
+# other exports
 export AWS_REGION=ap-southeast-2
