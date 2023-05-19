@@ -5,10 +5,10 @@
 `git rm --cached -r .`
 
 # Cleans the repo of all untracked files and directories
-# Other helpful flags
-# -i - interactive
-# -d - directories too
-# -x - ignored files
+Other helpful flags
+-i - interactive
+-d - directories too
+-x - ignored files
 `git clean -fd`
 
 # Sets new git repo remote
