@@ -20,7 +20,13 @@ require('lspconfig').tsserver.setup({})
 
 lsp.setup()
 
-require("symbols-outline").setup({ position = 'bottom' })
+-- SYMBOLS OUTLINE ---
+
+require("symbols-outline").setup({
+    position = 'bottom',
+    width = 35,
+    autofold_depth = 0,
+})
 
 --- TREE SITTER ---
 
@@ -79,6 +85,9 @@ vim.keymap.set("n", "<leader>p", [["+p]])
 vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
 vim.keymap.set({"n", "v"}, "<leader>d", [["+d]])
 
+-- Refresh all buffers (discards current changes)
+vim.keymap.set("n", "<leader>re", [[:bufdo :edit!<cr>]], {})
+
 -- Close all buffers except open one
 vim.keymap.set("n", "<leader>B", [[:Bdelete other<CR>]])
 
@@ -90,7 +99,7 @@ vim.keymap.set('n', '<leader>gf', [[:Telescope git_files hidden=true<cr>]], {})
 vim.keymap.set('n', '<leader>b', [[:Telescope buffers hidden=true<cr>]], {})
 
 -- Symbols Outline
-vim.keymap.set('n', '<leader>sy', [[:SymbolsOutline<cr>]], {})
+vim.keymap.set('n', '<leader>sy', [[:SymbolsOutline<cr>W]], {})
 
 -- Git Messenger
 vim.keymap.set('n', 'gb', [[:GitMessenger<cr>]], {})
@@ -106,6 +115,7 @@ vim.opt.nu = true
 vim.opt.relativenumber = true
 vim.opt.ruler = true
 vim.opt.autochdir = false
+vim.opt.autoread = true
 
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
