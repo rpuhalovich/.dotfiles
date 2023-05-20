@@ -26,6 +26,9 @@ require("symbols-outline").setup({
     position = 'bottom',
     width = 35,
     autofold_depth = 0,
+    keymaps = {
+        focus_location = "<cr>"
+    }
 })
 
 --- TREE SITTER ---
