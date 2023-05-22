@@ -44,6 +44,13 @@ require'nvim-treesitter.configs'.setup {
   },
 }
 
+--- GRUVBOX ---
+
+require("gruvbox").setup({
+  contrast = "hard", -- can be "hard", "soft" or empty string
+})
+vim.cmd("colorscheme gruvbox")
+
 --- REMAP ---
 
 vim.g.mapleader = " "
@@ -112,7 +119,6 @@ vim.keymap.set('n', 'gb', [[:GitMessenger<cr>]], {})
 vim.go.conceallevel = 0
 
 vim.o.background = "dark"
-vim.cmd([[colorscheme gruvbox]])
 
 vim.opt.nu = true
 vim.opt.relativenumber = true
