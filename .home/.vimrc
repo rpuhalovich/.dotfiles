@@ -50,9 +50,6 @@ nnoremap <leader>/ :noh<cr>
 " auto pairs
 inoremap {<cr> {<cr>}<Esc>O
 
-" entering braces
-nnoremap <leader><cr> i{<cr><esc>o}<esc>k_
-
 " -------------------- Settings --------------------
 colorscheme slate
 
@@ -97,7 +94,7 @@ set guicursor+=a:blinkon0
 
 " Show status and show path
 set laststatus=2
-set statusline=%<%F\ %h%m%r%=%-14.(%l,%c%V%)\ %P 
+set statusline=%<%F\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 
 " Make backspace work like in most other editors
 set backspace=indent,eol,start
