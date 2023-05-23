@@ -150,7 +150,7 @@ vim.opt.hlsearch = false
 vim.opt.incsearch = true
 vim.opt.cursorline = true
 
--- vim.opt.guicursor = ""
+vim.opt.guicursor = ""
 
 vim.opt.termguicolors = true
 
@@ -161,7 +161,7 @@ vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 50
 
 vim.opt.laststatus = 2
-vim.opt.statusline = "%<%F %h%m%r%=%-14.(%l,%c%V%) %P"
+vim.opt.statusline = "%<%F %h%m%r%=%-14.(%l,%c%V%) %P "
 
 vim.g.mapleader = " "
 

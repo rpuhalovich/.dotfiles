@@ -41,11 +41,7 @@ nnoremap <C-l> <C-w>l
 " quick vertical split
 nnoremap <leader>v <C-w><C-v><C-w>l
 
-" insert comments
-nnoremap <leader>cxml o<!--<cr>--><esc>0
-
 " better file searching
-" nnoremap / :%s///ng<left><left><left><left>
 nnoremap ? :<C-f>ivimgrep<space>""<space>**<space>\|<space>copen<esc>0f"a
 
 " clear highlighting for search term
@@ -79,7 +75,6 @@ set visualbell
 set noerrorbells
 set hidden
 set nohlsearch
-" set colorcolumn=120
 set noshowmode
 set cursorline
 set ignorecase
@@ -102,7 +97,7 @@ set guicursor+=a:blinkon0
 
 " Show status and show path
 set laststatus=2
-set statusline=%<%F\ %h%m%r%=%-14.(%l,%c%V%)\ %P
+set statusline=%<%F\ %h%m%r%=%-14.(%l,%c%V%)\ %P 
 
 " Make backspace work like in most other editors
 set backspace=indent,eol,start
