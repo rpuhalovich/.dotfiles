@@ -111,6 +111,9 @@ vim.keymap.set('n', '<leader>b', [[:Telescope buffers hidden=true<cr>]], {})
 -- Symbols Outline
 vim.keymap.set('n', '<leader>sy', [[:SymbolsOutline<cr>W]], {})
 
+-- Rename symbol: https://www.reddit.com/r/neovim/comments/rustfp/how_to_config_nvimlspconfig_to_rename_a_variable/
+vim.keymap.set('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', { noremap = true })
+
 -- Git Messenger
 vim.keymap.set('n', 'gb', [[:GitMessenger<cr>]], {})
 
