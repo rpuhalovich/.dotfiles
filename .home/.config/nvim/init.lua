@@ -1,56 +1,3 @@
---- LSP ---
-
--- see: https://github.com/VonHeikemen/lsp-zero.nvim for default keybindings
-
-local lsp = require('lsp-zero').preset({
-  name = 'minimal',
-  set_lsp_keymaps = true,
-  manage_nvim_cmp = true,
-  suggest_lsp_servers = false,
-})
-
-lsp.ensure_installed({
-  'tsserver',
-  'clangd',
-  'eslint',
-  'rust_analyzer'
-})
-
-require('lspconfig').tsserver.setup({})
-
-lsp.setup()
-
--- SYMBOLS OUTLINE ---
-
-require("symbols-outline").setup({
-    position = 'bottom',
-    width = 35,
-    autofold_depth = 0,
-    keymaps = {
-        focus_location = "<cr>"
-    }
-})
-
---- TREE SITTER ---
-
-require'nvim-treesitter.configs'.setup {
-  ensure_installed = "all",
-  sync_install = false,
-  auto_install = true,
-  highlight = {
-    enable = true,
-    disable = { "markdown", "json" },
-    additional_vim_regex_highlighting = false,
-  },
-}
-
---- GRUVBOX ---
-
-require("gruvbox").setup({
-  contrast = "hard", -- can be "hard", "soft" or empty string
-})
-vim.cmd("colorscheme gruvbox")
-
 --- REMAP ---
 
 vim.g.mapleader = " "
@@ -189,3 +136,56 @@ vim.g.NERDTreeMinimalUI = 1
 vim.g.fzf_layout = { window = { width = 0.9, height = 0.9 }}
 vim.g.fzf_preview_window = {'right'}
 vim.g.FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -l -g ""'
+
+--- LSP ---
+
+-- see: https://github.com/VonHeikemen/lsp-zero.nvim for default keybindings
+
+local lsp = require('lsp-zero').preset({
+  name = 'minimal',
+  set_lsp_keymaps = true,
+  manage_nvim_cmp = true,
+  suggest_lsp_servers = false,
+})
+
+lsp.ensure_installed({
+  'tsserver',
+  'clangd',
+  'eslint',
+  'rust_analyzer'
+})
+
+require('lspconfig').tsserver.setup({})
+
+lsp.setup()
+
+-- SYMBOLS OUTLINE ---
+
+require("symbols-outline").setup({
+    position = 'bottom',
+    width = 35,
+    autofold_depth = 0,
+    keymaps = {
+        focus_location = "<cr>"
+    }
+})
+
+--- TREE SITTER ---
+
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = "all",
+  sync_install = false,
+  auto_install = true,
+  highlight = {
+    enable = true,
+    disable = { "markdown", "json" },
+    additional_vim_regex_highlighting = false,
+  },
+}
+
+--- GRUVBOX ---
+
+require("gruvbox").setup({
+  contrast = "hard", -- can be "hard", "soft" or empty string
+})
+vim.cmd("colorscheme gruvbox")
