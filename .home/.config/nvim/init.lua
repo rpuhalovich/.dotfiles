@@ -51,6 +51,16 @@ require("gruvbox").setup({
 })
 vim.cmd("colorscheme gruvbox")
 
+--- telescope ---
+
+require('telescope').setup{
+  defaults = {
+    layout_strategy = 'vertical',
+    layout_config = { height = 0.95 },
+    preview = false
+  },
+}
+
 --- REMAP ---
 
 vim.g.mapleader = " "
@@ -103,7 +113,7 @@ vim.keymap.set("n", "<leader>B", [[:Bdelete other<CR>]])
 
 -- Better file search
 vim.keymap.set("n", "<leader>/", [[:noh<cr>]])
-vim.keymap.set('n', '?', [[:Telescope live_grep hidden=true<cr>]], {})
+vim.keymap.set('n', '?', [[:Telescope live_grep preview=true hidden=true<cr>]], {})
 vim.keymap.set('n', '<leader>f', [[:Telescope find_files hidden=true<cr>]], {})
 vim.keymap.set('n', '<leader>gf', [[:Telescope git_files hidden=true<cr>]], {})
 vim.keymap.set('n', '<leader>b', [[:Telescope buffers hidden=true<cr>]], {})

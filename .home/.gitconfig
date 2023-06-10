@@ -27,3 +27,15 @@
 	lt = log --tags --no-walk --pretty=oneline --abbrev-commit
 	pull = pull --prune --all
 	s = status
+# [filter "lfs"]
+# 	clean = git-lfs clean -- %f
+# 	smudge = git-lfs smudge -- %f
+# 	process = git-lfs filter-process
+# 	required = true
+[credential]
+	helper = store
+[credential "http://192.168.1.115:8080"]
+	provider = generic
+[lfs]
+	access = basic
+	cachecredentials = 1

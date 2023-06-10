@@ -14,4 +14,5 @@
 `]c`: Jump to the next diff
 `[c`: Jump to the previous diff
 `:cq`: Quit all buffers
+`git d <file>`: Show diff for a certain file
 `git d <commit hash> <file>`: Show diff for a certain commit and certain file

@@ -1,5 +1,4 @@
 # aliases
-alias btop="sudo btop"
 alias c="git add . && git commit && sleep 3 && git push"
 alias cat="bat"
 alias ls="exa -F1a --icons --group-directories-first"
@@ -16,6 +15,7 @@ alias vim="nvim"
 # cheatsheets
 alias csgit="nvim ~/.dotfiles/.cheatsheets/git.md"
 alias cstmux="nvim ~/.dotfiles/.cheatsheets/tmux.md"
+alias csvim="nvim ~/.dotfiles/.cheatsheets/nvim.md"
 
 # global init stuff
 autoload -Uz compinit

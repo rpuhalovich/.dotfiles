@@ -1,6 +1,10 @@
-# Neovim Cheat Sheet
+# Neovim/Vim Cheat Sheet
+
+## Native Vim
 
 [line sorting](https://webdevetc.com/blog/sort-text-in-vim/)
+
+`:%s/<regexp>//gn`: Searches and shows number of matches
 
 ## lsp-zero
 
