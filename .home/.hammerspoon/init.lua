@@ -18,7 +18,7 @@ wfTerminal:subscribe(hs.window.filter.windowCreated, function(window, applicatio
     return false
   end
 
-  local apps = {"Preview", "Alacritty", "iTerm2", "Finder", "Notion", "Code"}
+  local apps = {"Preview", "Alacritty", "Finder", "Notion", "Code"}
   if hasValue(apps, applicationName) then
     window:maximize()
   end
@@ -42,6 +42,3 @@ hs.hotkey.bind({"cmd"}, "4", function() launch("Visual Studio Code") end)
 hs.hotkey.bind({"cmd"}, "5", function() launch("Notion") end)
 hs.hotkey.bind({"cmd"}, "9", function() launch("1Password 7") end)
 hs.hotkey.bind({"cmd"}, "0", function() launch("Bitwarden") end)
-
-run = false
-menuIcon = hs.menubar.new(true)

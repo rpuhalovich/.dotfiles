@@ -1,7 +1,7 @@
 `git clean -fd`: Cleans the repo of all untracked files and directories
-    -i - interactive
-    -d - directories too
-    -x - ignored files
+  -i - interactive
+  -d - directories too
+  -x - ignored files
 
 `git remote set-url origin new.git.url/here`: Sets new git repo remote
 `git revert COMMIT-HASH`: Reverts a commit. Pretty sure you can use a hash range here too
@@ -14,5 +14,7 @@
 `]c`: Jump to the next diff
 `[c`: Jump to the previous diff
 `:cq`: Quit all buffers
-`git d <file>`: Show diff for a certain file
-`git d <commit hash> <file>`: Show diff for a certain commit and certain file
+`:qa`: Next diff
+`git d <commit hash/branch> <file>`: Show diff for a certain commit/branch and certain file
+`git diff --name-status <firstbranch>..<yourBranchName>`: Show files changed between branches
+`git diff --name-status <branch>`: Show files changed currently checked out branch and named branch
