@@ -28,10 +28,3 @@
 	lt = log --tags --no-walk --pretty=oneline --abbrev-commit
 	pull = pull --prune --all
 	s = status
-[credential]
-	helper = store
-[credential "http://192.168.1.115:8080"]
-	provider = generic
-[lfs]
-	access = basic
-	cachecredentials = 1

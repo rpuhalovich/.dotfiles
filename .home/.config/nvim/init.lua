@@ -51,6 +51,7 @@ vim.keymap.set("n", "<leader>B", [[:Bdelete other<CR>]])
 -- Better file search
 vim.keymap.set("n", "<leader>/", [[:noh<cr>]])
 vim.keymap.set('n', '?', [[:Telescope live_grep preview=true hidden=true<cr>]], {})
+vim.keymap.set('v', '?', [["zy:Telescope live_grep preview=true hidden=true default_text=<C-r>z<cr>]], {})
 vim.keymap.set('n', '<leader>f', [[:Telescope find_files hidden=true<cr>]], {})
 vim.keymap.set('n', '<leader>gf', [[:Telescope git_files hidden=true<cr>]], {})
 vim.keymap.set('n', '<leader>b', [[:Telescope buffers hidden=true<cr>]], {})
@@ -111,7 +112,7 @@ vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 50
 
 vim.opt.laststatus = 2
-vim.opt.statusline = "%<%F %h%m%r%=%-14.(%l,%c%V%) %P "
+vim.opt.statusline = "%<%F %h%m%r%=%-14.(%l,%c%V%) %P"
 
 vim.g.mapleader = " "
 
