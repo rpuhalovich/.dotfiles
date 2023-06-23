@@ -62,8 +62,12 @@ vim.keymap.set('n', '<leader>sy', [[:SymbolsOutline<cr>W]], {})
 -- Rename symbol: https://www.reddit.com/r/neovim/comments/rustfp/how_to_config_nvimlspconfig_to_rename_a_variable/
 vim.keymap.set('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', { noremap = true })
 
--- Git Messenger
-vim.keymap.set('n', 'gb', [[:GitMessenger<cr>]], {})
+-- Git Messenger/Blamer
+-- vim.keymap.set('n', 'gb', [[:GitMessenger<cr>]], {})
+vim.keymap.set('n', 'gb', [[:BlamerToggle<cr>]], {})
+
+-- Prettier
+vim.keymap.set('n', '<leader>P', [[:Prettier<cr>]], {})
 
 --- SETS ---
 
