@@ -111,7 +111,7 @@ vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 50
 
 vim.opt.laststatus = 2
-vim.opt.statusline = "%<%F %h%m%r%=%-14.(%l,%c%V%) %P "
+vim.opt.statusline = "%<%F %h%m%r%=%-8.(%l,%c%V%) %P"
 
 vim.g.mapleader = " "
 

@@ -1,4 +1,4 @@
-# Neovim/Vim Cheat Sheet
+Neovim/Vim Cheat Sheet
 
 ## Native Vim
 
@@ -26,6 +26,8 @@
 `gl`: Show diagnostics in a floating window.
 `[d`: Move to the previous diagnostic in the current buffer.
 `]d`: Move to the next diagnostic.
+
+`:Mason`: Manage LSP downloads.
 
 ## NERDTree
 
