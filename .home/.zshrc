@@ -29,9 +29,6 @@ touch ~/.hushlogin
 export PATH=$PATH:~/.scripts
 export PATH=$PATH:~/.scripts-local
 
-# fzf finding hidden files
-export FZF_DEFAULT_COMMAND="find . -type f -print -o -type l -print 2> /dev/null | sed s/^..//"
-
 # nvm
 source $(brew --prefix nvm)/nvm.sh
 nvm use 16.16.0 --silent

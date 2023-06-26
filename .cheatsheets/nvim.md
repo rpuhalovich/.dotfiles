@@ -6,6 +6,12 @@ Neovim/Vim Cheat Sheet
 
 `:%s/<regexp>//gn`: Searches and shows number of matches
 
+### Global Find and Replace
+
+- Search with `?`.
+- Use ^Q to put results in quickfix.
+- Use `:cdo <sed command>`. eg. `:cdo s/something/somethingElse/gc`.
+
 ## lsp-zero
 
 [From here.](https://github.com/VonHeikemen/lsp-zero.nvim)
