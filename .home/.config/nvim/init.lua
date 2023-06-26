@@ -63,7 +63,6 @@ vim.keymap.set('n', '<leader>sy', [[:SymbolsOutline<cr>W]], {})
 vim.keymap.set('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', { noremap = true })
 
 -- Git Messenger/Blamer
--- vim.keymap.set('n', 'gb', [[:GitMessenger<cr>]], {})
 vim.keymap.set('n', 'gb', [[:BlamerToggle<cr>]], {})
 
 -- Prettier
@@ -71,77 +70,49 @@ vim.keymap.set('n', '<leader>P', [[:Prettier<cr>]], {})
 
 --- SETS ---
 
+vim.g.mapleader = " "
+
+vim.g.vim_json_conceal = 0
 vim.go.conceallevel = 0
-
 vim.o.background = "dark"
-
-vim.opt.nu = true
-vim.opt.relativenumber = true
-vim.opt.ruler = true
 vim.opt.autochdir = false
 vim.opt.autoread = true
-
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.expandtab = true
-
-vim.opt.wrap = true
-vim.opt.linebreak = true
-
-vim.opt.smartindent = true
-
-vim.opt.listchars = { space = '·', tab = '> ' }
-vim.opt.list = true
-
-vim.opt.wrap = true
-
-vim.opt.swapfile = false
 vim.opt.backup = false
-vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
-vim.opt.undofile = true
-
+vim.opt.cursorline = true
+vim.opt.expandtab = true
+vim.opt.guicursor = ""
 vim.opt.hlsearch = true
 vim.opt.ignorecase = true
 vim.opt.incsearch = true
-vim.opt.cursorline = true
-
-vim.opt.guicursor = ""
-
-vim.opt.termguicolors = true
-
-vim.opt.scrolloff = 10
-vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
-
-vim.opt.updatetime = 50
-
 vim.opt.laststatus = 2
-vim.opt.statusline = "%<%F %h%m%r%=%-8.(%l,%c%V%) %P"
-
-vim.g.mapleader = " "
-
+vim.opt.linebreak = true
+vim.opt.list = true
+vim.opt.listchars = { space = '·', tab = '> ' }
+vim.opt.nu = true
 vim.opt.path:append("**")
+vim.opt.relativenumber = true
+vim.opt.ruler = true
+vim.opt.scrolloff = 10
+vim.opt.shiftwidth = 4
+vim.opt.signcolumn = "yes"
+vim.opt.smartindent = true
+vim.opt.softtabstop = 4
+vim.opt.statusline = "%<%F %h%m%r%=%-8.(%l:%c%V%) %P"
+vim.opt.swapfile = false
+vim.opt.tabstop = 4
+vim.opt.termguicolors = true
+vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+vim.opt.undofile = true
+vim.opt.updatetime = 50
+vim.opt.wrap = true
 
--- Disable quote concealing in JSON files
-vim.g.vim_json_conceal = 0
-
--- Netrw stuff
-vim.g.netrw_banner = 0
-vim.g.netrw_liststyle = 3
-vim.g.netrw_keepdir = 0
-
--- NERDTree stuff
-vim.g.NERDTreeShowLineNumbers = 1
-vim.g.NERDTreeShowHidden = 1
-vim.g.NERDTreeWinSize = 40
-vim.g.NERDTreeMouseMode = 3
+-- NERDTree
 vim.g.NERDTreeMinimalUI = 1
-
--- fzf
-vim.g.fzf_layout = { window = { width = 0.9, height = 0.9 }}
-vim.g.fzf_preview_window = {'right'}
-vim.g.FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -l -g ""'
+vim.g.NERDTreeMouseMode = 3
+vim.g.NERDTreeShowHidden = 1
+vim.g.NERDTreeShowLineNumbers = 1
+vim.g.NERDTreeWinSize = 40
 
 --- LSP ---
 
