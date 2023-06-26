@@ -51,77 +51,60 @@ nnoremap <leader>/ :noh<cr>
 inoremap {<cr> {<cr>}<Esc>O
 
 " -------------------- Settings --------------------
+syntax on
 colorscheme slate
 
 if has("gui_running")
 au GUIEnter * simalt ~x
 end
 
-set noundofile
-set noswapfile
-set nobackup
-set number
-set relativenumber
-set expandtab
-set wrap linebreak
-set linebreak nolist
-set so=10
-set ts=4 sw=4
-set ruler
-set visualbell
-set noerrorbells
-set hidden
-set nohlsearch
-set noshowmode
-set cursorline
-set ignorecase
-set mouse+=a
-set splitbelow splitright
+set autoindent
+set backspace=indent,eol,start
 set belloff=all
 set conceallevel=0
-
+set cursorline
+set expandtab
+set hidden
+set hlsearch
+set ignorecase
+set incsearch
+set laststatus=2
+set linebreak nolist
+set listchars=tab:>·,space:·
+set mouse+=a
+set nobackup
+set noerrorbells
+set nohlsearch
+set noshowmode
+set noswapfile
+set noundofile
+set number
 set path+=**
+set relativenumber
+set ruler
+set smartindent
+set so=10
+set splitbelow splitright
+set statusline=%<%F\ %h%m%r%=%-14.(%l,%c%V%)\ %P
+set ts=4 sw=4
+set visualbell
+set wildignore+=**/node_modules/**,**/.git/**
 set wildmenu
 set wildoptions+=pum
-set wildignore+=**/node_modules/**,**/.git/**
-
-set guifont=Consolas:h12:cANSI
+set wrap linebreak
 
 highlight Cursor guifg=white guibg=black
 highlight iCursor guifg=white guibg=steelblue
 set guicursor=n-v-c:block-Cursor
 set guicursor+=a:blinkon0
-
-" Show status and show path
-set laststatus=2
-set statusline=%<%F\ %h%m%r%=%-14.(%l,%c%V%)\ %P
-
-" Make backspace work like in most other editors
-set backspace=indent,eol,start
-
-" Highlight search results
-set hlsearch
-set incsearch
-
-" auto + smart indent for code
-set autoindent
-set smartindent
-
+set guifont=Consolas:h12:cANSI
 set guioptions-=T  "toolbar
 set guioptions-=r  "scrollbar
 set guioptions-=m  "scrollbar
 
-set listchars=tab:>·,space:·
-
-" disable automatic commenting on newlines
-autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
-
-syntax on
-
 " delete trailing whitespace on save
 autocmd BufWritePre * %s/\s\+$//e
 
-" Disable quote concealing in JSON files
 let g:vim_json_conceal=0
 
 " File Browsing
