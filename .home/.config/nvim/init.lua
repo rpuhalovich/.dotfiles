@@ -53,23 +53,23 @@ vim.keymap.set("n", "<leader>B", [[:Bdelete other<CR>]])
 
 -- Better file search
 vim.keymap.set("n", "<leader>/", [[:noh<cr>]])
-vim.keymap.set('n', '?', [[:Telescope live_grep preview=true hidden=true<cr>]], {})
-vim.keymap.set('v', '?', [["zy:Telescope live_grep preview=true hidden=true default_text=<C-r>z<cr>]], {})
-vim.keymap.set('n', '<leader>f', [[:Telescope find_files hidden=true<cr>]], {})
-vim.keymap.set('n', '<leader>gf', [[:Telescope git_files hidden=true<cr>]], {})
-vim.keymap.set('n', '<leader>b', [[:Telescope buffers hidden=true<cr>]], {})
+vim.keymap.set("n", "?", [[:Telescope live_grep preview=true hidden=true<cr>]], {})
+vim.keymap.set("v", "?", [["zy:Telescope live_grep preview=true hidden=true default_text=<C-r>z<cr>]], {})
+vim.keymap.set("n", "<leader>f", [[:Telescope find_files hidden=true<cr>]], {})
+vim.keymap.set("n", "<leader>gf", [[:Telescope git_files hidden=true<cr>]], {})
+vim.keymap.set("n", "<leader>b", [[:Telescope buffers hidden=true<cr>]], {})
 
 -- Symbols Outline
-vim.keymap.set('n', '<leader>sy', [[:SymbolsOutline<cr>W]], {})
+vim.keymap.set("n", "<leader>sy", [[:SymbolsOutline<cr>W]], {})
 
 -- Rename symbol: https://www.reddit.com/r/neovim/comments/rustfp/how_to_config_nvimlspconfig_to_rename_a_variable/
-vim.keymap.set('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', { noremap = true })
+vim.keymap.set("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", { noremap = true })
 
 -- Git Messenger/Blamer
-vim.keymap.set('n', 'gb', [[:BlamerToggle<cr>]], {})
+vim.keymap.set("n", "gb", [[:BlamerToggle<cr>]], {})
 
 -- Prettier
-vim.keymap.set('n', '<leader>P', [[:Prettier<cr>]], {})
+vim.keymap.set("n", "<leader>P", [[:Prettier<cr>]], {})
 
 --- SETS ---
 
@@ -91,7 +91,7 @@ vim.opt.isfname:append("@-@")
 vim.opt.laststatus = 2
 vim.opt.linebreak = true
 vim.opt.list = true
-vim.opt.listchars = { space = '·', tab = '> ' }
+vim.opt.listchars = { space = "·", tab = "> " }
 vim.opt.nu = true
 vim.opt.path:append("**")
 vim.opt.relativenumber = true
@@ -121,28 +121,28 @@ vim.g.NERDTreeWinSize = 40
 
 -- see: https://github.com/VonHeikemen/lsp-zero.nvim for default keybindings
 
-local lsp = require('lsp-zero').preset({
-  name = 'minimal',
+local lsp = require("lsp-zero").preset({
+  name = "minimal",
   set_lsp_keymaps = true,
   manage_nvim_cmp = true,
   suggest_lsp_servers = false,
 })
 
 lsp.ensure_installed({
-  'tsserver',
-  'clangd',
-  'eslint',
-  'rust_analyzer'
+  "tsserver",
+  "clangd",
+  "eslint",
+  "rust_analyzer"
 })
 
-require('lspconfig').tsserver.setup({})
+require("lspconfig").tsserver.setup({})
 
 lsp.setup()
 
 -- SYMBOLS OUTLINE ---
 
 require("symbols-outline").setup({
-    position = 'bottom',
+    position = "bottom",
     width = 35,
     autofold_depth = 0,
     keymaps = {
@@ -152,7 +152,7 @@ require("symbols-outline").setup({
 
 --- TREE SITTER ---
 
-require'nvim-treesitter.configs'.setup {
+require"nvim-treesitter.configs".setup {
   ensure_installed = "all",
   sync_install = false,
   auto_install = true,
@@ -172,9 +172,9 @@ vim.cmd("colorscheme gruvbox")
 
 --- telescope ---
 
-require('telescope').setup{
+require("telescope").setup{
   defaults = {
-    layout_strategy = 'vertical',
+    layout_strategy = "vertical",
     layout_config = { height = 0.95 },
     preview = false
   },
