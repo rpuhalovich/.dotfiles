@@ -1,5 +1,4 @@
---- REMAP ---
-
+--- REMAP
 vim.g.mapleader = " "
 
 vim.keymap.set("n", "k", [[gk]])
@@ -71,8 +70,7 @@ vim.keymap.set("n", "gb", [[:BlamerToggle<cr>]], {})
 -- Prettier
 vim.keymap.set("n", "<leader>P", [[:Prettier<cr>]], {})
 
---- SETS ---
-
+--- SETS
 vim.g.mapleader = " "
 
 vim.g.vim_json_conceal = 0
@@ -118,21 +116,19 @@ vim.g.NERDTreeShowLineNumbers = 1
 vim.g.NERDTreeWinSize = 40
 
 --- LSP ---
-
 -- see: https://github.com/VonHeikemen/lsp-zero.nvim for default keybindings
-
 local lsp = require("lsp-zero").preset({
-  name = "minimal",
-  set_lsp_keymaps = true,
-  manage_nvim_cmp = true,
-  suggest_lsp_servers = false,
+    name = "minimal",
+    set_lsp_keymaps = true,
+    manage_nvim_cmp = true,
+    suggest_lsp_servers = false,
 })
 
 lsp.ensure_installed({
-  "tsserver",
-  "clangd",
-  "eslint",
-  "rust_analyzer"
+    "tsserver",
+    "clangd",
+    "eslint",
+    "rust_analyzer"
 })
 
 require("lspconfig").tsserver.setup({})
@@ -140,7 +136,6 @@ require("lspconfig").tsserver.setup({})
 lsp.setup()
 
 -- SYMBOLS OUTLINE ---
-
 require("symbols-outline").setup({
     position = "bottom",
     width = 35,
@@ -151,31 +146,28 @@ require("symbols-outline").setup({
 })
 
 --- TREE SITTER ---
-
 require"nvim-treesitter.configs".setup {
-  ensure_installed = "all",
-  sync_install = false,
-  auto_install = true,
-  highlight = {
-    enable = true,
-    disable = { "markdown", "json" },
-    additional_vim_regex_highlighting = false,
-  },
+    ensure_installed = "all",
+    sync_install = false,
+    auto_install = true,
+    highlight = {
+        enable = true,
+        disable = { "markdown", "json" },
+        additional_vim_regex_highlighting = false,
+    },
 }
 
 --- GRUVBOX ---
-
 require("gruvbox").setup({
-  contrast = "hard", -- can be "hard", "soft" or empty string
+    contrast = "hard", -- can be "hard", "soft" or empty string
 })
 vim.cmd("colorscheme gruvbox")
 
---- telescope ---
-
+--- TELESCOPE ---
 require("telescope").setup{
-  defaults = {
-    layout_strategy = "vertical",
-    layout_config = { height = 0.95 },
-    preview = false
-  },
+    defaults = {
+        layout_strategy = "vertical",
+        layout_config = { height = 0.95 },
+        preview = false
+    },
 }
