@@ -150,20 +150,14 @@ function obj:windowActivate(w)
   else
     hs.alert.show("unable fo focus " .. name)
   end
-
-end  
+end
 
 function obj:selectWindow(onlyCurrentApp, moveToCurrent)
    local currentWin = hs.window.focusedWindow()
 
    local windowChooser = hs.chooser.new(function(choice)
-       if not choice then
-         hs.alert.show("Nothing to focus");
-         return
-       end
        local v = choice["win"]
        if v then
-         hs.alert.show("doing something, we have a v")
          print(v)
          if moveToCurrent then
            hs.alert.show("move to current")
@@ -177,8 +171,6 @@ function obj:selectWindow(onlyCurrentApp, moveToCurrent)
          end
          v:focus()
          v:application():activate()
-       else
-         hs.alert.show("unable fo focus " .. name)
        end
    end)
 
