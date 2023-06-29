@@ -3,6 +3,7 @@ vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function(use)
     use('wbthomason/packer.nvim')
     use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
+    use('RRethy/vim-illuminate')
     use('junegunn/fzf')
     use('APZelos/blamer.nvim')
     use('simrat39/symbols-outline.nvim')

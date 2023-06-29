@@ -115,6 +115,31 @@ vim.g.NERDTreeShowHidden = 1
 vim.g.NERDTreeShowLineNumbers = 1
 vim.g.NERDTreeWinSize = 40
 
+-- Blamer
+vim.g.NERDTreeMinimalUI = 1
+vim.g.blamer_delay = 100
+vim.g.blamer_show_in_visual_modes = 0
+
+-- Illuminate ---
+require("illuminate").configure({
+    delay = 500
+})
+
+-- change the highlight style
+vim.api.nvim_set_hl(0, "IlluminatedWordText", { link = "Visual" })
+vim.api.nvim_set_hl(0, "IlluminatedWordRead", { link = "Visual" })
+vim.api.nvim_set_hl(0, "IlluminatedWordWrite", { link = "Visual" })
+
+--- auto update the highlight style on colorscheme change
+vim.api.nvim_create_autocmd({ "ColorScheme" }, {
+  pattern = { "*" },
+  callback = function(ev)
+    vim.api.nvim_set_hl(0, "IlluminatedWordText", { link = "Visual" })
+    vim.api.nvim_set_hl(0, "IlluminatedWordRead", { link = "Visual" })
+    vim.api.nvim_set_hl(0, "IlluminatedWordWrite", { link = "Visual" })
+  end
+})
+
 --- LSP ---
 -- see: https://github.com/VonHeikemen/lsp-zero.nvim for default keybindings
 local lsp = require("lsp-zero").preset({
@@ -159,7 +184,10 @@ require"nvim-treesitter.configs".setup {
 
 --- GRUVBOX ---
 require("gruvbox").setup({
-    contrast = "hard", -- can be "hard", "soft" or empty string
+    contrast = "hard",
+    overrides = {
+        Visual = { bg = "#383838" }
+    }
 })
 vim.cmd("colorscheme gruvbox")
 
