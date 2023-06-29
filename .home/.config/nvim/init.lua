@@ -70,7 +70,7 @@ vim.keymap.set("n", "gb", [[:BlamerToggle<cr>]], {})
 -- Prettier
 vim.keymap.set("n", "<leader>P", [[:Prettier<cr>]], {})
 
---- SETS
+--- SETS ---
 vim.g.mapleader = " "
 
 vim.g.vim_json_conceal = 0
