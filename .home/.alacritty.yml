@@ -30,6 +30,8 @@ mouse:
   hide_when_typing: true
 
 window:
+  option_as_alt: Both
+  decorations: full
   title: Terminal
   dimensions:
     columns: 150
