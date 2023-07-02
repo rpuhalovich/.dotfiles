@@ -42,6 +42,7 @@ vim.keymap.set("n", "N", "Nzzzv")
 -- Copying and pasting
 vim.keymap.set("n", "<leader>p", [["+p]])
 vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
+vim.keymap.set({"n", "v"}, "<leader>yy", [[mm_v$h"+y`m]])
 vim.keymap.set({"n", "v"}, "<leader>d", [["+d]])
 
 -- Refresh all buffers (discards current changes)
@@ -70,6 +71,14 @@ vim.keymap.set("n", "gb", [[:BlamerToggle<cr>]], {})
 -- Prettier
 vim.keymap.set("n", "<leader>P", [[:Prettier<cr>]], {})
 
+-- Quick newline args
+vim.keymap.set("n", "<leader>n", [[f,lxi<cr><esc>]], {})
+
+--- SNIPPETS ---
+
+-- Quick log
+vim.keymap.set("n", ",logs", [[oLOG("%s", *FString(""));<esc>F"i]], {})
+
 --- SETS ---
 vim.g.mapleader = " "
 
@@ -80,6 +89,7 @@ vim.opt.autochdir = false
 vim.opt.autoread = true
 vim.opt.backup = false
 vim.opt.cursorline = true
+vim.opt.colorcolumn = "100"
 vim.opt.expandtab = true
 vim.opt.guicursor = ""
 vim.opt.hlsearch = true

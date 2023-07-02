@@ -1,0 +1,46 @@
+" -------------------- Keybinds --------------------
+let mapleader = " "
+
+nnoremap k gk
+nnoremap j gj
+
+nnoremap <leader>a :%y+<cr>
+
+nnoremap <leader>e :Ex<cr>
+nnoremap <leader>f :find<space>
+
+nnoremap <C-u> <C-u>zz
+nnoremap <C-d> <C-d>zz
+
+" move among buffers with tab
+nnoremap <tab> :bnext<cr>
+nnoremap <S-tab> :bprev<cr>
+
+" easier copying and pasting
+nnoremap <leader>p "+p
+nnoremap <leader>P "+P
+vnoremap <leader>y "+y
+vnoremap <leader>Y "+Y
+vnoremap <leader>d "+d
+
+" easier pane navigation
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+" quick vertical split
+nnoremap <leader>v <C-w><C-v><C-w>l
+
+" clear highlighting for search term
+nnoremap <leader>/ :noh<cr>
+
+nnoremap ,logs oLOG("%s", *FString(""));<esc>F"i
+
+" -------------------- Settings --------------------
+set hlsearch
+set ignorecase
+set incsearch
+set number
+set relativenumber
+set so=10
