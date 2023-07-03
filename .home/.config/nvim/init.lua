@@ -124,13 +124,13 @@ vim.g.NERDTreeMouseMode = 3
 vim.g.NERDTreeShowHidden = 1
 vim.g.NERDTreeShowLineNumbers = 1
 vim.g.NERDTreeWinSize = 40
-
--- Blamer
 vim.g.NERDTreeMinimalUI = 1
-vim.g.blamer_delay = 100
-vim.g.blamer_show_in_visual_modes = 0
 
--- Illuminate ---
+-- BLAMER ---
+vim.g.blamer_delay = 100
+-- vim.g.blamer_show_in_visual_modes = 0
+
+--- ILLUMINATE ---
 require("illuminate").configure({
     delay = 50
 })
