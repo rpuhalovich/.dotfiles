@@ -3,3 +3,6 @@
 
 # swap window
 `swap-window -t 0`
+
+# kill all sessions except current
+`kill-session -a`

@@ -89,7 +89,7 @@ vim.opt.autochdir = false
 vim.opt.autoread = true
 vim.opt.backup = false
 vim.opt.cursorline = true
-vim.opt.colorcolumn = "100"
+vim.opt.colorcolumn = ""
 vim.opt.expandtab = true
 vim.opt.guicursor = ""
 vim.opt.hlsearch = true
@@ -109,7 +109,7 @@ vim.opt.shiftwidth = 4
 vim.opt.signcolumn = "yes"
 vim.opt.smartindent = true
 vim.opt.softtabstop = 4
-vim.opt.statusline = "%<%F %h%m%r%=%-8.(%l:%c%V%) %P"
+vim.opt.statusline = "%<%F %h%m%r%=%-16.(%l,%c%V%) %P"
 vim.opt.swapfile = false
 vim.opt.tabstop = 4
 vim.opt.termguicolors = true
@@ -132,7 +132,7 @@ vim.g.blamer_show_in_visual_modes = 0
 
 -- Illuminate ---
 require("illuminate").configure({
-    delay = 500
+    delay = 50
 })
 
 -- change the highlight style
