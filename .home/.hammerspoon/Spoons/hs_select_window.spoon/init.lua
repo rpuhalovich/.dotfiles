@@ -64,6 +64,7 @@ function obj:focus_by_title(t)
    end
    w = obj:find_window_by_title(t)
    if w then
+      w:unminimize()
       w:focus()
    end
    return w
@@ -72,6 +73,7 @@ end
 function obj:focus_by_app(appName)
    for i,v in ipairs(obj.currentWindows) do
       if string.find(v:application():name(), appName) then
+         v:unminimize()
          v:focus()
          return v
       end
@@ -92,7 +94,6 @@ local function callback_window_created(w, appName, event)
       end
       return
    end
-   
    if event == "windowCreated" then
       table.insert(obj.currentWindows, 1, w)
       return
@@ -145,6 +146,7 @@ end
 
 function obj:windowActivate(w)
   if w then
+    w:unminimize()
     w:focus()
     w:application():activate()
   else
@@ -169,6 +171,7 @@ function obj:selectWindow(onlyCurrentApp, moveToCurrent)
            )
            v:moveToScreen(mainScreen)
          end
+         v:unminimize()
          v:focus()
          v:application():activate()
        end
@@ -203,6 +206,7 @@ end
 
 function obj:choosePreviousWindow()
   if obj.currentWindows[2] then
+    obj.currentWindows[2]:unminimize()
     obj.currentWindows[2]:focus()
   end
 end
