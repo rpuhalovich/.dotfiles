@@ -64,8 +64,8 @@ function obj:focus_by_title(t)
    end
    w = obj:find_window_by_title(t)
    if w then
-      w:unminimize()
       w:focus()
+      w:unminimize()
    end
    return w
 end
@@ -73,8 +73,8 @@ end
 function obj:focus_by_app(appName)
    for i,v in ipairs(obj.currentWindows) do
       if string.find(v:application():name(), appName) then
-         v:unminimize()
          v:focus()
+         v:unminimize()
          return v
       end
    end
@@ -146,8 +146,8 @@ end
 
 function obj:windowActivate(w)
   if w then
-    w:unminimize()
     w:focus()
+    w:unminimize()
     w:application():activate()
   else
     hs.alert.show("unable fo focus " .. name)
@@ -171,8 +171,8 @@ function obj:selectWindow(onlyCurrentApp, moveToCurrent)
            )
            v:moveToScreen(mainScreen)
          end
-         v:unminimize()
          v:focus()
+         v:unminimize()
          v:application():activate()
        end
    end)
@@ -206,8 +206,8 @@ end
 
 function obj:choosePreviousWindow()
   if obj.currentWindows[2] then
-    obj.currentWindows[2]:unminimize()
     obj.currentWindows[2]:focus()
+    obj.currentWindows[2]:unminimize()
   end
 end
 
