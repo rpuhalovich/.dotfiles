@@ -69,10 +69,8 @@ vim.keymap.set("n", "<leader>P", [[:Prettier<cr>]], {})
 -- Quick newline args
 vim.keymap.set("n", "<leader>n", [[f,lxi<cr><esc>]], {})
 
---- SNIPPETS ---
-
--- Quick log
-vim.keymap.set("n", ",logs", [[oLOG("%s", *FString(""));<esc>F"i]], {})
+vim.keymap.set("n", "<up>", "<up><cr><c-w>p")
+vim.keymap.set("n", "<down>", "<down><cr><c-w>p")
 
 --- SETS ---
 vim.g.mapleader = " "
