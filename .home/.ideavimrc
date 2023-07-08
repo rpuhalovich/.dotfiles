@@ -20,6 +20,7 @@ nnoremap <S-tab> :bprev<cr>
 nnoremap <leader>p "+p
 nnoremap <leader>P "+P
 vnoremap <leader>y "+y
+nnoremap <leader>yy mm_v$h"+y`m
 vnoremap <leader>Y "+Y
 vnoremap <leader>d "+d
 
