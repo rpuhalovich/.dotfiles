@@ -180,6 +180,7 @@ require("symbols-outline").setup({
     }
 })
 
+
 --- TREE SITTER ---
 require"nvim-treesitter.configs".setup {
     ensure_installed = "all",

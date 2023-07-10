@@ -133,11 +133,13 @@ function obj:list_window_choices(onlyCurrentApp, currentWin)
          end
          if (not onlyCurrentApp) or (app == currentApp) then
             table.insert(windowChoices, {
-                            text = w:title() .. "--" .. appName,
-                            subText = appName,
-                            uuid = i,
-                            image = appImage,
-                            win=w})
+               text = "[" .. appName .. "] " .. w:title(),
+               -- text = w:title(),
+               -- subText = appName,
+               uuid = i,
+               image = appImage,
+               win=w
+            })
          end
       end
    end
