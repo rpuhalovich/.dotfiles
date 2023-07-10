@@ -13,10 +13,8 @@ vim.keymap.set("n", "<leader>a", ":%y+<cr>")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
-vim.keymap.set("n", "<leader>r", [[:e<space>~/.config/nvim/<cr>]])
+vim.keymap.set("n", "<leader>cfg", [[:e<space>~/.config/nvim/<cr>]])
 vim.keymap.set("n", "<leader>c", [[:e<space>~/.dotfiles/.cheatsheets/nvim.md<cr>]])
-
-vim.keymap.set("n", "<leader>cl", [[:set conceallevel=0<cr>]])
 
 -- Quick splits
 vim.keymap.set("n", "<leader>v", [[<C-w><C-v><C-w>l]])
@@ -45,9 +43,6 @@ vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
 vim.keymap.set({"n", "v"}, "<leader>yy", [[mm_v$h"+y`m]])
 vim.keymap.set({"n", "v"}, "<leader>d", [["+d]])
 
--- Refresh all buffers (discards current changes)
-vim.keymap.set("n", "<leader>re", [[:bufdo :edit!<cr>]], {})
-
 -- Close all buffers except open one
 vim.keymap.set("n", "<leader>B", [[:Bdelete other<CR>]])
 
@@ -60,10 +55,10 @@ vim.keymap.set("n", "<leader>gf", [[:Telescope git_files hidden=true<cr>]], {})
 vim.keymap.set("n", "<leader>b", [[:Telescope buffers hidden=true<cr>]], {})
 
 -- Symbols Outline
-vim.keymap.set("n", "<leader>sy", [[:SymbolsOutline<cr>W]], {})
+vim.keymap.set("n", "<leader>o", [[:SymbolsOutline<cr>W]], {})
 
 -- Rename symbol: https://www.reddit.com/r/neovim/comments/rustfp/how_to_config_nvimlspconfig_to_rename_a_variable/
-vim.keymap.set("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", { noremap = true })
+vim.keymap.set("n", "<leader>r", "<cmd>lua vim.lsp.buf.rename()<CR>", { noremap = true })
 
 -- Git Messenger/Blamer
 vim.keymap.set("n", "gb", [[:BlamerToggle<cr>]], {})
@@ -74,10 +69,8 @@ vim.keymap.set("n", "<leader>P", [[:Prettier<cr>]], {})
 -- Quick newline args
 vim.keymap.set("n", "<leader>n", [[f,lxi<cr><esc>]], {})
 
---- SNIPPETS ---
-
--- Quick log
-vim.keymap.set("n", ",logs", [[oLOG("%s", *FString(""));<esc>F"i]], {})
+vim.keymap.set("n", "<up>", "<up><cr><c-w>p")
+vim.keymap.set("n", "<down>", "<down><cr><c-w>p")
 
 --- SETS ---
 vim.g.mapleader = " "

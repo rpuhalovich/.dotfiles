@@ -33,6 +33,9 @@ window:
   option_as_alt: Both
   decorations: full
   title: Terminal
+    # padding:
+    #   x: 0
+    #   y: 30
   dimensions:
     columns: 150
     lines: 100

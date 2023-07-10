@@ -47,6 +47,9 @@ nnoremap ? :<C-f>ivimgrep<space>""<space>**<space>\|<space>copen<esc>0f"a
 " clear highlighting for search term
 nnoremap <leader>/ :noh<cr>
 
+nnoremap <Down> <Down><CR><C-w>p
+nnoremap <Up> <Up><CR><C-w>p
+
 " auto pairs
 inoremap {<cr> {<cr>}<Esc>O
 
