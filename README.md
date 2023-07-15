@@ -8,7 +8,7 @@
 
 ## Homebrew
 
-Install from the Brewfile using the following
+Install from the Brewfile using the following:
 
 ```bash
 brew bundle --file=~/.dotfiles/Brewfile

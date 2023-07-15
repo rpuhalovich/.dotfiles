@@ -111,6 +111,16 @@ vim.opt.undofile = true
 vim.opt.updatetime = 50
 vim.opt.wrap = true
 
+-- show cursor line only in active window
+local cmd = vim.cmd
+cmd [[
+:augroup numbertoggle
+:  autocmd!
+:  autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu && mode() != "i" | set rnu   | endif
+:  autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu                  | set nornu | endif
+:augroup END
+]]
+
 -- NERDTree
 vim.g.NERDTreeMinimalUI = 1
 vim.g.NERDTreeMouseMode = 3
@@ -172,6 +182,7 @@ require("symbols-outline").setup({
         focus_location = "<cr>"
     }
 })
+
 
 --- TREE SITTER ---
 require"nvim-treesitter.configs".setup {
