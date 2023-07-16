@@ -128,6 +128,8 @@ vim.g.NERDTreeShowHidden = 1
 vim.g.NERDTreeShowLineNumbers = 1
 vim.g.NERDTreeWinSize = 40
 vim.g.NERDTreeMinimalUI = 1
+vim.g.NERDTreeDirArrowExpandable = '+'
+vim.g.NERDTreeDirArrowCollapsible = '-'
 
 -- BLAMER ---
 vim.g.blamer_delay = 100
