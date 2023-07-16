@@ -93,7 +93,6 @@ set ts=4 sw=4
 set visualbell
 set wildignore+=**/node_modules/**,**/.git/**
 set wildmenu
-set wildoptions+=pum
 set wrap linebreak
 
 highlight Cursor guifg=white guibg=black
