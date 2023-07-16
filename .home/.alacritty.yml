@@ -32,7 +32,7 @@ mouse:
 window:
   option_as_alt: Both
   decorations: full
-  title: Terminal
+  title: ""
     # padding:
     #   x: 0
     #   y: 30
