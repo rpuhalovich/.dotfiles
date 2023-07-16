@@ -36,7 +36,11 @@ nnoremap <leader>v <C-w><C-v><C-w>l
 " clear highlighting for search term
 nnoremap <leader>/ :noh<cr>
 
-nnoremap ,logs oLOG("%s", *FString(""));<esc>F"i
+" toggle breakpoint
+nnoremap <leader>bp <F9>
+
+nnoremap ,ls oLOG("%s", *FString(""));<esc>F"i
+nnoremap ,ss oif(GEngine) GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT(""));<esc>F"i
 
 " -------------------- Settings --------------------
 set hlsearch

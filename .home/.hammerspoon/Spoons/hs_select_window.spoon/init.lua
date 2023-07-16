@@ -1,46 +1,14 @@
----
---- dmg hammerspoon
----
-
-local obj={}
+local obj = {}
 obj.__index = obj
 
--- metadata
-
 obj.name = "selectWindow"
-obj.version = "0.2"
-obj.author = "dmg <dmg@turingmachine.org>"
-obj.homepage = "https://github.com/dmgerman/hs_select_window.spoon"
-obj.license = "MIT - https://opensource.org/licenses/MIT"
-
--- things to configure
-
-obj.rowsToDisplay = 14 -- how many rows to display in the chooser
-
--- for debugging purposes
-function obj:print_table(t, f)
-   for i,v in ipairs(t) do
-      print(i, f(v))
-   end
-end
-
--- for debugging purposes
-
-function obj:print_windows()
-   function w_info(w)
-      return w:title() .. w:application():name()
-   end
-   obj:print_table(hs.window.visibleWindows(), w_info)
-end
+obj.rowsToDisplay = 14
 
 theWindows = hs.window.filter.new()
 theWindows:setDefaultFilter{}
 theWindows:setSortOrder(hs.window.filter.sortByFocusedLast)
 obj.currentWindows = {}
-obj.previousSelection = nil  -- the idea is that one switches back and forth between two windows all the time
-
-
--- Start by saving all windows
+obj.previousSelection = nil
 
 for i,v in ipairs(theWindows:getWindows()) do
    table.insert(obj.currentWindows, v)
@@ -138,7 +106,7 @@ function obj:list_window_choices(onlyCurrentApp, currentWin)
                -- subText = appName,
                uuid = i,
                image = appImage,
-               win=w
+               win = w
             })
          end
       end

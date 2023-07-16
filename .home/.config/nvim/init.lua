@@ -126,8 +126,10 @@ vim.g.NERDTreeMinimalUI = 1
 vim.g.NERDTreeMouseMode = 3
 vim.g.NERDTreeShowHidden = 1
 vim.g.NERDTreeShowLineNumbers = 1
-vim.g.NERDTreeWinSize = 40
+vim.g.NERDTreeWinSize = 41
 vim.g.NERDTreeMinimalUI = 1
+vim.g.NERDTreeDirArrowExpandable = '+'
+vim.g.NERDTreeDirArrowCollapsible = '-'
 
 -- BLAMER ---
 vim.g.blamer_delay = 100
@@ -182,7 +184,6 @@ require("symbols-outline").setup({
         focus_location = "<cr>"
     }
 })
-
 
 --- TREE SITTER ---
 require"nvim-treesitter.configs".setup {
