@@ -82,8 +82,8 @@ vim.o.background = "dark"
 vim.opt.autochdir = false
 vim.opt.autoread = true
 vim.opt.backup = false
-vim.opt.cursorline = true
 vim.opt.colorcolumn = ""
+vim.opt.cursorline = true
 vim.opt.expandtab = true
 vim.opt.guicursor = ""
 vim.opt.hlsearch = true
@@ -110,6 +110,7 @@ vim.opt.termguicolors = true
 vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.opt.undofile = true
 vim.opt.updatetime = 50
+vim.opt.wildignore:append("**/node_modules/**")
 vim.opt.wrap = true
 
 -- show cursor line only in active window
@@ -187,7 +188,7 @@ require("symbols-outline").setup({
 })
 
 --- TREE SITTER ---
-require"nvim-treesitter.configs".setup {
+require("nvim-treesitter.configs").setup {
     ensure_installed = "all",
     sync_install = false,
     auto_install = true,
@@ -212,6 +213,15 @@ require("telescope").setup{
     defaults = {
         layout_strategy = "vertical",
         layout_config = { height = 0.95 },
-        preview = false
+        preview = false,
+        vimgrep_arguments = {
+          "rg",
+          "--color=never",
+          "--no-heading",
+          "--with-filename",
+          "--line-number",
+          "--column",
+          "--smart-case=false"
+        }
     },
 }
