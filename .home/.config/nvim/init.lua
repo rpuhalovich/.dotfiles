@@ -42,6 +42,7 @@ vim.keymap.set("n", "<leader>p", [["+p]])
 vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
 vim.keymap.set({"n", "v"}, "<leader>yy", [[mm_v$h"+y`m]])
 vim.keymap.set({"n", "v"}, "<leader>d", [["+d]])
+vim.keymap.set({"n", "v"}, "<leader>dd", [[mm_v$h"+y`mdd]])
 
 -- Close all buffers except open one
 vim.keymap.set("n", "<leader>B", [[:Bdelete other<CR>]])
