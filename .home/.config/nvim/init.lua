@@ -186,7 +186,7 @@ require("symbols-outline").setup({
 })
 
 --- TREE SITTER ---
-require"nvim-treesitter.configs".setup {
+require("nvim-treesitter.configs").setup {
     ensure_installed = "all",
     sync_install = false,
     auto_install = true,
@@ -211,6 +211,15 @@ require("telescope").setup{
     defaults = {
         layout_strategy = "vertical",
         layout_config = { height = 0.95 },
-        preview = false
+        preview = false,
+        vimgrep_arguments = {
+          "rg",
+          "--color=never",
+          "--no-heading",
+          "--with-filename",
+          "--line-number",
+          "--column",
+          "--smart-case=false"
+        }
     },
 }
