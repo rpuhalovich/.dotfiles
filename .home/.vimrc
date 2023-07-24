@@ -91,7 +91,7 @@ set splitbelow splitright
 set statusline=%<%F\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 set ts=4 sw=4
 set visualbell
-set wildignore+=**/node_modules/**,**/.git/**
+set wildignore+=**/node_modules/**
 set wildmenu
 set wrap linebreak
 

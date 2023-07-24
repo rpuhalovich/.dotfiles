@@ -52,6 +52,7 @@ vim.keymap.set("n", "<leader>/", [[:noh<cr>]])
 vim.keymap.set("n", "?", [[:Telescope live_grep preview=true hidden=true<cr>]], {})
 vim.keymap.set("v", "?", [["zy:Telescope live_grep preview=true hidden=true default_text=<C-r>z<cr>]], {})
 vim.keymap.set("n", "<leader>f", [[:Telescope find_files hidden=true<cr>]], {})
+vim.keymap.set("n", "<leader>F", [[:find ]], {})
 vim.keymap.set("n", "<leader>gf", [[:Telescope git_files hidden=true<cr>]], {})
 vim.keymap.set("n", "<leader>b", [[:Telescope buffers hidden=true<cr>]], {})
 
@@ -118,8 +119,8 @@ local cmd = vim.cmd
 cmd [[
 :augroup numbertoggle
 :  autocmd!
-:  autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu && mode() != "i" | set rnu   | endif
-:  autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu                  | set nornu | endif
+:  autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu && mode() != "i" | set rnu | endif
+:  autocmd BufLeave,FocusLost,InsertEnter,WinLeave * if &nu | set nornu | endif
 :augroup END
 ]]
 
@@ -211,6 +212,7 @@ vim.cmd("colorscheme gruvbox")
 --- TELESCOPE ---
 require("telescope").setup{
     defaults = {
+        file_ignore_patterns = { "^node_modules/", "^.git/" },
         layout_strategy = "vertical",
         layout_config = { height = 0.95 },
         preview = false,
@@ -218,10 +220,11 @@ require("telescope").setup{
           "rg",
           "--color=never",
           "--no-heading",
+          -- "--no-ignore",
           "--with-filename",
           "--line-number",
           "--column",
-          "--smart-case=false"
+          "--smart-case=false",
         }
     },
 }

@@ -1,4 +1,4 @@
-Neovim/Vim Cheat Sheet
+Cheat Sheet
 
 ## Native Vim
 
