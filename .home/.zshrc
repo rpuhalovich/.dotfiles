@@ -11,6 +11,7 @@ alias python="python3"
 alias rmds="find . -name .DS_Store -delete"
 alias tree="exa --tree"
 alias vim="nvim"
+alias v="nvim"
 alias du="duf"
 
 # cheatsheets

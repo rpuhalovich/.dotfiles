@@ -136,11 +136,11 @@ vim.g.NERDTreeDirArrowCollapsible = '-'
 
 -- BLAMER ---
 vim.g.blamer_delay = 100
--- vim.g.blamer_show_in_visual_modes = 0
+vim.g.blamer_show_in_visual_modes = 0
 
 --- ILLUMINATE ---
 require("illuminate").configure({
-    delay = 50
+    delay = 100
 })
 
 -- change the highlight style
@@ -174,7 +174,16 @@ lsp.ensure_installed({
     "rust_analyzer"
 })
 
-require("lspconfig").tsserver.setup({})
+lsp.configure('tsserver', {})
+lsp.configure('lua-language-server', {
+    settings = {
+        Lua = {
+            diagnostics = {
+                globals = { 'vim' }
+            }
+        }
+    }
+})
 
 lsp.setup()
 
@@ -220,7 +229,6 @@ require("telescope").setup{
           "rg",
           "--color=never",
           "--no-heading",
-          -- "--no-ignore",
           "--with-filename",
           "--line-number",
           "--column",
