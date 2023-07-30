@@ -13,6 +13,7 @@ alias tree="exa --tree"
 alias vim="nvim"
 alias v="nvim"
 alias du="duf"
+alias dev="source _dev"
 
 # cheatsheets
 alias csgit="nvim ~/.dotfiles/.cheatsheets/git.md"
