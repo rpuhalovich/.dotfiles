@@ -1,6 +1,8 @@
 # aliases
 alias c="git add . && git commit && sleep 3 && git push"
 alias cat="bat"
+alias d="source _dev"
+alias du="duf"
 alias ls="exa -F1a --icons --group-directories-first"
 alias node14="nvm install 14.20.0 && nvm use 14.20.0"
 alias node16="nvm install 16.16.0 && nvm use 16.16.0"
@@ -10,10 +12,8 @@ alias py="python3"
 alias python="python3"
 alias rmds="find . -name .DS_Store -delete"
 alias tree="exa --tree"
-alias vim="nvim"
 alias v="nvim"
-alias du="duf"
-alias dev="source _dev"
+alias vim="nvim"
 
 # cheatsheets
 alias csgit="nvim ~/.dotfiles/.cheatsheets/git.md"

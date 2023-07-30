@@ -1,4 +1,4 @@
---- REMAP
+--- REMAPS ---
 vim.g.mapleader = " "
 
 vim.keymap.set("n", "k", [[gk]])
@@ -128,13 +128,13 @@ cmd [[
 vim.g.NERDTreeMinimalUI = 1
 vim.g.NERDTreeMouseMode = 3
 vim.g.NERDTreeShowHidden = 1
-vim.g.NERDTreeShowLineNumbers = 1
+-- vim.g.NERDTreeShowLineNumbers = 1
 vim.g.NERDTreeWinSize = 41
 vim.g.NERDTreeMinimalUI = 1
 vim.g.NERDTreeDirArrowExpandable = '+'
 vim.g.NERDTreeDirArrowCollapsible = '-'
 
--- BLAMER ---
+--- BLAMER ---
 vim.g.blamer_delay = 100
 vim.g.blamer_show_in_visual_modes = 0
 
@@ -226,13 +226,13 @@ require("telescope").setup{
         layout_config = { height = 0.95 },
         preview = false,
         vimgrep_arguments = {
-          "rg",
-          "--color=never",
-          "--no-heading",
-          "--with-filename",
-          "--line-number",
-          "--column",
-          "--smart-case=false",
+            "rg",
+            "--color=never",
+            "--no-heading",
+            "--with-filename",
+            "--line-number",
+            "--column",
+            "--smart-case=false",
         }
     },
 }
