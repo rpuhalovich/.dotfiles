@@ -1,7 +1,6 @@
 # aliases
 alias c="git add . && git commit && sleep 3 && git push"
 alias cat="bat"
-alias d="source _dev"
 alias du="duf"
 alias ls="exa -F1a --icons --group-directories-first"
 alias node14="nvm install 14.20.0 && nvm use 14.20.0"
