@@ -118,9 +118,9 @@ vim.opt.wrap = true
 local cmd = vim.cmd
 cmd [[
 :augroup numbertoggle
-:  autocmd!
-:  autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu && mode() != "i" | set rnu | endif
-:  autocmd BufLeave,FocusLost,InsertEnter,WinLeave * if &nu | set nornu | endif
+: autocmd!
+: autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu && mode() != "i" | set rnu | endif
+: autocmd BufLeave,FocusLost,InsertEnter,WinLeave * if &nu | set nornu | endif
 :augroup END
 ]]
 
@@ -139,9 +139,7 @@ vim.g.blamer_delay = 100
 vim.g.blamer_show_in_visual_modes = 0
 
 --- ILLUMINATE ---
-require("illuminate").configure({
-    delay = 100
-})
+require("illuminate").configure({ delay = 100 })
 
 -- change the highlight style
 vim.api.nvim_set_hl(0, "IlluminatedWordText", { link = "Visual" })
@@ -170,20 +168,10 @@ local lsp = require("lsp-zero").preset({
 lsp.ensure_installed({
     "tsserver",
     "clangd",
-    "eslint",
-    "rust_analyzer"
+    "eslint"
 })
 
 lsp.configure('tsserver', {})
-lsp.configure('lua-language-server', {
-    settings = {
-        Lua = {
-            diagnostics = {
-                globals = { 'vim' }
-            }
-        }
-    }
-})
 
 lsp.setup()
 
@@ -216,6 +204,7 @@ require("gruvbox").setup({
         Visual = { bg = "#383838" }
     }
 })
+
 vim.cmd("colorscheme gruvbox")
 
 --- TELESCOPE ---
