@@ -93,7 +93,7 @@ vim.opt.incsearch = true
 vim.opt.isfname:append("@-@")
 vim.opt.laststatus = 2
 vim.opt.linebreak = true
-vim.opt.list = true
+vim.opt.list = false
 vim.opt.listchars = { space = "·", tab = "> " }
 vim.opt.nu = true
 vim.opt.path:append("**")
