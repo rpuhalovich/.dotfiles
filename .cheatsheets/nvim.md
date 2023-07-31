@@ -14,7 +14,14 @@ Cheat Sheet
 
 ## Treesitter
 
-If your Treesitter starts shitting itself and throwing errors. Try doing a `:PackerSync` followed by a `:TSUpdate` to update Treesitter.
+If your Treesitter starts shitting itself and throwing errors. Try doing the following:
+
+```
+cd ~/.dotfiles/.home/.config/nvim/lua/rp/packer.lua
+:so
+:PackerSync
+:TSUpdate
+```
 
 ## lsp-zero
 
