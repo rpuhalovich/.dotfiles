@@ -9,6 +9,8 @@ vim.keymap.set("n", "0", [[g0]])
 
 vim.keymap.set("n", "<leader>a", ":%y+<cr>")
 
+vim.keymap.set("n", "<C-s>", ":w<cr>")
+
 -- Center the view when going down and up
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
