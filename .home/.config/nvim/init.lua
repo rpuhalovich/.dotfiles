@@ -7,13 +7,13 @@ vim.keymap.set("n", "A", [[g$a]])
 vim.keymap.set("n", "$", [[g$]])
 vim.keymap.set("n", "0", [[g0]])
 
-vim.keymap.set("n", "<leader>a", ":%y+<cr>")
+vim.keymap.set("n", "<leader>a", [[:%y+<cr>]])
 
 vim.keymap.set("n", "<C-s>", ":w<cr>")
 
 -- Center the view when going down and up
-vim.keymap.set("n", "<C-d>", "<C-d>zz")
-vim.keymap.set("n", "<C-u>", "<C-u>zz")
+vim.keymap.set("n", "<C-d>", [[<C-d>zz]])
+vim.keymap.set("n", "<C-u>", [[<C-u>zz]])
 
 vim.keymap.set("n", "<leader>cfg", [[:e<space>~/.config/nvim/<cr>]])
 vim.keymap.set("n", "<leader>c", [[:e<space>~/.dotfiles/.cheatsheets/nvim.md<cr>]])
@@ -23,7 +23,7 @@ vim.keymap.set("n", "<leader>v", [[<C-w><C-v><C-w>l]])
 vim.keymap.set("n", "<leader>s", [[<C-w><C-s><C-w>j]])
 
 -- Open Explorer
-vim.keymap.set("n", "<leader>e", ":e .<cr>")
+vim.keymap.set("n", "<leader>e", [[:e .<cr>]])
 
 -- Move among buffers with tab
 vim.keymap.set("n", "<tab>", [[:bnext<cr>]])
@@ -36,8 +36,8 @@ vim.keymap.set("n", "<C-k>", [[<C-w>k]])
 vim.keymap.set("n", "<C-l>", [[<C-w>l]])
 
 -- Next and prev search results centering
-vim.keymap.set("n", "n", "nzzzv")
-vim.keymap.set("n", "N", "Nzzzv")
+vim.keymap.set("n", "n", [[nzzzv]])
+vim.keymap.set("n", "N", [[Nzzzv]])
 
 -- Copying and pasting
 vim.keymap.set("n", "<leader>p", [["+p]])
@@ -62,7 +62,7 @@ vim.keymap.set("n", "<leader>b", [[:Telescope buffers hidden=true<cr>]], {})
 vim.keymap.set("n", "<leader>o", [[:SymbolsOutline<cr>W]], {})
 
 -- Rename symbol: https://www.reddit.com/r/neovim/comments/rustfp/how_to_config_nvimlspconfig_to_rename_a_variable/
-vim.keymap.set("n", "<leader>r", "<cmd>lua vim.lsp.buf.rename()<CR>", { noremap = true })
+vim.keymap.set("n", "<leader>r", [[<cmd>lua vim.lsp.buf.rename()<CR>]], { noremap = true })
 
 -- Git Messenger/Blamer
 vim.keymap.set("n", "gb", [[:BlamerToggle<cr>]], {})
@@ -73,8 +73,8 @@ vim.keymap.set("n", "<leader>P", [[:Prettier<cr>]], {})
 -- Quick newline args
 vim.keymap.set("n", "<leader>n", [[f,lxi<cr><esc>]], {})
 
-vim.keymap.set("n", "<up>", "<up><cr><c-w>p")
-vim.keymap.set("n", "<down>", "<down><cr><c-w>p")
+vim.keymap.set("n", "<up>", [[<up><cr><c-w>p]])
+vim.keymap.set("n", "<down>", [[<down><cr><c-w>p]])
 
 -- SNIPPETS --
 vim.keymap.set("n", ",ls", [[oLOG("%s", *FString(""));<esc>F"i]])
@@ -119,7 +119,7 @@ vim.opt.updatetime = 50
 vim.opt.wildignore:append("**/node_modules/**")
 vim.opt.wrap = true
 
--- relative number only in the active window
+-- relative number only in the active window and only in normal mode
 local cmd = vim.cmd
 cmd [[
     augroup numbertoggle
