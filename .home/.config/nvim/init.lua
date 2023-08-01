@@ -1,4 +1,4 @@
---- REMAPS ---
+-- REMAPS --
 vim.g.mapleader = " "
 
 vim.keymap.set("n", "k", [[gk]])
@@ -76,7 +76,10 @@ vim.keymap.set("n", "<leader>n", [[f,lxi<cr><esc>]], {})
 vim.keymap.set("n", "<up>", "<up><cr><c-w>p")
 vim.keymap.set("n", "<down>", "<down><cr><c-w>p")
 
---- SETS ---
+-- SNIPPETS --
+vim.keymap.set("n", ",ls", [[oLOG("%s", *FString(""));<esc>F"i]])
+
+-- SETS --
 vim.g.mapleader = " "
 
 vim.g.vim_json_conceal = 0
@@ -116,14 +119,14 @@ vim.opt.updatetime = 50
 vim.opt.wildignore:append("**/node_modules/**")
 vim.opt.wrap = true
 
--- show cursor line only in active window
+-- relative number only in the active window
 local cmd = vim.cmd
 cmd [[
-:augroup numbertoggle
-: autocmd!
-: autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu && mode() != "i" | set rnu | endif
-: autocmd BufLeave,FocusLost,InsertEnter,WinLeave * if &nu | set nornu | endif
-:augroup END
+    augroup numbertoggle
+        autocmd!
+        autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu && mode() != "i" | set rnu | endif
+        autocmd BufLeave,FocusLost,InsertEnter,WinLeave * if &nu | set nornu | endif
+    augroup END
 ]]
 
 -- NERDTree
@@ -136,11 +139,11 @@ vim.g.NERDTreeMinimalUI = 1
 vim.g.NERDTreeDirArrowExpandable = '+'
 vim.g.NERDTreeDirArrowCollapsible = '-'
 
---- BLAMER ---
+-- BLAMER --
 vim.g.blamer_delay = 100
 vim.g.blamer_show_in_visual_modes = 0
 
---- ILLUMINATE ---
+-- ILLUMINATE --
 require("illuminate").configure({ delay = 100 })
 
 -- change the highlight style
@@ -148,7 +151,7 @@ vim.api.nvim_set_hl(0, "IlluminatedWordText", { link = "Visual" })
 vim.api.nvim_set_hl(0, "IlluminatedWordRead", { link = "Visual" })
 vim.api.nvim_set_hl(0, "IlluminatedWordWrite", { link = "Visual" })
 
---- auto update the highlight style on colorscheme change
+-- auto update the highlight style on colorscheme change
 vim.api.nvim_create_autocmd({ "ColorScheme" }, {
   pattern = { "*" },
   callback = function(ev)
@@ -158,7 +161,7 @@ vim.api.nvim_create_autocmd({ "ColorScheme" }, {
   end
 })
 
---- LSP ---
+-- LSP --
 -- see: https://github.com/VonHeikemen/lsp-zero.nvim for default keybindings
 local lsp = require("lsp-zero").preset({
     name = "minimal",
@@ -177,7 +180,7 @@ lsp.configure('tsserver', {})
 
 lsp.setup()
 
--- SYMBOLS OUTLINE ---
+-- SYMBOLS OUTLINE --
 require("symbols-outline").setup({
     position = "bottom",
     width = 35,
@@ -187,7 +190,7 @@ require("symbols-outline").setup({
     }
 })
 
---- TREE SITTER ---
+-- TREE SITTER --
 require("nvim-treesitter.configs").setup {
     ensure_installed = "all",
     sync_install = false,
@@ -199,7 +202,7 @@ require("nvim-treesitter.configs").setup {
     },
 }
 
---- GRUVBOX ---
+-- GRUVBOX --
 require("gruvbox").setup({
     contrast = "hard",
     overrides = {
@@ -209,7 +212,7 @@ require("gruvbox").setup({
 
 vim.cmd("colorscheme gruvbox")
 
---- TELESCOPE ---
+-- TELESCOPE --
 require("telescope").setup{
     defaults = {
         file_ignore_patterns = { "^node_modules/", "^.git/" },
