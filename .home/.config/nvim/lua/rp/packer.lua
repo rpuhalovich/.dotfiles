@@ -7,8 +7,6 @@ return require('packer').startup(function(use)
     use('RRethy/vim-illuminate')
     use('Yggdroot/indentLine')
     use('ellisonleao/gruvbox.nvim')
-    -- use('junegunn/fzf')
-    -- use('junegunn/fzf.vim')
     use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
     use('preservim/nerdtree')
     use('prettier/vim-prettier')
@@ -17,7 +15,7 @@ return require('packer').startup(function(use)
     use('tpope/vim-surround')
     use({ 'nvim-telescope/telescope.nvim', tag = '0.1.1', requires = { {'nvim-lua/plenary.nvim'} } })
     use({ 'windwp/nvim-autopairs', config = function() require('nvim-autopairs').setup {} end })
-    use {
+    use({
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v1.x',
         requires = {
@@ -33,5 +31,5 @@ return require('packer').startup(function(use)
             {'L3MON4D3/LuaSnip'},
             {'rafamadriz/friendly-snippets'},
         }
-    }
+    })
 end)
