@@ -25,10 +25,6 @@ vim.keymap.set("n", "<leader>s", [[<C-w><C-s><C-w>j]])
 -- Open Explorer
 vim.keymap.set("n", "<leader>e", [[:e .<cr>]])
 
--- Move among buffers with tab
-vim.keymap.set("n", "<tab>", [[:bnext<cr>]])
-vim.keymap.set("n", "<S-tab>", [[:bprev<cr>]])
-
 -- Easier pane navigation
 vim.keymap.set("n", "<C-h>", [[<C-w>h]])
 vim.keymap.set("n", "<C-j>", [[<C-w>j]])
@@ -47,22 +43,21 @@ vim.keymap.set({"n", "v"}, "<leader>d", [["+d]])
 vim.keymap.set({"n", "v"}, "<leader>dd", [[mm_v$h"+y`mdd]])
 
 -- Close all buffers except open one
-vim.keymap.set("n", "<leader>B", [[:Bdelete other<CR>]])
+vim.keymap.set("n", "<leader>B", [[:Bdelete other<cr>]])
 
 -- Better file search
 vim.keymap.set("n", "<leader>/", [[:noh<cr>]])
 vim.keymap.set("n", "?", [[:Telescope live_grep preview=true hidden=true<cr>]], {})
-vim.keymap.set("v", "?", [["zy:Telescope live_grep preview=true hidden=true default_text=<C-r>z<cr>]], {})
 vim.keymap.set("n", "<leader>f", [[:Telescope find_files hidden=true<cr>]], {})
 vim.keymap.set("n", "<leader>F", [[:find ]], {})
 vim.keymap.set("n", "<leader>gf", [[:Telescope git_files hidden=true<cr>]], {})
-vim.keymap.set("n", "<leader>b", [[:Telescope buffers hidden=true<cr>]], {})
+vim.keymap.set("n", "<tab>", [[:Telescope buffers hidden=true<cr>]], {})
 
 -- Symbols Outline
 vim.keymap.set("n", "<leader>o", [[:SymbolsOutline<cr>W]], {})
 
 -- Rename symbol: https://www.reddit.com/r/neovim/comments/rustfp/how_to_config_nvimlspconfig_to_rename_a_variable/
-vim.keymap.set("n", "<leader>r", [[<cmd>lua vim.lsp.buf.rename()<CR>]], { noremap = true })
+vim.keymap.set("n", "<leader>r", [[<cmd>lua vim.lsp.buf.rename()<cr>]], { noremap = true })
 
 -- Git Messenger/Blamer
 vim.keymap.set("n", "gb", [[:BlamerToggle<cr>]], {})

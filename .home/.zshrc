@@ -54,5 +54,5 @@ NEWLINE=$'\n'
 setopt PROMPT_SUBST
 export PROMPT='${COLOR_DEF}%d ${COLOR_GIT}$(parse_git_branch)${COLOR_DEF}${NEWLINE}> '
 
-# other exports
+# other
 export AWS_REGION=ap-southeast-2
