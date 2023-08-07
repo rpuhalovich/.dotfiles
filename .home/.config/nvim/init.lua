@@ -83,6 +83,9 @@ vim.opt.backup = false
 vim.opt.colorcolumn = ""
 vim.opt.cursorline = true
 vim.opt.expandtab = true
+vim.opt.formatoptions:remove("c")
+vim.opt.formatoptions:remove("o")
+vim.opt.formatoptions:remove("r")
 vim.opt.guicursor = ""
 vim.opt.hlsearch = true
 vim.opt.ignorecase = true
@@ -121,11 +124,15 @@ cmd [[
     augroup END
 ]]
 
+-- no auto comments anywhere
+cmd [[
+    autocmd FileType * set formatoptions-=cro
+]]
+
 -- NERDTree
 vim.g.NERDTreeMinimalUI = 1
 vim.g.NERDTreeMouseMode = 3
 vim.g.NERDTreeShowHidden = 1
--- vim.g.NERDTreeShowLineNumbers = 1
 vim.g.NERDTreeWinSize = 41
 vim.g.NERDTreeMinimalUI = 1
 vim.g.NERDTreeDirArrowExpandable = '+'

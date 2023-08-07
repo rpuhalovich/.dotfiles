@@ -23,6 +23,15 @@ cd ~/.dotfiles/.home/.config/nvim/lua/rp/packer.lua
 :TSUpdate
 ```
 
+## lsp general
+
+If you don't know what's setting certain options you can use the following to see what set it.
+
+```
+verb set <option you're wanting to inspect>
+eg. verb set fo
+```
+
 ## lsp-zero
 
 [From here.](https://github.com/VonHeikemen/lsp-zero.nvim)
