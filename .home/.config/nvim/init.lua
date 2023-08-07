@@ -70,6 +70,7 @@ vim.keymap.set("n", "<leader>n", [[f,lxi<cr><esc>]], {})
 
 -- SNIPPETS --
 vim.keymap.set("n", ",ls", [[oLOG("%s", *FString(""));<esc>F"i]])
+vim.keymap.set("n", ",mlc", [[j:-1read ~/.config/nvim/snippets/mlc<cr>kddjA<space>]])
 
 -- SETS --
 vim.g.mapleader = " "
@@ -83,9 +84,6 @@ vim.opt.backup = false
 vim.opt.colorcolumn = ""
 vim.opt.cursorline = true
 vim.opt.expandtab = true
-vim.opt.formatoptions:remove("c")
-vim.opt.formatoptions:remove("o")
-vim.opt.formatoptions:remove("r")
 vim.opt.guicursor = ""
 vim.opt.hlsearch = true
 vim.opt.ignorecase = true
