@@ -122,8 +122,8 @@ cmd [[
     augroup END
 ]]
 
--- no auto comments anywhere
-cmd [[ autocmd FileType * set formatoptions-=cro ]]
+cmd [[ autocmd FileType * set formatoptions-=cro ]] -- no auto comments anywhere
+cmd [[ autocmd BufWritePre * :%s/\s\+$//e ]] -- remove trailing whitespace on save
 
 -- NERDTree
 vim.g.NERDTreeMinimalUI = 1
