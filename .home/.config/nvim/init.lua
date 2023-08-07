@@ -123,9 +123,7 @@ cmd [[
 ]]
 
 -- no auto comments anywhere
-cmd [[
-    autocmd FileType * set formatoptions-=cro
-]]
+cmd [[ autocmd FileType * set formatoptions-=cro ]]
 
 -- NERDTree
 vim.g.NERDTreeMinimalUI = 1
