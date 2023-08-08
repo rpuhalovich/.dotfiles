@@ -55,7 +55,7 @@ inoremap {<cr> {<cr>}<Esc>O
 
 " -------------------- Settings --------------------
 syntax on
-colorscheme slate
+colorscheme habamax
 
 if has("gui_running")
 au GUIEnter * simalt ~x

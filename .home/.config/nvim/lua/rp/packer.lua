@@ -5,7 +5,8 @@ return require('packer').startup(function(use)
     use('APZelos/blamer.nvim')
     use('Asheq/close-buffers.vim')
     use('RRethy/vim-illuminate')
-    use('Yggdroot/indentLine')
+    -- use('Yggdroot/indentLine')
+    use('lukas-reineke/indent-blankline.nvim')
     use('ellisonleao/gruvbox.nvim')
     use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
     use('preservim/nerdtree')
@@ -31,5 +32,11 @@ return require('packer').startup(function(use)
             {'L3MON4D3/LuaSnip'},
             {'rafamadriz/friendly-snippets'},
         }
+    })
+    use({
+        'goolord/alpha-nvim',
+        config = function ()
+            require'alpha'.setup(require'alpha.themes.dashboard'.config)
+        end
     })
 end)

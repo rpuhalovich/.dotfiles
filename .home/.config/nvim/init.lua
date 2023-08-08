@@ -52,11 +52,12 @@ vim.keymap.set("n", "<leader>f", [[:Telescope find_files hidden=true<cr>]], {})
 vim.keymap.set("n", "<leader>F", [[:find ]], {})
 vim.keymap.set("n", "<leader>gf", [[:Telescope git_files hidden=true<cr>]], {})
 vim.keymap.set("n", "<tab>", [[:Telescope buffers hidden=true<cr>]], {})
+vim.keymap.set("n", "<leader>b", [[:Telescope buffers hidden=true<cr>]], {})
 
 -- Symbols Outline
 vim.keymap.set("n", "<leader>o", [[:SymbolsOutline<cr>W]], {})
 
--- Rename symbol: https://www.reddit.com/r/neovim/comments/rustfp/how_to_config_nvimlspconfig_to_rename_a_variable/
+-- Rename symbol
 vim.keymap.set("n", "<leader>r", [[<cmd>lua vim.lsp.buf.rename()<cr>]], { noremap = true })
 
 -- Git Messenger/Blamer
@@ -82,7 +83,7 @@ vim.opt.autochdir = false
 vim.opt.autoread = true
 vim.opt.backup = false
 vim.opt.colorcolumn = ""
-vim.opt.cursorline = true
+vim.opt.cursorline = false
 vim.opt.expandtab = true
 vim.opt.guicursor = ""
 vim.opt.hlsearch = true
@@ -113,17 +114,19 @@ vim.opt.wildignore:append("**/node_modules/**")
 vim.opt.wrap = true
 
 -- relative number only in the active window and only in normal mode
-local cmd = vim.cmd
-cmd [[
+vim.cmd([[
     augroup numbertoggle
         autocmd!
         autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu && mode() != "i" | set rnu | endif
         autocmd BufLeave,FocusLost,InsertEnter,WinLeave * if &nu | set nornu | endif
     augroup END
-]]
+]])
 
-cmd [[ autocmd FileType * set formatoptions-=cro ]] -- no auto comments anywhere
-cmd [[ autocmd BufWritePre * :%s/\s\+$//e ]] -- remove trailing whitespace on save
+-- no auto comments anywhere
+vim.cmd([[ autocmd FileType * set formatoptions-=cro ]])
+
+-- remove trailing whitespace on save
+vim.cmd([[ autocmd BufWritePre * :%s/\s\+$//e ]])
 
 -- NERDTree
 vim.g.NERDTreeMinimalUI = 1
@@ -186,16 +189,16 @@ require("symbols-outline").setup({
 })
 
 -- TREE SITTER --
-require("nvim-treesitter.configs").setup {
+require("nvim-treesitter.configs").setup({
     ensure_installed = "all",
     sync_install = false,
     auto_install = true,
     highlight = {
         enable = true,
         disable = { "markdown", "json" },
-        additional_vim_regex_highlighting = false,
-    },
-}
+        additional_vim_regex_highlighting = false
+    }
+})
 
 -- GRUVBOX --
 require("gruvbox").setup({
@@ -208,7 +211,7 @@ require("gruvbox").setup({
 vim.cmd("colorscheme gruvbox")
 
 -- TELESCOPE --
-require("telescope").setup{
+require("telescope").setup({
     defaults = {
         file_ignore_patterns = { "^node_modules/", "^.git/" },
         layout_strategy = "vertical",
@@ -223,5 +226,5 @@ require("telescope").setup{
             "--column",
             "--smart-case=false",
         }
-    },
-}
+    }
+})
