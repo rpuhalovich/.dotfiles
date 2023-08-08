@@ -70,7 +70,7 @@ vim.keymap.set("n", "<leader>n", [[f,lxi<cr><esc>]], {})
 
 -- SNIPPETS --
 vim.keymap.set("n", ",ls", [[oLOG("%s", *FString(""));<esc>F"i]])
-vim.keymap.set("n", ",mlc", [[j:-1read ~/.config/nvim/snippets/mlc<cr>kddjA<space>]])
+vim.keymap.set("n", ",mlc", [[j:-1read ~/.config/nvim/snippets/mlc<cr>kjjA<space>]])
 
 -- SETS --
 vim.g.mapleader = " "
