@@ -42,6 +42,7 @@ return require('packer').startup(function(use)
                 dashboard.button("<leader>e", "File Explorer"),
                 dashboard.button("<leader>f", "Find File"),
                 dashboard.button("?", "Find Word"),
+                dashboard.button("e", "Open New Scratch Buffer", ":enew<cr>"),
                 dashboard.button("q", "Quit", ":qa<cr>")
             }
         end
