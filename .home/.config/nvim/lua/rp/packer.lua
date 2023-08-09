@@ -1,5 +1,5 @@
 -- From: https://github.com/wbthomason/packer.nvim
-vim.cmd [[packadd packer.nvim]]
+vim.cmd([[packadd packer.nvim]])
 return require('packer').startup(function(use)
     use('wbthomason/packer.nvim')
     use('APZelos/blamer.nvim')
@@ -37,6 +37,13 @@ return require('packer').startup(function(use)
         'goolord/alpha-nvim',
         config = function ()
             require'alpha'.setup(require'alpha.themes.dashboard'.config)
+            local dashboard = require("alpha.themes.dashboard")
+            dashboard.section.buttons.val = {
+                dashboard.button("<leader>e", "File Explorer"),
+                dashboard.button("<leader>f", "Find File"),
+                dashboard.button("?", "Find Word"),
+                dashboard.button("q", "Quit", ":qa<cr>")
+            }
         end
     })
 end)
