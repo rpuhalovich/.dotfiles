@@ -201,6 +201,7 @@ require("gruvbox").setup({
     contrast = "hard",
     overrides = {
         Visual = { bg = highlighColour },
+        StatusLine = { fg = backgroundColour },
         SignColumn = { bg = backgroundColour },
         DiagnosticError = { bg = backgroundColour },
         DiagnosticSignError = { bg = backgroundColour },
