@@ -194,10 +194,19 @@ require("nvim-treesitter.configs").setup({
 })
 
 -- GRUVBOX --
+local backgroundColour = "#1C1C1C"
+local highlighColour = "#383838"
+
 require("gruvbox").setup({
     contrast = "hard",
     overrides = {
-        Visual = { bg = "#383838" }
+        Visual = { bg = highlighColour },
+        SignColumn = { bg = backgroundColour },
+        DiagnosticError = { bg = backgroundColour },
+        DiagnosticSignError = { bg = backgroundColour },
+        DiagnosticSignHint = { bg = backgroundColour },
+        DiagnosticSignInfo = { bg = backgroundColour },
+        DiagnosticSignWarn = { bg = backgroundColour }
     }
 })
 
