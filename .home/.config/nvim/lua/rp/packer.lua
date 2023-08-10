@@ -20,7 +20,7 @@ return require('packer').startup(function(use)
         branch = 'v1.x',
         requires = {
             {'neovim/nvim-lspconfig'},
-            { 'williamboman/mason.nvim', run = function() pcall(vim.cmd, 'MasonUpdate') end },
+            {'williamboman/mason.nvim', run = function() pcall(vim.cmd, 'MasonUpdate') end},
             {'williamboman/mason-lspconfig.nvim'},
             {'hrsh7th/nvim-cmp'},
             {'hrsh7th/cmp-nvim-lsp'},
