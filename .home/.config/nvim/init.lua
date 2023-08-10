@@ -56,7 +56,7 @@ vim.keymap.set("n", "?", [[:Telescope live_grep preview=true hidden=true<cr>]], 
 vim.keymap.set("n", "<leader>f", [[:Telescope find_files hidden=true<cr>]], {})
 vim.keymap.set("n", "<leader>F", [[:find ]], {})
 vim.keymap.set("n", "<leader>gf", [[:Telescope git_files hidden=true<cr>]], {})
-vim.keymap.set("n", "<tab>", [[:Telescope buffers hidden=true<cr>]], {})
+-- vim.keymap.set("n", "<tab>", [[:Telescope buffers hidden=true<cr>]], {})
 vim.keymap.set("n", "<leader>b", [[:Telescope buffers hidden=true<cr>]], {})
 
 -- Toggle Indent Lines
@@ -201,7 +201,7 @@ require("gruvbox").setup({
     contrast = "hard",
     overrides = {
         Visual = { bg = highlighColour },
-        StatusLine = { fg = backgroundColour },
+        StatusLine = { fg = "#282828" },
         SignColumn = { bg = backgroundColour },
         DiagnosticError = { bg = backgroundColour },
         DiagnosticSignError = { bg = backgroundColour },
