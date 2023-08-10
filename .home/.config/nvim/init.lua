@@ -1,11 +1,16 @@
 -- REMAPS --
 vim.g.mapleader = " "
 
-vim.keymap.set("n", "k", [[gk]])
-vim.keymap.set("n", "j", [[gj]])
-vim.keymap.set("n", "A", [[g$a]])
 vim.keymap.set("n", "$", [[g$]])
 vim.keymap.set("n", "0", [[g0]])
+vim.keymap.set("n", "A", [[g$a]])
+vim.keymap.set("n", "j", [[gj]])
+vim.keymap.set("n", "k", [[gk]])
+vim.keymap.set("v", "$", [[g$]])
+vim.keymap.set("v", "0", [[g0]])
+vim.keymap.set("v", "A", [[g$a]])
+vim.keymap.set("v", "j", [[gj]])
+vim.keymap.set("v", "k", [[gk]])
 
 vim.keymap.set("n", "<leader>a", [[:%y+<cr>]])
 
@@ -53,6 +58,9 @@ vim.keymap.set("n", "<leader>F", [[:find ]], {})
 vim.keymap.set("n", "<leader>gf", [[:Telescope git_files hidden=true<cr>]], {})
 vim.keymap.set("n", "<tab>", [[:Telescope buffers hidden=true<cr>]], {})
 vim.keymap.set("n", "<leader>b", [[:Telescope buffers hidden=true<cr>]], {})
+
+-- Toggle Indent Lines
+vim.keymap.set("n", "<leader>i", [[:IndentLinesToggle<cr>]], {})
 
 -- Symbols Outline
 vim.keymap.set("n", "<leader>o", [[:SymbolsOutline<cr>W]], {})
@@ -123,10 +131,10 @@ vim.cmd([[
 ]])
 
 -- no auto comments anywhere
-vim.cmd([[ autocmd FileType * set formatoptions-=cro ]])
+vim.cmd([[autocmd FileType * set formatoptions-=cro]])
 
 -- remove trailing whitespace on save
-vim.cmd([[ autocmd BufWritePre * :%s/\s\+$//e ]])
+vim.cmd([[autocmd BufWritePre * :%s/\s\+$//e]])
 
 -- NERDTree
 vim.g.NERDTreeMinimalUI = 1
@@ -137,27 +145,12 @@ vim.g.NERDTreeMinimalUI = 1
 vim.g.NERDTreeDirArrowExpandable = '+'
 vim.g.NERDTreeDirArrowCollapsible = '-'
 
+-- Indent Lines
+vim.g.indentLine_enabled = 0
+
 -- BLAMER --
 vim.g.blamer_delay = 100
 vim.g.blamer_show_in_visual_modes = 0
-
--- ILLUMINATE --
-require("illuminate").configure({ delay = 100 })
-
--- change the highlight style
-vim.api.nvim_set_hl(0, "IlluminatedWordText", { link = "Visual" })
-vim.api.nvim_set_hl(0, "IlluminatedWordRead", { link = "Visual" })
-vim.api.nvim_set_hl(0, "IlluminatedWordWrite", { link = "Visual" })
-
--- auto update the highlight style on colorscheme change
-vim.api.nvim_create_autocmd({ "ColorScheme" }, {
-    pattern = { "*" },
-    callback = function(ev)
-        vim.api.nvim_set_hl(0, "IlluminatedWordText", { link = "Visual" })
-        vim.api.nvim_set_hl(0, "IlluminatedWordRead", { link = "Visual" })
-        vim.api.nvim_set_hl(0, "IlluminatedWordWrite", { link = "Visual" })
-    end
-})
 
 -- LSP --
 -- see: https://github.com/VonHeikemen/lsp-zero.nvim for default keybindings
