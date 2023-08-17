@@ -38,8 +38,9 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-" quick vertical split
+" quick splits
 nnoremap <leader>v <C-w><C-v><C-w>l
+nnoremap <leader>s <C-w><C-s><C-w>j
 
 " better file searching
 nnoremap ? :<C-f>ivimgrep<space>""<space>**<space>\|<space>copen<esc>0f"a

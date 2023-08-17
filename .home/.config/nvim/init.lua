@@ -19,6 +19,8 @@ vim.keymap.set("n", "<C-s>", ":w<cr>")
 -- Center the view when going down and up
 vim.keymap.set("n", "<C-d>", [[<C-d>zz]])
 vim.keymap.set("n", "<C-u>", [[<C-u>zz]])
+vim.keymap.set("v", "<C-d>", [[<C-d>zz]])
+vim.keymap.set("v", "<C-u>", [[<C-u>zz]])
 
 vim.keymap.set("n", "<leader>cfg", [[:e<space>~/.config/nvim/<cr>]])
 vim.keymap.set("n", "<leader>c", [[:e<space>~/.dotfiles/.cheatsheets/nvim.md<cr>]])
@@ -52,30 +54,29 @@ vim.keymap.set("n", "<leader>B", [[:Bdelete other<cr>]])
 
 -- Better file search
 vim.keymap.set("n", "<leader>/", [[:noh<cr>]])
-vim.keymap.set("n", "?", [[:Telescope live_grep preview=true hidden=true<cr>]], {})
-vim.keymap.set("n", "<leader>f", [[:Telescope find_files hidden=true<cr>]], {})
-vim.keymap.set("n", "<leader>F", [[:find ]], {})
-vim.keymap.set("n", "<leader>gf", [[:Telescope git_files hidden=true<cr>]], {})
--- vim.keymap.set("n", "<tab>", [[:Telescope buffers hidden=true<cr>]], {})
-vim.keymap.set("n", "<leader>b", [[:Telescope buffers hidden=true<cr>]], {})
+vim.keymap.set("n", "?", [[:Telescope live_grep preview=true hidden=true<cr>]])
+vim.keymap.set("n", "<leader>f", [[:Telescope find_files hidden=true<cr>]])
+vim.keymap.set("n", "<leader>F", [[:find ]])
+vim.keymap.set("n", "<leader>gf", [[:Telescope git_files hidden=true<cr>]])
+vim.keymap.set("n", "<leader>b", [[:Telescope buffers hidden=true<cr>]])
 
 -- Toggle Indent Lines
-vim.keymap.set("n", "<leader>i", [[:IndentLinesToggle<cr>]], {})
+vim.keymap.set("n", "<leader>i", [[:IndentLinesToggle<cr>]])
 
 -- Symbols Outline
-vim.keymap.set("n", "<leader>o", [[:SymbolsOutline<cr>W]], {})
+vim.keymap.set("n", "<leader>o", [[:SymbolsOutline<cr>W]])
 
 -- Rename symbol
 vim.keymap.set("n", "<leader>r", [[<cmd>lua vim.lsp.buf.rename()<cr>]], { noremap = true })
 
 -- Git Messenger/Blamer
-vim.keymap.set("n", "gb", [[:BlamerToggle<cr>]], {})
+vim.keymap.set("n", "gb", [[:BlamerToggle<cr>]])
 
 -- Prettier
-vim.keymap.set("n", "<leader>P", [[:Prettier<cr>]], {})
+vim.keymap.set("n", "<leader>P", [[:Prettier<cr>]])
 
 -- Quick newline args
-vim.keymap.set("n", "<leader>n", [[f,lxi<cr><esc>]], {})
+vim.keymap.set("n", "<leader>n", [[f,lxi<cr><esc>]])
 
 -- SNIPPETS --
 vim.keymap.set("n", ",ls", [[oLOG("%s", *FString(""));<esc>F"i]])
@@ -229,6 +230,7 @@ require("telescope").setup({
             "--line-number",
             "--column",
             "--smart-case=false",
+            "--hidden"
         }
     }
 })
