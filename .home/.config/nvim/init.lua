@@ -14,8 +14,6 @@ vim.keymap.set("v", "k", [[gk]])
 
 vim.keymap.set("n", "<leader>a", [[:%y+<cr>]])
 
-vim.keymap.set("n", "<C-s>", ":w<cr>")
-
 -- Center the view when going down and up
 vim.keymap.set("n", "<C-d>", [[<C-d>zz]])
 vim.keymap.set("n", "<C-u>", [[<C-u>zz]])
@@ -85,6 +83,9 @@ vim.keymap.set("n", ",mlc", [[j:-1read ~/.config/nvim/snippets/mlc<cr>kjjA<space
 -- SETS --
 vim.g.mapleader = " "
 
+vim.opt.number = true
+vim.opt.relativenumber = true
+
 vim.g.vim_json_conceal = 0
 vim.go.conceallevel = 0
 vim.o.background = "dark"
@@ -103,9 +104,7 @@ vim.opt.laststatus = 2
 vim.opt.linebreak = true
 vim.opt.list = false
 vim.opt.listchars = { space = "·", tab = "> " }
-vim.opt.nu = true
 vim.opt.path:append("**")
-vim.opt.relativenumber = true
 vim.opt.ruler = true
 vim.opt.scrolloff = 10
 vim.opt.shiftwidth = 4
