@@ -4,17 +4,13 @@ vim.cmd([[packadd packer.nvim]])
 return require('packer').startup(function(use)
     use('wbthomason/packer.nvim')
     use('APZelos/blamer.nvim')
-    use('Asheq/close-buffers.vim')
-    use('Yggdroot/indentLine')
     use('ellisonleao/gruvbox.nvim')
     use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
     use('preservim/nerdtree')
-    use('prettier/vim-prettier')
     use('simrat39/symbols-outline.nvim')
     use('tpope/vim-fugitive')
     use('tpope/vim-surround')
     use({'nvim-telescope/telescope.nvim', tag = '0.1.1', requires = {{'nvim-lua/plenary.nvim'}}})
-    -- use({'windwp/nvim-autopairs', config = function() require('nvim-autopairs').setup {} end})
     use({
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v1.x',
