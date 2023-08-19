@@ -12,6 +12,7 @@ vim.keymap.set("v", "A", [[g$a]])
 vim.keymap.set("v", "j", [[gj]])
 vim.keymap.set("v", "k", [[gk]])
 
+-- Copy Whole File
 vim.keymap.set("n", "<leader>a", [[:%y+<cr>]])
 
 -- Quick Save All
@@ -49,9 +50,9 @@ vim.keymap.set("n", "N", [[Nzzzv]])
 -- Copying and pasting
 vim.keymap.set("n", "<leader>p", [["+p]])
 vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
-vim.keymap.set({"n", "v"}, "<leader>yy", [[mm_v$h"+y`m]])
+-- vim.keymap.set({"n", "v"}, "<leader>yy", [[mm_v$h"+y`m]])
 vim.keymap.set({"n", "v"}, "<leader>d", [["+d]])
-vim.keymap.set({"n", "v"}, "<leader>dd", [[mm_v$h"+y`mdd]])
+-- vim.keymap.set({"n", "v"}, "<leader>dd", [[mm_v$h"+y`mdd]])
 
 -- Close all buffers except open one
 vim.keymap.set("n", "<leader>B", [[:%bd|e#<cr>]])
@@ -121,7 +122,7 @@ vim.opt.statusline = "%<%F %h%m%r%=%-16.(%l,%c%V%) %P"
 vim.opt.swapfile = false
 vim.opt.tabstop = 4
 vim.opt.termguicolors = true
-vim.opt.timeoutlen = 600
+vim.opt.timeoutlen = 500
 vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.opt.undofile = true
 vim.opt.updatetime = 50
