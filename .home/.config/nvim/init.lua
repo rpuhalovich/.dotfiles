@@ -115,6 +115,7 @@ vim.opt.statusline = "%<%F %h%m%r%=%-16.(%l,%c%V%) %P"
 vim.opt.swapfile = false
 vim.opt.tabstop = 4
 vim.opt.termguicolors = true
+vim.opt.timeoutlen = 300
 vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.opt.undofile = true
 vim.opt.updatetime = 50

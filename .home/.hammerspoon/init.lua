@@ -44,8 +44,8 @@ hs.hotkey.bind({"cmd"}, "9", function() launch("1Password 7") end)
 hs.hotkey.bind({"cmd"}, "0", function() launch("Bitwarden") end)
 
 -- window switcher
-local SWbindings = {
-  all_windows = {{"ctrl"}, "space"},
-  app_windows = {{"ctrl", "shift"}, "space"}
-}
-spoon.hs_select_window:bindHotkeys(SWbindings)
+-- local SWbindings = {
+--   all_windows = {{"ctrl"}, "space"},
+--   app_windows = {{"ctrl", "shift"}, "space"}
+-- }
+-- spoon.hs_select_window:bindHotkeys(SWbindings)
