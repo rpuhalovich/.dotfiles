@@ -12,7 +12,11 @@ vim.keymap.set("v", "A", [[g$a]])
 vim.keymap.set("v", "j", [[gj]])
 vim.keymap.set("v", "k", [[gk]])
 
-vim.keymap.set("n", "<leader>a", [[:%y+<cr>]])
+-- Copy Whole File
+-- vim.keymap.set("n", "<leader>a", [[:%y+<cr>]])
+
+-- Quick Save
+vim.keymap.set("n", "s", [[:w<cr>]])
 
 -- Center the view when going down and up
 vim.keymap.set("n", "<C-d>", [[<C-d>zz]])
@@ -26,6 +30,11 @@ vim.keymap.set("n", "<leader>c", [[:e<space>~/.dotfiles/.cheatsheets/nvim.md<cr>
 -- Quick splits
 vim.keymap.set("n", "<leader>v", [[<C-w><C-v><C-w>l]])
 vim.keymap.set("n", "<leader>s", [[<C-w><C-s><C-w>j]])
+
+-- Auto Pairs
+vim.keymap.set("i", "{<cr>", [[{<cr>}<Esc>O]])
+vim.keymap.set("i", "(<cr>", [[(<cr>)<Esc>O]])
+vim.keymap.set("i", "[<cr>", [[[<cr>]<Esc>O]])
 
 -- Open Explorer
 vim.keymap.set("n", "<leader>e", [[:e .<cr>]])
@@ -43,12 +52,12 @@ vim.keymap.set("n", "N", [[Nzzzv]])
 -- Copying and pasting
 vim.keymap.set("n", "<leader>p", [["+p]])
 vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
-vim.keymap.set({"n", "v"}, "<leader>yy", [[mm_v$h"+y`m]])
+-- vim.keymap.set({"n", "v"}, "<leader>yy", [[mm_v$h"+y`m]])
 vim.keymap.set({"n", "v"}, "<leader>d", [["+d]])
-vim.keymap.set({"n", "v"}, "<leader>dd", [[mm_v$h"+y`mdd]])
+-- vim.keymap.set({"n", "v"}, "<leader>dd", [[mm_v$h"+y`mdd]])
 
 -- Close all buffers except open one
-vim.keymap.set("n", "<leader>B", [[:Bdelete other<cr>]])
+vim.keymap.set("n", "<leader>B", [[:%bd|e#<cr>]])
 
 -- Better file search
 vim.keymap.set("n", "<leader>/", [[:noh<cr>]])
@@ -58,17 +67,11 @@ vim.keymap.set("n", "<leader>F", [[:find ]])
 vim.keymap.set("n", "<leader>gf", [[:Telescope git_files hidden=true<cr>]])
 vim.keymap.set("n", "<leader>b", [[:Telescope buffers hidden=true<cr>]])
 
--- Toggle Indent Lines
-vim.keymap.set("n", "<leader>i", [[:IndentLinesToggle<cr>]])
-
 -- Symbols Outline
 vim.keymap.set("n", "<leader>o", [[:SymbolsOutline<cr>W]])
 
 -- Rename symbol
 vim.keymap.set("n", "<leader>r", [[<cmd>lua vim.lsp.buf.rename()<cr>]], { noremap = true })
-
--- Git Messenger/Blamer
-vim.keymap.set("n", "gb", [[:BlamerToggle<cr>]])
 
 -- Prettier
 vim.keymap.set("n", "<leader>P", [[:Prettier<cr>]])
@@ -115,6 +118,7 @@ vim.opt.statusline = "%<%F %h%m%r%=%-16.(%l,%c%V%) %P"
 vim.opt.swapfile = false
 vim.opt.tabstop = 4
 vim.opt.termguicolors = true
+vim.opt.timeoutlen = 500
 vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.opt.undofile = true
 vim.opt.updatetime = 50
@@ -144,9 +148,6 @@ vim.g.NERDTreeWinSize = 41
 vim.g.NERDTreeMinimalUI = 1
 vim.g.NERDTreeDirArrowExpandable = '+'
 vim.g.NERDTreeDirArrowCollapsible = '-'
-
--- Indent Lines
-vim.g.indentLine_enabled = 0
 
 -- BLAMER --
 vim.g.blamer_delay = 100
