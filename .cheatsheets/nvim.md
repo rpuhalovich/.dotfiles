@@ -12,6 +12,10 @@ Cheat Sheet
 - Use ^Q to put results in quickfix.
 - Use `:cdo <sed command>`. eg. `:cdo s/something/somethingElse/gc`.
 
+## Edit command mode commands with vim keybindings
+
+In command mode press `<c-f>` to bring up a command edit window.
+
 ## Treesitter
 
 If your Treesitter starts shitting itself and throwing errors. Try doing the following:
