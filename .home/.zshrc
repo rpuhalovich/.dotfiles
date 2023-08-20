@@ -17,6 +17,7 @@ alias vim="nvim"
 alias csgit="nvim ~/.dotfiles/.cheatsheets/git.md"
 alias cstmux="nvim ~/.dotfiles/.cheatsheets/tmux.md"
 alias csvim="nvim ~/.dotfiles/.cheatsheets/nvim.md"
+alias csunreal="nvim ~/.dotfiles/.cheatsheets/unreal.md"
 
 # global init stuff
 autoload -Uz compinit

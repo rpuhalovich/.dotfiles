@@ -13,9 +13,9 @@ vim.keymap.set("v", "j", [[gj]])
 vim.keymap.set("v", "k", [[gk]])
 
 -- Copy Whole File
-vim.keymap.set("n", "<leader>a", [[:%y+<cr>]])
+-- vim.keymap.set("n", "<leader>a", [[:%y+<cr>]])
 
--- Quick Save All
+-- Quick Save
 vim.keymap.set("n", "s", [[:w<cr>]])
 
 -- Center the view when going down and up
