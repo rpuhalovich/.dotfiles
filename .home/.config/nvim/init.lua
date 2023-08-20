@@ -65,17 +65,11 @@ vim.keymap.set("n", "<leader>F", [[:find ]])
 vim.keymap.set("n", "<leader>gf", [[:Telescope git_files hidden=true<cr>]])
 vim.keymap.set("n", "<leader>b", [[:Telescope buffers hidden=true<cr>]])
 
--- Toggle Indent Lines
-vim.keymap.set("n", "<leader>i", [[:IndentLinesToggle<cr>]])
-
 -- Symbols Outline
 vim.keymap.set("n", "<leader>o", [[:SymbolsOutline<cr>W]])
 
 -- Rename symbol
 vim.keymap.set("n", "<leader>r", [[<cmd>lua vim.lsp.buf.rename()<cr>]], { noremap = true })
-
--- Git Messenger/Blamer
-vim.keymap.set("n", "gb", [[:BlamerToggle<cr>]])
 
 -- Prettier
 vim.keymap.set("n", "<leader>P", [[:Prettier<cr>]])
@@ -152,9 +146,6 @@ vim.g.NERDTreeWinSize = 41
 vim.g.NERDTreeMinimalUI = 1
 vim.g.NERDTreeDirArrowExpandable = '+'
 vim.g.NERDTreeDirArrowCollapsible = '-'
-
--- Indent Lines
-vim.g.indentLine_enabled = 0
 
 -- BLAMER --
 vim.g.blamer_delay = 100
