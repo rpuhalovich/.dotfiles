@@ -13,7 +13,7 @@ vim.keymap.set("v", "j", [[gj]])
 vim.keymap.set("v", "k", [[gk]])
 
 -- Copy Whole File
--- vim.keymap.set("n", "<leader>a", [[:%y+<cr>]])
+vim.keymap.set("n", "<leader>a", [[:%y+<cr>]])
 
 -- Quick Save
 vim.keymap.set("n", "s", [[:w<cr>]])
@@ -33,8 +33,8 @@ vim.keymap.set("n", "<leader>s", [[<C-w><C-s><C-w>j]])
 
 -- Auto Pairs
 vim.keymap.set("i", "{<cr>", [[{<cr>}<Esc>O]])
-vim.keymap.set("i", "(<cr>", [[(<cr>)<Esc>O]])
-vim.keymap.set("i", "[<cr>", [[[<cr>]<Esc>O]])
+-- vim.keymap.set("i", "(<cr>", [[(<cr>)<Esc>O]])
+-- vim.keymap.set("i", "[<cr>", [[[<cr>]<Esc>O]])
 
 -- Open Explorer
 vim.keymap.set("n", "<leader>e", [[:e .<cr>]])
@@ -126,13 +126,13 @@ vim.opt.wildignore:append("**/node_modules/**")
 vim.opt.wrap = true
 
 -- relative number only in the active window and only in normal mode
-vim.cmd([[
-    augroup numbertoggle
-        autocmd!
-        autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu && mode() != "i" | set rnu | endif
-        autocmd BufLeave,FocusLost,InsertEnter,WinLeave * if &nu | set nornu | endif
-    augroup END
-]])
+-- vim.cmd([[
+--     augroup numbertoggle
+--         autocmd!
+--         autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu && mode() != "i" | set rnu | endif
+--         autocmd BufLeave,FocusLost,InsertEnter,WinLeave * if &nu | set nornu | endif
+--     augroup END
+-- ]])
 
 -- no auto comments anywhere
 vim.cmd([[autocmd FileType * set formatoptions-=cro]])
