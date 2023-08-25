@@ -68,13 +68,16 @@ vim.keymap.set("n", "<leader>gf", [[:Telescope git_files hidden=true<cr>]])
 vim.keymap.set("n", "<leader>b", [[:Telescope buffers hidden=true<cr>]])
 
 -- Symbols Outline
-vim.keymap.set("n", "<leader>o", [[:SymbolsOutline<cr>W]])
+vim.keymap.set("n", "go", [[:SymbolsOutline<cr>W]])
 
 -- Rename symbol
 vim.keymap.set("n", "<leader>r", [[<cmd>lua vim.lsp.buf.rename()<cr>]], { noremap = true })
 
 -- Prettier
 vim.keymap.set("n", "<leader>P", [[:Prettier<cr>]])
+
+-- Git Blame
+vim.keymap.set("n", "gb", [[:G blame<cr>]])
 
 -- Quick newline args
 vim.keymap.set("n", "<leader>n", [[f,lxi<cr><esc>]])
