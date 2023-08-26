@@ -5,7 +5,7 @@ filetype off
 let mapleader = " "
 set wildcharm=<C-z> " for tab completion in maps
 
-nnoremap <leader>r :e<space>~\.vimrc<cr>
+nnoremap <leader>cfg :e<space>~\.vimrc<cr>
 
 nnoremap k gk
 nnoremap j gj
@@ -66,7 +66,6 @@ set autoindent
 set backspace=indent,eol,start
 set belloff=all
 set conceallevel=0
-set cursorline
 set expandtab
 set hidden
 set hlsearch
@@ -82,9 +81,7 @@ set nohlsearch
 set noshowmode
 set noswapfile
 set noundofile
-set number
 set path+=**
-set relativenumber
 set ruler
 set smartindent
 set so=10

@@ -117,7 +117,7 @@ vim.opt.shiftwidth = 4
 vim.opt.signcolumn = "yes"
 vim.opt.smartindent = true
 vim.opt.softtabstop = 4
-vim.opt.statusline = "%<%F %h%m%r%=%-16.(%l,%c%V%) %P"
+-- vim.opt.statusline = "%<%F %h%m%r%=%-16.(%l,%c%V%) %P"
 vim.opt.swapfile = false
 vim.opt.tabstop = 4
 vim.opt.termguicolors = true
