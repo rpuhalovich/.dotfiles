@@ -148,7 +148,6 @@ vim.g.NERDTreeMinimalUI = 1
 vim.g.NERDTreeMouseMode = 3
 vim.g.NERDTreeShowHidden = 1
 vim.g.NERDTreeWinSize = 41
-vim.g.NERDTreeMinimalUI = 1
 vim.g.NERDTreeHighlightCursorline = 0
 vim.g.NERDTreeDirArrowExpandable = '+'
 vim.g.NERDTreeDirArrowCollapsible = '-'
