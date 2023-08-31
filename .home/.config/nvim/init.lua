@@ -136,7 +136,7 @@ vim.cmd([[autocmd BufWritePre * :%s/\s\+$//e]])
 vim.g.NERDTreeMinimalUI = 1
 vim.g.NERDTreeMouseMode = 3
 vim.g.NERDTreeShowHidden = 1
-vim.g.NERDTreeWinSize = 41
+vim.g.NERDTreeWinSize = 40
 vim.g.NERDTreeHighlightCursorline = 0
 vim.g.NERDTreeDirArrowExpandable = '+'
 vim.g.NERDTreeDirArrowCollapsible = '-'
@@ -169,6 +169,7 @@ require("symbols-outline").setup({
     position = "bottom",
     width = 35,
     autofold_depth = 0,
+    auto_unfold_hover = false,
     keymaps = {
         focus_location = "<cr>"
     }
