@@ -26,7 +26,7 @@ wfTerminal:subscribe(hs.window.filter.windowCreated, function(window, applicatio
 end)
 
 -- caps enabling
--- hs.hotkey.bind({"shift"}, "escape", function() hs.hid.capslock.toggle() end)
+hs.hotkey.bind({"cmd"}, "escape", function() hs.hid.capslock.toggle() end)
 
 -- maximize all windows
 hs.hotkey.bind({"cmd", "ctrl", "option"}, "up", function()
