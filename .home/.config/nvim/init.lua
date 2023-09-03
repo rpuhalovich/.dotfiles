@@ -88,8 +88,8 @@ vim.keymap.set("n", ",mlc", [[j:-1read ~/.config/nvim/snippets/mlc<cr>kjjA<space
 -- SETS --
 vim.g.mapleader = " "
 
-vim.opt.number = false
-vim.opt.relativenumber = false
+vim.opt.number = true
+vim.opt.relativenumber = true
 
 vim.g.vim_json_conceal = 0
 vim.go.conceallevel = 0

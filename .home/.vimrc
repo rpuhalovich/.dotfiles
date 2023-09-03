@@ -7,8 +7,16 @@ set wildcharm=<C-z> " for tab completion in maps
 
 nnoremap <leader>cfg :e<space>~\.vimrc<cr>
 
-nnoremap k gk
+nnoremap $ g$
+nnoremap 0 g0
+nnoremap A g$a
 nnoremap j gj
+nnoremap k gk
+nnoremap $ g$
+nnoremap 0 g0
+nnoremap A g$a
+nnoremap j gj
+nnoremap k gk
 
 nnoremap <leader>b :buffer<space><c-z>
 nnoremap <leader>B mm:%bd\|e#\|bd#<cr>`m
