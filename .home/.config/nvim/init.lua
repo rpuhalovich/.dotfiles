@@ -156,9 +156,10 @@ local lsp = require("lsp-zero").preset({
 
 lsp.ensure_installed({
     "tsserver",
-    "clangd",
     "eslint"
 })
+
+vim.cmd([[autocmd FileType cpp :lua require('cmp').setup.buffer({ enabled = false })]])
 
 lsp.configure('tsserver', {})
 

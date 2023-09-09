@@ -25,7 +25,7 @@ compinit
 bindkey -v '^?' backward-delete-char
 bindkey '^Y' autosuggest-accept
 touch ~/.hushlogin
-history -p
+# history -p
 
 # personal scripts
 export PATH=$PATH:~/.scripts
