@@ -4,7 +4,7 @@ alias cat="bat"
 alias du="duf"
 alias ls="exa -F1a --icons --group-directories-first"
 alias node16="nvm install 16.16.0 && nvm use 16.16.0"
-alias node18="nvm install 18.16.0 && nvm use 18.16.0"
+alias node18="nvm install 18.17.1 && nvm use 18.17.1"
 alias pip="pip3"
 alias py="python3"
 alias python="python3"
@@ -33,7 +33,7 @@ export PATH=$PATH:~/.scripts-local
 
 # nvm
 source $(brew --prefix nvm)/nvm.sh
-nvm use 18.16.0 --silent
+nvm use 18.17.1 --silent
 export NVM_DIR=~/.nvm
 
 # bat

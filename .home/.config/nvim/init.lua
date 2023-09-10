@@ -12,9 +12,6 @@ vim.keymap.set("v", "A", [[g$a]])
 vim.keymap.set("v", "j", [[gj]])
 vim.keymap.set("v", "k", [[gk]])
 
--- K is annoying
-vim.keymap.set("n", "K", [[]])
-
 -- Copy Whole File
 vim.keymap.set("n", "<leader>a", [[:%y+<cr>]])
 
@@ -152,6 +149,11 @@ local lsp = require("lsp-zero").preset({
     set_lsp_keymaps = true,
     manage_nvim_cmp = true,
     suggest_lsp_servers = false,
+})
+
+lsp.default_keymaps({
+  buffer = bufnr,
+  omit = {'<cr>'}
 })
 
 lsp.ensure_installed({
