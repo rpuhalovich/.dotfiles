@@ -25,8 +25,11 @@ wfTerminal:subscribe(hs.window.filter.windowCreated, function(window, applicatio
   end
 end)
 
--- caps enabling
-hs.hotkey.bind({"cmd"}, "escape", function() hs.hid.capslock.toggle() end)
+-- paste as keystrokes
+hs.hotkey.bind({"cmd", "shift"}, "v", function()
+  local s = hs.pasteboard.getContents()
+  hs.eventtap.keyStrokes(s)
+end)
 
 -- maximize all windows
 hs.hotkey.bind({"cmd", "ctrl", "option"}, "up", function()
