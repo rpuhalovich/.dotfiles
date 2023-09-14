@@ -85,7 +85,7 @@ vim.g.mapleader = " "
 vim.opt.number = false
 vim.opt.relativenumber = false
 
-vim.opt.statusline = "%<%f -- %-12.(L%l C%c %P%) %h%m%r"
+vim.opt.statusline = "%<%f -- %-12.(%lL %cC %P%) %h%m%r"
 
 vim.g.vim_json_conceal = 0
 vim.go.conceallevel = 0
