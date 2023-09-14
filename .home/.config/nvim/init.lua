@@ -109,6 +109,7 @@ vim.opt.path:append("**")
 vim.opt.ruler = true
 vim.opt.scrolloff = 10
 vim.opt.shiftwidth = 4
+vim.opt.showcmd = false
 vim.opt.signcolumn = "yes"
 vim.opt.smartindent = true
 vim.opt.softtabstop = 4
