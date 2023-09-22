@@ -105,6 +105,7 @@ vim.opt.laststatus = 2
 vim.opt.linebreak = true
 vim.opt.list = false
 vim.opt.listchars = { space = "·", tab = "> " }
+vim.opt.mousemodel = "extend"
 vim.opt.path:append("**")
 vim.opt.ruler = true
 vim.opt.scrolloff = 10

@@ -59,11 +59,13 @@ inoremap {<cr> {<cr>}<Esc>O
 
 " -------------------- Settings --------------------
 syntax on
-colorscheme habamax
+colorscheme default
 
 if has("gui_running")
 au GUIEnter * simalt ~x
 end
+
+set nu rnu
 
 set autoindent
 set backspace=indent,eol,start

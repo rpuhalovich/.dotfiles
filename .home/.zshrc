@@ -2,14 +2,14 @@
 alias c="git add . && git commit && sleep 3 && git push"
 alias cat="bat"
 alias du="duf"
-alias ls="exa -F1a --icons --group-directories-first"
+alias ls="eza -F1a --icons --group-directories-first"
 alias node16="nvm install 16.16.0 && nvm use 16.16.0"
 alias node18="nvm install 18.17.1 && nvm use 18.17.1"
 alias pip="pip3"
 alias py="python3"
 alias python="python3"
 alias rmds="find . -name .DS_Store -delete"
-alias tree="exa --tree"
+alias tree="eza --tree"
 alias v="nvim"
 alias vim="nvim"
 
@@ -39,7 +39,7 @@ export NVM_DIR=~/.nvm
 # bat
 export BAT_THEME="gruvbox-dark"
 
-# exa
+# eza
 export LS_COLORS="$(vivid generate gruvbox-dark-soft)"
 
 # command line customization
