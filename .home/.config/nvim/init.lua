@@ -59,7 +59,6 @@ vim.keymap.set("n", "<leader>B", [[:%bd|e#<cr>]])
 vim.keymap.set("n", "<leader>/", [[:noh<cr>]])
 vim.keymap.set("n", "?", [[:Telescope live_grep preview=true hidden=true<cr>]])
 vim.keymap.set("n", "<leader>f", [[:Telescope find_files hidden=true<cr>]])
-vim.keymap.set("n", "<leader>F", [[:find ]])
 vim.keymap.set("n", "<leader>gf", [[:Telescope git_files hidden=true<cr>]])
 vim.keymap.set("n", "<leader>b", [[:Telescope buffers hidden=true<cr>]])
 
@@ -80,12 +79,10 @@ vim.keymap.set("n", ",ls", [[oLOG("%s", *FString(""));<esc>F"i]])
 vim.keymap.set("n", ",mlc", [[j:-1read ~/.config/nvim/snippets/mlc<cr>kjjA<space>]])
 
 -- SETS --
-vim.g.mapleader = " "
-
-vim.opt.number = false
-vim.opt.relativenumber = false
-
 vim.opt.statusline = "%<%f -- %-12.(%lL %cC %P%) %h%m%r"
+
+vim.opt.number = true
+vim.opt.relativenumber = true
 
 vim.g.vim_json_conceal = 0
 vim.go.conceallevel = 0
