@@ -45,9 +45,6 @@ nnoremap <C-l> <C-w>l
 nnoremap <leader>v <C-w><C-v><C-w>l
 nnoremap <leader>s <C-w><C-s><C-w>j
 
-" better file searching
-nnoremap ? :<C-f>ivimgrep<space>""<space>**<space>\|<space>copen<esc>0f"a
-
 " clear highlighting for search term
 nnoremap <leader>/ :noh<cr>
 
@@ -57,9 +54,14 @@ nnoremap <Up> <Up><CR><C-w>p
 " auto pairs
 inoremap {<cr> {<cr>}<Esc>O
 
+" better file searching
+nnoremap ? :GitGrep<space>
+
+" https://stackoverflow.com/questions/1898987/how-to-exclude-file-patterns-in-vimgrep
+command! -nargs=1 GitGrep noautocmd vimgrep /<args>/gj `git ls-files` | cw
+
 " -------------------- Settings --------------------
 syntax on
-colorscheme default
 
 if has("gui_running")
 au GUIEnter * simalt ~x
@@ -91,7 +93,6 @@ set ruler
 set smartindent
 set so=10
 set splitbelow splitright
-set statusline=%<%F\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 set ts=4 sw=4
 set visualbell
 set wildignore+=**/node_modules/**
