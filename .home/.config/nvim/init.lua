@@ -59,7 +59,6 @@ vim.keymap.set("n", "<leader>B", [[:%bd|e#<cr>]])
 vim.keymap.set("n", "<leader>/", [[:noh<cr>]])
 vim.keymap.set("n", "?", [[:Telescope live_grep preview=true hidden=true<cr>]])
 vim.keymap.set("n", "<leader>f", [[:Telescope find_files hidden=true<cr>]])
-vim.keymap.set("n", "<leader>F", [[:find ]])
 vim.keymap.set("n", "<leader>gf", [[:Telescope git_files hidden=true<cr>]])
 vim.keymap.set("n", "<leader>b", [[:Telescope buffers hidden=true<cr>]])
 
