@@ -131,6 +131,7 @@ vim.cmd([[autocmd BufWritePre * :%s/\s\+$//e]])
 
 -- NERDTree
 vim.g.NERDTreeMinimalUI = 1
+vim.g.NERDTreeMinimalMenu = 1
 vim.g.NERDTreeMouseMode = 3
 vim.g.NERDTreeShowHidden = 1
 vim.g.NERDTreeWinSize = 40
