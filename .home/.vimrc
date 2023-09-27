@@ -62,6 +62,7 @@ command! -nargs=1 GitGrep noautocmd vimgrep /<args>/gj `git ls-files` | cw
 
 " -------------------- Settings --------------------
 syntax on
+colorscheme retrobox
 
 if has("gui_running")
 au GUIEnter * simalt ~x
@@ -69,6 +70,7 @@ end
 
 set nu rnu
 
+set background=dark
 set autoindent
 set backspace=indent,eol,start
 set belloff=all

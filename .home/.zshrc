@@ -1,5 +1,4 @@
 # aliases
-alias c="git add . && git commit && sleep 3 && git push"
 alias cat="bat"
 alias du="duf"
 alias ls="eza -F1a --icons --group-directories-first"
@@ -12,6 +11,12 @@ alias rmds="find . -name .DS_Store -delete"
 alias tree="eza --tree"
 alias v="nvim"
 alias vim="nvim"
+
+# git
+alias c="git add . && git commit && sleep 3 && git push"
+alias gm="git status | grep 'modified:' | sed s/modified\://g | sed 's|^[[:blank:]]*||g'"
+alias gs="git status --short --branch --show-stash"
+alias gd="git difftool"
 
 # cheatsheets
 alias csgit="nvim ~/.dotfiles/.cheatsheets/git.md"
