@@ -14,13 +14,18 @@ alias vim="nvim"
 
 # git
 alias c="git add . && git commit && sleep 3 && git push"
-alias gm="git status | grep 'modified:' | sed s/modified\://g | sed 's|^[[:blank:]]*||g'"
+alias ga="git add ."
+alias gc="git commit"
+alias gcl="git clone --recursive"
+alias gf="git fetch --prune --all"
+alias gm="git ls-files -m"
+alias gb="git branch -b"
 alias gs="git status --short --branch --show-stash"
 alias gd="git difftool"
-alias gl = "log"
-alias glg = "log --graph --topo-order --abbrev-commit --date=short --decorate --all --boundary --pretty=format:'%C(bold blue)<%cn> %Cgreen%ad %Cred%h%Creset -%C(yellow)%d%Creset %s %Creset'"
-alias glo = "log --oneline --pretty=format:'%C(bold blue)<%cn> %Cgreen%ad %Cred%h%Creset -%C(yellow)%d%Creset %s %Creset'"
-alias glt = "log --tags --no-walk --pretty=oneline --abbrev-commit"
+alias gl="git log"
+alias glg="git log --graph --topo-order --abbrev-commit --date=short --decorate --all --boundary --pretty=format:'%C(bold blue)<%cn> %Cgreen%ad %Cred%h%Creset -%C(yellow)%d%Creset %s %Creset'"
+alias glo="git log --oneline --pretty=format:'%C(bold blue)<%cn> %Cgreen%ad %Cred%h%Creset -%C(yellow)%d%Creset %s %Creset'"
+alias glt="git log --tags --no-walk --pretty=oneline --abbrev-commit"
 
 # cheatsheets
 alias csgit="nvim ~/.dotfiles/.cheatsheets/git.md"

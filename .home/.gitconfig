@@ -14,21 +14,6 @@
 [difftool]
 	prompt = false
 	trustExitCode = true
-[alias]
-	a = add .
-	b = branch -a
-	bl = blame
-	c = commit
-	ch = checkout
-	clone = clone --recursive
-	d = difftool
-	dns = diff --name-status
-	f = fetch --prune --all
-	l = log
-	lg = log --graph --topo-order --abbrev-commit --date=short --decorate --all --boundary --pretty=format:'%C(bold blue)<%cn> %Cgreen%ad %Cred%h%Creset -%C(yellow)%d%Creset %s %Creset'
-	lo = log --oneline --pretty=format:'%C(bold blue)<%cn> %Cgreen%ad %Cred%h%Creset -%C(yellow)%d%Creset %s %Creset'
-	lt = log --tags --no-walk --pretty=oneline --abbrev-commit
-	s = status
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
