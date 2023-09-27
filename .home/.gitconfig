@@ -5,6 +5,7 @@
 	defaultBranch = main
 [core]
 	editor = nvim
+    pager = less
 [push]
 	autoSetupRemote = true
 [advice]
