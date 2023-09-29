@@ -57,15 +57,25 @@ nnoremap <Up> <Up><CR><C-w>p
 inoremap {<cr> {<cr>}<Esc>O
 
 " git
-command! -nargs=1 GitGrep noautocmd vimgrep /<args>/gj `git ls-files` | cw
-nnoremap ? :GitGrep<space>
-
-function! GitPath()
-  return system('cat /tmp/tmppath')
+function! Grep(...)
+	return system(join([&grepprg] + [expandcmd(join(a:000, ' '))], ' '))
 endfunction
 
+command! -nargs=+ -complete=file_in_path -bar Grep  cgetexpr Grep(<f-args>)
+
+cnoreabbrev <expr> grep (getcmdtype() ==# ':' && getcmdline() ==# 'grep')  ? 'Grep'  : 'grep'
+
+augroup quickfix
+	autocmd!
+	autocmd QuickFixCmdPost cgetexpr cwindow
+	autocmd QuickFixCmdPost lgetexpr lwindow
+augroup END
+
+" usage: :Grep foo OR :Grep 'foo bar'
+nnoremap ? :Grep<space>
+
 command! -nargs=0 GitFind noautocmd exec '!git ls-files | fzf > /tmp/tmppath'
-nnoremap <leader>f :GitFind<cr><cr>:e `=GitPath()`<cr>
+nnoremap <leader>f :GitFind<cr><cr>:e `=system('cat /tmp/tmppath')`<cr>
 
 " -------------------- Settings --------------------
 syntax on
@@ -77,6 +87,8 @@ end
 
 set nu rnu
 
+set key=
+set cm=blowfish2
 set background=dark
 set autoindent
 set backspace=indent,eol,start
@@ -107,6 +119,8 @@ set visualbell
 set wildignore+=**/node_modules/**
 set wildmenu
 set wrap linebreak
+
+set grepprg=rg\ --hidden\ --vimgrep
 
 highlight Cursor guifg=white guibg=black
 highlight iCursor guifg=white guibg=steelblue

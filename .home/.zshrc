@@ -19,15 +19,17 @@ alias gc="git commit"
 alias gch="git checkout"
 alias gcl="git clone --recursive"
 alias gd="git difftool"
+alias gpl="git pull --no-rebase"
+alias gph="git push"
 alias gf="git fetch --prune --all"
+alias gm="git status --porcelain | grep ' M ' | sed 's/ M //'"
+alias gs="git status --short --branch --show-stash && echo '\n## modified' && gm"
 
 fmt='%C(bold blue)<%cn> %Cgreen%ad %Cred%h%Creset -%C(yellow)%d%Creset %s %Creset'
 alias gl="tput smcup && git log && tput rmcup"
 alias glg="tput smcup && git log --graph --topo-order --abbrev-commit --date=short --decorate --all --boundary --pretty=format:'$fmt' && tput rmcup"
 alias glo="tput smcup && git log --oneline --pretty=format:'$fmt' && tput rmcup"
 alias glt="tput smcup && git log --tags --no-walk --pretty=oneline --abbrev-commit && tput rmcup"
-alias gm="git ls-files -m"
-alias gs="git status --short --branch --show-stash"
 
 # cheatsheets
 alias csgit="nvim ~/.dotfiles/.cheatsheets/git.md"
