@@ -12,16 +12,27 @@ alias tree="eza --tree"
 alias v="nvim"
 
 # git
-fmt='%C(bold blue)<%cn> %Cgreen%ad %Cred%h%Creset -%C(yellow)%d%Creset %s %Creset'
-
 alias c="git add . && git commit && sleep 3 && git push"
 alias ga="git add ."
+<<<<<<< HEAD
+=======
+alias gc="git commit"
+alias gch="git checkout"
+alias gcl="git clone --recursive"
+alias gf="git fetch --prune --all"
+alias gm="git ls-files -m"
+>>>>>>> 6cdd148613d243f75d11a5b7938fafeabf79cb3e
 alias gb="git branch -a"
 alias gc="git commit"
 alias gch="git checkout"
 alias gcl="git clone --recursive"
 alias gd="git difftool"
+<<<<<<< HEAD
 alias gf="git fetch --prune --all"
+=======
+
+fmt='%C(bold blue)<%cn> %Cgreen%ad %Cred%h%Creset -%C(yellow)%d%Creset %s %Creset'
+>>>>>>> 6cdd148613d243f75d11a5b7938fafeabf79cb3e
 alias gl="tput smcup && git log && tput rmcup"
 alias glg="tput smcup && git log --graph --topo-order --abbrev-commit --date=short --decorate --all --boundary --pretty=format:'$fmt' && tput rmcup"
 alias glo="tput smcup && git log --oneline --pretty=format:'$fmt' && tput rmcup"
