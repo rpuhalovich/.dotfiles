@@ -13,13 +13,15 @@ nnoremap A g$a
 nnoremap j gj
 nnoremap k gk
 
+nnoremap s :w<cr>
+nnoremap <c-q> :q<cr>
+
 nnoremap <leader>b :buffer<space><c-z>
 nnoremap <leader>B mm:%bd\|e#\|bd#<cr>`m
 
 nnoremap <leader>a :%y+<cr>
 
 nnoremap <leader>e :Ex<cr>
-nnoremap <leader>f :find<space>
 
 nnoremap <C-u> <C-u>zz
 nnoremap <C-d> <C-d>zz
@@ -54,11 +56,16 @@ nnoremap <Up> <Up><CR><C-w>p
 " auto pairs
 inoremap {<cr> {<cr>}<Esc>O
 
-" better file searching
+" git
+command! -nargs=1 GitGrep noautocmd vimgrep /<args>/gj `git ls-files` | cw
 nnoremap ? :GitGrep<space>
 
-" https://stackoverflow.com/questions/1898987/how-to-exclude-file-patterns-in-vimgrep
-command! -nargs=1 GitGrep noautocmd vimgrep /<args>/gj `git ls-files` | cw
+function! GitPath()
+  return system('cat /tmp/tmppath')
+endfunction
+
+command! -nargs=0 GitFind noautocmd exec '!git ls-files | fzf > /tmp/tmppath'
+nnoremap <leader>f :GitFind<cr><cr>:e `=GitPath()`<cr>
 
 " -------------------- Settings --------------------
 syntax on

@@ -18,6 +18,9 @@ vim.keymap.set("n", "<leader>a", [[:%y+<cr>]])
 -- Quick Save
 vim.keymap.set("n", "s", [[:w<cr>]])
 
+-- Quick Quit
+vim.keymap.set("n", "<c-q>", [[:q<cr>]])
+
 -- Center the view when going down and up
 vim.keymap.set("n", "<C-d>", [[<C-d>zz]])
 vim.keymap.set("n", "<C-u>", [[<C-u>zz]])
