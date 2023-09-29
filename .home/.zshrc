@@ -23,7 +23,7 @@ alias gpl="git pull --no-rebase"
 alias gph="git push"
 alias gf="git fetch --prune --all"
 alias gm="git status --porcelain | grep ' M ' | sed 's/ M //'"
-alias gs="git status --short --branch --show-stash && echo '\n## modified' && gm"
+alias gs="git status --short --branch --show-stash && echo '## modified' && gm"
 
 fmt='%C(bold blue)<%cn> %Cgreen%ad %Cred%h%Creset -%C(yellow)%d%Creset %s %Creset'
 alias gl="tput smcup && git log && tput rmcup"
