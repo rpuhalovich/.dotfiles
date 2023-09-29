@@ -56,26 +56,9 @@ nnoremap <Up> <Up><CR><C-w>p
 " auto pairs
 inoremap {<cr> {<cr>}<Esc>O
 
-" git
-function! Grep(...)
-	return system(join([&grepprg] + [expandcmd(join(a:000, ' '))], ' '))
-endfunction
-
-command! -nargs=+ -complete=file_in_path -bar Grep  cgetexpr Grep(<f-args>)
-
-cnoreabbrev <expr> grep (getcmdtype() ==# ':' && getcmdline() ==# 'grep')  ? 'Grep'  : 'grep'
-
-augroup quickfix
-	autocmd!
-	autocmd QuickFixCmdPost cgetexpr cwindow
-	autocmd QuickFixCmdPost lgetexpr lwindow
-augroup END
-
-" usage: :Grep foo OR :Grep 'foo bar'
+command! -nargs=1 Grep noautocmd vimgrep /<args>/gj ** | cw
 nnoremap ? :Grep<space>
-
-command! -nargs=0 GitFind noautocmd exec '!git ls-files | fzf > /tmp/tmppath'
-nnoremap <leader>f :GitFind<cr><cr>:e `=system('cat /tmp/tmppath')`<cr>
+nnoremap <leader>f :find<space>
 
 " -------------------- Settings --------------------
 syntax on
@@ -119,8 +102,6 @@ set visualbell
 set wildignore+=**/node_modules/**
 set wildmenu
 set wrap linebreak
-
-set grepprg=rg\ --hidden\ --vimgrep
 
 highlight Cursor guifg=white guibg=black
 highlight iCursor guifg=white guibg=steelblue
