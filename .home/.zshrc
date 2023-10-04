@@ -44,9 +44,10 @@ bindkey -v '^?' backward-delete-char
 bindkey '^Y' autosuggest-accept
 touch ~/.hushlogin
 
-# personal scripts
+# path exports
 export PATH=$PATH:~/.scripts
 export PATH=$PATH:~/.scripts-local
+export PATH=$PATH:~/.config/emacs/bin
 
 # nvm
 source $(brew --prefix nvm)/nvm.sh
