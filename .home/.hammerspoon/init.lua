@@ -38,8 +38,17 @@ hs.hotkey.bind({"cmd", "ctrl", "option"}, "up", function()
 end)
 
 -- app shortcuts
+hs.hotkey.bind({"cmd"}, "1", function()
+  local appName = "Firefox"
+  local win = hs.application.get(appName):focusedWindow()
+  if win ~= nil and win:isMinimized() == false and win == hs.window.focusedWindow() then
+    win:minimize()
+  else
+    launch(appName)
+  end
+end)
+
 launch = hs.application.launchOrFocus
-hs.hotkey.bind({"cmd"}, "1", function() launch("Firefox") end)
 hs.hotkey.bind({"cmd"}, "2", function() launch("Firefox Developer Edition") end)
 hs.hotkey.bind({"cmd"}, "3", function() launch("Alacritty") end)
 hs.hotkey.bind({"cmd"}, "4", function() launch("Visual Studio Code") end)
