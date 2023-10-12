@@ -7,7 +7,6 @@ return require('packer').startup(function(use)
     use('preservim/nerdtree')
     use('simrat39/symbols-outline.nvim')
     use('tpope/vim-fugitive')
-    use('tpope/vim-surround')
     use('wbthomason/packer.nvim')
     use({'nvim-telescope/telescope.nvim', tag = '0.1.1', requires = {{'nvim-lua/plenary.nvim'}}})
     use({
