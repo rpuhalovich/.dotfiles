@@ -30,14 +30,14 @@ return require('packer').startup(function(use)
     use({
         'goolord/alpha-nvim',
         config = function ()
-            require'alpha'.setup(require'alpha.themes.dashboard'.config)
-            local dashboard = require("alpha.themes.dashboard")
+            require('alpha').setup(require('alpha.themes.dashboard').config)
+            local dashboard = require('alpha.themes.dashboard')
             dashboard.section.buttons.val = {
-                dashboard.button("<leader>e", "File Explorer"),
-                dashboard.button("<leader>f", "Find File"),
-                dashboard.button("?", "Find Word"),
-                dashboard.button("e", "New Scratch Buffer", ":enew<cr>"),
-                dashboard.button("q", "Quit", ":qa<cr>")
+                dashboard.button('<leader>e', 'File Explorer'),
+                dashboard.button('<leader>f', 'Find File'),
+                dashboard.button('?', 'Find Word'),
+                dashboard.button('e', 'New Scratch Buffer', ':enew<cr>'),
+                dashboard.button('q', 'Quit', ':qa<cr>')
             }
         end
     })
