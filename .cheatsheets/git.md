@@ -11,6 +11,7 @@
 `git credential-osxkeychain erase`: erase personal access token on macos
 `git fetch -p`: Prunes all remote branches that don't exist anymore
 `git rm --cached -r .`: removes tracking of all items in repository
+`git diff [<options>] [<commit>] [--] [<path>...]`: show diff between a file for a given branch/commit
 
 # vimdiff navigation
 `]c`: Jump to the next diff

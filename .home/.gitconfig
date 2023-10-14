@@ -5,7 +5,7 @@
 	defaultBranch = main
 [core]
 	editor = vim
-    pager = less
+    pager = less -R
 [push]
 	autoSetupRemote = true
 [advice]

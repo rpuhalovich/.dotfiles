@@ -126,6 +126,9 @@ vim.opt.updatetime = 50
 vim.opt.wildignore:append("**/node_modules/**")
 vim.opt.wrap = true
 
+-- use pipe character for vertical split
+vim.cmd([[set fillchars+=vert:\|]])
+
 -- no auto comments anywhere
 vim.cmd([[autocmd FileType * set formatoptions-=cro]])
 
@@ -164,8 +167,6 @@ lsp.ensure_installed({
     "tsserver",
     "eslint"
 })
-
-vim.cmd([[autocmd FileType cpp :lua require('cmp').setup.buffer({ enabled = false })]])
 
 lsp.configure('tsserver', {})
 
