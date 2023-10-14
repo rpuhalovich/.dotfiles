@@ -39,27 +39,10 @@ end)
 
 -- app shortcuts
 launch = hs.application.launchOrFocus
-
-hs.hotkey.bind({"cmd"}, "1", function()
-  local appName = "Firefox"
-  local win = hs.application.get(appName):focusedWindow()
-  if win ~= nil and win:isMinimized() == false and win == hs.window.focusedWindow() then
-    win:minimize()
-  else
-    launch(appName)
-  end
-end)
-
+hs.hotkey.bind({"cmd"}, "1", function() launch("Firefox") end)
 hs.hotkey.bind({"cmd"}, "2", function() launch("Firefox Developer Edition") end)
 hs.hotkey.bind({"cmd"}, "3", function() launch("Alacritty") end)
 hs.hotkey.bind({"cmd"}, "4", function() launch("Visual Studio Code") end)
 hs.hotkey.bind({"cmd"}, "5", function() launch("Joplin") end)
 hs.hotkey.bind({"cmd"}, "9", function() launch("1Password 7") end)
 hs.hotkey.bind({"cmd"}, "0", function() launch("Bitwarden") end)
-
--- window switcher
--- local SWbindings = {
---   all_windows = {{"ctrl"}, "space"},
---   app_windows = {{"ctrl", "shift"}, "space"}
--- }
--- spoon.hs_select_window:bindHotkeys(SWbindings)
