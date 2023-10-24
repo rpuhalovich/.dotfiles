@@ -1,23 +1,17 @@
-Cheat Sheet
-
 ## Native Vim
-
 [line sorting](https://webdevetc.com/blog/sort-text-in-vim/)
 
 `:%s/<regexp>//gn`: Searches and shows number of matches
 
 ### Global Find and Replace
-
 - Search with `?`.
 - Use ^Q to put results in quickfix.
 - Use `:cdo <sed command>`. eg. `:cdo s/something/somethingElse/gc`.
 
 ## Edit command mode commands with vim keybindings
-
 In command mode press `<c-f>` to bring up a command edit window.
 
 ## Treesitter
-
 If your Treesitter starts shitting itself and throwing errors. Try doing the following:
 
 ```
@@ -28,7 +22,6 @@ cd ~/.dotfiles/.home/.config/nvim/lua/rp/packer.lua
 ```
 
 ## lsp general
-
 If you don't know what's setting certain options you can use the following to see what set it.
 
 ```
@@ -37,7 +30,6 @@ eg. verb set fo
 ```
 
 ## lsp-zero
-
 [From here.](https://github.com/VonHeikemen/lsp-zero.nvim)
 
 `K`: Displays hover information about the symbol under the cursor in a floating window.
@@ -60,12 +52,10 @@ eg. verb set fo
 `:Mason`: Manage LSP downloads.
 
 ## NERDTree
-
 `?`: Open quickhelp.
 `i`: Open the node in a split.
 
 ## symbols-outline.nvim
-
 `o`: Go to symbol location in code without losing focus.
 `Ctrl+Space`: Hover current symbol.
 `K`: Toggles the current symbol preview.
@@ -77,3 +67,7 @@ eg. verb set fo
 `E`: Unfold all symbols.
 `R`: Reset all folding.
 `?`: Show help message.
+
+## Folding
+`zX`: Undos all manually done folding in the editor.
+`za`: When on a closed fold: open it.

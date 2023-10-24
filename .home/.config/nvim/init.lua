@@ -81,6 +81,9 @@ vim.keymap.set("n", "<leader>n", [[f,lxi<cr><esc>]])
 vim.keymap.set("n", ",ls", [[oLOG("%s", *FString(""));<esc>F"i]])
 vim.keymap.set("n", ",mlc", [[j:-1read ~/.config/nvim/snippets/mlc<cr>kjjA<space>]])
 
+-- NeoFormat
+vim.cmd([[command! -nargs=0 Prettier :Neoformat prettier]])
+
 -- SETS --
 vim.g.mapleader = " "
 
@@ -144,6 +147,9 @@ vim.g.NERDTreeWinSize = 40
 vim.g.NERDTreeHighlightCursorline = 0
 vim.g.NERDTreeDirArrowExpandable = '+'
 vim.g.NERDTreeDirArrowCollapsible = '-'
+
+-- NeoFormat
+vim.g.neoformat_try_node_exe = 1
 
 -- BLAMER --
 vim.g.blamer_delay = 100
