@@ -1,5 +1,4 @@
 # aliases
-alias cat="bat"
 alias du="duf"
 alias ls="eza -F1a --icons --group-directories-first"
 alias pip="pip3"
@@ -43,9 +42,10 @@ bindkey '^Y' autosuggest-accept
 touch ~/.hushlogin
 
 # path exports
-export PATH=$PATH:~/.scripts
-export PATH=$PATH:~/.scripts-local
-export PATH=$PATH:~/.config/emacs/bin
+export PATH=$PATH:$HOME/.scripts
+export PATH=$PATH:$HOME/.scripts-local
+export PATH=$PATH:$HOME/.config/emacs/bin
+export PATH=$PATH:$HOME/dev/chromium/depot_tools
 
 # nvm
 source $(brew --prefix nvm)/nvm.sh

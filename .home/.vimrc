@@ -56,17 +56,15 @@ nnoremap <Up> <Up><CR><C-w>p
 " auto pairs
 inoremap {<cr> {<cr>}<Esc>O
 
-command! -nargs=1 Grep noautocmd vimgrep /<args>/gj ** | cw
+command! -nargs=1 Grep noautocmd vimgrep /<args>/gj `git ls-files` | cw
 nnoremap ? :Grep<space>
 nnoremap <leader>f :find<space>
+
+command! -nargs=1 Tab noautocmd set ts=<args> sw=<args>
 
 " -------------------- Settings --------------------
 syntax on
 colorscheme retrobox
-
-if has("gui_running")
-au GUIEnter * simalt ~x
-end
 
 set nu rnu
 
@@ -103,14 +101,17 @@ set wildignore+=**/node_modules/**
 set wildmenu
 set wrap linebreak
 
-highlight Cursor guifg=white guibg=black
-highlight iCursor guifg=white guibg=steelblue
-set guicursor=n-v-c:block-Cursor
-set guicursor+=a:blinkon0
-set guifont=Consolas:h12:cANSI
-set guioptions-=T  "toolbar
-set guioptions-=r  "scrollbar
-set guioptions-=m  "scrollbar
+if has("gui_running")
+    au GUIEnter * simalt ~x
+    highlight Cursor guifg=white guibg=black
+    highlight iCursor guifg=white guibg=steelblue
+    set guicursor=n-v-c:block-Cursor
+    set guicursor+=a:blinkon0
+    set guifont=Consolas:h12:cANSI
+    set guioptions-=T  "toolbar
+    set guioptions-=r  "scrollbar
+    set guioptions-=m  "scrollbar
+endif
 
 " delete trailing whitespace on save
 autocmd BufWritePre * %s/\s\+$//e
