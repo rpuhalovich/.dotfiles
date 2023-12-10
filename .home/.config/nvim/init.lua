@@ -121,6 +121,7 @@ vim.opt.smartindent = true
 vim.opt.softtabstop = 4
 vim.opt.swapfile = false
 vim.opt.tabstop = 4
+vim.opt.tw = 72
 vim.opt.termguicolors = true
 vim.opt.timeoutlen = 500
 vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
