@@ -96,6 +96,7 @@ set smartindent
 set so=10
 set splitbelow splitright
 set ts=4 sw=4
+set tw=72
 set visualbell
 set wildignore+=**/node_modules/**
 set wildmenu
