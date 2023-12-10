@@ -68,18 +68,18 @@ colorscheme retrobox
 
 set nu rnu
 
-set key=
-set cm=blowfish2
-set background=dark
 set autoindent
+set background=dark
 set backspace=indent,eol,start
 set belloff=all
+set cm=blowfish2
 set conceallevel=0
 set expandtab
 set hidden
 set hlsearch
 set ignorecase
 set incsearch
+set key=
 set laststatus=2
 set linebreak nolist
 set listchars=tab:>·,space:·
@@ -99,6 +99,7 @@ set ts=4 sw=4
 set visualbell
 set wildignore+=**/node_modules/**
 set wildmenu
+set wildoptions=pum
 set wrap linebreak
 
 if has("gui_running")
