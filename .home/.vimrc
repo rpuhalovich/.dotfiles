@@ -9,7 +9,7 @@ nnoremap <leader>cfg :e<space>~\.vimrc<cr>
 
 nnoremap $ g$
 nnoremap 0 g0
-nnoremap A g$a
+" nnoremap A g$a
 nnoremap j gj
 nnoremap k gk
 
@@ -96,7 +96,7 @@ set smartindent
 set so=10
 set splitbelow splitright
 set ts=4 sw=4
-set tw=72
+" set tw=72
 set visualbell
 set wildignore+=**/node_modules/**
 set wildmenu
