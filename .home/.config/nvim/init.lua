@@ -229,13 +229,13 @@ require("gruvbox").setup({
 vim.cmd("colorscheme gruvbox")
 
 -- TELESCOPE --
-require("telescope").setup({
-    defaults = {
-        -- file_ignore_patterns = { "^node_modules/", "^.git/" },
-        file_ignore_patterns = { "^node_modules/" },
-        layout_strategy = "vertical",
-        layout_config = { height = 0.95 },
-        preview = false,
-        vimgrep_arguments = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" }
-    }
-})
+-- require("telescope").setup({
+--     defaults = {
+--         -- file_ignore_patterns = { "^node_modules/", "^.git/" },
+--         file_ignore_patterns = { "^node_modules/" },
+--         layout_strategy = "vertical",
+--         layout_config = { height = 0.95 },
+--         preview = false,
+--         vimgrep_arguments = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" }
+--     }
+-- })
