@@ -60,10 +60,15 @@ vim.keymap.set("n", "<leader>B", [[:%bd|e#<cr>]])
 
 -- Better file search
 vim.keymap.set("n", "<leader>/", [[:noh<cr>]])
-vim.keymap.set("n", "?", [[:Telescope live_grep preview=true hidden=true<cr>]])
-vim.keymap.set("n", "<leader>f", [[:Telescope find_files hidden=true<cr>]])
-vim.keymap.set("n", "<leader>gf", [[:Telescope git_files hidden=true<cr>]])
-vim.keymap.set("n", "<leader>b", [[:Telescope buffers hidden=true<cr>]])
+
+-- vim.keymap.set("n", "?", [[:Telescope live_grep preview=true hidden=true<cr>]])
+-- vim.keymap.set("n", "<leader>f", [[:Telescope find_files hidden=true<cr>]])
+-- vim.keymap.set("n", "<leader>gf", [[:Telescope git_files hidden=true<cr>]])
+-- vim.keymap.set("n", "<leader>b", [[:Telescope buffers hidden=true<cr>]])
+
+vim.keymap.set("n", "?", [[:Rg<cr>]])
+vim.keymap.set("n", "<leader>f", [[:Files<cr>]])
+vim.keymap.set("n", "<leader>b", [[:Buffers<cr>]])
 
 -- Symbols Outline
 vim.keymap.set("n", "go", [[:SymbolsOutline<cr>W]])
@@ -226,19 +231,11 @@ vim.cmd("colorscheme gruvbox")
 -- TELESCOPE --
 require("telescope").setup({
     defaults = {
-        file_ignore_patterns = { "^node_modules/", "^.git/" },
+        -- file_ignore_patterns = { "^node_modules/", "^.git/" },
+        file_ignore_patterns = { "^node_modules/" },
         layout_strategy = "vertical",
         layout_config = { height = 0.95 },
         preview = false,
-        vimgrep_arguments = {
-            "rg",
-            "--color=never",
-            "--no-heading",
-            "--with-filename",
-            "--line-number",
-            "--column",
-            "--smart-case=false",
-            "--hidden"
-        }
+        vimgrep_arguments = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" }
     }
 })

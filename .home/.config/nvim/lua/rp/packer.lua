@@ -9,7 +9,9 @@ return require('packer').startup(function(use)
     use('simrat39/symbols-outline.nvim')
     use('tpope/vim-fugitive')
     use('wbthomason/packer.nvim')
-    use({'nvim-telescope/telescope.nvim', requires = {{'nvim-lua/plenary.nvim'}}})
+    -- use({'nvim-telescope/telescope.nvim', requires = {{'nvim-lua/plenary.nvim'}}})
+    use('junegunn/fzf', {run = 'fzf#install()'})
+    use('junegunn/fzf.vim')
     use({
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v1.x',
