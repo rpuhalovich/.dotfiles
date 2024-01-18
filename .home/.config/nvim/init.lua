@@ -60,13 +60,7 @@ vim.keymap.set("n", "<leader>B", [[:%bd|e#<cr>]])
 
 -- Better file search
 vim.keymap.set("n", "<leader>/", [[:noh<cr>]])
-
--- vim.keymap.set("n", "?", [[:Telescope live_grep preview=true hidden=true<cr>]])
--- vim.keymap.set("n", "<leader>f", [[:Telescope find_files hidden=true<cr>]])
--- vim.keymap.set("n", "<leader>gf", [[:Telescope git_files hidden=true<cr>]])
--- vim.keymap.set("n", "<leader>b", [[:Telescope buffers hidden=true<cr>]])
-
-vim.keymap.set("n", "?", [[:Rg<cr>]])
+vim.keymap.set("n", "?", [[:call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case --hidden .", fzf#vim#with_preview())<cr>]])
 vim.keymap.set("n", "<leader>f", [[:Files<cr>]])
 vim.keymap.set("n", "<leader>b", [[:Buffers<cr>]])
 
@@ -88,6 +82,11 @@ vim.keymap.set("n", ",mlc", [[j:-1read ~/.config/nvim/snippets/mlc<cr>kjjA<space
 
 -- NeoFormat
 vim.cmd([[command! -nargs=0 Prettier :Neoformat prettier]])
+
+-- Tab size switching
+vim.cmd([[command! -nargs=1 Tab noautocmd set ts=<args> sw=<args>]])
+
+vim.cmd([[let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -l -g ""']])
 
 -- SETS --
 vim.g.mapleader = " "
@@ -227,15 +226,3 @@ require("gruvbox").setup({
 })
 
 vim.cmd("colorscheme gruvbox")
-
--- TELESCOPE --
--- require("telescope").setup({
---     defaults = {
---         -- file_ignore_patterns = { "^node_modules/", "^.git/" },
---         file_ignore_patterns = { "^node_modules/" },
---         layout_strategy = "vertical",
---         layout_config = { height = 0.95 },
---         preview = false,
---         vimgrep_arguments = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" }
---     }
--- })
