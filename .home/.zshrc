@@ -24,9 +24,9 @@ alias gs="git status --short --branch --show-stash && echo '## modified' && gm"
 
 fmt='%C(bold blue)<%cn> %Cgreen%ad %Cred%h%Creset -%C(yellow)%d%Creset %s %Creset'
 alias gl="git log"
-alias glg="git log --graph --topo-order --abbrev-commit --date=short --decorate --all --boundary --pretty=format:'$fmt' && tput rmcup"
-alias glo="git log --oneline --pretty=format:'$fmt' && tput rmcup"
-alias glt="git log --tags --no-walk --pretty=oneline --abbrev-commit && tput rmcup"
+alias glg="git log --graph --topo-order --abbrev-commit --date=short --decorate --all --boundary --pretty=format:'$fmt'"
+alias glo="git log --oneline --pretty=format:'$fmt'"
+alias glt="git log --tags --no-walk --pretty=oneline --abbrev-commit"
 
 # cheatsheets
 alias csgit="nvim ~/.dotfiles/.cheatsheets/git.md"
