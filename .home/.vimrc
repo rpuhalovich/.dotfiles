@@ -27,8 +27,8 @@ nnoremap <C-u> <C-u>zz
 nnoremap <C-d> <C-d>zz
 
 " move among buffers with tab
-nnoremap <tab> :bnext<cr>
-nnoremap <S-tab> :bprev<cr>
+" nnoremap <tab> :bnext<cr>
+" nnoremap <S-tab> :bprev<cr>
 
 " easier copying and pasting
 nnoremap <leader>p "+p
@@ -56,7 +56,7 @@ nnoremap <Up> <Up><CR><C-w>p
 " auto pairs
 inoremap {<cr> {<cr>}<Esc>O
 
-command! -nargs=1 Grep noautocmd vimgrep /<args>/gj `git ls-files` | cw
+command! -nargs=1 Grep noautocmd vimgrep /<args>/gj ** | cw
 nnoremap ? :Grep<space>
 nnoremap <leader>f :find<space>
 
@@ -99,6 +99,7 @@ set ts=4 sw=4
 " set tw=72
 set visualbell
 set wildignore+=**/node_modules/**
+set wildoptions=pum
 set wildmenu
 set wildoptions=pum
 set wrap linebreak
