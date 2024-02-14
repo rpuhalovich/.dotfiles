@@ -3,7 +3,7 @@
 
 `:%s/<regexp>//gn`: Searches and shows number of matches
 
-### Global Find and Replace
+## Global Find and Replace
 - Search with `?`.
 - Use ^Q to put results in quickfix.
 - Use `:cdo <sed command>`. eg. `:cdo s/something/somethingElse/gc`.
