@@ -1,6 +1,6 @@
 # aliases
 alias du="duf"
-alias ls="eza -F1a --icons --group-directories-first"
+alias ls="eza -la --icons --group-directories-first"
 alias pip="pip3"
 alias py="python3"
 alias python="python3"
@@ -44,7 +44,6 @@ touch ~/.hushlogin
 # path exports
 export PATH=$PATH:$HOME/.scripts
 export PATH=$PATH:$HOME/.scripts-local
-export PATH=$PATH:$HOME/.config/emacs/bin
 export PATH=$PATH:$HOME/dev/depot_tools
 
 # nvm
@@ -69,6 +68,3 @@ COLOR_GIT='%F{196}'
 NEWLINE=$'\n'
 setopt PROMPT_SUBST
 export PROMPT='${COLOR_DEF}%d ${COLOR_GIT}$(parse_git_branch)${COLOR_DEF}${NEWLINE}> '
-
-# other
-export AWS_REGION=ap-southeast-2
