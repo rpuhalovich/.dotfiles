@@ -3,6 +3,10 @@
 
 `:%s/<regexp>//gn`: Searches and shows number of matches
 
+## Vimdiff
+`[c`: go to next diff
+`]c`: go to prev diff
+
 ## Global Find and Replace
 - Search with `?`.
 - Use ^Q to put results in quickfix.

@@ -6,6 +6,8 @@
 [core]
 	editor = vim
     pager = less -R
+	autocrlf = false
+	filemode = false
 [push]
 	autoSetupRemote = true
 [advice]
@@ -22,3 +24,5 @@
 	required = true
 [credential]
 	helper = osxkeychain
+[http]
+	cookiefile = /Users/rp/.gitcookies
