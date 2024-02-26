@@ -24,7 +24,7 @@ alias gs="git status --short --branch --show-stash && echo '## modified' && gm"
 
 fmt='%C(bold blue)<%cn> %Cgreen%ad %Cred%h%Creset -%C(yellow)%d%Creset %s %Creset'
 alias gl="git log"
-alias glg="git log --graph --topo-order --abbrev-commit --date=short --decorate --all --boundary --pretty=format:'$fmt'"
+alias glg="git log --first-parent --graph --topo-order --abbrev-commit --date=short --decorate --all --boundary --pretty=format:'$fmt'"
 alias glo="git log --oneline --pretty=format:'$fmt'"
 alias glt="git log --tags --no-walk --pretty=oneline --abbrev-commit"
 
