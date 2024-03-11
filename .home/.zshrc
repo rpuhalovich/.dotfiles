@@ -19,8 +19,8 @@ alias gd="git difftool"
 alias gpl="git pull --no-rebase"
 alias gph="git push"
 alias gf="git fetch --prune --all"
-alias gm="git status --porcelain | grep ' M ' | sed 's/ M //'"
-alias gs="git status --short --branch --show-stash && echo '## modified' && gm"
+# alias gm="git status --porcelain | grep ' M ' | sed 's/ M //'"
+alias gs="git status --short --branch --show-stash && echo '## modified' && git status --porcelain | grep ' M ' | sed 's/ M //'"
 
 fmt='%C(bold blue)<%cn> %Cgreen%ad %Cred%h%Creset -%C(yellow)%d%Creset %s %Creset'
 alias gl="git log"
@@ -34,6 +34,9 @@ alias cstmux="nvim ~/.dotfiles/.cheatsheets/tmux.md"
 alias csvim="nvim ~/.dotfiles/.cheatsheets/nvim.md"
 alias csunreal="nvim ~/.dotfiles/.cheatsheets/unreal.md"
 
+# google stuff
+alias gm="/Volumes/ryan_ssd/v8/v8/tools/dev/gm.py"
+
 # global init stuff
 autoload -Uz compinit
 compinit
@@ -44,6 +47,7 @@ touch ~/.hushlogin
 # path exports
 export PATH=$PATH:$HOME/.scripts
 export PATH=$PATH:$HOME/.scripts-local
+export PATH=$PATH:$HOME/.config/emacs/bin
 export PATH=$PATH:$HOME/dev/depot_tools
 
 # nvm
