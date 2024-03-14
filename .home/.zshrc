@@ -47,8 +47,11 @@ touch ~/.hushlogin
 # path exports
 export PATH=$PATH:$HOME/.scripts
 export PATH=$PATH:$HOME/.scripts-local
-export PATH=$PATH:$HOME/.config/emacs/bin
 export PATH=$PATH:$HOME/dev/depot_tools
+
+# doom emacs
+export PATH=$PATH:$HOME/.config/emacs/bin
+export TERM=xterm-256color
 
 # nvm
 source $(brew --prefix nvm)/nvm.sh

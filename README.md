@@ -14,7 +14,7 @@ Install from the Brewfile using the following:
 brew bundle --file=~/.dotfiles/Brewfile
 ```
 
-Update brewfile using the following
+Update brewfile using the following:
 
 ```bash
 brew bundle dump
