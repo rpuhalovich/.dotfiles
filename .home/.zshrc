@@ -50,6 +50,7 @@ export PATH=$PATH:$HOME/.scripts-local
 export PATH=$PATH:$HOME/dev/depot_tools
 
 # doom emacs
+alias d="doom run"
 export PATH=$PATH:$HOME/.config/emacs/bin
 export TERM=xterm-256color
 
