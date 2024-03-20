@@ -150,8 +150,8 @@ vim.g.NERDTreeMouseMode = 3
 vim.g.NERDTreeShowHidden = 1
 vim.g.NERDTreeWinSize = 40
 vim.g.NERDTreeHighlightCursorline = 0
-vim.g.NERDTreeDirArrowExpandable = '+'
-vim.g.NERDTreeDirArrowCollapsible = '-'
+vim.g.NERDTreeDirArrowExpandable = '|'
+vim.g.NERDTreeDirArrowCollapsible = '|'
 
 -- NeoFormat
 vim.g.neoformat_try_node_exe = 1
