@@ -26,10 +26,6 @@ nnoremap <leader>e :Ex<cr>
 nnoremap <C-u> <C-u>zz
 nnoremap <C-d> <C-d>zz
 
-" move among buffers with tab
-" nnoremap <tab> :bnext<cr>
-" nnoremap <S-tab> :bprev<cr>
-
 " easier copying and pasting
 nnoremap <leader>p "+p
 nnoremap <leader>P "+P
@@ -53,7 +49,7 @@ nnoremap <leader>/ :noh<cr>
 nnoremap <Down> <Down><CR><C-w>p
 nnoremap <Up> <Up><CR><C-w>p
 
-" auto pairs
+" auto pair curly brackets
 inoremap {<cr> {<cr>}<Esc>O
 
 command! -nargs=1 Grep noautocmd vimgrep /<args>/gj ** | cw
