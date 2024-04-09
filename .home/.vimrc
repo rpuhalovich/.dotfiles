@@ -104,7 +104,7 @@ if has("gui_running")
     au GUIEnter * simalt ~x
     highlight Cursor guifg=white guibg=black
     highlight iCursor guifg=white guibg=steelblue
-    set guicursor=n-v-c:block-Cursor
+    set guicursor=n-v-c-i:hor25-Cursor
     set guicursor+=a:blinkon0
     set guifont=Consolas:h12:cANSI
     set guioptions-=T  "toolbar
