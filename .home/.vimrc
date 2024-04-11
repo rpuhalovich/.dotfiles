@@ -60,7 +60,6 @@ command! -nargs=1 Tab noautocmd set ts=<args> sw=<args>
 
 " -------------------- Settings --------------------
 syntax on
-colorscheme retrobox
 
 set nu rnu
 
@@ -101,6 +100,7 @@ set wildoptions=pum
 set wrap linebreak
 
 if has("gui_running")
+    colorscheme retrobox
     au GUIEnter * simalt ~x
     highlight Cursor guifg=white guibg=black
     highlight iCursor guifg=white guibg=steelblue
@@ -109,7 +109,7 @@ if has("gui_running")
     set guifont=Consolas:h12:cANSI
     set guioptions-=T  "toolbar
     set guioptions-=r  "scrollbar
-    set guioptions-=m  "scrollbar
+    " set guioptions-=m  "scrollbar
 endif
 
 " delete trailing whitespace on save
