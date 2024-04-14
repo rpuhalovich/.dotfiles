@@ -99,12 +99,17 @@ set wildmenu
 set wildoptions=pum
 set wrap linebreak
 
+if has("unix")
+    colorscheme retrobox
+endif
+
 if has("gui_running")
     colorscheme retrobox
     au GUIEnter * simalt ~x
     highlight Cursor guifg=white guibg=black
     highlight iCursor guifg=white guibg=steelblue
     set guicursor=n-v-c-i:hor25-Cursor
+    set nonu nornu
     set guicursor+=a:blinkon0
     set guifont=Consolas:h12:cANSI
     set guioptions-=T  "toolbar
