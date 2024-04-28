@@ -1,6 +1,8 @@
+bindkey "^X^E" edit-command-line
+
 # aliases
 alias du="duf"
-alias ls="eza -la --icons --group-directories-first"
+alias ls="eza -lah --icons --group-directories-first"
 alias pip="pip3"
 alias py="python3"
 alias python="python3"
@@ -20,7 +22,7 @@ alias gpl="git pull --no-rebase"
 alias gph="git push"
 alias gf="git fetch --prune --all"
 # alias gm="git status --porcelain | grep ' M ' | sed 's/ M //'"
-alias gs="git status --short --branch --show-stash && echo '## modified' && git status --porcelain | grep ' M ' | sed 's/ M //'"
+alias gs="git status --short --branch --show-stash"
 
 fmt='%C(bold blue)<%cn> %Cgreen%ad %Cred%h%Creset -%C(yellow)%d%Creset %s %Creset'
 alias gl="git log"
@@ -76,3 +78,10 @@ COLOR_GIT='%F{196}'
 NEWLINE=$'\n'
 setopt PROMPT_SUBST
 export PROMPT='${COLOR_DEF}%d ${COLOR_GIT}$(parse_git_branch)${COLOR_DEF}${NEWLINE}> '
+
+# The following lines were added by compinstall
+zstyle ':completion:*' completer _complete _ignored
+zstyle :compinstall filename '/Users/rp/.zshrc'
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
