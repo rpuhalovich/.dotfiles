@@ -61,7 +61,7 @@ command! -nargs=1 Tab noautocmd set ts=<args> sw=<args>
 " -------------------- Settings --------------------
 syntax on
 
-set nu rnu
+" set nu rnu
 
 set autoindent
 set background=dark

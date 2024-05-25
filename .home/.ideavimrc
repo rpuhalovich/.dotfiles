@@ -1,13 +1,13 @@
 " -------------------- Keybinds --------------------
 let mapleader = " "
 
-nnoremap k gk
-nnoremap j gj
-
 nnoremap <leader>a :%y+<cr>
 
 nnoremap <leader>e :Ex<cr>
 nnoremap <leader>f :find<space>
+
+nnoremap s :w<cr>
+nnoremap <c-q> :q<cr>
 
 nnoremap <C-u> <C-u>zz
 nnoremap <C-d> <C-d>zz
@@ -46,6 +46,4 @@ nnoremap ,ss oif(GEngine) GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Ye
 set hlsearch
 set ignorecase
 set incsearch
-set number
-set relativenumber
 set so=10

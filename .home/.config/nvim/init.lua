@@ -91,8 +91,8 @@ vim.cmd([[let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -l -g ""']])
 -- SETS --
 vim.g.mapleader = " "
 
-vim.opt.number = true
-vim.opt.relativenumber = true
+-- vim.opt.number = true
+-- vim.opt.relativenumber = true
 
 vim.opt.statusline = "%<%F -- %-12.(%lL %cC %P%) %h%m%r"
 
