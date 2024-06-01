@@ -1,9 +1,8 @@
--- REMAPS
+-- REMAPS --
 vim.g.mapleader = " "
 
 vim.keymap.set("n", "$", [[g$]])
 vim.keymap.set("n", "0", [[g0]])
--- vim.keymap.set("n", "A", [[g$a]])
 vim.keymap.set("n", "j", [[gj]])
 vim.keymap.set("n", "k", [[gk]])
 vim.keymap.set("v", "$", [[g$]])
@@ -17,6 +16,7 @@ vim.keymap.set("n", "<leader>a", [[:%y+<cr>]])
 
 -- Quick Save
 vim.keymap.set("n", "s", [[:w<cr>]])
+vim.keymap.set("v", "s", [[:w<cr>]])
 
 -- Quick Quit
 vim.keymap.set("n", "<c-q>", [[:q<cr>]])
@@ -61,7 +61,7 @@ vim.keymap.set("n", "<leader>B", [[:%bd|e#<cr>]])
 -- Better file search
 vim.keymap.set("n", "<leader>/", [[:noh<cr>]])
 vim.keymap.set("n", "?", [[:call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case --hidden .", fzf#vim#with_preview())<cr>]])
-vim.keymap.set("n", "<leader>f", [[:Files<cr>]])
+vim.keymap.set("n", "<leader>f", [[:call fzf#vim#files('.', {'options': ['--info=inline']}, 0)<cr>]])
 vim.keymap.set("n", "<leader>b", [[:Buffers<cr>]])
 
 -- Symbols Outline
@@ -76,7 +76,7 @@ vim.keymap.set("n", "gb", [[:G blame<cr>]])
 -- Quick newline args
 vim.keymap.set("n", "<leader>n", [[f,lxi<cr><esc>]])
 
--- SNIPPETS
+-- SNIPPETS --
 vim.keymap.set("n", ",ls", [[oLOG("%s", *FString(""));<esc>F"i]])
 vim.keymap.set("n", ",mlc", [[j:-1read ~/.config/nvim/snippets/mlc<cr>kjjA<space>]])
 
@@ -86,7 +86,7 @@ vim.cmd([[command! -nargs=0 Prettier :Neoformat prettier]])
 -- Tab size switching
 vim.cmd([[command! -nargs=1 Tab noautocmd set ts=<args> sw=<args>]])
 
--- SETS
+-- SETS --
 vim.g.mapleader = " "
 
 vim.opt.statusline = "%<%F -- %-12.(%lL %cC %P%) %h%m%r"
@@ -120,6 +120,7 @@ vim.opt.smartindent = true
 vim.opt.softtabstop = 4
 vim.opt.swapfile = false
 vim.opt.tabstop = 4
+-- vim.opt.tw = 72
 vim.opt.termguicolors = true
 vim.opt.timeoutlen = 500
 vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
@@ -150,11 +151,11 @@ vim.g.NERDTreeDirArrowCollapsible = '|'
 -- NeoFormat
 vim.g.neoformat_try_node_exe = 1
 
--- BLAMER
+-- BLAMER --
 vim.g.blamer_delay = 100
 vim.g.blamer_show_in_visual_modes = 0
 
--- LSP
+-- LSP --
 -- see: https://github.com/VonHeikemen/lsp-zero.nvim for default keybindings
 local lsp = require("lsp-zero").preset({
     name = "minimal",
@@ -172,7 +173,7 @@ lsp.configure('tsserver', {})
 
 lsp.setup()
 
--- SYMBOLS OUTLINE
+-- SYMBOLS OUTLINE --
 require("symbols-outline").setup({
     position = "bottom",
     width = 35,
@@ -183,7 +184,7 @@ require("symbols-outline").setup({
     }
 })
 
--- TREE SITTER
+-- TREE SITTER --
 require("nvim-treesitter.configs").setup({
     ensure_installed = "all",
     sync_install = false,
@@ -195,22 +196,24 @@ require("nvim-treesitter.configs").setup({
     }
 })
 
--- GRUVBOX
-local backgroundColour = "#1D2021"
+-- GRUVBOX --
+local backgroundColour = "#1C1C1C"
 local highlightColour = "#383838"
 local statuslineColor = "#282828"
-
 require("gruvbox").setup({
     contrast = "hard",
+    palette_overrides = {
+        dark0_hard = "#1C1C1C"
+    },
     overrides = {
         Visual = { bg = highlightColour },
-        StatusLine = { fg = backgroundColour },
+        StatusLine = { bg = backgroundColour },
         SignColumn = { bg = backgroundColour },
         DiagnosticError = { bg = backgroundColour },
         DiagnosticSignError = { bg = backgroundColour },
         DiagnosticSignHint = { bg = backgroundColour },
         DiagnosticSignInfo = { bg = backgroundColour },
-        DiagnosticSignWarn = { bg = backgroundColour }
+        DiagnosticSignWarn = { bg = backgroundColour },
     },
     italic = {
       strings = false,
@@ -220,5 +223,4 @@ require("gruvbox").setup({
       folds = false
     }
 })
-
 vim.cmd("colorscheme gruvbox")
