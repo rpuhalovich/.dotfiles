@@ -60,9 +60,11 @@ vim.keymap.set("n", "<leader>B", [[:%bd|e#<cr>]])
 
 -- Better file search
 vim.keymap.set("n", "<leader>/", [[:noh<cr>]])
-vim.keymap.set("n", "?", [[:call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case --hidden .", fzf#vim#with_preview())<cr>]])
-vim.keymap.set("n", "<leader>f", [[:call fzf#vim#files('.', {'options': ['--info=inline']}, 0)<cr>]])
-vim.keymap.set("n", "<leader>b", [[:Buffers<cr>]])
+
+local rgcmd = "'rg --column --line-number --no-heading --color=always --smart-case --hidden .'"
+vim.keymap.set("n", "?", [[:call fzf#vim#grep(]]..rgcmd..[[, fzf#vim#with_preview({'options': ['--layout=reverse', '--preview-window=down,50%']}), 0)<cr><cr>]])
+vim.keymap.set("n", "<leader>f", [[:call fzf#vim#files('.', {'options': ['--layout=reverse']}, 0)<cr>]])
+vim.keymap.set("n", "<leader>b", [[:call fzf#vim#buffers('.', {'options': ['--layout=reverse']}, 0)<cr>]])
 
 -- Symbols Outline
 vim.keymap.set("n", "go", [[:SymbolsOutline<cr>W]])
@@ -97,7 +99,7 @@ vim.o.background = "dark"
 vim.opt.autochdir = false
 vim.opt.autoread = true
 vim.opt.backup = false
-vim.opt.colorcolumn = ""
+vim.opt.colorcolumn = "160"
 vim.opt.cursorline = false
 vim.opt.expandtab = true
 vim.opt.guicursor = ""
@@ -105,7 +107,7 @@ vim.opt.hlsearch = false
 vim.opt.ignorecase = true
 vim.opt.incsearch = true
 vim.opt.isfname:append("@-@")
-vim.opt.laststatus = 1
+vim.opt.laststatus = 0
 vim.opt.linebreak = true
 vim.opt.list = false
 vim.opt.listchars = { space = "·", tab = "> " }
@@ -120,7 +122,6 @@ vim.opt.smartindent = true
 vim.opt.softtabstop = 4
 vim.opt.swapfile = false
 vim.opt.tabstop = 4
--- vim.opt.tw = 72
 vim.opt.termguicolors = true
 vim.opt.timeoutlen = 500
 vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
