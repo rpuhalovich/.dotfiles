@@ -1,0 +1,69 @@
+set -o vi
+
+alias ls="ls -lah --color"
+alias cls="clear"
+alias v="vim"
+alias rg="rg --path-separator=//"
+
+function modified() {
+    files=$(git status --porcelain | grep -E '^( M )' | grep -E '\.cs' | sed 's/^ M //') # modified
+    files+=$(git ls-files -o --exclude-standard | grep -E '\.cs') # untracked
+    echo $(echo $files | sed 's/\n/ /')
+}
+
+function gfmt() {
+    filter $(modified)
+}
+
+function dfmt() {
+    if [ $# -ne 1 ]; then
+        echo "Invalid arguments"
+        return
+    fi
+    files=$(modified)
+    dotnet format $1 --include $files
+    filter $files
+}
+
+function filter() {
+    sed -i 's/[ \t]*$//' $@ # remove trailing whitespace
+    sed -i '/^$/N;/^\n$/D' $@ # replace multiple empty lines with single empty line
+    sed -i 's/^M$//' $@ # use unix line endings
+    sed -i '$a\' $@ # add newline at end of file
+    sed -i $'s/\t/    /g' $@ # replace tabs with spaces
+}
+
+function gdn() {
+    git diff --name-status $1
+    git diff --shortstat $1
+}
+
+function gmerge() {
+    if [ $# -ne 1 ]; then
+        echo "Invalid arguments"
+        return
+    fi
+    git fetch --prune --all
+    git checkout $1
+    git pull --no-rebase
+    git checkout -
+    git merge $1
+}
+
+formatting='%C(bold blue)<%cn> %Cgreen%ad %Cred%h%Creset -%C(yellow)%d%Creset %s %Creset'
+alias c="gfmt; git add . && git commit && sleep 3 && git push"
+alias ga="gfmt; git add ."
+alias gb="git branch -a --color=always | less -R"
+alias gblame="git blame"
+alias gc="git commit"
+alias gch="git checkout"
+alias gcl="git clone --recursive"
+alias gd="git difftool"
+alias gf="git fetch --prune --all"
+alias gl="git log"
+alias glg="git log --first-parent --graph --topo-order --abbrev-commit --date=short --decorate --all --boundary --pretty=format:'$formatting'"
+alias glo="git log --oneline --pretty=format:'$formatting'"
+alias glt="git log --tags --no-walk --pretty=oneline --abbrev-commit"
+alias gpull="git pull --no-rebase && git fetch --prune --all"
+alias gpush="git push"
+alias gs="git status --short --branch --show-stash --untracked-files=all"
