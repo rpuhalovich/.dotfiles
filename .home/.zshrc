@@ -79,9 +79,6 @@ NEWLINE=$'\n'
 setopt PROMPT_SUBST
 export PROMPT='${COLOR_DEF}%d ${COLOR_GIT}$(parse_git_branch)${COLOR_DEF}${NEWLINE}> '
 
-# The following lines were added by compinstall
-zstyle ':completion:*' completer _complete _ignored
-zstyle :compinstall filename '/Users/rp/.zshrc'
-autoload -Uz compinit
-compinit
-# End of lines added by compinstall
+# history
+SAVEHIST=1000
+HISTFILE=~/.zsh_history
