@@ -1,7 +1,5 @@
 bindkey "^X^E" edit-command-line
 
-# aliases
-alias du="duf"
 alias ls="eza -lah --icons --group-directories-first"
 alias pip="pip3"
 alias py="python3"
@@ -11,33 +9,46 @@ alias tree="eza --tree"
 alias v="nvim"
 
 # git
+function gdn() {
+    git diff --name-status $1
+    git diff --shortstat $1
+}
+
+function gmerge() {
+    if [ $# -ne 1 ]; then
+        echo "Invalid arguments"
+        return
+    fi
+    git fetch --prune --all
+    git checkout $1
+    git pull --no-rebase
+    git checkout -
+    git merge $1
+}
+
+formatting='%C(bold blue)<%cn> %Cgreen%ad %Cred%h%Creset -%C(yellow)%d%Creset %s %Creset'
 alias c="git add . && git commit && sleep 3 && git push"
 alias ga="git add ."
-alias gb="tput smcup && git branch -a --color=always | less -R && tput rmcup"
+alias gb="git branch -a --color=always | less -R"
+alias gblame="git blame"
 alias gc="git commit"
 alias gch="git checkout"
 alias gcl="git clone --recursive"
 alias gd="git difftool"
-alias gpl="git pull --no-rebase"
-alias gph="git push"
 alias gf="git fetch --prune --all"
-# alias gm="git status --porcelain | grep ' M ' | sed 's/ M //'"
-alias gs="git status --short --branch --show-stash"
-
-fmt='%C(bold blue)<%cn> %Cgreen%ad %Cred%h%Creset -%C(yellow)%d%Creset %s %Creset'
 alias gl="git log"
-alias glg="git log --first-parent --graph --topo-order --abbrev-commit --date=short --decorate --all --boundary --pretty=format:'$fmt'"
-alias glo="git log --oneline --pretty=format:'$fmt'"
+alias glg="git log --first-parent --graph --topo-order --abbrev-commit --date=short --decorate --all --boundary --pretty=format:'$formatting'"
+alias glo="git log --oneline --pretty=format:'$formatting'"
 alias glt="git log --tags --no-walk --pretty=oneline --abbrev-commit"
+alias gpull="git pull --no-rebase && git fetch --prune --all"
+alias gpush="git push"
+alias gs="git status --short --branch --show-stash --untracked-files=all"
 
 # cheatsheets
 alias csgit="nvim ~/.dotfiles/.cheatsheets/git.md"
 alias cstmux="nvim ~/.dotfiles/.cheatsheets/tmux.md"
 alias csvim="nvim ~/.dotfiles/.cheatsheets/nvim.md"
 alias csunreal="nvim ~/.dotfiles/.cheatsheets/unreal.md"
-
-# google stuff
-alias gm="/Volumes/ryan_ssd/v8/v8/tools/dev/gm.py"
 
 # global init stuff
 autoload -Uz compinit
@@ -51,21 +62,10 @@ export PATH=$PATH:$HOME/.scripts
 export PATH=$PATH:$HOME/.scripts-local
 export PATH=$PATH:$HOME/dev/depot_tools
 
-# doom emacs
-alias d="doom run"
-export PATH=$PATH:$HOME/.config/emacs/bin
-export TERM=xterm-256color
-
 # nvm
 source $(brew --prefix nvm)/nvm.sh
 nvm use 18.17.1 --silent
 export NVM_DIR=~/.nvm
-
-# bat
-export BAT_THEME="gruvbox-dark"
-
-# eza
-export LS_COLORS="$(vivid generate gruvbox-dark-soft)"
 
 # command line customization
 parse_git_branch() {

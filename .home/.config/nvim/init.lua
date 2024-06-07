@@ -99,7 +99,7 @@ vim.o.background = "dark"
 vim.opt.autochdir = false
 vim.opt.autoread = true
 vim.opt.backup = false
-vim.opt.colorcolumn = "160"
+vim.opt.colorcolumn = ""
 vim.opt.cursorline = false
 vim.opt.expandtab = true
 vim.opt.guicursor = ""
@@ -201,6 +201,7 @@ require("nvim-treesitter.configs").setup({
 local backgroundColour = "#1C1C1C"
 local highlightColour = "#383838"
 local statuslineColor = "#282828"
+
 require("gruvbox").setup({
     contrast = "hard",
     palette_overrides = {
@@ -224,4 +225,5 @@ require("gruvbox").setup({
       folds = false
     }
 })
+
 vim.cmd("colorscheme gruvbox")
