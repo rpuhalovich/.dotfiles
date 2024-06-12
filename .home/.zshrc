@@ -1,11 +1,8 @@
-bindkey "^X^E" edit-command-line
-
-alias ls="eza -lah --icons --group-directories-first"
+alias ls="ls -lah"
 alias pip="pip3"
 alias py="python3"
 alias python="python3"
 alias rmds="find . -name .DS_Store -delete"
-alias tree="eza --tree"
 alias v="nvim"
 
 # git
@@ -44,12 +41,6 @@ alias gpull="git pull --no-rebase && git fetch --prune --all"
 alias gpush="git push"
 alias gs="git status --short --branch --show-stash --untracked-files=all"
 
-# cheatsheets
-alias csgit="nvim ~/.dotfiles/.cheatsheets/git.md"
-alias cstmux="nvim ~/.dotfiles/.cheatsheets/tmux.md"
-alias csvim="nvim ~/.dotfiles/.cheatsheets/nvim.md"
-alias csunreal="nvim ~/.dotfiles/.cheatsheets/unreal.md"
-
 # global init stuff
 autoload -Uz compinit
 compinit
@@ -59,8 +50,6 @@ touch ~/.hushlogin
 
 # path exports
 export PATH=$PATH:$HOME/.scripts
-export PATH=$PATH:$HOME/.scripts-local
-export PATH=$PATH:$HOME/dev/depot_tools
 
 # nvm
 source $(brew --prefix nvm)/nvm.sh
@@ -82,3 +71,9 @@ export PROMPT='${COLOR_DEF}%d ${COLOR_GIT}$(parse_git_branch)${COLOR_DEF}${NEWLI
 # history
 SAVEHIST=1000
 HISTFILE=~/.zsh_history
+setopt HIST_IGNORE_SPACE
+
+# edit command in vi
+autoload -z edit-command-line
+zle -N edit-command-line
+bindkey "^X^E" edit-command-line

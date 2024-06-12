@@ -1,1 +1,1 @@
-brew bundle --file=~/.dotfiles/Brewfile
+brew bundle --no-lock --file=./Brewfile
