@@ -1,4 +1,4 @@
-alias ls="ls -lah"
+alias ls="eza -lah --group-directories-first"
 alias pip="pip3"
 alias py="python3"
 alias python="python3"
