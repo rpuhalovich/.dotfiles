@@ -75,7 +75,7 @@ set hlsearch
 set ignorecase
 set incsearch
 set key=
-set laststatus=2
+set laststatus=1
 set linebreak nolist
 set listchars=tab:>·,space:·
 set mouse+=a

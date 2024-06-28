@@ -26,11 +26,12 @@ function gmerge() {
 formatting='%C(bold blue)<%cn> %Cgreen%ad %Cred%h%Creset -%C(yellow)%d%Creset %s %Creset'
 alias c="git add . && git commit && sleep 3 && git push"
 alias ga="git add ."
-alias gb="git branch -a --color=always | less -R"
+alias gb="git branch -a --color=always"
 alias gblame="git blame"
 alias gc="git commit"
 alias gch="git checkout"
-alias gcl="git clone --recursive"
+alias gclone="git clone --recursive"
+alias gcl="gclone"
 alias gd="git difftool"
 alias gf="git fetch --prune --all"
 alias gl="git log"
@@ -50,6 +51,7 @@ touch ~/.hushlogin
 
 # path exports
 export PATH=$PATH:$HOME/.scripts
+export PATH=$PATH:$HOME/.scripts-local
 
 # nvm
 source $(brew --prefix nvm)/nvm.sh
