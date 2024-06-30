@@ -6,9 +6,8 @@ alias rmds="find . -name .DS_Store -delete"
 alias v="nvim"
 
 # git
-function gdn() {
-    git diff --name-status $1
-    git diff --shortstat $1
+function gmod {
+    git status --porcelain | grep '^ M' | sed 's/^ M//'
 }
 
 function gmerge() {
@@ -24,15 +23,16 @@ function gmerge() {
 }
 
 formatting='%C(bold blue)<%cn> %Cgreen%ad %Cred%h%Creset -%C(yellow)%d%Creset %s %Creset'
-alias c="git add . && git commit && sleep 3 && git push"
+alias c="git add . && git commit && git push"
 alias ga="git add ."
 alias gb="git branch -a --color=always"
 alias gblame="git blame"
 alias gc="git commit"
 alias gch="git checkout"
-alias gclone="git clone --recursive"
 alias gcl="gclone"
+alias gclone="git clone --recursive"
 alias gd="git difftool"
+alias gdn="git diff --name-status"
 alias gf="git fetch --prune --all"
 alias gl="git log"
 alias glg="git log --first-parent --graph --topo-order --abbrev-commit --date=short --decorate --all --boundary --pretty=format:'$formatting'"

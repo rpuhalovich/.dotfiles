@@ -35,7 +35,7 @@ vim.keymap.set("n", "<leader>v", [[<C-w><C-v><C-w>l]])
 vim.keymap.set("n", "<leader>s", [[<C-w><C-s><C-w>j]])
 
 -- Auto Pairs
-vim.keymap.set("i", "{<cr>", [[<cr>{<cr>}<Esc>O]])
+vim.keymap.set("i", "{<cr>", [[{<cr>}<Esc>O]])
 
 -- Open Explorer
 vim.keymap.set("n", "<leader>e", [[:e .<cr>]])
