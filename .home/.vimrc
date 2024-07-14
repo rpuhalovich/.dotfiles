@@ -9,7 +9,6 @@ nnoremap <leader>cfg :e<space>~\.vimrc<cr>
 
 nnoremap $ g$
 nnoremap 0 g0
-" nnoremap A g$a
 nnoremap j gj
 nnoremap k gk
 
@@ -52,16 +51,22 @@ nnoremap <Up> <Up><CR><C-w>p
 " auto pair curly brackets
 inoremap {<cr> {<cr>}<Esc>O
 
-command! -nargs=1 Grep noautocmd vimgrep /<args>/gj ** | cw
+" if isdirectory('.git')
+"     if executable('rg')
+"         let &grepprg='rg -n'
+"     else
+"         let &grepprg='git grep -nr'
+"     endif
+" endif
+command! -nargs=+ Grep silent! grep! <args> | cw
 nnoremap ? :Grep<space>
+
 nnoremap <leader>f :find<space>
 
 command! -nargs=1 Tab noautocmd set ts=<args> sw=<args>
 
 " -------------------- Settings --------------------
 syntax on
-
-" set nu rnu
 
 set autoindent
 set background=dark
@@ -91,10 +96,8 @@ set smartindent
 set so=10
 set splitbelow splitright
 set ts=4 sw=4
-" set tw=72
 set visualbell
 set wildignore+=**/node_modules/**
-set wildoptions=pum
 set wildmenu
 set wildoptions=pum
 set wrap linebreak
@@ -112,9 +115,8 @@ if has("gui_running")
     set nonu nornu
     set guicursor+=a:blinkon0
     set guifont=Consolas:h12:cANSI
-    set guioptions-=T  "toolbar
-    set guioptions-=r  "scrollbar
-    " set guioptions-=m  "scrollbar
+    set guioptions-=T "toolbar
+    set guioptions-=r "scrollbar
 endif
 
 " delete trailing whitespace on save

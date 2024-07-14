@@ -3,7 +3,7 @@ let mapleader = " "
 nnoremap <leader>a :%y+<cr>
 
 nnoremap s :wa<cr>
-nnoremap <c-q> :q<cr>
+nnoremap <c-q> :qa<cr>
 
 nnoremap <C-u> <C-u>zz
 nnoremap <C-d> <C-d>zz
