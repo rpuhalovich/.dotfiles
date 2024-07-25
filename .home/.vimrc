@@ -51,15 +51,15 @@ nnoremap <Up> <Up><CR><C-w>p
 " auto pair curly brackets
 inoremap {<cr> {<cr>}<Esc>O
 
-" if isdirectory('.git')
-"     if executable('rg')
-"         let &grepprg='rg -n'
-"     else
-"         let &grepprg='git grep -nr'
-"     endif
-" endif
-command! -nargs=+ Grep silent! grep! <args> | cw
-nnoremap ? :Grep<space>
+if isdirectory('.git')
+    if executable('rg')
+        let &grepprg='rg -n'
+    else
+        let &grepprg='git grep -nr'
+    endif
+endif
+" command! -nargs=1 Grep grep <args> | cw
+" nnoremap ? :Grep<space>
 
 nnoremap <leader>f :find<space>
 
@@ -72,14 +72,13 @@ set autoindent
 set background=dark
 set backspace=indent,eol,start
 set belloff=all
-set cm=blowfish2
+" set cm=blowfish2
 set conceallevel=0
 set expandtab
 set hidden
 set hlsearch
 set ignorecase
 set incsearch
-set key=
 set laststatus=1
 set linebreak nolist
 set listchars=tab:>·,space:·

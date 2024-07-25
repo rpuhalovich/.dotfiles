@@ -55,7 +55,7 @@ export PATH=$PATH:$HOME/.scripts-local
 
 # nvm
 source $(brew --prefix nvm)/nvm.sh
-nvm use 18.17.1 --silent
+nvm use 18.18.0 --silent
 export NVM_DIR=~/.nvm
 
 # command line customization
@@ -79,3 +79,6 @@ setopt HIST_IGNORE_SPACE
 autoload -z edit-command-line
 zle -N edit-command-line
 bindkey "^X^E" edit-command-line
+
+# plan9
+export PATH=$PATH:/Users/rp/dev/plan9/bin
