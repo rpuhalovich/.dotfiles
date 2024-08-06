@@ -139,11 +139,11 @@ if filereadable($VIMRUNTIME . '\autoload\plug.vim') || filereadable($VIMRUNTIME 
     " PlugUpdate!
 
     call plug#begin()
-    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+    Plug 'junegunn/fzf', {'do': {-> fzf#install()}}
     Plug 'junegunn/fzf.vim'
     call plug#end()
 
-    let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.9 } }
+    let g:fzf_layout = {'window': {'width': 0.9, 'height': 0.9}}
 
     let g:fzf_vim = {}
     let g:fzf_vim.preview_window = ['down,50%']
