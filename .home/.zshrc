@@ -3,7 +3,8 @@ alias pip="pip3"
 alias py="python3"
 alias python="python3"
 alias rmds="find . -name .DS_Store -delete"
-alias v="nvim"
+alias v="vim"
+alias nv="nvim"
 
 # git
 function gmod {

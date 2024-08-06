@@ -143,11 +143,17 @@ if filereadable($VIMRUNTIME . '\autoload\plug.vim') || filereadable($VIMRUNTIME 
     Plug 'junegunn/fzf.vim'
     call plug#end()
 
+    let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.8 } }
+
     let g:fzf_vim = {}
-    let g:fzf_vim.preview_window = ['down,50%', 'ctrl-/']
-    let g:fzf_vim.layout = 'reverse'
-    let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.9 } }
+    let g:fzf_vim.preview_window = ['down,50%']
+
+    let rgcmd = 'rg --column --line-number --no-heading --color=always --smart-case --hidden .'
+    command! -bang -nargs=* Rg call fzf#vim#grep(rgcmd, 1, fzf#vim#with_preview({'options': ['--layout=reverse', '--preview-window=down,50%']}), 0)
+    command! -bang -nargs=* Files call fzf#vim#files('.', {'options': ['--layout=reverse']}, 0)
+    command! -bang -nargs=* Buffers call fzf#vim#buffers('.', {'options': ['--layout=reverse']}, 0)
 
     nnoremap <leader>f :Files<cr>
+    nnoremap <leader>b :Buffers<cr>
     nnoremap ? :Rg<cr>
 endif
