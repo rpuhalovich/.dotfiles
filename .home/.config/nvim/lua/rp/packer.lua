@@ -24,12 +24,4 @@ return require('packer').startup(function(use)
             {'rafamadriz/friendly-snippets'},
         }
     })
-    use({
-        'goolord/alpha-nvim',
-        config = function ()
-            require('alpha').setup(require('alpha.themes.dashboard').config)
-            local dashboard = require('alpha.themes.dashboard')
-            dashboard.section.buttons.val = {}
-        end
-    })
 end)

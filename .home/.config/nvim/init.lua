@@ -60,6 +60,8 @@ vim.keymap.set("n", "<leader>B", [[:%bd|e#<cr>]])
 vim.keymap.set("n", "<leader>/", [[:noh<cr>]])
 
 -- Better file search
+vim.cmd([[let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.9 } }]])
+
 local rgcmd = "'rg --column --line-number --no-heading --color=always --smart-case --hidden .'"
 vim.keymap.set("n", "?", [[:call fzf#vim#grep(]]..rgcmd..[[, fzf#vim#with_preview({'options': ['--layout=reverse', '--preview-window=down,50%']}), 0)<cr>]])
 vim.keymap.set("n", "<leader>f", [[:call fzf#vim#files('.', {'options': ['--layout=reverse']}, 0)<cr>]])
@@ -103,6 +105,7 @@ vim.opt.path:append("**")
 vim.opt.ruler = true
 vim.opt.scrolloff = 10
 vim.opt.shiftwidth = 4
+vim.opt.shortmess:append("I")
 vim.opt.showcmd = false
 vim.opt.signcolumn = "yes"
 vim.opt.smartindent = true
