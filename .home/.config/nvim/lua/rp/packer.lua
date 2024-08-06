@@ -4,10 +4,6 @@ vim.cmd([[packadd packer.nvim]])
 return require('packer').startup(function(use)
     use('ellisonleao/gruvbox.nvim')
     use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
-    use('preservim/nerdtree')
-    use('sbdchd/neoformat')
-    use('simrat39/symbols-outline.nvim')
-    use('tpope/vim-fugitive')
     use('wbthomason/packer.nvim')
     use('junegunn/fzf', {run = 'fzf#install()'})
     use('junegunn/fzf.vim')
@@ -33,13 +29,7 @@ return require('packer').startup(function(use)
         config = function ()
             require('alpha').setup(require('alpha.themes.dashboard').config)
             local dashboard = require('alpha.themes.dashboard')
-            dashboard.section.buttons.val = {
-                dashboard.button('<leader>e', 'File Explorer'),
-                dashboard.button('<leader>f', 'Find File'),
-                dashboard.button('?', 'Find Word'),
-                dashboard.button('e', 'New Scratch Buffer', ':enew<cr>'),
-                dashboard.button('q', 'Quit', ':qa<cr>')
-            }
+            dashboard.section.buttons.val = {}
         end
     })
 end)

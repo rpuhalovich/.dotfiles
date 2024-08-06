@@ -52,6 +52,7 @@ touch ~/.hushlogin
 # path exports
 export PATH=$PATH:$HOME/.scripts
 export PATH=$PATH:$HOME/.scripts-local
+export PATH=$PATH:$HOME/dev/depot_tools
 
 # nvm
 source $(brew --prefix nvm)/nvm.sh

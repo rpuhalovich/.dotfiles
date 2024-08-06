@@ -28,7 +28,6 @@ vim.keymap.set("v", "<C-d>", [[<C-d>zz]])
 vim.keymap.set("v", "<C-u>", [[<C-u>zz]])
 
 vim.keymap.set("n", "<leader>cfg", [[:e<space>~/.config/nvim/<cr>]])
-vim.keymap.set("n", "<leader>c", [[:e<space>~/.dotfiles/.cheatsheets/nvim.md<cr>]])
 
 -- Quick splits
 vim.keymap.set("n", "<leader>v", [[<C-w><C-v><C-w>l]])
@@ -58,40 +57,28 @@ vim.keymap.set({"n", "v"}, "<leader>d", [["+d]])
 -- Close all buffers except open one
 vim.keymap.set("n", "<leader>B", [[:%bd|e#<cr>]])
 
--- Better file search
 vim.keymap.set("n", "<leader>/", [[:noh<cr>]])
 
+-- Better file search
 local rgcmd = "'rg --column --line-number --no-heading --color=always --smart-case --hidden .'"
-vim.keymap.set("n", "?", [[:call fzf#vim#grep(]]..rgcmd..[[, fzf#vim#with_preview({'options': ['--layout=reverse', '--preview-window=down,50%']}), 0)<cr><cr>]])
+vim.keymap.set("n", "?", [[:call fzf#vim#grep(]]..rgcmd..[[, fzf#vim#with_preview({'options': ['--layout=reverse', '--preview-window=down,50%']}), 0)<cr>]])
 vim.keymap.set("n", "<leader>f", [[:call fzf#vim#files('.', {'options': ['--layout=reverse']}, 0)<cr>]])
 vim.keymap.set("n", "<leader>b", [[:call fzf#vim#buffers('.', {'options': ['--layout=reverse']}, 0)<cr>]])
 
--- Symbols Outline
-vim.keymap.set("n", "go", [[:SymbolsOutline<cr>W]])
-
 -- Rename symbol
 vim.keymap.set("n", "<leader>r", [[<cmd>lua vim.lsp.buf.rename()<cr>]], { noremap = true })
-
--- Git Blame
-vim.keymap.set("n", "gb", [[:G blame<cr>]])
-
--- Quick newline args
-vim.keymap.set("n", "<leader>n", [[f,lxi<cr><esc>]])
 
 -- SNIPPETS --
 vim.keymap.set("n", ",ls", [[oLOG("%s", *FString(""));<esc>F"i]])
 vim.keymap.set("n", ",mlc", [[j:-1read ~/.config/nvim/snippets/mlc<cr>kjjA<space>]])
 
--- NeoFormat
-vim.cmd([[command! -nargs=0 Prettier :Neoformat prettier]])
-
--- Tab size switching
-vim.cmd([[command! -nargs=1 Tab noautocmd set ts=<args> sw=<args>]])
-
 -- SETS --
 vim.g.mapleader = " "
 
 vim.opt.statusline = "%<%F -- %-12.(%lL %cC %P%) %h%m%r"
+
+vim.g.netrw_banner = 0
+vim.g.netrw_liststyle = 3
 
 vim.g.vim_json_conceal = 0
 vim.go.conceallevel = 0
@@ -107,7 +94,7 @@ vim.opt.hlsearch = false
 vim.opt.ignorecase = true
 vim.opt.incsearch = true
 vim.opt.isfname:append("@-@")
-vim.opt.laststatus = 0
+vim.opt.laststatus = 2
 vim.opt.linebreak = true
 vim.opt.list = false
 vim.opt.listchars = { space = "·", tab = "> " }
@@ -139,23 +126,6 @@ vim.cmd([[autocmd FileType * set formatoptions-=cro]])
 -- remove trailing whitespace on save
 vim.cmd([[autocmd BufWritePre * :%s/\s\+$//e]])
 
--- NERDTree
-vim.g.NERDTreeMinimalUI = 1
-vim.g.NERDTreeMinimalMenu = 1
-vim.g.NERDTreeMouseMode = 3
-vim.g.NERDTreeShowHidden = 1
-vim.g.NERDTreeWinSize = 40
-vim.g.NERDTreeHighlightCursorline = 0
-vim.g.NERDTreeDirArrowExpandable = '|'
-vim.g.NERDTreeDirArrowCollapsible = '|'
-
--- NeoFormat
-vim.g.neoformat_try_node_exe = 1
-
--- BLAMER --
-vim.g.blamer_delay = 100
-vim.g.blamer_show_in_visual_modes = 0
-
 -- LSP --
 -- see: https://github.com/VonHeikemen/lsp-zero.nvim for default keybindings
 local lsp = require("lsp-zero").preset({
@@ -173,17 +143,6 @@ lsp.default_keymaps({
 lsp.configure('tsserver', {})
 
 lsp.setup()
-
--- SYMBOLS OUTLINE --
-require("symbols-outline").setup({
-    position = "bottom",
-    width = 35,
-    autofold_depth = 0,
-    auto_unfold_hover = false,
-    keymaps = {
-        focus_location = "<cr>"
-    }
-})
 
 -- TREE SITTER --
 require("nvim-treesitter.configs").setup({
@@ -209,7 +168,7 @@ require("gruvbox").setup({
     },
     overrides = {
         Visual = { bg = highlightColour },
-        StatusLine = { bg = backgroundColour },
+        -- StatusLine = { bg = backgroundColour },
         SignColumn = { bg = backgroundColour },
         DiagnosticError = { bg = backgroundColour },
         DiagnosticSignError = { bg = backgroundColour },
