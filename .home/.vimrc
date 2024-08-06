@@ -90,7 +90,7 @@ set grepprg=rg\ --vimgrep
 set grepformat=%f:%l:%c:%m
 
 autocmd BufWritePre * %s/\s\+$//e " delete trailing whitespace on save
-autocmd FileType * set formatoptions-=cro
+autocmd FileType * set formatoptions-=cro " never add comment on newline
 
 let g:vim_json_conceal=0
 let g:netrw_banner=0 " disable annoying banner
