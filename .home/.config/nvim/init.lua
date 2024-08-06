@@ -62,10 +62,14 @@ vim.keymap.set("n", "<leader>/", [[:noh<cr>]])
 -- Better file search
 vim.cmd([[let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.9 } }]])
 
-local rgcmd = "'rg --column --line-number --no-heading --color=always --smart-case --hidden .'"
-vim.keymap.set("n", "?", [[:call fzf#vim#grep(]]..rgcmd..[[, fzf#vim#with_preview({'options': ['--layout=reverse', '--preview-window=down,50%']}), 0)<cr>]])
-vim.keymap.set("n", "<leader>f", [[:call fzf#vim#files('.', {'options': ['--layout=reverse']}, 0)<cr>]])
-vim.keymap.set("n", "<leader>b", [[:call fzf#vim#buffers('.', {'options': ['--layout=reverse']}, 0)<cr>]])
+vim.cmd([[let rgcmd = 'rg --column --line-number --no-heading --color=always --smart-case --hidden .']])
+vim.cmd([[command! -bang -nargs=* Rg call fzf#vim#grep(rgcmd, 1, fzf#vim#with_preview({'options': ['--layout=reverse', '--preview-window=down,50%']}), 0)]])
+vim.cmd([[command! -bang -nargs=* Files call fzf#vim#files('.', {'options': ['--layout=reverse']}, 0)]])
+vim.cmd([[command! -bang -nargs=* Buffers call fzf#vim#buffers('.', {'options': ['--layout=reverse']}, 0)]])
+
+vim.keymap.set("n", "?", [[:Rg<cr>]])
+vim.keymap.set("n", "<leader>f", [[:Files<cr>]])
+vim.keymap.set("n", "<leader>b", [[:Buffers<cr>]])
 
 -- Rename symbol
 vim.keymap.set("n", "<leader>r", [[<cmd>lua vim.lsp.buf.rename()<cr>]], { noremap = true })
