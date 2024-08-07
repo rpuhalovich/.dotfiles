@@ -151,12 +151,18 @@ if filereadable($VIMRUNTIME . '\autoload\plug.vim') || filereadable($VIMRUNTIME 
     let g:fzf_vim = {}
     let g:fzf_vim.preview_window = ['down,50%']
 
-    let rgcmd = 'rg --column --line-number --no-heading --color=always --smart-case --glob=!tags --hidden .'
-    command! -bang -nargs=0 Buffers call fzf#vim#buffers('.', {'options': ['--layout=reverse']}, 0)
-    command! -bang -nargs=0 Files call fzf#vim#files('.', {'options': ['--layout=reverse']}, 0)
-    command! -bang -nargs=0 Rg call fzf#vim#grep(rgcmd, 1, fzf#vim#with_preview({'options': ['--layout=reverse', '--preview-window=down,50%']}), 0)
+    let rgcmd = 'rg --column --line-number --no-heading --color=always --smart-case -g !tags --hidden .'
+    command! -bang -nargs=* Buffers call fzf#vim#buffers('.', {'options': ['--layout=reverse']}, 0)
+    command! -bang -nargs=* Files call fzf#vim#files('.', {'options': ['--layout=reverse']}, 0)
+    command! -bang -nargs=* GFiles call fzf#vim#files('.', {'source': 'git ls-files', 'options': ['--layout=reverse']}, 0)
+    command! -bang -nargs=* Rg call fzf#vim#grep(rgcmd, 1, fzf#vim#with_preview({'options': ['--layout=reverse', '--preview-window=down,50%']}), 0)
 
     nnoremap <leader>b :Buffers<cr>
-    nnoremap <leader>f :Files<cr>
     nnoremap ? :Rg<cr>
+
+    if isdirectory($PWD . '\.git') || isdirectory($PWD . '/.git')
+        nnoremap <leader>f :GFiles<cr>
+    else
+        nnoremap <leader>f :Files<cr>
+    endif
 endif
