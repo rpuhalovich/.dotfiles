@@ -48,6 +48,7 @@ nnoremap <leader>/ :noh<cr>
 nnoremap <leader>f :find<space>
 
 command! -nargs=1 Tab noautocmd set ts=<args> sw=<args>
+command! MakeTags !ctags -R .
 
 " -------------------- settings --------------------
 syntax on
@@ -148,7 +149,7 @@ if filereadable($VIMRUNTIME . '\autoload\plug.vim') || filereadable($VIMRUNTIME 
     let g:fzf_vim = {}
     let g:fzf_vim.preview_window = ['down,50%']
 
-    let rgcmd = 'rg --column --line-number --no-heading --color=always --smart-case --hidden .'
+    let rgcmd = 'rg --column --line-number --no-heading --color=always --smart-case --glob=!tags --hidden .'
     command! -bang -nargs=* Buffers call fzf#vim#buffers('.', {'options': ['--layout=reverse']}, 0)
     command! -bang -nargs=* Files call fzf#vim#files('.', {'options': ['--layout=reverse']}, 0)
     command! -bang -nargs=* Rg call fzf#vim#grep(rgcmd, 1, fzf#vim#with_preview({'options': ['--layout=reverse', '--preview-window=down,50%']}), 0)
