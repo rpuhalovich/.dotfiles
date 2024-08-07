@@ -48,7 +48,7 @@ nnoremap <leader>/ :noh<cr>
 nnoremap <leader>f :find<space>
 
 command! -nargs=1 Tab noautocmd set ts=<args> sw=<args>
-command! MakeTags !ctags -R .
+command! MakeTags !ctags<space>-R<space>.
 
 " -------------------- settings --------------------
 syntax on
@@ -60,6 +60,8 @@ set belloff=all
 set cm=blowfish2
 set conceallevel=0
 set expandtab
+set grepformat=%f:%l:%c:%m
+set grepprg=rg\ --vimgrep
 set hidden
 set hlsearch
 set ignorecase
@@ -80,15 +82,13 @@ set shortmess+=I
 set smartindent
 set so=10
 set splitbelow splitright
+set statusline=%<%F\ --\ %-12.(%lL\ %cC\ %P%)\ %h%m%r
 set ts=4 sw=4
 set visualbell
 set wildignore+=**/node_modules/**
 set wildmenu
 set wildoptions=pum,fuzzy
 set wrap linebreak
-
-set grepprg=rg\ --vimgrep
-set grepformat=%f:%l:%c:%m
 
 autocmd BufWritePre * %s/\s\+$//e " delete trailing whitespace on save
 autocmd FileType * set formatoptions-=cro " never add comment on newline
