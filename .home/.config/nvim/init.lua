@@ -118,7 +118,7 @@ vim.opt.swapfile = false
 vim.opt.tabstop = 4
 vim.opt.termguicolors = true
 vim.opt.timeoutlen = 500
-vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir-nvim"
 vim.opt.undofile = true
 vim.opt.updatetime = 50
 vim.opt.wildignore:append("**/node_modules/**")
