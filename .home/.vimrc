@@ -1,9 +1,5 @@
-set nocompatible
-filetype off
-
 " -- KEYBINDS --
 let mapleader = " "
-set wildcharm=<c-z> " for tab completion in maps
 
 nnoremap <leader>cfg :e<space>~\.vimrc<cr>
 
@@ -16,7 +12,7 @@ nnoremap s :w<cr>
 vnoremap s <esc>:w<cr>
 nnoremap <c-q> :q<cr>
 
-nnoremap <leader>b :buffer<space><c-z>
+nnoremap <leader>b :buffer<space>
 nnoremap <leader>B mm:%bd\|e#\|bd#<cr>`m
 
 nnoremap <leader>a :%y+<cr>
@@ -55,11 +51,12 @@ inoremap {<cr> {<cr>}<Esc>O
 
 command! -nargs=+ Grep silent! grep <args> | cw | redraw!
 command! -nargs=1 Tab noautocmd set ts=<args> sw=<args>
-command! Tags :execute 'silent! !ctags<space>-R<space>. &' | redraw!
 
 " -- SETTINGS --
+filetype off
 syntax on
 
+set nocompatible
 set autoindent
 set background=dark
 set backspace=indent,eol,start
@@ -67,8 +64,11 @@ set belloff=all
 set cm=blowfish2
 set conceallevel=0
 set expandtab
+
+" TODO: make check for rg
 set grepformat=%f:%l:%c:%m
 set grepprg=rg\ --vimgrep
+
 set hidden
 set ignorecase
 set incsearch
@@ -89,27 +89,27 @@ set smartindent
 set so=10
 set splitbelow
 set splitright
-set statusline=%<%F\ --\ %-12.(%lL\ %cC\ %P%)\ %h%m%r
 set ts=4
 set sw=4
 set visualbell
 
-set wildmenu
-set wildignore+=**/node_modules/**
-set wildignore+=**/Intermediate/**
 set wildignore+=**/Binaries/**
-set wildignore+=*.uasset
-set wildignore+=*.umap
+set wildignore+=**/Intermediate/**
+set wildignore+=**/node_modules/**
 set wildignore+=*.gen.*
 set wildignore+=*.generated.*
 set wildignore+=*.o.*
-set wildoptions=pum,fuzzy
+set wildignore+=*.uasset
+set wildignore+=*.umap
+set wildmenu
 
+set wildoptions=pum,fuzzy
 set wrap
 set linebreak
 set formatoptions-=cro
 
 autocmd BufWritePre * %s/\s\+$//e " delete trailing whitespace on save
+autocmd BufReadPre *.cs set cc=160
 
 let g:vim_json_conceal=0
 let g:netrw_banner=0 " disable annoying banner
@@ -126,8 +126,6 @@ if has('win32') && has("gui_running")
     highlight Cursor guifg=black guibg=orange
     highlight iCursor guifg=black guibg=orange
 
-    set cc=160
-
     set guioptions+=d
     set guicursor=n-v-c-i:block-Cursor
     set guicursor+=a:blinkon0
@@ -135,6 +133,7 @@ if has('win32') && has("gui_running")
     set guioptions-=T "toolbar
     set guioptions-=m "menubar
     set guioptions-=r "scrollbar
+    set statusline=%<%F\ --\ %-12.(%lL\ %cC\ %P%)\ %h%m%r
 
     nnoremap $ g$
     nnoremap 0 g0
