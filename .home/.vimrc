@@ -47,9 +47,11 @@ nnoremap <leader>/ :noh<cr>
 nnoremap <leader>f :find<space>
 nnoremap ? :Grep<space>""<left>
 
+" switch between header and source files for cpp
 nnoremap <leader>o :e %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<CR>
 
-nnoremap ,log aUE_LOG(LogTemp, Warning, TEXT(""));<esc>F"i
+" auto bracket pair
+inoremap {<cr> {<cr>}<Esc>O
 
 command! -nargs=+ Grep silent! grep <args> | cw | redraw!
 command! -nargs=1 Tab noautocmd set ts=<args> sw=<args>
