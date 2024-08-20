@@ -43,10 +43,9 @@ nnoremap <leader>/ :noh<cr>
 nnoremap <leader>f :find<space>
 nnoremap ? :Grep<space>""<left>
 
-" switch between header and source files for cpp
-nnoremap <leader>o :e %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<CR>
+" quick switch between h and cpp
+nnoremap <leader>o :e %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<cr>
 
-" auto bracket pair
 inoremap {<cr> {<cr>}<Esc>O
 
 command! -nargs=+ Grep silent! grep <args> | cw | redraw!
@@ -65,7 +64,7 @@ set cm=blowfish2
 set conceallevel=0
 set expandtab
 
-" TODO: make check for rg
+" make check for rg
 set grepformat=%f:%l:%c:%m
 set grepprg=rg\ --vimgrep
 
@@ -109,7 +108,6 @@ set linebreak
 set formatoptions-=cro
 
 autocmd BufWritePre * %s/\s\+$//e " delete trailing whitespace on save
-autocmd BufReadPre *.cs set cc=160
 
 let g:vim_json_conceal=0
 let g:netrw_banner=0 " disable annoying banner
@@ -122,7 +120,9 @@ endif
 if has('win32') && has("gui_running")
     colorscheme retrobox
 
-    au GUIEnter * simalt ~x
+    autocmd GUIEnter * simalt ~x
+    " autocmd BufReadPre *.cs set cc=160
+
     highlight Cursor guifg=black guibg=orange
     highlight iCursor guifg=black guibg=orange
 
