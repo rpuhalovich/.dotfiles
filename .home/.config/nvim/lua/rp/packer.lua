@@ -1,12 +1,7 @@
 -- From: https://github.com/wbthomason/packer.nvim
 vim.cmd([[packadd packer.nvim]])
-
 return require('packer').startup(function(use)
-    use('ellisonleao/gruvbox.nvim')
-    use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
     use('wbthomason/packer.nvim')
-    use('junegunn/fzf', {run = 'fzf#install()'})
-    use('junegunn/fzf.vim')
     use({
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v1.x',

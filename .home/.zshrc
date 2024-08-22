@@ -1,47 +1,13 @@
-alias ls="eza -lah --group-directories-first"
+source ~/.gitrc
+
+alias ls="ls -lah --color"
 alias pip="pip3"
 alias py="python3"
 alias python="python3"
 alias rmds="find . -name .DS_Store -delete"
 alias v="vim"
 alias nv="nvim"
-
-# git
-function gmod {
-    git status --porcelain | grep '^ M' | sed 's/^ M//'
-}
-
-function gmerge() {
-    if [ $# -ne 1 ]; then
-        echo "Invalid arguments"
-        return
-    fi
-    git fetch --prune --all
-    git checkout $1
-    git pull --no-rebase
-    git checkout -
-    git merge $1
-}
-
-formatting='%C(bold blue)<%cn> %Cgreen%ad %Cred%h%Creset -%C(yellow)%d%Creset %s %Creset'
-alias c="git add . && git commit && git push"
-alias ga="git add ."
-alias gb="git branch -a --color=always"
-alias gblame="git blame"
-alias gc="git commit"
-alias gch="git checkout"
-alias gcl="gclone"
-alias gclone="git clone --recursive"
-alias gd="git difftool"
-alias gdn="git diff --name-status"
-alias gf="git fetch --prune --all"
-alias gl="git log"
-alias glg="git log --first-parent --graph --topo-order --abbrev-commit --date=short --decorate --all --boundary --pretty=format:'$formatting'"
-alias glo="git log --oneline --pretty=format:'$formatting'"
-alias glt="git log --tags --no-walk --pretty=oneline --abbrev-commit"
-alias gpull="git pull --no-rebase && git fetch --prune --all"
-alias gpush="git push"
-alias gs="git status --short --branch --show-stash --untracked-files=all"
+alias uuid="node -e \"console.log(require('crypto').randomUUID())\""
 
 # global init stuff
 autoload -Uz compinit

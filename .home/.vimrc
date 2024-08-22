@@ -60,7 +60,6 @@ set autoindent
 set background=dark
 set backspace=indent,eol,start
 set belloff=all
-set cm=blowfish2
 set conceallevel=0
 set expandtab
 
@@ -71,7 +70,6 @@ set grepprg=rg\ --vimgrep
 set hidden
 set ignorecase
 set incsearch
-set key=
 set laststatus=2
 set linebreak
 set listchars=tab:>·,space:·

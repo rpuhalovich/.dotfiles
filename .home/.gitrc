@@ -1,11 +1,3 @@
-set -o vi
-
-alias ls="ls -lah --color"
-alias cls="clear"
-alias v="vim"
-alias rg="rg --path-separator=//"
-alias uuid="node -e \"console.log(require('crypto').randomUUID())\""
-
 function modified() {
     files=$(git status --porcelain | grep -E '^( M )' | grep -E '\.cs' | sed 's/^ M //') # modified
     files+=" $(git ls-files -o --exclude-standard | grep -E '\.cs')" # untracked
@@ -68,6 +60,3 @@ alias glt="git log --tags --no-walk --pretty=oneline --abbrev-commit"
 alias gpull="git fetch --prune --all && git pull --no-rebase"
 alias gpush="git push"
 alias gs="git status --short --branch --show-stash --untracked-files=all"
-
-export PATH=$PATH:$HOME/bin
-export TERM=xterm

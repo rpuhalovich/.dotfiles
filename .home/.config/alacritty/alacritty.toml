@@ -33,7 +33,7 @@ foreground = "#d5c4a1"
 size = 14.0
 
 [font.normal]
-family = "JetBrainsMono Nerd Font"
+family = "JetBrains Mono NL"
 style = "Regular"
 
 [mouse]
