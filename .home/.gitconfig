@@ -24,5 +24,9 @@
 	required = true
 [credential]
 	helper = osxkeychain
+	helper = 
+	helper = /usr/local/share/gcm-core/git-credential-manager
 [http]
 	cookiefile = /Users/rp/.gitcookies
+[credential "https://dev.azure.com"]
+	useHttpPath = true

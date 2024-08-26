@@ -1,4 +1,4 @@
-for i in .ideavimrc .clangd .scripts .hammerspoon .gitconfig .vimrc .zshrc .tmux.conf; do
+for i in .ideavimrc .clangd .scripts .hammerspoon .gitconfig .vimrc .zshrc .tmux.conf .gitrc; do
     rm -rf $HOME/$i
     ln -s $HOME/.dotfiles/.home/$i $HOME/$i
 done
