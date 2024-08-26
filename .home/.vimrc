@@ -48,37 +48,46 @@ nnoremap <leader>o :e %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<cr>
 
 inoremap {<cr> {<cr>}<Esc>O
 
+nnoremap $ g$
+nnoremap 0 g0
+nnoremap A g$a
+nnoremap j gj
+nnoremap k gk
+
+vnoremap $ g$
+vnoremap 0 g0
+vnoremap A g$a
+vnoremap j gj
+vnoremap k gk
+
 command! -nargs=+ Grep silent! grep <args> | cw | redraw!
 command! -nargs=1 Tab noautocmd set ts=<args> sw=<args>
 
-" -- SETTINGS --
+" -- SETS --
 filetype off
 syntax on
 
-set nocompatible
 set autoindent
 set background=dark
 set backspace=indent,eol,start
 set belloff=all
 set conceallevel=0
 set expandtab
-
-" make check for rg
+set formatoptions-=cro
 set grepformat=%f:%l:%c:%m
 set grepprg=rg\ --vimgrep
-
 set hidden
 set ignorecase
 set incsearch
 set laststatus=2
 set linebreak
+set linebreak
 set listchars=tab:>·,space:·
 set mouse+=a
 set nobackup
+set nocompatible
 set noshowmode
 set noswapfile
-set undodir=~/.vim/undodir
-set undofile
 set path+=**
 set ruler
 set shortmess+=I
@@ -86,10 +95,12 @@ set smartindent
 set so=10
 set splitbelow
 set splitright
-set ts=4
+set statusline=%<%F\ --\ %-12.(%lL\ %cC\ %P%)\ %h%m%r
 set sw=4
+set ts=4
+set undodir=~/.vim/undodir
+set undofile
 set visualbell
-
 set wildignore+=**/Binaries/**
 set wildignore+=**/Intermediate/**
 set wildignore+=**/node_modules/**
@@ -99,11 +110,8 @@ set wildignore+=*.o.*
 set wildignore+=*.uasset
 set wildignore+=*.umap
 set wildmenu
-
 set wildoptions=pum,fuzzy
 set wrap
-set linebreak
-set formatoptions-=cro
 
 autocmd BufWritePre * %s/\s\+$//e " delete trailing whitespace on save
 
@@ -131,17 +139,4 @@ if has('win32') && has("gui_running")
     set guioptions-=T "toolbar
     set guioptions-=m "menubar
     set guioptions-=r "scrollbar
-    set statusline=%<%F\ --\ %-12.(%lL\ %cC\ %P%)\ %h%m%r
-
-    nnoremap $ g$
-    nnoremap 0 g0
-    nnoremap A g$a
-    nnoremap j gj
-    nnoremap k gk
-
-    vnoremap $ g$
-    vnoremap 0 g0
-    vnoremap A g$a
-    vnoremap j gj
-    vnoremap k gk
 endif
