@@ -113,7 +113,7 @@ set wildmenu
 set wildoptions=pum,fuzzy
 set wrap
 
-autocmd BufWritePre * %s/\s\+$//e " delete trailing whitespace on save
+" autocmd BufWritePre * %s/\s\+$//e " delete trailing whitespace on save
 
 let g:vim_json_conceal=0
 let g:netrw_banner=0 " disable annoying banner
