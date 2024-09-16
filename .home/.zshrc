@@ -20,6 +20,7 @@ touch ~/.hushlogin
 export PATH=$PATH:$HOME/.scripts
 export PATH=$PATH:$HOME/.scripts-local
 export PATH=$PATH:$HOME/dev/depot_tools
+export PATH="$PATH:/Users/ryanpuhalovich/.dotnet/tools"
 
 # nvm
 source $(brew --prefix nvm)/nvm.sh

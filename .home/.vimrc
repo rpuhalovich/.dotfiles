@@ -1,4 +1,4 @@
-" -- KEYBINDS --
+" --- keybinds ---
 let mapleader = " "
 
 nnoremap <leader>cfg :e<space>~\.vimrc<cr>
@@ -48,22 +48,17 @@ nnoremap <leader>o :e %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<cr>
 
 inoremap {<cr> {<cr>}<Esc>O
 
-nnoremap $ g$
-nnoremap 0 g0
-nnoremap A g$a
-nnoremap j gj
-nnoremap k gk
+if !has('nvim')
+    nnoremap j gj
+    vnoremap j gj
+    nnoremap k gk
+    vnoremap k gk
+endif
 
-vnoremap $ g$
-vnoremap 0 g0
-vnoremap A g$a
-vnoremap j gj
-vnoremap k gk
-
-command! -nargs=+ Grep silent! grep <args> | cw | redraw!
+command! -nargs=+ Grep silent! grep <args> | cw 20 | redraw!
 command! -nargs=1 Tab noautocmd set ts=<args> sw=<args>
 
-" -- SETS --
+" --- sets ---
 filetype off
 syntax on
 
@@ -73,9 +68,8 @@ set backspace=indent,eol,start
 set belloff=all
 set conceallevel=0
 set expandtab
-set formatoptions-=cro
 set grepformat=%f:%l:%c:%m
-set grepprg=rg\ --vimgrep
+set grepprg=rg\ --vimgrep\ -i
 set hidden
 set ignorecase
 set incsearch
@@ -85,13 +79,13 @@ set linebreak
 set listchars=tab:>·,space:·
 set mouse+=a
 set nobackup
-set nocompatible
 set noshowmode
 set noswapfile
 set path+=**
 set ruler
 set shortmess+=I
 set smartindent
+set smoothscroll
 set so=10
 set splitbelow
 set splitright
@@ -104,6 +98,8 @@ set visualbell
 set wildignore+=**/Binaries/**
 set wildignore+=**/Intermediate/**
 set wildignore+=**/node_modules/**
+set wildignore+=**/net6.0/**
+set wildignore+=**/out/**
 set wildignore+=*.gen.*
 set wildignore+=*.generated.*
 set wildignore+=*.o.*
@@ -113,7 +109,10 @@ set wildmenu
 set wildoptions=pum,fuzzy
 set wrap
 
-" autocmd BufWritePre * %s/\s\+$//e " delete trailing whitespace on save
+autocmd BufWritePre * %s/\s\+$//e " delete trailing whitespace on save
+
+" disable comments on new lines
+autocmd BufNewFile,BufRead * setlocal formatoptions-=cro
 
 let g:vim_json_conceal=0
 let g:netrw_banner=0 " disable annoying banner
@@ -127,7 +126,6 @@ if has('win32') && has("gui_running")
     colorscheme retrobox
 
     autocmd GUIEnter * simalt ~x
-    " autocmd BufReadPre *.cs set cc=160
 
     highlight Cursor guifg=black guibg=orange
     highlight iCursor guifg=black guibg=orange
