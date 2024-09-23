@@ -120,9 +120,7 @@ set wildoptions=pum,fuzzy
 set wrap
 
 autocmd BufWritePre * %s/\s\+$//e " delete trailing whitespace on save
-
-" disable comments on new lines
-autocmd BufNewFile,BufRead * setlocal formatoptions-=cro
+autocmd BufNewFile,BufRead * setlocal formatoptions-=cro " disable comments on new lines
 
 let g:vim_json_conceal=0
 let g:netrw_banner=0
