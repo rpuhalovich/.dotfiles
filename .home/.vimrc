@@ -58,6 +58,16 @@ endif
 command! -nargs=+ Grep silent! grep <args> | cw 20 | redraw!
 command! -nargs=1 Tab noautocmd set ts=<args> sw=<args>
 
+" from :vert h emacs-keys
+cnoremap <C-A> <Home>
+cnoremap <C-B> <Left>
+cnoremap <C-D> <Del>
+cnoremap <C-E> <End>
+cnoremap <C-F> <Right>
+cnoremap <C-N> <Down>
+cnoremap <C-P> <Up>
+cnoremap <C-k> <C-\>e getcmdpos() == 1 ? '' : getcmdline()[:getcmdpos()-2]<CR>
+
 " --- sets ---
 filetype off
 syntax on
@@ -115,8 +125,8 @@ autocmd BufWritePre * %s/\s\+$//e " delete trailing whitespace on save
 autocmd BufNewFile,BufRead * setlocal formatoptions-=cro
 
 let g:vim_json_conceal=0
-let g:netrw_banner=0 " disable annoying banner
-let g:netrw_liststyle=3 " tree view
+let g:netrw_banner=0
+let g:netrw_liststyle=1
 
 if has('mac')
     colorscheme retrobox

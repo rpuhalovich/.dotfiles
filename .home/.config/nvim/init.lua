@@ -1,9 +1,13 @@
-vim.cmd([[so ~/.vimrc]])
+vim.cmd([[
+so ~/.vimrc
 
-vim.cmd([[nnoremap <leader>cfg :e<space>~/.dotfiles/.home/.config/nvim/<cr>]])
-vim.cmd([[set fillchars+=vert:\|]])
-vim.cmd([[autocmd BufReadPre *.cs set cc=160]])
-vim.cmd([[autocmd BufNewFile,BufRead * setlocal formatoptions-=cro]])
+nnoremap <leader>cfg :e<space>~/.dotfiles/.home/.config/nvim/<cr>
+
+set fillchars+=vert:\|
+
+autocmd BufNewFile,BufRead * setlocal formatoptions-=cro
+autocmd BufReadPre *.cs set cc=160
+]])
 
 vim.opt.cursorline = false
 vim.opt.expandtab = true
@@ -22,5 +26,13 @@ local lsp = require("lsp-zero").preset({
     manage_nvim_cmp = true,
     suggest_lsp_servers = false
 })
+
 lsp.default_keymaps({ buffer = bufnr, omit = {'<cr>'} })
+
+vim.cmd([[
+autocmd FileType cs nnoremap <c-]> <cmd>lua require('omnisharp_extended').lsp_definition()<cr>
+autocmd FileType cs nnoremap gi <cmd>lua require('omnisharp_extended').lsp_implementation()<cr>
+autocmd FileType cs nnoremap gr <cmd>lua require('omnisharp_extended').lsp_references()<cr>
+]])
+
 lsp.setup()
