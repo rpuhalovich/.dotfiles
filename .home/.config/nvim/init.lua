@@ -4,9 +4,6 @@ so ~/.vimrc
 nnoremap <leader>cfg :e<space>~/.dotfiles/.home/.config/nvim/<cr>
 
 set fillchars+=vert:\|
-
-autocmd BufNewFile,BufRead * setlocal formatoptions-=cro
-autocmd BufReadPre *.cs set cc=160
 ]])
 
 vim.opt.cursorline = false
@@ -36,3 +33,7 @@ autocmd FileType cs nnoremap gr <cmd>lua require('omnisharp_extended').lsp_refer
 ]])
 
 lsp.setup()
+
+vim.cmd([[
+autocmd BufReadPre *.cs set cc=160
+]])

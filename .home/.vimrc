@@ -17,7 +17,7 @@ nnoremap <leader>B mm:%bd\|e#\|bd#<cr>`m
 
 nnoremap <leader>a :%y+<cr>
 
-nnoremap <leader>e :e<space>.<cr>
+nnoremap <leader>e :Ex<cr>
 
 nnoremap <C-u> <C-u>zz
 nnoremap <C-d> <C-d>zz
@@ -64,8 +64,6 @@ cnoremap <C-B> <Left>
 cnoremap <C-D> <Del>
 cnoremap <C-E> <End>
 cnoremap <C-F> <Right>
-cnoremap <C-N> <Down>
-cnoremap <C-P> <Up>
 cnoremap <C-k> <C-\>e getcmdpos() == 1 ? '' : getcmdline()[:getcmdpos()-2]<CR>
 
 " --- sets ---
