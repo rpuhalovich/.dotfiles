@@ -1,31 +1,29 @@
-function modified() {
+function gmodified() {
     files=$(git status --porcelain | grep -E '^( M )' | grep -E '\.cs' | sed 's/^ M //') # modified
     files+=" $(git ls-files -o --exclude-standard | grep -E '\.cs')" # untracked
     echo $(echo $files | sed 's/\n/ /')
 }
 
-function dfmt() {
-    if [ $# -ne 1 ]; then
-        echo "Invalid arguments"
-        return
+function gcheck() {
+    files=$(gmodified)
+    if [[ -z "$files" ]]; then
+       return 0
     fi
-    files=$(modified)
-    dotnet format style $1 --include $files
-    filter $files
+
+    if rg nocheckin $files; then
+        echo
+        echo "ERROR: unresolved nocheckin"
+        return 1
+    fi
 }
 
-function filter() {
-    sed -i 's/[ \t]*$//' $@ # remove trailing whitespace
-    sed -i '/^$/N;/^\n$/D' $@ # replace multiple empty lines with single empty line
-    sed -i 's/^M$//' $@ # use unix line endings
-    sed -i $'s/\t/    /g' $@ # replace tabs with spaces
+function dfmt() {
+    if [ $# -ne 1 ]; then
+        echo "ERROR: invalid arguments"
+        return 1
+    fi
 
-    # remove empty lines from beginning and end of file
-    for file in $@; do
-        sed -i -e '/./,$!d' -e :a -e '/^\n*$/{$d;N;ba' -e '}' $file
-    done
-
-    sed -i '$a\' $@ # add newline at end of file
+    dotnet format $1 --include $(gmodified)
 }
 
 function gmerge() {
@@ -41,8 +39,8 @@ function gmerge() {
 }
 
 formatting='%C(bold blue)<%cn> %Cgreen%ad %Cred%h%Creset -%C(yellow)%d%Creset %s %Creset'
-alias c="git add . && git commit && sleep 3 && git push"
-alias ga="git add"
+alias c="gcheck && git add . && git commit && sleep 3 && git push"
+alias ga="gcheck && git add"
 alias gb="git branch -a --color=always | less -R"
 alias gblame="git blame"
 alias gbloc="git branch --format \"%(refname:short) %(upstream)\" | awk '{if (!\$2) print \$1;}'"

@@ -3,11 +3,6 @@ let mapleader = " "
 
 nnoremap <leader>cfg :e<space>~\.vimrc<cr>
 
-inoremap <C-p> <up>
-inoremap <C-n> <down>
-nnoremap <C-p> <up>
-nnoremap <C-n> <down>
-
 nnoremap s :w<cr>
 vnoremap s <esc>:w<cr>
 nnoremap <c-q> :q<cr>
@@ -39,7 +34,6 @@ nnoremap <C-l> <C-w>l
 nnoremap <leader>v <C-w><C-v><C-w>l
 nnoremap <leader>s <C-w><C-s><C-w>j
 
-nnoremap <leader>/ :noh<cr>
 nnoremap <leader>f :find<space>
 nnoremap ? :Grep<space>""<left>
 
@@ -48,12 +42,10 @@ nnoremap <leader>o :e %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<cr>
 
 inoremap {<cr> {<cr>}<Esc>O
 
-if !has('nvim')
-    nnoremap j gj
-    vnoremap j gj
-    nnoremap k gk
-    vnoremap k gk
-endif
+nnoremap j gj
+vnoremap j gj
+nnoremap k gk
+vnoremap k gk
 
 command! -nargs=+ Grep silent! grep <args> | cw 20 | redraw!
 command! -nargs=1 Tab noautocmd set ts=<args> sw=<args>
@@ -82,7 +74,6 @@ set hidden
 set ignorecase
 set incsearch
 set laststatus=2
-set linebreak
 set linebreak
 set listchars=tab:>·,space:·
 set mouse+=a
