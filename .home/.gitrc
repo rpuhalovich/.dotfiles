@@ -1,3 +1,5 @@
+#!/bin/bash
+
 function gbdiff() {
     while true; do
         files=($(git diff --name-only $BRANCH_NAME))
@@ -14,7 +16,13 @@ function gbdiff() {
         done
 
         read choice
-        git difftool $BRANCH_NAME -- ${files[$choice]}
+        if [[ $choice == 'q' ]]; then
+            break
+        fi
+
+        if [[ $choice =~ '^[0-9]+$' ]] ; then
+            git difftool $BRANCH_NAME -- ${files[$choice]}
+        fi
     done
 }
 
