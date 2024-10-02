@@ -6,6 +6,8 @@ function gd() {
     PREV_FILE=""
     PREV_INDEX=0
 
+    SELECTION_INDEX=1
+
     while true; do
         files=($(git diff --name-only $BRANCH_NAME))
         if [ $? != 0 ]; then
@@ -25,12 +27,37 @@ function gd() {
         n=0
         for i in $files; do
             ((n++))
-            echo $n: $i
+            if [ $n -eq $SELECTION_INDEX ]; then
+                echo "$n: $i *"
+            else
+                echo "$n: $i"
+            fi
         done
 
-        read choice
+        read -sk choice # might not be portable to bash
+
         if [[ $choice == 'q' ]]; then
             break
+        fi
+
+        if [[ $choice == 'j' ]]; then
+            if ((SELECTION_INDEX >= ${#files[@]})); then
+                continue
+            fi
+            ((SELECTION_INDEX++))
+        fi
+
+        if [[ $choice == 'k' ]]; then
+            if ((SELECTION_INDEX <= 1)); then
+                continue
+            fi
+            ((SELECTION_INDEX--))
+        fi
+
+        if [[ $choice == $'\n' ]]; then
+            git difftool $BRANCH_NAME -- ${files[$SELECTION_INDEX]}
+            PREV_FILE=${files[$SELECTION_INDEX]}
+            PREV_INDEX=$SELECTION_INDEX
         fi
 
         if [[ $choice == 'a' ]]; then
