@@ -28,7 +28,7 @@ function gd() {
         if [[ -n $BRANCH_NAME ]]; then
             echo "diff: $BRANCH_NAME"
         else
-            echo "diff: $CURRENT_BRANCH"
+            echo "diff: $CURRENT_BRANCH (current)"
         fi
         echo
 
