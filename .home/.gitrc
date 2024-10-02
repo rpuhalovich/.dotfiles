@@ -4,7 +4,7 @@ function gd() {
     BRANCH_NAME=$1
 
     PREV_FILE=""
-    PREV_INDEX=-1
+    PREV_INDEX=0
 
     while true; do
         files=($(git diff --name-only $BRANCH_NAME))
