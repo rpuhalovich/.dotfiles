@@ -1,6 +1,6 @@
 #!/bin/bash
 
-function gbdiff() {
+function gd() {
     while true; do
         files=($(git diff --name-only $BRANCH_NAME))
         if [ $? != 0 ]; then
@@ -18,6 +18,10 @@ function gbdiff() {
         read choice
         if [[ $choice == 'q' ]]; then
             break
+        fi
+
+        if [[ $choice == 'a' ]]; then
+            git difftool $BRANCH_NAME -- ${files}
         fi
 
         if [[ $choice =~ '^[0-9]+$' ]] ; then
@@ -76,7 +80,6 @@ alias gc="git commit"
 alias gch="git checkout"
 alias gcl="gclone"
 alias gclone="git clone --recursive"
-alias gd="git difftool"
 alias gdn="git diff --name-status"
 alias gf="git fetch --prune --all"
 alias gl="git log --date=local"
