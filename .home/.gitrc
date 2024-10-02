@@ -6,7 +6,12 @@ function gd() {
     while true; do
         files=($(git diff --name-only $BRANCH_NAME))
         if [ $? != 0 ]; then
-            return 1
+            break
+        fi
+
+        if [[ -z $files ]]; then
+           echo no diffs
+           break
         fi
 
         clear
@@ -19,7 +24,6 @@ function gd() {
 
         read choice
         if [[ $choice == 'q' ]]; then
-            clear
             break
         fi
 
@@ -27,7 +31,15 @@ function gd() {
             git difftool $BRANCH_NAME -- ${files}
         fi
 
-        if [[ $choice =~ '^[0-9]+$' ]] ; then
+        if [[ $choice =~ '^[0-9]+$' ]]; then
+            if [ $choice -gt ${#files[@]} ]; then
+                continue
+            fi
+
+            if [ $choice -lt 1 ]; then
+                continue
+            fi
+
             git difftool $BRANCH_NAME -- ${files[$choice]}
         fi
     done
