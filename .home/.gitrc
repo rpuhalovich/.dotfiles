@@ -1,3 +1,23 @@
+function gbdiff() {
+    while true; do
+        files=($(git diff --name-only $BRANCH_NAME))
+        if [ $? != 0 ]; then
+            return 1
+        fi
+
+        clear
+
+        n=0
+        for i in $files; do
+            ((n++))
+            echo $n -- $i
+        done
+
+        read choice
+        git difftool $BRANCH_NAME -- ${files[$choice]}
+    done
+}
+
 function gmodified() {
     files=$(git status --porcelain | grep -E '^( M )' | grep -E '\.cs' | sed 's/^ M //') # modified
     files+=" $(git ls-files -o --exclude-standard | grep -E '\.cs')" # untracked
