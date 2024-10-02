@@ -6,6 +6,9 @@ nnoremap <leader>cfg :e<space>~/.dotfiles/.home/.config/nvim/<cr>
 set fillchars+=vert:\|
 
 autocmd BufReadPre *.cs set cc=160
+
+set errorformat=\ %#%f(%l\\\,%c):\ %m
+set makeprg=dotnet\ build\ --nologo\ -v\ q\ --property\ WarningLevel=0\ /clp:ErrorsOnly
 ]])
 
 vim.opt.cursorline = false
