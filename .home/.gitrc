@@ -3,6 +3,9 @@
 function gd() {
     BRANCH_NAME=$1
 
+    PREV_FILE=""
+    PREV_INDEX=-1
+
     while true; do
         files=($(git diff --name-only $BRANCH_NAME))
         if [ $? != 0 ]; then
@@ -15,6 +18,9 @@ function gd() {
         fi
 
         clear
+
+        echo "prev($PREV_INDEX): $PREV_FILE"
+        echo
 
         n=0
         for i in $files; do
@@ -41,6 +47,9 @@ function gd() {
             fi
 
             git difftool $BRANCH_NAME -- ${files[$choice]}
+
+            PREV_FILE=${files[$choice]}
+            PREV_INDEX=$choice
         fi
     done
 }
