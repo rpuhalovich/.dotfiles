@@ -3,10 +3,12 @@
 function gd() {
     BRANCH_NAME=$1
 
-    PREV_FILE=""
+    PREV_FILE="-"
     PREV_INDEX=0
 
     SELECTION_INDEX=1
+
+    CURRENT_BRANCH=$(git branch --no-color | grep -E '^\*' | sed 's/^\*.//')
 
     while true; do
         files=($(git diff --name-only $BRANCH_NAME))
@@ -22,13 +24,19 @@ function gd() {
         clear
 
         echo "prev($PREV_INDEX): $PREV_FILE"
+
+        if [[ -n $BRANCH_NAME ]]; then
+            echo "diff: $BRANCH_NAME"
+        else
+            echo "diff: $CURRENT_BRANCH"
+        fi
         echo
 
         n=0
         for i in $files; do
             ((n++))
             if [ $n -eq $SELECTION_INDEX ]; then
-                echo "$n: $i *"
+                echo "$n:*$i*"
             else
                 echo "$n: $i"
             fi
