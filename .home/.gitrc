@@ -1,6 +1,8 @@
 #!/bin/bash
 
 function gd() {
+    BRANCH_NAME=$1
+
     while true; do
         files=($(git diff --name-only $BRANCH_NAME))
         if [ $? != 0 ]; then
@@ -12,11 +14,12 @@ function gd() {
         n=0
         for i in $files; do
             ((n++))
-            echo $n -- $i
+            echo $n: $i
         done
 
         read choice
         if [[ $choice == 'q' ]]; then
+            clear
             break
         fi
 
