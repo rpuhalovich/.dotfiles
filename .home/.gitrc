@@ -78,6 +78,14 @@ function gd() {
             PREV_FILE=${files[$choice]}
             PREV_INDEX=$choice
         fi
+
+        if [[ $choice == 'd' ]]; then
+            if [[ -z $BRANCH_NAME ]]; then
+                git restore ${files[$SELECTION_INDEX]}
+            else
+               continue
+            fi
+        fi
     done
 }
 
