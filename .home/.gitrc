@@ -7,8 +7,15 @@ function gd() {
     SELECTION_INDEX=1
     CURRENT_BRANCH=$(git branch --no-color | grep -E '^\*' | sed 's/^\*.//')
 
+    GREP_PATTERN=""
+
     while true; do
-        files=($(git diff --name-only $BRANCH_NAME))
+        if [[ -n $GREP_PATTERN ]]; then
+            files=($(git diff --name-only $BRANCH_NAME | grep $GREP_PATTERN))
+        else
+            files=($(git diff --name-only $BRANCH_NAME))
+        fi
+
         if [ $? != 0 ]; then
             break
         fi
@@ -27,6 +34,12 @@ function gd() {
         else
             echo "diff: $CURRENT_BRANCH (current)"
         fi
+
+        if [[ -n $GREP_PATTERN ]]; then
+            echo "grep: $GREP_PATTERN"
+        else
+            echo "grep: -"
+        fi
         echo
 
         n=0
@@ -40,6 +53,12 @@ function gd() {
         done
 
         read -sk choice # might not be portable to bash
+
+        if [[ $choice == '/' ]]; then
+            echo -n '/'
+            read new_grep_pattern
+            GREP_PATTERN=$new_grep_pattern
+        fi
 
         if [[ $choice == 'q' ]]; then
             break
@@ -87,6 +106,8 @@ function gd() {
         if [[ $choice == 'd' ]]; then
             if [[ -z $BRANCH_NAME ]]; then
                 git restore ${files[$SELECTION_INDEX]}
+                PREV_FILE="-"
+                PREV_INDEX=0
             fi
         fi
     done
