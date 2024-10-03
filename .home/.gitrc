@@ -6,7 +6,6 @@ function gd() {
     PREV_INDEX=0
     SELECTION_INDEX=1
     CURRENT_BRANCH=$(git branch --no-color | grep -E '^\*' | sed 's/^\*.//')
-
     GREP_PATTERN=""
 
     while true; do
