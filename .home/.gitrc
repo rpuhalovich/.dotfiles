@@ -58,6 +58,9 @@ function gd() {
             echo -n '/'
             read new_grep_pattern
             GREP_PATTERN=$new_grep_pattern
+            PREV_FILE="-"
+            PREV_INDEX=0
+            SELECTION_INDEX=1
         fi
 
         if [[ $choice == 'q' ]]; then
