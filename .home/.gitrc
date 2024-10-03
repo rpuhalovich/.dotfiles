@@ -99,7 +99,8 @@ function gmodified() {
 }
 
 function gcheck() {
-    files=$(gmodified)
+    files=($(gmodified))
+
     if [[ -z "$files" ]]; then
        return 0
     fi
