@@ -88,19 +88,23 @@ function gd() {
             git difftool $BRANCH_NAME -- ${files}
         fi
 
-        if [[ $choice =~ '^[0-9]+$' ]]; then
-            if [ $choice -gt ${#files[@]} ]; then
-                continue
+        if [[ $choice == ':' ]]; then
+            echo -n ':'
+            read num
+            if [[ $num =~ '^[0-9]+$' ]]; then
+                if [ $num -gt ${#files[@]} ]; then
+                    continue
+                fi
+
+                if [ $num -lt 1 ]; then
+                    continue
+                fi
+
+                git difftool $BRANCH_NAME -- ${files[$num]}
+
+                PREV_FILE=${files[$num]}
+                PREV_INDEX=$num
             fi
-
-            if [ $choice -lt 1 ]; then
-                continue
-            fi
-
-            git difftool $BRANCH_NAME -- ${files[$choice]}
-
-            PREV_FILE=${files[$choice]}
-            PREV_INDEX=$choice
         fi
 
         if [[ $choice == 'd' ]]; then
