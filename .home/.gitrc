@@ -2,12 +2,9 @@
 
 function gd() {
     BRANCH_NAME=$1
-
     PREV_FILE="-"
     PREV_INDEX=0
-
     SELECTION_INDEX=1
-
     CURRENT_BRANCH=$(git branch --no-color | grep -E '^\*' | sed 's/^\*.//')
 
     while true; do
@@ -36,9 +33,9 @@ function gd() {
         for i in $files; do
             ((n++))
             if [ $n -eq $SELECTION_INDEX ]; then
-                echo "$n:*$i*"
+                echo "$n: * $i *"
             else
-                echo "$n: $i"
+                echo "$n:   $i "
             fi
         done
 
