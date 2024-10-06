@@ -97,6 +97,7 @@ set visualbell
 set wildignore+=**/Binaries/**
 set wildignore+=**/Intermediate/**
 set wildignore+=**/node_modules/**
+set wildignore+=**/extern/**
 set wildignore+=**/net6.0/**
 set wildignore+=**/out/**
 set wildignore+=*.gen.*
@@ -111,12 +112,41 @@ set wrap
 autocmd BufWritePre * %s/\s\+$//e " delete trailing whitespace on save
 autocmd BufNewFile,BufRead * setlocal formatoptions-=cro " disable comments on new lines
 
+let c_no_curly_error=1
 let g:vim_json_conceal=0
 let g:netrw_banner=0
 let g:netrw_liststyle=1
 
+function! RustBuild()
+    let errorformat .=
+                \ ',' .
+                \ '%-G,' .
+                \ '%-Gerror: aborting %.%#,' .
+                \ '%-Gerror: Could not compile %.%#,' .
+                \ '%Eerror: %m,' .
+                \ '%Eerror[E%n]: %m,' .
+                \ '%-Gwarning: the option `Z` is unstable %.%#,' .
+                \ '%Wwarning: %m,' .
+                \ '%Inote: %m,' .
+                \ '%C %#--> %f:%l:%c'
+    set errorformat=errorformat
+endfunction
+
 if has('mac')
     colorscheme retrobox
+
+    if executable('fzf')
+        function! SelectFile()
+          let tmp = tempname()
+          silent execute '!fzf>'.tmp
+          let fname = readfile(tmp)[0]
+          silent execute '!rm '.tmp
+          execute 'e '.fname
+          redraw!
+        endfunction
+
+        nnoremap <leader>F :call SelectFile()<cr>
+    endif
 endif
 
 if has('win32') && has("gui_running")

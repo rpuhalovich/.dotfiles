@@ -1,6 +1,6 @@
 source ~/.gitrc
 
-alias ls="ls -lah --color"
+alias ls="ls -lah"
 alias pip="pip3"
 alias py="python3"
 alias python="python3"
