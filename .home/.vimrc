@@ -42,10 +42,12 @@ nnoremap <leader>o :e %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<cr>
 
 inoremap {<cr> {<cr>}<Esc>O
 
-nnoremap j gj
-vnoremap j gj
-nnoremap k gk
-vnoremap k gk
+if !has('nvim')
+    nnoremap j gj
+    vnoremap j gj
+    nnoremap k gk
+    vnoremap k gk
+endif
 
 command! -nargs=+ Grep silent! grep <args> | cw 20 | redraw!
 command! -nargs=1 Tab noautocmd set ts=<args> sw=<args>

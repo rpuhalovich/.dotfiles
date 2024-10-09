@@ -5,6 +5,8 @@ return require('packer').startup(function(use)
     use('wbthomason/packer.nvim')
     use('tpope/vim-fugitive')
     use('prettier/vim-prettier')
+    use('junegunn/fzf')
+    use('junegunn/fzf.vim')
     use('Hoffs/omnisharp-extended-lsp.nvim')
     use({
         'VonHeikemen/lsp-zero.nvim',
