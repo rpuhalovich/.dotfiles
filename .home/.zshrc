@@ -1,3 +1,5 @@
+# zmodload zsh/zprof
+
 source ~/.gitrc
 
 alias ls="ls -lah"
@@ -23,9 +25,9 @@ export PATH=$PATH:$HOME/dev/depot_tools
 export PATH="$PATH:/Users/ryanpuhalovich/.dotnet/tools"
 
 # nvm
-source $(brew --prefix nvm)/nvm.sh
-nvm use 18.18.0 --silent
-export NVM_DIR=~/.nvm
+# source $(brew --prefix nvm)/nvm.sh
+# nvm use 18.18.0 --silent
+# export NVM_DIR=~/.nvm
 
 # command line customization
 parse_git_branch() {
@@ -48,3 +50,5 @@ setopt HIST_IGNORE_SPACE
 autoload -z edit-command-line
 zle -N edit-command-line
 bindkey "^X^E" edit-command-line
+
+# zprof
