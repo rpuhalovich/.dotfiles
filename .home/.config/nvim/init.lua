@@ -9,6 +9,8 @@ autocmd BufReadPre *.cs set cc=160
 
 set errorformat=\ %#%f(%l\\\,%c):\ %m
 set makeprg=dotnet\ build\ --nologo\ -v\ q\ --property\ WarningLevel=0\ /clp:ErrorsOnly
+
+nnoremap <leader>F :call fzf#vim#files('.')<cr>
 ]])
 
 vim.opt.cursorline = false

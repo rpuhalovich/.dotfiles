@@ -102,10 +102,7 @@ function gd() {
                     continue
                 fi
 
-                git difftool $BRANCH_NAME -- ${files[$num]}
-
-                PREV_FILE=${files[$num]}
-                PREV_INDEX=$num
+                SELECTION_INDEX=$num
             fi
         fi
 
