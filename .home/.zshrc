@@ -12,10 +12,10 @@ alias nv="nvim"
 alias uuid="node -e \"console.log(require('crypto').randomUUID())\""
 
 # global init stuff
-autoload -Uz compinit
-compinit
+# autoload -Uz compinit
+# compinit
+# bindkey '^Y' autosuggest-accept
 bindkey -v '^?' backward-delete-char
-bindkey '^Y' autosuggest-accept
 touch ~/.hushlogin
 
 # path exports
