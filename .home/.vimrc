@@ -40,7 +40,9 @@ nnoremap ? :Grep<space>""<left>
 " quick switch between h and cpp
 nnoremap <leader>o :e %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<cr>
 
-nnoremap <c-m> :make<cr>
+" this executes with crlf for some reason (create bug ticket or fix it?)
+" nnoremap <c-m> :make<cr>
+nnoremap <c-b> :make<cr>
 
 inoremap {<cr> {<cr>}<Esc>O
 
@@ -50,7 +52,6 @@ if !has('nvim')
     nnoremap k gk
     vnoremap k gk
 endif
-
 
 command! -nargs=+ Grep silent! grep <args> | cw 20 | redraw!
 command! -nargs=1 Tab noautocmd set ts=<args> sw=<args>

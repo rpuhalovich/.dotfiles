@@ -29,9 +29,9 @@ function gd() {
         echo "prev($PREV_INDEX): $PREV_FILE"
 
         if [[ -n $BRANCH_NAME ]]; then
-            echo "diff: $BRANCH_NAME"
+            echo "diff: $BRANCH_NAME <- $CURRENT_BRANCH"
         else
-            echo "diff: $CURRENT_BRANCH (current)"
+            echo "diff: $CURRENT_BRANCH"
         fi
 
         if [[ -n $GREP_PATTERN ]]; then
