@@ -42,7 +42,9 @@ nnoremap <leader>o :e %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<cr>
 
 nnoremap <c-b> :make<cr>
 
-inoremap {<cr> {<cr>}<Esc>O
+inoremap {<cr> {<cr>}<esc>O
+
+nnoremap yyp mmyyp`mj
 
 if !has('nvim')
     nnoremap j gj
