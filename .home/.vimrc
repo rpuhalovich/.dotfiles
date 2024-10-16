@@ -40,8 +40,6 @@ nnoremap ? :Grep<space>""<left>
 " quick switch between h and cpp
 nnoremap <leader>o :e %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<cr>
 
-" this executes with crlf for some reason (create bug ticket or fix it?)
-" nnoremap <c-m> :make<cr>
 nnoremap <c-b> :make<cr>
 
 inoremap {<cr> {<cr>}<Esc>O
@@ -53,9 +51,6 @@ if !has('nvim')
     vnoremap k gk
 endif
 
-command! -nargs=+ Grep silent! grep <args> | cw 20 | redraw!
-command! -nargs=1 Tab noautocmd set ts=<args> sw=<args>
-
 " from :vert h emacs-keys
 cnoremap <C-A> <Home>
 cnoremap <C-B> <Left>
@@ -63,6 +58,23 @@ cnoremap <C-D> <Del>
 cnoremap <C-E> <End>
 cnoremap <C-F> <Right>
 cnoremap <C-k> <C-\>e getcmdpos() == 1 ? '' : getcmdline()[:getcmdpos()-2]<CR>
+
+if executable('fzf')
+    function! SelectFile()
+      let tmp = tempname()
+      silent execute '!fzf>'.tmp
+      if (tmp)
+          let fname = readfile(tmp)[0]
+          silent execute '!rm '.tmp
+          execute 'e '.fname
+      endif
+      redraw!
+    endfunction
+    nnoremap <leader>F :call SelectFile()<cr>
+endif
+
+command! -nargs=+ Grep silent! grep <args> | cw 20 | redraw!
+command! -nargs=1 Tab noautocmd set ts=<args> sw=<args>
 
 " --- sets ---
 filetype off
@@ -116,44 +128,16 @@ set wildmenu
 set wildoptions=pum,fuzzy
 set wrap
 
-autocmd BufWritePre * %s/\s\+$//e " delete trailing whitespace on save
-autocmd BufNewFile,BufRead * setlocal formatoptions-=cro " disable comments on new lines
-
 let c_no_curly_error=1
 let g:vim_json_conceal=0
 let g:netrw_banner=0
 let g:netrw_liststyle=1
 
-function! RustBuild()
-    let errorformat .=
-                \ ',' .
-                \ '%-G,' .
-                \ '%-Gerror: aborting %.%#,' .
-                \ '%-Gerror: Could not compile %.%#,' .
-                \ '%Eerror: %m,' .
-                \ '%Eerror[E%n]: %m,' .
-                \ '%-Gwarning: the option `Z` is unstable %.%#,' .
-                \ '%Wwarning: %m,' .
-                \ '%Inote: %m,' .
-                \ '%C %#--> %f:%l:%c'
-    set errorformat=errorformat
-endfunction
+autocmd BufWritePre * %s/\s\+$//e " delete trailing whitespace on save
+autocmd BufNewFile,BufRead * setlocal formatoptions-=cro " disable comments on new lines
 
 if has('mac')
     colorscheme retrobox
-
-    if executable('fzf')
-        function! SelectFile()
-          let tmp = tempname()
-          silent execute '!fzf>'.tmp
-          let fname = readfile(tmp)[0]
-          silent execute '!rm '.tmp
-          execute 'e '.fname
-          redraw!
-        endfunction
-
-        nnoremap <leader>F :call SelectFile()<cr>
-    endif
 endif
 
 if has('win32') && has("gui_running")
