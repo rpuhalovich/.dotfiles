@@ -60,17 +60,17 @@ cnoremap <C-F> <Right>
 cnoremap <C-k> <C-\>e getcmdpos() == 1 ? '' : getcmdline()[:getcmdpos()-2]<CR>
 
 if executable('fzf')
-    function! SelectFile()
+    function! FuzzyFind()
       let tmp = tempname()
       silent execute '!fzf>'.tmp
-      if (tmp)
+      if (tmp isnot v:null)
           let fname = readfile(tmp)[0]
           silent execute '!rm '.tmp
           execute 'e '.fname
       endif
       redraw!
     endfunction
-    nnoremap <leader>F :call SelectFile()<cr>
+    nnoremap <leader>F :call FuzzyFind()<cr>
 endif
 
 command! -nargs=+ Grep silent! grep <args> | cw 20 | redraw!
@@ -100,18 +100,22 @@ set noshowmode
 set noswapfile
 set path+=**
 set ruler
+set scrolloff=10
+set shiftwidth=4
 set shortmess+=I
 set smartindent
 set smoothscroll
-set so=10
 set splitbelow
 set splitright
 set statusline=%<%F\ --\ %-12.(%lL\ %cC\ %P%)\ %h%m%r
-set sw=4
-set ts=4
+set tabstop=4
 set undodir=~/.vim/undodir
 set undofile
 set visualbell
+set wildmenu
+set wildoptions=pum,fuzzy
+set wrap
+
 set wildignore+=**/Binaries/**
 set wildignore+=**/Intermediate/**
 set wildignore+=**/node_modules/**
@@ -124,9 +128,6 @@ set wildignore+=*.o.*
 set wildignore+=*.o
 set wildignore+=*.uasset
 set wildignore+=*.umap
-set wildmenu
-set wildoptions=pum,fuzzy
-set wrap
 
 let c_no_curly_error=1
 let g:vim_json_conceal=0
