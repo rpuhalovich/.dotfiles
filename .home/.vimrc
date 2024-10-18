@@ -44,8 +44,6 @@ nnoremap <c-b> :make<cr>
 
 inoremap {<cr> {<cr>}<esc>O
 
-nnoremap yyp mmyyp`mj
-
 if !has('nvim')
     nnoremap j gj
     vnoremap j gj
