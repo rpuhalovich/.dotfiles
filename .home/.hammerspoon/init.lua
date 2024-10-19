@@ -19,7 +19,7 @@ wfTerminal:subscribe(hs.window.filter.windowCreated, function(window, applicatio
     return false
   end
 
-  local apps = {"Preview", "Alacritty", "Finder", "Notion", "Code", "VSCodium"}
+  local apps = {"Preview", "Alacritty", "Finder", "Notion", "Code", "VSCodium", "Emacs"}
   if hasValue(apps, applicationName) then
     window:maximize()
   end
@@ -42,4 +42,3 @@ launch = hs.application.launchOrFocus
 hs.hotkey.bind({"cmd"}, "1", function() launch("Firefox") end)
 hs.hotkey.bind({"cmd"}, "2", function() launch("Firefox Developer Edition") end)
 hs.hotkey.bind({"cmd"}, "3", function() launch("Alacritty") end)
-hs.hotkey.bind({"cmd"}, "4", function() launch("VSCodium") end)

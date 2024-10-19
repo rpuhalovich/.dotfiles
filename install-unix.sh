@@ -1,3 +1,7 @@
+mkdir -p $HOME/.vim/colors
+rm -rf $HOME/.vim/colors/retrobox.vim
+ln -s $HOME/.dotfiles/.home/.vim/colors/retrobox.vim $HOME/.vim/colors/retrobox.vim
+
 for i in .ideavimrc .clangd .scripts .hammerspoon .gitconfig .vimrc .zshrc .tmux.conf .gitrc; do
     rm -rf $HOME/$i
     ln -s $HOME/.dotfiles/.home/$i $HOME/$i
