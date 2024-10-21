@@ -1,9 +1,9 @@
 " modified from retrobox.vim
 
-hi clear
+source $VIMRUNTIME/colors/vim.lua " Nvim: revert to Vim default color scheme
 let g:colors_name = 'retrobox'
 
-let s:t_Co = has('gui_running') ? -1 : (&t_Co ?? 0)
+let s:t_Co = &t_Co
 
 hi! link CursorColumn CursorLine
 hi! link StatusLineTerm StatusLine
@@ -13,14 +13,17 @@ hi! link Tag Special
 hi! link lCursor Cursor
 hi! link MessageWindow PMenu
 hi! link PopupNotification Todo
-hi! link CurSearch IncSearch
-hi! link Terminal Normal
+hi! link CurSearch Search
 
 if (has('termguicolors') && &termguicolors) || has('gui_running')
-let g:terminal_ansi_colors = ['#080808', '#cc241d', '#98971a', '#d79921', '#458588', '#b16286', '#689d6a', '#a89984', '#928374', '#fb4934', '#b8bb26', '#fabd2f', '#83a598', '#d3869b', '#8ec07c', '#ebdbb2']
+  let g:terminal_ansi_colors = ['#080808', '#cc241d', '#98971a', '#d79921', '#458588', '#b16286', '#689d6a', '#a89984', '#928374', '#fb4934', '#b8bb26', '#fabd2f', '#83a598', '#d3869b', '#8ec07c', '#ebdbb2']
+  " Nvim uses g:terminal_color_{0-15} instead
+  for i in range(g:terminal_ansi_colors->len())
+    let g:terminal_color_{i} = g:terminal_ansi_colors[i]
+  endfor
 endif
 hi Normal guifg=#ebdbb2 guibg=#080808 gui=NONE cterm=NONE
-hi CursorLineNr guifg=#fabd2f guibg=#080808 gui=bold cterm=bold
+hi CursorLineNr guifg=#fabd2f guibg=#303030 gui=NONE cterm=NONE
 hi FoldColumn guifg=#928374 guibg=#080808 gui=NONE cterm=NONE
 hi SignColumn guifg=#928374 guibg=#080808 gui=NONE cterm=NONE
 hi VertSplit guifg=#303030 guibg=#080808 gui=NONE cterm=NONE
@@ -41,8 +44,6 @@ hi PmenuKind guifg=#fb4934 guibg=#3c3836 gui=NONE cterm=NONE
 hi PmenuKindSel guifg=#fb4934 guibg=#83a598 gui=NONE cterm=NONE
 hi PmenuExtra guifg=#a89984 guibg=#3c3836 gui=NONE cterm=NONE
 hi PmenuExtraSel guifg=#303030 guibg=#83a598 gui=NONE cterm=NONE
-hi PmenuMatch guifg=#b16286 guibg=#3c3836 gui=NONE cterm=NONE
-hi PmenuMatchSel guifg=#b16286 guibg=#83a598 gui=bold cterm=bold
 hi SpecialKey guifg=#928374 guibg=NONE gui=NONE cterm=NONE
 hi StatusLine guifg=#504945 guibg=#ebdbb2 gui=bold,reverse cterm=bold,reverse
 hi StatusLineNC guifg=#3c3836 guibg=#a89984 gui=reverse cterm=reverse
@@ -54,7 +55,7 @@ hi ToolbarLine guifg=NONE guibg=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NO
 hi Visual guifg=#080808 guibg=#83a598 gui=NONE cterm=NONE
 hi WildMenu guifg=#83a598 guibg=#504945 gui=bold cterm=bold
 hi EndOfBuffer guifg=#504945 guibg=NONE gui=NONE cterm=NONE
-hi Conceal guifg=#504945 guibg=NONE gui=NONE cterm=NONE
+hi Conceal guifg=#83a598 guibg=NONE gui=NONE cterm=NONE
 hi Cursor guifg=#080808 guibg=#fbf1c7 gui=NONE cterm=NONE
 hi DiffAdd guifg=#b8bb26 guibg=#080808 gui=reverse cterm=reverse
 hi DiffChange guifg=#8ec07c guibg=#080808 gui=reverse cterm=reverse
