@@ -4,10 +4,8 @@ vim.cmd([[packadd packer.nvim]])
 return require('packer').startup(function(use)
     use('wbthomason/packer.nvim')
     use('tpope/vim-fugitive')
-    use('prettier/vim-prettier')
     use('junegunn/fzf')
     use('junegunn/fzf.vim')
-    use('Hoffs/omnisharp-extended-lsp.nvim')
     use({
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v1.x',
@@ -25,4 +23,6 @@ return require('packer').startup(function(use)
             {'williamboman/mason.nvim', run = function() pcall(vim.cmd, 'MasonUpdate') end}
         }
     })
+    use('carlsmedstad/vim-bicep')
+    use('Hoffs/omnisharp-extended-lsp.nvim')
 end)
