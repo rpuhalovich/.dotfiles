@@ -7,7 +7,7 @@ set fillchars+=vert:\|
 
 " autocmd BufReadPre *.cs set cc=160
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-match OverLength /\%160v.\+/
+match OverLength /\%161v.\+/
 
 set errorformat=\ %#%f(%l\\\,%c):\ %m
 set makeprg=dotnet\ build\ --nologo\ -v\ q\ --property\ WarningLevel=0\ /clp:ErrorsOnly
@@ -26,7 +26,7 @@ vim.opt.expandtab = true
 vim.opt.guicursor = ""
 vim.opt.hlsearch = false
 vim.opt.signcolumn = "yes"
-vim.opt.statusline = "%<%F %{FugitiveStatusline()} -- %-12.(%lL %cC %P%) %h%m%r"
+vim.opt.statusline = "%<%f %{FugitiveStatusline()} %-12.(%lL %cC %P%) %h%m%r"
 vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir-nvim"
 vim.opt.wrap = false
 

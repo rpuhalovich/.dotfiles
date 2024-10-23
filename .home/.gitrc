@@ -15,10 +15,6 @@ function gd() {
             files=($(git diff --name-only $BRANCH_NAME))
         fi
 
-        if [ $? != 0 ]; then
-            break
-        fi
-
         if [[ -z $files ]]; then
            echo no diffs
            break

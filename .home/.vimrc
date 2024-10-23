@@ -111,6 +111,7 @@ set statusline=%<%F\ --\ %-12.(%lL\ %cC\ %P%)\ %h%m%r
 set tabstop=4
 set undodir=~/.vim/undodir
 set undofile
+set virtualedit=all
 set visualbell
 set wildmenu
 set wildoptions=pum,fuzzy
