@@ -5,7 +5,7 @@ ln -s $HOME/.dotfiles/.home/.vim/colors/retrobox.vim $HOME/.vim/colors/retrobox.
 mkdir -p $HOME/.scripts-local/
 mkdir -p $HOME/.config/
 
-for i in .ideavimrc .clangd .scripts .hammerspoon .gitconfig .vimrc .zshrc .tmux.conf .gitrc; do
+for i in .ideavimrc .clangd .scripts .hammerspoon .gitconfig .vimrc .zshrc .tmux.conf .gitrc .emacs; do
     rm -rf $HOME/$i
     ln -s $HOME/.dotfiles/.home/$i $HOME/$i
 done
