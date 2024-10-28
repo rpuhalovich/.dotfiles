@@ -104,9 +104,14 @@ function gd() {
 
         if [[ $choice == 'd' ]]; then
             if [[ -z $BRANCH_NAME ]]; then
-                git restore ${files[$SELECTION_INDEX]}
-                PREV_FILE="-"
-                PREV_INDEX=0
+                echo -n 'confirm: '
+                read ans
+
+                if [[ $ans == 'y' ]]; then
+                    git restore ${files[$SELECTION_INDEX]}
+                    PREV_FILE="-"
+                    PREV_INDEX=0
+                fi
             fi
         fi
     done
