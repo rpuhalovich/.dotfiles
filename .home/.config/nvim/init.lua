@@ -5,20 +5,12 @@ nnoremap <leader>cfg :e<space>~/.dotfiles/.home/.config/nvim/<cr>
 
 set fillchars+=vert:\|
 
-" autocmd BufReadPre *.cs set cc=160
-highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-match OverLength /\%161v.\+/
+autocmd BufReadPre *.cs set cc=160
 
 set errorformat=\ %#%f(%l\\\,%c):\ %m
 set makeprg=dotnet\ build\ --nologo\ -v\ q\ --property\ WarningLevel=0\ /clp:ErrorsOnly
 
 nnoremap <leader>F :call fzf#vim#files('.', {'window': { 'width': 0.9, 'height': 0.9 }})<cr>
-
-augroup vimrc-incsearch-highlight
-    autocmd!
-    autocmd CmdlineEnter /,\? :set hlsearch
-    autocmd CmdlineLeave /,\? :set nohlsearch
-augroup END
 ]])
 
 vim.opt.cursorline = false
@@ -26,7 +18,7 @@ vim.opt.expandtab = true
 vim.opt.guicursor = ""
 vim.opt.hlsearch = false
 vim.opt.signcolumn = "yes"
-vim.opt.statusline = "%<%f %{FugitiveStatusline()} %-12.(%lL %cC %P%) %h%m%r"
+vim.opt.statusline = "%<%F %{FugitiveStatusline()} %-12.(%lL %cC %P%) %h%m%r"
 vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir-nvim"
 vim.opt.wrap = false
 
