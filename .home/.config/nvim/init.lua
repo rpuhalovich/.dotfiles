@@ -18,7 +18,7 @@ vim.opt.expandtab = true
 vim.opt.guicursor = ""
 vim.opt.hlsearch = false
 vim.opt.signcolumn = "yes"
-vim.opt.statusline = "%<%F %{FugitiveStatusline()} %-12.(%lL %cC %P%) %h%m%r"
+vim.opt.statusline = "%<%F %-12.(%lL %cC %P%) %h%m%r"
 vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir-nvim"
 vim.opt.wrap = false
 
@@ -38,5 +38,12 @@ autocmd FileType cs nnoremap <c-]> <cmd>lua require('omnisharp_extended').lsp_de
 autocmd FileType cs nnoremap gi <cmd>lua require('omnisharp_extended').lsp_implementation()<cr>
 autocmd FileType cs nnoremap gr <cmd>lua require('omnisharp_extended').lsp_references()<cr>
 ]])
+
+vim.api.nvim_create_autocmd("LspAttach", {
+  callback = function(args)
+    local client = vim.lsp.get_client_by_id(args.data.client_id)
+    client.server_capabilities.semanticTokensProvider = nil
+  end
+});
 
 lsp.setup()
