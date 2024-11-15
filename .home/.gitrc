@@ -111,6 +111,18 @@ function gd() {
                     git restore ${files[$SELECTION_INDEX]}
                     PREV_FILE="-"
                     PREV_INDEX=0
+
+                    newIndex=SELECTION_INDEX
+
+                    if ((SELECTION_INDEX >= ${#files[@]})); then
+                        newIndex=${#files[@]}
+                    fi
+
+                    if ((SELECTION_INDEX <= 1)); then
+                        newIndex=1
+                    fi
+
+                    SELECTION_INDEX=$newIndex
                 fi
             fi
         fi
