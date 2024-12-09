@@ -112,7 +112,7 @@ function gd() {
                     PREV_FILE="-"
                     PREV_INDEX=0
 
-                    newIndex=SELECTION_INDEX
+                    newIndex=$SELECTION_INDEX
 
                     if ((SELECTION_INDEX >= ${#files[@]})); then
                         newIndex=${#files[@]}
