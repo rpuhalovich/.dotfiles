@@ -79,7 +79,7 @@ command! -nargs=+ Grep silent! grep <args> | cw 20 | redraw!
 command! -nargs=1 Tab noautocmd set ts=<args> sw=<args>
 
 " --- sets ---
-filetype off
+filetype on
 syntax on
 
 set autoindent
@@ -94,7 +94,7 @@ set grepprg=rg\ --vimgrep\ -i
 set hidden
 set ignorecase
 set incsearch
-set laststatus=2
+set laststatus=0
 set linebreak
 set listchars=tab:>·,space:·
 set mouse+=a
@@ -137,10 +137,6 @@ let g:vim_json_conceal=0
 let g:netrw_banner=0
 let g:netrw_liststyle=1
 
-autocmd BufWritePre * %s/\s\+$//e " delete trailing whitespace on save
-autocmd BufNewFile,BufRead * setlocal formatoptions-=cro " disable comments on new lines
-autocmd BufRead,BufNewFile *.md set wrap
-
 if has('mac')
     colorscheme retrobox
 endif
@@ -161,3 +157,8 @@ if has('win32') && has("gui_running")
     set guioptions-=m "menubar
     set guioptions-=r "scrollbar
 endif
+
+autocmd BufWritePre * %s/\s\+$//e " delete trailing whitespace on save
+autocmd BufNewFile,BufRead * setlocal formatoptions-=cro " disable comments on new lines
+autocmd FileType make setlocal noexpandtab
+autocmd Filetype markdown setlocal wrap
