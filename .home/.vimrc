@@ -88,6 +88,7 @@ set backspace=indent,eol,start
 set belloff=all
 set conceallevel=0
 set expandtab
+set exrc
 set grepformat=%f:%l:%c:%m
 set grepprg=rg\ --vimgrep\ -i
 set hidden
@@ -100,6 +101,7 @@ set mouse+=a
 set nobackup
 set noshowmode
 set noswapfile
+set nowrap
 set path+=**
 set ruler
 set scrolloff=10
@@ -116,7 +118,6 @@ set undofile
 set visualbell
 set wildmenu
 set wildoptions=pum,fuzzy
-set wrap
 
 set wildignore+=**/Binaries/**
 set wildignore+=**/Intermediate/**
@@ -138,6 +139,7 @@ let g:netrw_liststyle=1
 
 autocmd BufWritePre * %s/\s\+$//e " delete trailing whitespace on save
 autocmd BufNewFile,BufRead * setlocal formatoptions-=cro " disable comments on new lines
+autocmd BufRead,BufNewFile *.md set wrap
 
 if has('mac')
     colorscheme retrobox
