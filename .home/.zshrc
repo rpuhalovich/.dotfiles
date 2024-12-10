@@ -11,6 +11,10 @@ alias v="vim"
 alias nv="nvim"
 alias uuid="node -e \"console.log(require('crypto').randomUUID())\""
 
+function dateString() {
+    node -e 'console.log((new Date("$1")).toString())'
+}
+
 # global init stuff
 bindkey -v '^?' backward-delete-char
 touch ~/.hushlogin
