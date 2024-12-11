@@ -45,8 +45,8 @@ hi PmenuKindSel guifg=#fb4934 guibg=#83a598 gui=NONE cterm=NONE
 hi PmenuExtra guifg=#a89984 guibg=#3c3836 gui=NONE cterm=NONE
 hi PmenuExtraSel guifg=#303030 guibg=#83a598 gui=NONE cterm=NONE
 hi SpecialKey guifg=#928374 guibg=NONE gui=NONE cterm=NONE
-hi StatusLine guifg=#ebdbb2 guibg=#080808 gui=NONE cterm=NONE
-hi StatusLineNC guifg=#ebdbb2 guibg=#080808 gui=NONE cterm=NONE
+hi StatusLine guifg=#ebdbb2 guibg=#1c1c1c gui=NONE cterm=NONE
+hi StatusLineNC guifg=#ebdbb2 guibg=#1c1c1c gui=NONE cterm=NONE
 hi TabLine guifg=#a89984 guibg=#3c3836 gui=NONE cterm=NONE
 hi TabLineFill guifg=#ebdbb2 guibg=#3c3836 gui=NONE cterm=NONE
 hi TabLineSel guifg=#fbf1c7 guibg=#080808 gui=bold cterm=bold
