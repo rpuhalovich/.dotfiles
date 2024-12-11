@@ -84,6 +84,7 @@ set backspace=indent,eol,start
 set belloff=all
 set conceallevel=0
 set expandtab
+set exrc
 set grepformat=%f:%l:%c:%m
 set grepprg=rg\ --vimgrep\ -i
 set hidden
@@ -96,6 +97,7 @@ set mouse+=a
 set nobackup
 set noshowmode
 set noswapfile
+set nowrap
 set path+=**
 set ruler
 set scrolloff=10
@@ -112,7 +114,6 @@ set undofile
 set visualbell
 set wildmenu
 set wildoptions=pum,fuzzy
-set nowrap
 
 set wildignore+=**/Binaries/**
 set wildignore+=**/Intermediate/**
