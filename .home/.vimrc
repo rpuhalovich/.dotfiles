@@ -37,11 +37,7 @@ nnoremap <leader>s <C-w><C-s><C-w>j
 nnoremap <leader>f :find<space>
 nnoremap ? :Grep<space>""<left>
 
-" quick switch between h and cpp
-nnoremap <leader>o :e %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<cr>
-
 nnoremap <c-b> :make<cr>
-
 nnoremap <leader>: :!
 
 inoremap {<cr> {<cr>}<esc>O
@@ -93,7 +89,7 @@ set grepprg=rg\ --vimgrep\ -i
 set hidden
 set ignorecase
 set incsearch
-set laststatus=0
+set laststatus=2
 set linebreak
 set listchars=tab:>·,space:·
 set mouse+=a

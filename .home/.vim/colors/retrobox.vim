@@ -41,8 +41,8 @@ hi PmenuExtraSel ctermfg=236 ctermbg=109 cterm=NONE
 hi PmenuMatch ctermfg=132 ctermbg=237 cterm=NONE
 hi PmenuMatchSel ctermfg=132 ctermbg=109 cterm=bold
 hi SpecialKey ctermfg=102 ctermbg=NONE cterm=NONE
-hi StatusLine ctermfg=239 ctermbg=187 cterm=bold,reverse
-hi StatusLineNC ctermfg=237 ctermbg=102 cterm=reverse
+hi StatusLine ctermfg=187 ctermbg=232 cterm=NONE
+hi StatusLineNC ctermfg=187 ctermbg=232 cterm=NONE
 hi TabLine ctermfg=102 ctermbg=237 cterm=NONE
 hi TabLineFill ctermfg=187 ctermbg=237 cterm=NONE
 hi TabLineSel ctermfg=230 ctermbg=232 cterm=bold
