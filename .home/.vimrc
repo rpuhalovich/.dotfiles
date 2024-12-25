@@ -107,7 +107,7 @@ set smartindent
 set smoothscroll
 set splitbelow
 set splitright
-set statusline=%<%F\ %-12.(%lL\ %cC\ %P%)\ %h%m%r
+" set statusline=%<%F\ %-12.(%lL\ %cC\ %P%)\ %h%m%r
 set tabstop=4
 set undodir=~/.vim/undodir
 set undofile

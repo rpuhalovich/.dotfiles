@@ -22,8 +22,8 @@ touch ~/.hushlogin
 # path exports
 export PATH=$PATH:$HOME/.scripts
 export PATH=$PATH:$HOME/.scripts-local
-export PATH=$PATH:$HOME/dev/depot_tools
-export PATH="$PATH:/Users/ryanpuhalovich/.dotnet/tools"
+export PATH=$PATH:/Users/ryanpuhalovich/.dotnet/tools
+export PATH=$HOME/.cargo/bin:$PATH
 
 # command line customization
 parse_git_branch() {
