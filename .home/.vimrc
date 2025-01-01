@@ -154,7 +154,8 @@ if has('win32') && has("gui_running")
     set guioptions-=r "scrollbar
 endif
 
-autocmd BufWritePre * %s/\s\+$//e " delete trailing whitespace on save
 autocmd BufNewFile,BufRead * setlocal formatoptions-=cro " disable comments on new lines
+autocmd BufNewFile,BufRead *.ht,*.ct set syntax=off
+autocmd BufWritePre * %s/\s\+$//e " delete trailing whitespace on save
 autocmd FileType make setlocal noexpandtab
 autocmd Filetype markdown setlocal wrap

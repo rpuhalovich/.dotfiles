@@ -23,7 +23,8 @@ touch ~/.hushlogin
 export PATH=$PATH:$HOME/.scripts
 export PATH=$PATH:$HOME/.scripts-local
 export PATH=$PATH:/Users/ryanpuhalovich/.dotnet/tools
-export PATH=$HOME/.cargo/bin:$PATH
+export PATH=$PATH:$HOME/go/bin
+export PATH=$PATH:$HOME/.cargo/bin
 
 # command line customization
 parse_git_branch() {
