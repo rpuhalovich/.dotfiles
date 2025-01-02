@@ -148,7 +148,7 @@ if has('win32') && has("gui_running")
     set guioptions+=d
     set guicursor=n-v-c-i:block-Cursor
     set guicursor+=a:blinkon0
-    set guifont=JetBrains\ Mono\ NL:h10:cANSI
+    " set guifont=JetBrains\ Mono\ NL:h10:cANSI
     set guioptions-=T "toolbar
     set guioptions-=m "menubar
     set guioptions-=r "scrollbar
