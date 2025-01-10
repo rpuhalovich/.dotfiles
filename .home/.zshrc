@@ -9,10 +9,10 @@ alias python="python3"
 alias rmds="find . -name .DS_Store -delete"
 alias v="vim"
 alias nv="nvim"
-alias uuid="node -e \"console.log(require('crypto').randomUUID())\""
+alias uuid="bun -e \"console.log(require('crypto').randomUUID())\""
 
 function dateString() {
-    node -e 'console.log((new Date("$1")).toString())'
+    bun -e 'console.log((new Date("$1")).toString())'
 }
 
 # global init stuff
@@ -48,5 +48,9 @@ setopt HIST_IGNORE_SPACE
 autoload -z edit-command-line
 zle -N edit-command-line
 bindkey "^X^E" edit-command-line
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
 
 # zprof
