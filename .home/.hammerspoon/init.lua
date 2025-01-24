@@ -1,6 +1,5 @@
 hs.loadSpoon("SpoonInstall")
 hs.loadSpoon("ReloadConfiguration")
-hs.loadSpoon("hs_select_window")
 hs.console.darkMode(true)
 spoon.ReloadConfiguration:start()
 
