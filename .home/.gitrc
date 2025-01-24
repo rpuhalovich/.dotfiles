@@ -1,0 +1,190 @@
+#!/bin/bash
+
+function gd() {
+    BRANCH_NAME=$1
+    PREV_FILE="-"
+    PREV_INDEX=0
+    SELECTION_INDEX=1
+    CURRENT_BRANCH=$(git branch --no-color | grep -E '^\*' | sed 's/^\*.//')
+    GREP_PATTERN=""
+
+    while true; do
+        if [[ -n $GREP_PATTERN ]]; then
+            files=($(git diff --name-only $BRANCH_NAME | grep $GREP_PATTERN))
+        else
+            files=($(git diff --name-only $BRANCH_NAME))
+        fi
+
+        if [[ -z $files ]]; then
+           echo no diffs
+           break
+        fi
+
+        clear
+
+        echo "prev($PREV_INDEX): $PREV_FILE"
+
+        if [[ -n $BRANCH_NAME ]]; then
+            echo "diff: $BRANCH_NAME <- $CURRENT_BRANCH"
+        else
+            echo "diff: $CURRENT_BRANCH"
+        fi
+
+        if [[ -n $GREP_PATTERN ]]; then
+            echo "grep: $GREP_PATTERN"
+        else
+            echo "grep: -"
+        fi
+        echo
+
+        n=0
+        for i in $files; do
+            ((n++))
+            if [ $n -eq $SELECTION_INDEX ]; then
+                echo "$n: * $i *"
+            else
+                echo "$n:   $i "
+            fi
+        done
+
+        read -sk choice # might not be portable to bash
+
+        if [[ $choice == '/' ]]; then
+            echo -n '/'
+            read new_grep_pattern
+            GREP_PATTERN=$new_grep_pattern
+            PREV_FILE="-"
+            PREV_INDEX=0
+            SELECTION_INDEX=1
+        fi
+
+        if [[ $choice == 'q' ]]; then
+            break
+        fi
+
+        if [[ $choice == 'j' ]]; then
+            if ((SELECTION_INDEX >= ${#files[@]})); then
+                continue
+            fi
+            ((SELECTION_INDEX++))
+        fi
+
+        if [[ $choice == 'k' ]]; then
+            if ((SELECTION_INDEX <= 1)); then
+                continue
+            fi
+            ((SELECTION_INDEX--))
+        fi
+
+        if [[ $choice == $'\n' ]]; then
+            git difftool $BRANCH_NAME -- ${files[$SELECTION_INDEX]}
+            PREV_FILE=${files[$SELECTION_INDEX]}
+            PREV_INDEX=$SELECTION_INDEX
+        fi
+
+        if [[ $choice == 'a' ]]; then
+            git difftool $BRANCH_NAME -- ${files}
+        fi
+
+        if [[ $choice == ':' ]]; then
+            echo -n ':'
+            read num
+            if [[ $num =~ '^[0-9]+$' ]]; then
+                if [ $num -gt ${#files[@]} ]; then
+                    continue
+                fi
+
+                if [ $num -lt 1 ]; then
+                    continue
+                fi
+
+                SELECTION_INDEX=$num
+            fi
+        fi
+
+        if [[ $choice == 'd' ]]; then
+            if [[ -z $BRANCH_NAME ]]; then
+                echo -n 'confirm: '
+                read ans
+
+                if [[ $ans == 'y' ]]; then
+                    git restore ${files[$SELECTION_INDEX]}
+                    PREV_FILE="-"
+                    PREV_INDEX=0
+
+                    newIndex=$SELECTION_INDEX
+
+                    if ((SELECTION_INDEX >= ${#files[@]})); then
+                        newIndex=${#files[@]}
+                    fi
+
+                    if ((SELECTION_INDEX <= 1)); then
+                        newIndex=1
+                    fi
+
+                    SELECTION_INDEX=$newIndex
+                fi
+            fi
+        fi
+    done
+}
+
+function gmodified() {
+    files=$(git status --porcelain | grep -E '^( M )' | grep -E '\.cs' | sed 's/^ M //') # modified
+    files+=" $(git ls-files -o --exclude-standard | grep -E '\.cs')" # untracked
+    echo $(echo $files | sed 's/\n/ /')
+}
+
+function gcheck() {
+    files=($(gmodified))
+
+    if [[ -z "$files" ]]; then
+       return 0
+    fi
+
+    if rg nocheckin $files; then
+        echo
+        echo "ERROR: unresolved nocheckin"
+        return 1
+    fi
+}
+
+function dfmt() {
+    if [ $# -ne 1 ]; then
+        echo "ERROR: invalid arguments"
+        return 1
+    fi
+
+    dotnet format $1 --include $(gmodified)
+}
+
+function gmerge() {
+    if [ $# -ne 1 ]; then
+        echo "Invalid arguments"
+        return
+    fi
+    git fetch --prune --all
+    git checkout $1
+    git pull --no-rebase
+    git checkout -
+    git merge $1
+}
+
+formatting='%C(bold blue)<%cn> %Cgreen%ad %Cred%h%Creset -%C(yellow)%d%Creset %s %Creset'
+alias c="gcheck && git add . && git commit && sleep 3 && git push"
+alias ga="gcheck && git add"
+alias gb="git branch -a --color=always | less -R"
+alias gblame="git blame"
+alias gbloc="git branch --format \"%(refname:short) %(upstream)\" | awk '{if (!\$2) print \$1;}'"
+alias gc="git commit"
+alias gch="git checkout"
+alias gclone="git clone --recurse-submodules"
+alias gdn="git diff --name-status"
+alias gf="git fetch --prune --all"
+alias gl="git log --date=local"
+alias glg="git log --first-parent --graph --topo-order --abbrev-commit --date=short --decorate --all --boundary --pretty=format:'$formatting'"
+alias glo="git log --oneline --pretty=format:'$formatting'"
+alias glt="git log --tags --no-walk --pretty=oneline --abbrev-commit"
+alias gpull="git fetch --prune --all && git pull --no-rebase --recurse-submodules"
+alias gpush="git push"
+alias gs="git status --short --branch --show-stash --untracked-files=all"

@@ -1,0 +1,32 @@
+[user]
+	email = reanpuhalovich@gmail.com
+	name = Ryan Puhalovich
+[init]
+	defaultBranch = main
+[core]
+	editor = vim
+    pager = less -R
+	autocrlf = false
+	filemode = false
+[push]
+	autoSetupRemote = true
+[advice]
+	detachedHead = false
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false
+	trustExitCode = true
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[credential]
+	helper = osxkeychain
+[http]
+	cookiefile = /Users/rp/.gitcookies
+[credential "https://dev.azure.com"]
+	useHttpPath = true
+[submodule]
+	recurse = true

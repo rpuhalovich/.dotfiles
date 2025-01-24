@@ -1,0 +1,32 @@
+let mapleader = " "
+
+nnoremap <leader>a :%y+<cr>
+
+nnoremap s :wa<cr>
+
+nnoremap <C-u> <C-u>zz
+nnoremap <C-d> <C-d>zz
+
+nnoremap <C-q> :q<cr>
+
+nnoremap <leader>p "+p
+nnoremap <leader>P "+P
+vnoremap <leader>y "+y
+vnoremap <leader>d "+d
+
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+" auto pair
+" inoremap {<cr> {<cr>}<Esc>O<space><space><space><space>
+
+" quick vertical split
+nnoremap <leader>v <C-w><C-v><C-w>l
+
+nnoremap ,l aUE_LOG(LogTemp, Display, TEXT(""));<esc>F"i
+
+set ignorecase
+set incsearch
+set scrolloff=10
