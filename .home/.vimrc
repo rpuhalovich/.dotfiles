@@ -98,6 +98,7 @@ set linebreak
 set listchars=tab:>·,space:·
 set mouse+=a
 set nobackup
+set noshowcmd
 set noshowmode
 set noswapfile
 set nowrap
@@ -110,7 +111,6 @@ set smartindent
 set smoothscroll
 set splitbelow
 set splitright
-" set statusline=%<%F\ %-12.(%lL\ %cC\ %P%)\ %h%m%r
 set tabstop=4
 set undodir=~/.vim/undodir
 set undofile
@@ -151,7 +151,6 @@ if has('win32') && has("gui_running")
     set guioptions+=d
     set guicursor=n-v-c-i:block-Cursor
     set guicursor+=a:blinkon0
-    " set guifont=JetBrains\ Mono\ NL:h10:cANSI
     set guioptions-=T "toolbar
     set guioptions-=m "menubar
     set guioptions-=r "scrollbar

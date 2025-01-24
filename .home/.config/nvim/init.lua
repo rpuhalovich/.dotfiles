@@ -18,7 +18,6 @@ vim.opt.expandtab = true
 vim.opt.guicursor = ""
 vim.opt.hlsearch = false
 vim.opt.signcolumn = "yes"
--- vim.opt.statusline = "%<%F %-12.(%lL %cC %P%) %h%m%r"
 vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir-nvim"
 vim.opt.wrap = false
 
