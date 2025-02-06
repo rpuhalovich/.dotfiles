@@ -16,17 +16,17 @@ hi! link PopupNotification Todo
 hi! link CurSearch IncSearch
 hi! link Terminal Normal
 
-hi Normal ctermfg=187 ctermbg=0 cterm=NONE
-hi CursorLineNr ctermfg=214 ctermbg=0 cterm=bold
-hi FoldColumn ctermfg=102 ctermbg=0 cterm=NONE
-hi SignColumn ctermfg=102 ctermbg=0 cterm=NONE
-hi VertSplit ctermfg=236 ctermbg=0 cterm=NONE
+hi Normal ctermfg=187 ctermbg=black cterm=NONE
+hi CursorLineNr ctermfg=214 ctermbg=black cterm=bold
+hi FoldColumn ctermfg=102 ctermbg=black cterm=NONE
+hi SignColumn ctermfg=102 ctermbg=black cterm=NONE
+hi VertSplit ctermfg=236 ctermbg=black cterm=NONE
 hi ColorColumn ctermfg=NONE ctermbg=16 cterm=NONE
 hi Comment ctermfg=102 ctermbg=NONE cterm=NONE
 hi CursorLine ctermfg=NONE ctermbg=236 cterm=NONE
-hi Error ctermfg=203 ctermbg=0 cterm=bold,reverse
+hi Error ctermfg=203 ctermbg=black cterm=bold,reverse
 hi ErrorMsg ctermfg=232 ctermbg=203 cterm=bold
-hi Folded ctermfg=102 ctermbg=0 cterm=NONE
+hi Folded ctermfg=102 ctermbg=black cterm=NONE
 hi LineNr ctermfg=243 ctermbg=NONE cterm=NONE
 hi MatchParen ctermfg=NONE ctermbg=239 cterm=bold,underline
 hi NonText ctermfg=239 ctermbg=NONE cterm=NONE
@@ -45,7 +45,7 @@ hi StatusLine ctermfg=187 ctermbg=234 cterm=NONE
 hi StatusLineNC ctermfg=187 ctermbg=234 cterm=NONE
 hi TabLine ctermfg=102 ctermbg=237 cterm=NONE
 hi TabLineFill ctermfg=187 ctermbg=237 cterm=NONE
-hi TabLineSel ctermfg=230 ctermbg=0 cterm=bold
+hi TabLineSel ctermfg=230 ctermbg=black cterm=bold
 hi ToolbarButton ctermfg=230 ctermbg=236 cterm=bold
 hi ToolbarLine ctermfg=NONE ctermbg=NONE cterm=NONE
 hi Visual ctermfg=232 ctermbg=109 cterm=NONE
@@ -53,17 +53,17 @@ hi WildMenu ctermfg=109 ctermbg=239 cterm=bold
 hi EndOfBuffer ctermfg=239 ctermbg=NONE cterm=NONE
 hi Conceal ctermfg=239 ctermbg=NONE cterm=NONE
 hi Cursor ctermfg=232 ctermbg=230 cterm=NONE
-hi DiffAdd ctermfg=142 ctermbg=0 cterm=reverse
-hi DiffChange ctermfg=107 ctermbg=0 cterm=reverse
-hi DiffDelete ctermfg=203 ctermbg=0 cterm=reverse
-hi DiffText ctermfg=214 ctermbg=0 cterm=reverse
+hi DiffAdd ctermfg=142 ctermbg=black cterm=reverse
+hi DiffChange ctermfg=107 ctermbg=black cterm=reverse
+hi DiffDelete ctermfg=203 ctermbg=black cterm=reverse
+hi DiffText ctermfg=214 ctermbg=black cterm=reverse
 hi Directory ctermfg=142 ctermbg=NONE cterm=bold
-hi IncSearch ctermfg=208 ctermbg=0 cterm=reverse
+hi IncSearch ctermfg=208 ctermbg=black cterm=reverse
 hi ModeMsg ctermfg=214 ctermbg=NONE cterm=bold
 hi MoreMsg ctermfg=214 ctermbg=NONE cterm=bold
 hi Question ctermfg=208 ctermbg=NONE cterm=bold
-hi Search ctermfg=100 ctermbg=0 cterm=reverse
-hi QuickFixLine ctermfg=107 ctermbg=0 cterm=reverse
+hi Search ctermfg=100 ctermbg=black cterm=reverse
+hi QuickFixLine ctermfg=107 ctermbg=black cterm=reverse
 hi SpellBad ctermfg=203 ctermbg=NONE cterm=underline
 hi SpellCap ctermfg=109 ctermbg=NONE cterm=underline
 hi SpellLocal ctermfg=107 ctermbg=NONE cterm=underline
@@ -77,7 +77,7 @@ hi Constant ctermfg=175 ctermbg=NONE cterm=NONE
 hi Define ctermfg=107 ctermbg=NONE cterm=NONE
 hi Debug ctermfg=203 ctermbg=NONE cterm=NONE
 hi Delimiter ctermfg=208 ctermbg=NONE cterm=NONE
-hi Error ctermfg=203 ctermbg=0 cterm=bold,reverse
+hi Error ctermfg=203 ctermbg=black cterm=bold,reverse
 hi Exception ctermfg=203 ctermbg=NONE cterm=NONE
 hi Float ctermfg=175 ctermbg=NONE cterm=NONE
 hi Function ctermfg=142 ctermbg=NONE cterm=bold
@@ -99,7 +99,7 @@ hi StorageClass ctermfg=208 ctermbg=NONE cterm=NONE
 hi Special ctermfg=208 ctermbg=NONE cterm=NONE
 hi String ctermfg=142 ctermbg=NONE cterm=NONE
 hi Structure ctermfg=107 ctermbg=NONE cterm=NONE
-hi Todo ctermfg=fg ctermbg=0 cterm=bold
+hi Todo ctermfg=fg ctermbg=black cterm=bold
 hi Type ctermfg=214 ctermbg=NONE cterm=NONE
 hi Typedef ctermfg=214 ctermbg=NONE cterm=NONE
 hi Underlined ctermfg=109 ctermbg=NONE cterm=underline
