@@ -27,7 +27,7 @@ hi CursorLineNr guifg=#fabd2f guibg=#303030 gui=NONE cterm=NONE
 hi FoldColumn guifg=#928374 guibg=#000000 gui=NONE cterm=NONE
 hi SignColumn guifg=#928374 guibg=#000000 gui=NONE cterm=NONE
 hi VertSplit guifg=#303030 guibg=#000000 gui=NONE cterm=NONE
-hi ColorColumn guifg=NONE guibg=#1c1c1c gui=NONE cterm=NONE
+hi ColorColumn guifg=NONE guibg=#080808 gui=NONE cterm=NONE
 hi Comment guifg=#928374 guibg=NONE gui=NONE cterm=NONE
 hi CursorLine guifg=NONE guibg=#303030 gui=NONE cterm=NONE
 hi Error guifg=#fb4934 guibg=#000000 gui=bold,reverse cterm=bold,reverse
