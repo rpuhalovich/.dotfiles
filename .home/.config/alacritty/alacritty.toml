@@ -16,7 +16,7 @@ cursor = "#d5c4a1"
 text = "#1C1C1C"
 
 [colors.normal]
-black = "#080808"
+black = "#000000"
 blue = "#83a598"
 cyan = "#8ec07c"
 green = "#b8bb26"
@@ -26,7 +26,7 @@ white = "#d5c4a1"
 yellow = "#fabd2f"
 
 [colors.primary]
-background = "#080808"
+background = "#000000"
 foreground = "#d5c4a1"
 
 [font]
