@@ -17,6 +17,8 @@ nnoremap <leader>e :Ex<cr>
 nnoremap <C-u> <C-u>zz
 nnoremap <C-d> <C-d>zz
 
+" nnoremap <c-tab> <c-w>gt
+
 " easier copying and pasting
 nnoremap <leader>p "+p
 nnoremap <leader>P "+P
