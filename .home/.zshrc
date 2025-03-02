@@ -17,12 +17,12 @@ bindkey -v '^?' backward-delete-char
 touch ~/.hushlogin
 
 # path exports
+export PATH=$PATH:$HOME/.cargo/bin
+export PATH=$PATH:$HOME/.dotnet/tools
 export PATH=$PATH:$HOME/.scripts
 export PATH=$PATH:$HOME/.scripts-local
-export PATH=$PATH:$HOME/.dotnet/tools
+export PATH=$PATH:$HOME/dev/ctools/bin
 export PATH=$PATH:$HOME/go/bin
-export PATH=$PATH:$HOME/.cargo/bin
-export PATH=$PATH:$HOME/.ctools/bin
 
 # command line customization
 parse_git_branch() {

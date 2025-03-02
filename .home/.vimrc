@@ -60,6 +60,8 @@ cnoremap <C-k> <C-\>e getcmdpos() == 1 ? '' : getcmdline()[:getcmdpos()-2]<CR>
 nnoremap <F3> :cp<cr>
 nnoremap <F4> :cn<cr>
 
+nnoremap <leader>t :!ctags -R .<cr><cr>
+
 if executable('fzf')
     function! FuzzyFind()
       let tmp = tempname()
@@ -116,7 +118,8 @@ set undodir=~/.vim/undodir
 set undofile
 set visualbell
 set wildmenu
-set wildoptions=pum,fuzzy
+set wildoptions=tagfile,pum,fuzzy
+set autoread
 
 set wildignore+=**/Binaries/**
 set wildignore+=**/Intermediate/**
