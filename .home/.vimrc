@@ -153,6 +153,8 @@ if has('win32') && has("gui_running")
     highlight Cursor guifg=black guibg=orange
     highlight iCursor guifg=black guibg=orange
 
+    set guifont=Fixedsys:h14
+
     set guioptions+=d
     set guicursor=n-v-c-i:block-Cursor
     set guicursor+=a:blinkon0
