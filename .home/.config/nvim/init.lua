@@ -10,6 +10,9 @@ autocmd BufReadPre *.cs set colorcolumn=160
 set errorformat=\ %#%f(%l\\\,%c):\ %m
 set makeprg=dotnet\ build\ --nologo\ -v\ q\ --property\ WarningLevel=0\ /clp:ErrorsOnly
 
+" set background=light
+" colorscheme default
+
 nnoremap <leader>F :call fzf#vim#files('.', {'window': { 'width': 0.9, 'height': 0.9 }})<cr>
 ]])
 

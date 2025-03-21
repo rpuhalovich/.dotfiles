@@ -1,7 +1,3 @@
-mkdir -p $HOME/.vim/colors
-rm -rf $HOME/.vim/colors/retrobox.vim
-ln -s $HOME/.dotfiles/.home/.vim/colors/retrobox.vim $HOME/.vim/colors/retrobox.vim
-
 mkdir -p $HOME/.scripts-local/
 mkdir -p $HOME/.config/
 

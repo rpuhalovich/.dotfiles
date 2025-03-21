@@ -24,6 +24,9 @@ export PATH=$PATH:$HOME/.scripts-local
 export PATH=$PATH:$HOME/dev/ctools/bin
 export PATH=$PATH:$HOME/go/bin
 
+# dotnet stuff
+export DOTNET_CLI_TELEMETRY_OPTOUT=1
+
 # command line customization
 parse_git_branch() {
     git branch 2> /dev/null | sed -n -e 's/^\* \(.*\)/(\1)/p'
