@@ -22,6 +22,7 @@ export PATH=$PATH:$HOME/.dotnet/tools
 export PATH=$PATH:$HOME/.scripts
 export PATH=$PATH:$HOME/.scripts-local
 export PATH=$PATH:$HOME/dev/ctools/bin
+export PATH=$PATH:$HOME/shadercross/bin
 export PATH=$PATH:$HOME/go/bin
 
 # dotnet stuff
