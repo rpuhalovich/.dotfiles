@@ -1,19 +1,6 @@
-[colors]
-draw_bold_text_with_bright_colors = false
-
-[colors.bright]
-black = "#665c54"
-blue = "#bdae93"
-cyan = "#d65d0e"
-green = "#3c3836"
-magenta = "#ebdbb2"
-red = "#fe8019"
-white = "#fbf1c7"
-yellow = "#504945"
-
 [colors.cursor]
 cursor = "#d5c4a1"
-text = "#1C1C1C"
+text = "#000000"
 
 [colors.normal]
 black = "#000000"
@@ -32,11 +19,6 @@ foreground = "#d5c4a1"
 [font]
 size = 14.0
 
-# NOTE: Trying out Menlo
-# [font.normal]
-# family = "JetBrains Mono NL"
-# style = "Regular"
-
 [mouse]
 hide_when_typing = true
 
@@ -44,7 +26,3 @@ hide_when_typing = true
 decorations = "full"
 option_as_alt = "Both"
 title = ""
-
-[window.dimensions]
-columns = 150
-lines = 100
