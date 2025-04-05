@@ -32,9 +32,10 @@ foreground = "#d5c4a1"
 [font]
 size = 14.0
 
-[font.normal]
-family = "JetBrains Mono NL"
-style = "Regular"
+# NOTE: Trying out Menlo
+# [font.normal]
+# family = "JetBrains Mono NL"
+# style = "Regular"
 
 [mouse]
 hide_when_typing = true

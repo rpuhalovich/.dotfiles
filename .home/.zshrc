@@ -7,10 +7,8 @@ alias rmds="find . -name .DS_Store -delete"
 alias v="vim"
 alias nv="nvim"
 alias uuid="bun -e \"console.log(require('crypto').randomUUID())\""
-
-function dateString() {
-    bun -e 'console.log((new Date("$1")).toString())'
-}
+alias py="python3"
+alias py="python"
 
 # global init stuff
 bindkey -v '^?' backward-delete-char
@@ -21,8 +19,6 @@ export PATH=$PATH:$HOME/.cargo/bin
 export PATH=$PATH:$HOME/.dotnet/tools
 export PATH=$PATH:$HOME/.scripts
 export PATH=$PATH:$HOME/.scripts-local
-export PATH=$PATH:$HOME/dev/ctools/bin
-export PATH=$PATH:$HOME/shadercross/bin
 export PATH=$PATH:$HOME/go/bin
 
 # dotnet stuff
@@ -53,5 +49,9 @@ bindkey "^X^E" edit-command-line
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+function dateString() {
+    bun -e 'console.log((new Date("$1")).toString())'
+}
 
 # zprof
