@@ -8,7 +8,6 @@ alias v="vim"
 alias nv="nvim"
 alias uuid="bun -e \"console.log(require('crypto').randomUUID())\""
 alias py="python3"
-alias py="python"
 
 # global init stuff
 bindkey -v '^?' backward-delete-char
