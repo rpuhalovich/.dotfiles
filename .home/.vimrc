@@ -14,8 +14,8 @@ nnoremap <leader>a :%y+<cr>
 
 nnoremap <leader>e :Ex<cr>
 
-nnoremap <C-u> <C-u>zz
-nnoremap <C-d> <C-d>zz
+nnoremap <c-u> <c-u>zz
+nnoremap <c-d> <c-d>zz
 
 " easier copying and pasting
 nnoremap <leader>p "+p
@@ -25,14 +25,14 @@ vnoremap <leader>Y "+Y
 vnoremap <leader>d "+d
 
 " easier pane navigation
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
+nnoremap <c-h> <c-w>h
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-l> <c-w>l
 
 " quick splits
-nnoremap <leader>v <C-w><C-v><C-w>l
-nnoremap <leader>s <C-w><C-s><C-w>j
+nnoremap <leader>v <c-w><c-v><c-w>l
+nnoremap <leader>s <c-w><c-s><c-w>j
 
 nnoremap <leader>f :find<space>
 nnoremap ? :Grep<space>""<left>
@@ -50,30 +50,18 @@ if !has('nvim')
 endif
 
 " from :vert h emacs-keys
-cnoremap <C-A> <Home>
-cnoremap <C-B> <Left>
-cnoremap <C-D> <Del>
-cnoremap <C-E> <End>
-cnoremap <C-F> <Right>
-cnoremap <C-k> <C-\>e getcmdpos() == 1 ? '' : getcmdline()[:getcmdpos()-2]<CR>
+cnoremap <c-a> <home>
+cnoremap <c-b> <left>
+cnoremap <c-d> <del>
+cnoremap <c-e> <end>
+cnoremap <c-f> <right>
+cnoremap <c-k> <c-\>e getcmdpos() == 1 ? '' : getcmdline()[:getcmdpos() - 2]<cr>
 
 nnoremap <F3> :cp<cr>
 nnoremap <F4> :cn<cr>
 
-nnoremap <leader>t :!ctags -R .<cr><cr>
-
-if executable('fzf')
-    function! FuzzyFind()
-      let tmp = tempname()
-      silent execute '!fzf>'.tmp
-      if (tmp isnot v:null)
-          let fname = readfile(tmp)[0]
-          silent execute '!rm '.tmp
-          execute 'e '.fname
-      endif
-      redraw!
-    endfunction
-    nnoremap <leader>F :call FuzzyFind()<cr>
+if executable('ctags')
+    nnoremap <leader>t :!ctags -R .<cr><cr>
 endif
 
 command! -nargs=+ Grep silent! grep <args> | cw 20 | redraw!
@@ -85,16 +73,17 @@ syntax on
 
 if executable('rg')
     set grepprg=rg\ --vimgrep\ -i
+    set grepformat=%f:%l:%c:%m
 endif
 
 set autoindent
+set autoread
 set background=dark
 set backspace=indent,eol,start
 set belloff=all
 set conceallevel=0
 set expandtab
 set exrc
-set grepformat=%f:%l:%c:%m
 set hidden
 set ignorecase
 set incsearch
@@ -122,7 +111,6 @@ set undofile
 set visualbell
 set wildmenu
 set wildoptions=tagfile,pum,fuzzy
-set autoread
 
 set wildignore+=**/Binaries/**
 set wildignore+=**/Intermediate/**
