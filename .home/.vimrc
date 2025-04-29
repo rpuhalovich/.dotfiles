@@ -1,4 +1,3 @@
-" --- keybinds ---
 let mapleader = " "
 
 nnoremap <leader>cfg :e<space>~\.vimrc<cr>
@@ -67,7 +66,6 @@ endif
 command! -nargs=+ Grep silent! grep <args> | cw 20 | redraw!
 command! -nargs=1 Tab noautocmd set ts=<args> sw=<args>
 
-" --- sets ---
 filetype on
 syntax on
 
@@ -259,7 +257,7 @@ if has('mac') || has('win32') && has("gui_running")
     hi CursorIM ctermfg=232 ctermbg=230 cterm=NONE
 endif
 
-if has('nvim') && (has('mac') || has('win32') && has("gui_running"))
+if has('nvim') && has('mac')
     " modified from retrobox.vim
 
     source $VIMRUNTIME/colors/vim.lua " Nvim: revert to Vim default color scheme
@@ -279,7 +277,6 @@ if has('nvim') && (has('mac') || has('win32') && has("gui_running"))
 
     if (has('termguicolors') && &termguicolors) || has('gui_running')
       let g:terminal_ansi_colors = ['#000000', '#cc241d', '#98971a', '#d79921', '#458588', '#b16286', '#689d6a', '#a89984', '#928374', '#fb4934', '#b8bb26', '#fabd2f', '#83a598', '#d3869b', '#8ec07c', '#ebdbb2']
-      " Nvim uses g:terminal_color_{0-15} instead
       for i in range(g:terminal_ansi_colors->len())
         let g:terminal_color_{i} = g:terminal_ansi_colors[i]
       endfor
