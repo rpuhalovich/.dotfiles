@@ -19,13 +19,9 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-" auto pair
-" inoremap {<cr> {<cr>}<Esc>O<space><space><space><space>
+nnoremap gi <Action>(ReSharperGotoImplementation)
 
-" quick vertical split
 nnoremap <leader>v <C-w><C-v><C-w>l
-
-nnoremap ,l aUE_LOG(LogTemp, Display, TEXT(""));<esc>F"i
 
 set ignorecase
 set incsearch
