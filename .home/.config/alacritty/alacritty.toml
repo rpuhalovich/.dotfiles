@@ -18,6 +18,8 @@ foreground = "#d5c4a1"
 
 [font]
 size = 14.0
+offset.x = 0
+offset.y = -1
 
 [mouse]
 hide_when_typing = true

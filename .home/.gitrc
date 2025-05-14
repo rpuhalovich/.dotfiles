@@ -10,7 +10,7 @@ function gd() {
 
     while true; do
         if [[ -n $GREP_PATTERN ]]; then
-            files=($(git diff --name-only $BRANCH_NAME | grep $GREP_PATTERN))
+            files=($(git diff --name-only $BRANCH_NAME | grep -i $GREP_PATTERN))
         else
             files=($(git diff --name-only $BRANCH_NAME))
         fi
@@ -171,8 +171,8 @@ function gmerge() {
 }
 
 formatting='%C(bold blue)<%cn> %Cgreen%ad %Cred%h%Creset -%C(yellow)%d%Creset %s %Creset'
-alias c="gcheck && git add . && git commit && sleep 3 && git push"
-alias ga="gcheck && git add"
+alias c="git add . && git commit && sleep 3 && git push"
+alias ga="git add"
 alias gb="git branch -a --color=always | less -R"
 alias gblame="git blame"
 alias gbloc="git branch --format \"%(refname:short) %(upstream)\" | awk '{if (!\$2) print \$1;}'"
