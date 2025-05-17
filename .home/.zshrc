@@ -6,8 +6,7 @@ alias ls="ls -lah"
 alias rmds="find . -name .DS_Store -delete"
 alias v="vim"
 alias nv="nvim"
-alias uuid="bun -e \"console.log(require('crypto').randomUUID())\""
-alias py="python3"
+alias uuid="python3 -c \"import uuid; print(uuid.uuid4())\""
 
 # global init stuff
 bindkey -v '^?' backward-delete-char
@@ -48,9 +47,5 @@ bindkey "^X^E" edit-command-line
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
-
-function dateString() {
-    bun -e 'console.log((new Date("$1")).toString())'
-}
 
 # zprof
