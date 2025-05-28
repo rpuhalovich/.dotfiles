@@ -30,3 +30,5 @@
 	useHttpPath = true
 [submodule]
 	recurse = true
+[guitool "pull"]
+	cmd = git fetch --prune --all && git pull --no-rebase --recurse-submodules
