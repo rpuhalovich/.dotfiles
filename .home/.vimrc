@@ -65,6 +65,7 @@ endif
 
 command! -nargs=+ Grep silent! grep <args> | cw 20 | redraw!
 command! -nargs=1 Tab noautocmd set ts=<args> sw=<args>
+command! -nargs=0 Blame noautocmd :!git gui blame % &
 
 filetype on
 syntax on
