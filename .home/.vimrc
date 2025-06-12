@@ -59,6 +59,8 @@ cnoremap <c-k> <c-\>e getcmdpos() == 1 ? '' : getcmdline()[:getcmdpos() - 2]<cr>
 nnoremap <F3> :cp<cr>
 nnoremap <F4> :cn<cr>
 
+nnoremap ,sdl :!open file:///Users/rp/sdlwiki/SDL3/CategoryAPI.html<cr><cr>
+
 if executable('ctags')
     nnoremap <leader>t :!ctags -R .<cr><cr>
 endif
@@ -113,14 +115,15 @@ set wildoptions=tagfile,pum,fuzzy
 
 set wildignore+=**/Binaries/**
 set wildignore+=**/Intermediate/**
-set wildignore+=**/node_modules/**
+set wildignore+=**/build-*/**
 set wildignore+=**/extern/**
 set wildignore+=**/net6.0/**
+set wildignore+=**/node_modules/**
 set wildignore+=**/out/**
 set wildignore+=*.gen.*
 set wildignore+=*.generated.*
-set wildignore+=*.o.*
 set wildignore+=*.o
+set wildignore+=*.o.*
 set wildignore+=*.uasset
 set wildignore+=*.umap
 
