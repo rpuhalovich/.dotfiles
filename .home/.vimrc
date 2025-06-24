@@ -133,6 +133,11 @@ let g:netrw_banner=0
 let g:netrw_liststyle=1
 
 if has('win32') && has("gui_running")
+    cd ~\
+
+    " paste in command mode with ctrl-v (from mswin.vim)
+    cmap <C-V> <C-R>+
+
     autocmd GUIEnter * simalt ~x
 
     highlight Cursor guifg=black guibg=orange
