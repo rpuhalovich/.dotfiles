@@ -174,20 +174,16 @@ if has("gui_win32")
     set guioptions-=r "scrollbar
 endif
 
-if has("linux") && has("gui_win32")
-    cd ~\
+if has("linux") && has("gui_running")
+    cd ~/
 
     colorscheme retrobox
 
     " paste in command mode with ctrl-v (from mswin.vim)
     cmap <C-V> <C-R>+
 
-    autocmd GUIEnter * simalt ~x
-
     highlight Cursor guifg=black guibg=orange
     highlight iCursor guifg=black guibg=orange
-
-    set guifont=Fixedsys:h14
 
     set guioptions+=d
     set guicursor=n-v-c-i:block-Cursor
