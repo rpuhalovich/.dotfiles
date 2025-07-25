@@ -115,8 +115,25 @@ end
 vim.lsp.config['omnisharp'] = omnisharplsp()
 vim.lsp.enable('omnisharp')
 
+vim.lsp.start({
+  name = 'omnisharp',
+  cmd = …,
+  on_attach = function(client, bufnr)
+    vim.lsp.completion.enable(true, client.id, bufnr, {
+      autotrigger = true,
+      convert = function(item)
+        return { abbr = item.label:gsub('%b()', '') }
+      end,
+    })
+  end,
+})
+
 vim.cmd([[
 autocmd FileType cs nnoremap <c-]> <cmd>lua require('omnisharp_extended').lsp_definition()<cr>
 autocmd FileType cs nnoremap gi <cmd>lua require('omnisharp_extended').lsp_implementation()<cr>
 autocmd FileType cs nnoremap gr <cmd>lua require('omnisharp_extended').lsp_references()<cr>
+autocmd FileType cs nnoremap gl <cmd>lua vim.diagnostic.open_float()<cr>
 ]])
+
+-- vim.diagnostic.enable = true
+-- vim.diagnostic.config({ virtual_lines = true }) enable automatic errors showing inline
