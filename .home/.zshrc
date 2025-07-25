@@ -19,6 +19,8 @@ export PATH=$PATH:$HOME/.scripts
 export PATH=$PATH:$HOME/.scripts-local
 export PATH=$PATH:$HOME/go/bin
 
+export SVN_EDITOR=vim
+
 # dotnet stuff
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
 
