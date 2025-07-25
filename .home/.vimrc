@@ -59,12 +59,6 @@ cnoremap <c-k> <c-\>e getcmdpos() == 1 ? '' : getcmdline()[:getcmdpos() - 2]<cr>
 nnoremap <F3> :cp<cr>
 nnoremap <F4> :cn<cr>
 
-nnoremap ,sdl :!open "file:///Users/ryanpuhalovich/Downloads/sdlwiki/SDL3/CategoryAPI.html"<cr><cr>
-
-if executable('ctags')
-    nnoremap <leader>t :!ctags -R .<cr><cr>
-endif
-
 command! -nargs=+ Grep silent! grep <args> | cw 20 | redraw!
 command! -nargs=1 Tab noautocmd set ts=<args> sw=<args>
 command! -nargs=0 Blame noautocmd :!git gui blame % &
@@ -394,6 +388,7 @@ if has('nvim') && has('mac')
         let g:terminal_color_{i} = g:terminal_ansi_colors[i]
       endfor
     endif
+
     hi Normal guifg=#ebdbb2 guibg=#000000 gui=NONE cterm=NONE
     hi CursorLineNr guifg=#fabd2f guibg=#303030 gui=NONE cterm=NONE
     hi FoldColumn guifg=#928374 guibg=#000000 gui=NONE cterm=NONE
