@@ -33,8 +33,7 @@ function omnisharplsp()
   local util = require 'lspconfig.util'
   return {
     cmd = {
-      -- config this to your own install of omnisharp-lsp-net6
-      '/Users/ryanpuhalovich/omnisharp-lsp-net6/OmniSharp',
+      '/Users/ryanpuhalovich/omnisharp-lsp-net6/OmniSharp', -- config this to your own install of omnisharp-lsp-net6
       '-z', -- https://github.com/OmniSharp/omnisharp-vscode/pull/4300
       '--hostPID',
       tostring(vim.fn.getpid()),
