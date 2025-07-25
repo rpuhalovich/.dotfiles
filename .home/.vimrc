@@ -483,7 +483,7 @@ if has('nvim') && has('mac')
 endif
 
 if has("mac") && !has("nvim")
-    hi Normal ctermfg=187 ctermbg=black cterm=NONE
+    hi Normal ctermfg=lightgray ctermbg=black cterm=NONE
     hi CursorLineNr ctermfg=214 ctermbg=black cterm=bold
     hi FoldColumn ctermfg=102 ctermbg=black cterm=NONE
     hi SignColumn ctermfg=102 ctermbg=black cterm=NONE
