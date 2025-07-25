@@ -27,33 +27,6 @@ require("lazy").setup({
   checker = { enabled = true },
 })
 
--- Personal config
-vim.cmd([[
-so ~/.vimrc
-
-nnoremap <leader>cfg :e<space>~/.dotfiles/.home/.config/nvim/<cr>
-
-set fillchars+=vert:\|
-
-autocmd BufReadPre *.cs set colorcolumn=160
-
-set errorformat=\ %#%f(%l\\\,%c):\ %m
-set makeprg=dotnet\ build\ --nologo\ -v\ q\ --property\ WarningLevel=0\ /clp:ErrorsOnly
-
-nnoremap <leader>n mm:bufdo set nu<cr>`m
-
-autocmd BufEnter * set formatoptions-=cro
-autocmd BufEnter * setlocal formatoptions-=cro
-]])
-
-vim.opt.cursorline = false
-vim.opt.expandtab = true
-vim.opt.guicursor = ""
-vim.opt.hlsearch = false
-vim.opt.signcolumn = "yes"
-vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir-nvim"
-vim.opt.wrap = false
-
 -- LSP
 function omnisharplsp()
   -- from https://github.com/neovim/nvim-lspconfig
@@ -137,3 +110,30 @@ autocmd FileType cs nnoremap gl <cmd>lua vim.diagnostic.open_float()<cr>
 
 -- vim.diagnostic.enable = true
 -- vim.diagnostic.config({ virtual_lines = true }) enable automatic errors showing inline
+
+-- Personal config
+vim.cmd([[
+so ~/.vimrc
+
+nnoremap <leader>cfg :e<space>~/.dotfiles/.home/.config/nvim/init.lua<cr>
+
+set fillchars+=vert:\|
+
+set colorcolumn=160
+
+set errorformat=\ %#%f(%l\\\,%c):\ %m
+set makeprg=dotnet\ build\ --nologo\ -v\ q\ --property\ WarningLevel=0\ /clp:ErrorsOnly
+
+nnoremap <leader>n mm:bufdo set nu<cr>`m
+
+autocmd BufEnter * set formatoptions-=cro
+autocmd BufEnter * setlocal formatoptions-=cro
+]])
+
+vim.opt.cursorline = false
+vim.opt.expandtab = true
+vim.opt.guicursor = ""
+vim.opt.hlsearch = false
+vim.opt.signcolumn = "yes"
+vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir-nvim"
+vim.opt.wrap = false
