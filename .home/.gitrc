@@ -82,10 +82,6 @@ function gd() {
             PREV_INDEX=$SELECTION_INDEX
         fi
 
-        if [[ $choice == 'a' ]]; then
-            git difftool $BRANCH_NAME -- ${files}
-        fi
-
         if [[ $choice == ':' ]]; then
             echo -n ':'
             read num
