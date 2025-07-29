@@ -365,7 +365,7 @@ if has("linux") && has("gui_running")
     hi CursorIM guifg=#000000 guibg=#fbf1c7 gui=NONE cterm=NONE
 endif
 
-if has('nvim') && has('mac')
+if has('mac') && has('nvim')
     " modified from retrobox.vim
     source $VIMRUNTIME/colors/vim.lua " Nvim: revert to Vim default color scheme
     let g:colors_name = 'retrobox'
@@ -412,7 +412,7 @@ if has('nvim') && has('mac')
     hi PmenuExtra guifg=#a89984 guibg=#3c3836 gui=NONE cterm=NONE
     hi PmenuExtraSel guifg=#303030 guibg=#83a598 gui=NONE cterm=NONE
     hi SpecialKey guifg=#928374 guibg=NONE gui=NONE cterm=NONE
-    hi StatusLine guifg=#ebdbb2 guibg=#000000 gui=NONE cterm=NONE
+    hi StatusLine guifg=#ebdbb2 guibg=#1c1c1c gui=NONE cterm=NONE
     hi StatusLineNC guifg=#ebdbb2 guibg=#000000 gui=NONE cterm=NONE
     hi TabLine guifg=#a89984 guibg=#3c3836 gui=NONE cterm=NONE
     hi TabLineFill guifg=#ebdbb2 guibg=#3c3836 gui=NONE cterm=NONE
