@@ -20,8 +20,8 @@ vim.g.maplocalleader = "\\"
 
 require("lazy").setup({
   spec = {
-    {"Hoffs/omnisharp-extended-lsp.nvim", lazy = false},
-    {"neovim/nvim-lspconfig", lazy = false},
+    { "Hoffs/omnisharp-extended-lsp.nvim", lazy = false },
+    { "neovim/nvim-lspconfig", lazy = false },
   },
   install = { colorscheme = { "habamax" } },
   checker = { enabled = true },
@@ -49,8 +49,7 @@ function omnisharplsp()
         util.root_pattern '*.sln'(fname)
           or util.root_pattern '*.csproj'(fname)
           or util.root_pattern 'omnisharp.json'(fname)
-          or util.root_pattern 'function.json'(fname)
-      )
+          or util.root_pattern 'function.json'(fname))
     end,
     init_options = {},
     capabilities = {
@@ -105,6 +104,9 @@ autocmd FileType cs nnoremap <c-]> <cmd>lua require('omnisharp_extended').lsp_de
 autocmd FileType cs nnoremap gi <cmd>lua require('omnisharp_extended').lsp_implementation()<cr>
 autocmd FileType cs nnoremap gr <cmd>lua require('omnisharp_extended').lsp_references()<cr>
 autocmd FileType cs nnoremap gl <cmd>lua vim.diagnostic.open_float()<cr>
+autocmd FileType cs set colorcolumn=160
+autocmd FileType cs set errorformat=\ %#%f(%l\\\,%c):\ %m
+autocmd FileType cs set makeprg=dotnet\ build\ --nologo\ -v\ q\ --property\ WarningLevel=0\ /clp:ErrorsOnly
 ]])
 
 -- vim.diagnostic.enable = true
@@ -115,15 +117,9 @@ vim.cmd([[
 so ~/.vimrc
 
 nnoremap <leader>cfg :e<space>~/.dotfiles/.home/.config/nvim/init.lua<cr>
+nnoremap <leader>n mm:bufdo set nu<cr>`m
 
 set fillchars+=vert:\|
-
-set colorcolumn=160
-
-set errorformat=\ %#%f(%l\\\,%c):\ %m
-set makeprg=dotnet\ build\ --nologo\ -v\ q\ --property\ WarningLevel=0\ /clp:ErrorsOnly
-
-nnoremap <leader>n mm:bufdo set nu<cr>`m
 
 autocmd BufEnter * set formatoptions-=cro
 autocmd BufEnter * setlocal formatoptions-=cro
