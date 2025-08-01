@@ -36,7 +36,7 @@ nnoremap <leader>s <c-w><c-s><c-w>j
 nnoremap <leader>f :find<space>
 nnoremap ? :Grep<space>""<left>
 
-nnoremap <c-b> :make<cr>
+nnoremap <c-b> :make<cr><cr>
 nnoremap <leader>: :!
 
 inoremap {<cr> {<cr>}<esc>O
