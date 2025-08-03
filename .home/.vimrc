@@ -39,6 +39,9 @@ nnoremap ? :Grep<space>""<left>
 nnoremap <c-b> :make<cr><cr>
 nnoremap <leader>: :!
 
+" copy current file path into system clipboard
+nnoremap <leader>c :let @+=expand("%:p")<cr>
+
 inoremap {<cr> {<cr>}<esc>O
 
 if !has('nvim')
