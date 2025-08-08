@@ -100,6 +100,7 @@ vim.lsp.start({
 })
 
 vim.cmd([[
+set signcolumn=yes
 autocmd FileType cs nnoremap <c-]> <cmd>lua require('omnisharp_extended').lsp_definition()<cr>
 autocmd FileType cs nnoremap gi <cmd>lua require('omnisharp_extended').lsp_implementation()<cr>
 autocmd FileType cs nnoremap gr <cmd>lua require('omnisharp_extended').lsp_references()<cr>
@@ -109,26 +110,10 @@ autocmd FileType cs set errorformat=\ %#%f(%l\\\,%c):\ %m
 autocmd FileType cs set makeprg=dotnet\ build\ --nologo\ -v\ q\ --property\ WarningLevel=0\ /clp:ErrorsOnly
 ]])
 
--- vim.diagnostic.enable = true
--- vim.diagnostic.config({ virtual_lines = true }) enable automatic errors showing inline
-
--- Personal config
+-- prefrences
 vim.cmd([[
 so ~/.vimrc
-
-nnoremap <leader>cfg :e<space>~/.dotfiles/.home/.config/nvim/init.lua<cr>
-nnoremap <leader>n mm:bufdo set nu<cr>`m
-
-set fillchars+=vert:\|
-
 autocmd BufEnter * set formatoptions-=cro
 autocmd BufEnter * setlocal formatoptions-=cro
 ]])
 
-vim.opt.cursorline = false
-vim.opt.expandtab = true
-vim.opt.guicursor = ""
-vim.opt.hlsearch = false
-vim.opt.signcolumn = "yes"
-vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir-nvim"
-vim.opt.wrap = false

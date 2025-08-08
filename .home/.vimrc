@@ -1,3 +1,5 @@
+" MAPS #########################################################################
+
 let mapleader = " "
 
 nnoremap <leader>cfg :e<space>~\.vimrc<cr>
@@ -65,6 +67,8 @@ nnoremap <F4> :cn<cr>
 command! -nargs=+ Grep silent! grep <args> | cw 20 | redraw!
 command! -nargs=1 Tab noautocmd set ts=<args> sw=<args>
 command! -nargs=0 Blame noautocmd :!git gui blame % &
+
+" SETS #########################################################################
 
 filetype on
 syntax on
@@ -136,6 +140,18 @@ autocmd BufWritePre * %s/\s\+$//e " delete trailing whitespace on save
 autocmd FileType make setlocal noexpandtab
 autocmd Filetype markdown setlocal wrap
 
+if has("nvim")
+    nnoremap <leader>cfg :e<space>~/.dotfiles/.home/.config/nvim/init.lua<cr>
+    nnoremap <leader>n :bufdo set nu<cr>
+    set fillchars+=vert:\|
+    set nocursorline
+    set expandtab
+    set guicursor=""
+    set nohlsearch
+    set undodir=~/.vim/undodir-nvim
+    set nowrap
+endif
+
 if has("gui_win32")
     cd ~\
 
@@ -155,7 +171,28 @@ if has("gui_win32")
     set guioptions-=T "toolbar
     set guioptions-=m "menubar
     set guioptions-=r "scrollbar
+endif
 
+if has("linux") && has("gui_running")
+    cd ~/
+
+    " paste in command mode with ctrl-v (from mswin.vim)
+    cmap <C-V> <C-R>+
+
+    highlight Cursor guifg=black guibg=orange
+    highlight iCursor guifg=black guibg=orange
+
+    set guioptions+=d
+    set guicursor=n-v-c-i:block-Cursor
+    set guicursor+=a:blinkon0
+    set guioptions-=T "toolbar
+    set guioptions-=m "menubar
+    set guioptions-=r "scrollbar
+endif
+
+" COLORSCHEME ##################################################################
+
+if has("gui_win32")
     " modified from retrobox.vim
     hi clear
     let s:t_Co = has('gui_running') ? -1 : (&t_Co ?? 0)
@@ -262,21 +299,6 @@ if has("gui_win32")
 endif
 
 if has("linux") && has("gui_running")
-    cd ~/
-
-    " paste in command mode with ctrl-v (from mswin.vim)
-    cmap <C-V> <C-R>+
-
-    highlight Cursor guifg=black guibg=orange
-    highlight iCursor guifg=black guibg=orange
-
-    set guioptions+=d
-    set guicursor=n-v-c-i:block-Cursor
-    set guicursor+=a:blinkon0
-    set guioptions-=T "toolbar
-    set guioptions-=m "menubar
-    set guioptions-=r "scrollbar
-
     if (has('termguicolors') && &termguicolors) || has('gui_running')
       let g:terminal_ansi_colors = ['#000000', '#cc241d', '#98971a', '#d79921', '#458588', '#b16286', '#689d6a', '#a89984', '#928374', '#fb4934', '#b8bb26', '#fabd2f', '#83a598', '#d3869b', '#8ec07c', '#ebdbb2']
     endif
