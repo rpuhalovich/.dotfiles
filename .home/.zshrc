@@ -4,7 +4,7 @@ source ~/.gitrc
 
 alias ls="ls -lah"
 alias rmds="find . -name .DS_Store -delete"
-alias v="vim"
+alias v="nvim"
 alias nv="nvim"
 alias uuid="python3 -c \"import uuid; print(uuid.uuid4())\""
 
