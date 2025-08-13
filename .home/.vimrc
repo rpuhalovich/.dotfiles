@@ -153,8 +153,6 @@ if has("nvim")
 endif
 
 if has("gui_win32")
-    cd ~\
-
     " paste in command mode with ctrl-v (from mswin.vim)
     cmap <C-V> <C-R>+
 

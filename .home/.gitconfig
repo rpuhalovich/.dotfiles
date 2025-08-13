@@ -17,18 +17,5 @@
 [difftool]
 	prompt = false
 	trustExitCode = true
-[filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
 [credential]
 	helper = osxkeychain
-[http]
-	cookiefile = /Users/rp/.gitcookies
-[credential "https://dev.azure.com"]
-	useHttpPath = true
-[submodule]
-	recurse = true
-[guitool "pull"]
-	cmd = git fetch --prune --all && git pull --no-rebase --recurse-submodules
