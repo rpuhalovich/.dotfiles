@@ -64,6 +64,8 @@ cnoremap <c-k> <c-\>e getcmdpos() == 1 ? '' : getcmdline()[:getcmdpos() - 2]<cr>
 nnoremap <F3> :cp<cr>
 nnoremap <F4> :cn<cr>
 
+command! -nargs=0 SpellCheck setlocal spell spelllang=en_us
+command! -nargs=0 NoSpellCheck setlocal nospell
 command! -nargs=+ Grep silent! grep <args> | cw 20 | redraw!
 command! -nargs=1 Tab noautocmd set ts=<args> sw=<args>
 command! -nargs=0 Blame noautocmd :!git gui blame % &
