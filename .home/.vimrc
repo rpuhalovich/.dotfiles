@@ -66,6 +66,8 @@ nnoremap <F4> :cn<cr>
 
 command! -nargs=0 SpellCheck setlocal spell spelllang=en_us
 command! -nargs=0 NoSpellCheck setlocal nospell
+command! -nargs=0 SC setlocal spell spelllang=en_us
+command! -nargs=0 NoSC setlocal nospell
 command! -nargs=+ Grep silent! grep <args> | cw 20 | redraw!
 command! -nargs=1 Tab noautocmd set ts=<args> sw=<args>
 command! -nargs=0 Blame noautocmd :!git gui blame % &

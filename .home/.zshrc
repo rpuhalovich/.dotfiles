@@ -4,9 +4,8 @@ source ~/.gitrc
 
 alias ls="ls -lah"
 alias rmds="find . -name .DS_Store -delete"
-alias v="nvim"
+alias v="nvim -u ~/.vimrc"
 alias nv="nvim"
-alias uuid="python3 -c \"import uuid; print(uuid.uuid4())\""
 
 # global init stuff
 bindkey -v '^?' backward-delete-char
