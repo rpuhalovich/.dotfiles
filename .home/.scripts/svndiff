@@ -1,9 +1,0 @@
-#!/bin/sh
-# Reference: https://blog.tplus1.com/blog/2007/08/29/how-to-use-vimdiff-as-the-subversion-diff-tool/
-
-DIFF="/opt/homebrew/bin/vimdiff"
-# DIFF="/Applications/DiffMerge.app/Contents/MacOS/DiffMerge"
-LEFT="$6"
-RIGHT="$7"
-
-"$DIFF" "$LEFT" "$RIGHT"
