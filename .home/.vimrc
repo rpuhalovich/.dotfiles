@@ -141,8 +141,6 @@ autocmd FileType make setlocal noexpandtab
 autocmd Filetype markdown setlocal wrap
 
 if has("nvim")
-    " nnoremap <leader>cfg :e<space>~/.dotfiles/.home/.config/nvim/init.lua<cr>
-    nnoremap <leader>n :bufdo set nu<cr>
     set fillchars+=vert:\|
     set nocursorline
     set expandtab
@@ -150,6 +148,8 @@ if has("nvim")
     set nohlsearch
     set undodir=~/.vim/undodir-nvim
     set nowrap
+    autocmd BufEnter * set formatoptions-=cro
+    autocmd BufEnter * setlocal formatoptions-=cro
 endif
 
 if has("gui_win32")
