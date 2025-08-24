@@ -46,12 +46,10 @@ nnoremap <leader>c :let @+=expand("%:p")<cr>
 
 inoremap {<cr> {<cr>}<esc>O
 
-if !has('nvim')
-    nnoremap j gj
-    vnoremap j gj
-    nnoremap k gk
-    vnoremap k gk
-endif
+nnoremap j gj
+vnoremap j gj
+nnoremap k gk
+vnoremap k gk
 
 " from :vert h emacs-keys
 cnoremap <c-a> <home>

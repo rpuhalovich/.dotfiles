@@ -17,6 +17,7 @@ export PATH=$PATH:$HOME/.dotnet/tools
 export PATH=$PATH:$HOME/.scripts
 export PATH=$PATH:$HOME/.scripts-local
 export PATH=$PATH:$HOME/go/bin
+export PATH=$PATH:$HOME/dotnet
 
 export SVN_EDITOR=vim
 
