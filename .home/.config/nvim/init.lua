@@ -114,9 +114,5 @@ vim.cmd([[
 so ~/.vimrc
 autocmd BufEnter * set formatoptions-=cro
 autocmd BufEnter * setlocal formatoptions-=cro
-nnoremap j gj
-vnoremap j gj
-nnoremap k gk
-vnoremap k gk
 ]])
 
