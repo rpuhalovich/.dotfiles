@@ -4,7 +4,7 @@ source ~/.gitrc
 
 alias ls="ls -lah"
 alias rmds="find . -name .DS_Store -delete"
-alias v="nvim -u ~/.vimrc"
+alias v="nvim"
 alias nv="nvim"
 
 # global init stuff
