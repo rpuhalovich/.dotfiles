@@ -62,6 +62,8 @@ cnoremap <c-k> <c-\>e getcmdpos() == 1 ? '' : getcmdline()[:getcmdpos() - 2]<cr>
 nnoremap <F3> :cp<cr>
 nnoremap <F4> :cn<cr>
 
+nnoremap <leader>n :bufdo set nu!<cr>
+
 command! -nargs=0 SpellCheck setlocal spell spelllang=en_us
 command! -nargs=0 NoSpellCheck setlocal nospell
 command! -nargs=0 SC setlocal spell spelllang=en_us
