@@ -605,4 +605,5 @@ if has("mac") && !has("nvim")
 endif
 
 highlight ExtraWhitespace ctermbg=DarkRed guibg=DarkRed
-match ExtraWhitespace /\s\+$/
+au InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+au InsertLeave * match ExtraWhitespace /\s\+$/
