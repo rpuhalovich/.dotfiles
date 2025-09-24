@@ -63,7 +63,9 @@ nnoremap <F3> :cp<cr>
 nnoremap <F4> :cn<cr>
 
 nnoremap <leader>n :bufdo set nu!<cr>
+nnoremap <leader>ws :bufdo set list!<cr>
 
+command! -nargs=0 STW noautocmd :%s/\s\+$//e
 command! -nargs=0 SpellCheck setlocal spell spelllang=en_us
 command! -nargs=0 NoSpellCheck setlocal nospell
 command! -nargs=0 SC setlocal spell spelllang=en_us
@@ -139,10 +141,17 @@ let g:netrw_banner=0
 let g:netrw_liststyle=1
 
 autocmd BufNewFile,BufRead * setlocal formatoptions-=cro " disable comments on new lines
-autocmd BufNewFile,BufRead *.ht,*.ct set syntax=off
-autocmd BufWritePre * %s/\s\+$//e " delete trailing whitespace on save
 autocmd FileType make setlocal noexpandtab
 autocmd Filetype markdown setlocal wrap
+
+fun! StripTrailingWhitespaceExcluded()
+    if &ft =~ 'cs' " Don't strip on these filetypes
+        return
+    endif
+    %s/\s\+$//e
+endfun
+
+autocmd BufWritePre * call StripTrailingWhitespaceExcluded()
 
 if has("nvim")
     set fillchars+=vert:\|
@@ -594,3 +603,6 @@ if has("mac") && !has("nvim")
     hi Underlined ctermfg=109 ctermbg=NONE cterm=underline
     hi CursorIM ctermfg=black ctermbg=230 cterm=NONE
 endif
+
+highlight ExtraWhitespace ctermbg=DarkRed guibg=DarkRed
+match ExtraWhitespace /\s\+$/
