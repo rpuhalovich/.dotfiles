@@ -18,6 +18,7 @@ export PATH=$PATH:$HOME/.scripts
 export PATH=$PATH:$HOME/.scripts-local
 export PATH=$PATH:$HOME/go/bin
 export PATH=$PATH:$HOME/dotnet
+export PATH=$PATH:$HOME/depot_tools
 
 export SVN_EDITOR=vim
 
@@ -51,3 +52,4 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
 # zprof
+export PATH="/opt/homebrew/opt/llvm/bin:$PATH"

@@ -120,6 +120,8 @@ set visualbell
 set wildmenu
 set wildoptions=tagfile,pum,fuzzy
 
+set nofixendofline
+
 set wildignore+=**/Binaries/**
 set wildignore+=**/Intermediate/**
 set wildignore+=**/build-*/**
