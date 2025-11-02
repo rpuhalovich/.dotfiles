@@ -72,7 +72,6 @@ command! -nargs=0 SC setlocal spell spelllang=en_us
 command! -nargs=0 NoSC setlocal nospell
 command! -nargs=+ Grep silent! grep <args> | cw 20 | redraw!
 command! -nargs=1 Tab noautocmd set ts=<args> sw=<args>
-command! -nargs=0 Blame noautocmd :!git gui blame % &
 
 " SETS #########################################################################
 
@@ -100,6 +99,7 @@ set linebreak
 set listchars=tab:>·,space:·
 set mouse+=a
 set nobackup
+set nofixendofline
 set noshowcmd
 set noshowmode
 set noswapfile
@@ -119,8 +119,6 @@ set undofile
 set visualbell
 set wildmenu
 set wildoptions=tagfile,pum,fuzzy
-
-set nofixendofline
 
 set wildignore+=**/Binaries/**
 set wildignore+=**/Intermediate/**
@@ -605,7 +603,3 @@ if has("mac") && !has("nvim")
     hi Underlined ctermfg=109 ctermbg=NONE cterm=underline
     hi CursorIM ctermfg=black ctermbg=230 cterm=NONE
 endif
-
-highlight ExtraWhitespace ctermbg=DarkRed guibg=DarkRed
-au InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
-au InsertLeave * match ExtraWhitespace /\s\+$/

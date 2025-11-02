@@ -20,7 +20,11 @@ export PATH=$PATH:$HOME/go/bin
 export PATH=$PATH:$HOME/dotnet
 export PATH=$PATH:$HOME/depot_tools
 
+# svn
 export SVN_EDITOR=vim
+
+# homebrew
+export HOMEBREW_NO_AUTO_UPDATE=1
 
 # dotnet stuff
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
@@ -53,3 +57,5 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 
 # zprof
 export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
+
+. "$HOME/.local/bin/env"
