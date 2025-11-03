@@ -64,13 +64,16 @@ nnoremap <leader>w @w
 nnoremap <F3> :cp<cr>
 nnoremap <F4> :cn<cr>
 
+nnoremap <leader>n :bufdo set nu!<cr>
+nnoremap <leader>ws :bufdo set list!<cr>
+
+command! -nargs=0 STW noautocmd :%s/\s\+$//e
 command! -nargs=0 SpellCheck setlocal spell spelllang=en_us
 command! -nargs=0 NoSpellCheck setlocal nospell
 command! -nargs=0 SC setlocal spell spelllang=en_us
 command! -nargs=0 NoSC setlocal nospell
 command! -nargs=+ Grep silent! grep <args> | cw 20 | redraw!
 command! -nargs=1 Tab noautocmd set ts=<args> sw=<args>
-command! -nargs=0 Blame noautocmd :!git gui blame % &
 
 " SETS #########################################################################
 
@@ -98,6 +101,7 @@ set linebreak
 set listchars=tab:>·,space:·
 set mouse+=a
 set nobackup
+set nofixendofline
 set noshowcmd
 set noshowmode
 set noswapfile
@@ -139,10 +143,17 @@ let g:netrw_banner=0
 let g:netrw_liststyle=1
 
 autocmd BufNewFile,BufRead * setlocal formatoptions-=cro " disable comments on new lines
-autocmd BufNewFile,BufRead *.ht,*.ct set syntax=off
-autocmd BufWritePre * %s/\s\+$//e " delete trailing whitespace on save
 autocmd FileType make setlocal noexpandtab
 autocmd Filetype markdown setlocal wrap
+
+fun! StripTrailingWhitespaceExcluded()
+    if &ft =~ 'cs' " Don't strip on these filetypes
+        return
+    endif
+    %s/\s\+$//e
+endfun
+
+autocmd BufWritePre * call StripTrailingWhitespaceExcluded()
 
 if has("nvim")
     set fillchars+=vert:\|
