@@ -6,21 +6,26 @@ alias ls="ls -lah"
 alias rmds="find . -name .DS_Store -delete"
 alias v="nvim"
 alias nv="nvim"
+alias inst="sudo /Applications/Xcode.app/Contents/Applications/Instruments.app/Contents/MacOS/Instruments"
 
 # global init stuff
 bindkey -v '^?' backward-delete-char
 touch ~/.hushlogin
+
+# homebrew
+export HOMEBREW_NO_AUTO_UPDATE=1
 
 # path exports
 export PATH=$PATH:$HOME/.cargo/bin
 export PATH=$PATH:$HOME/.dotnet/tools
 export PATH=$PATH:$HOME/.scripts
 export PATH=$PATH:$HOME/.scripts-local
+export PATH=$PATH:$HOME/.bin
 export PATH=$PATH:$HOME/go/bin
 export PATH=$PATH:$HOME/dotnet
 export PATH=$PATH:$HOME/depot_tools
 
-# svn
+# svn stuff
 export SVN_EDITOR=vim
 
 # homebrew
