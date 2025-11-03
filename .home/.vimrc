@@ -59,6 +59,8 @@ cnoremap <c-e> <end>
 cnoremap <c-f> <right>
 cnoremap <c-k> <c-\>e getcmdpos() == 1 ? '' : getcmdline()[:getcmdpos() - 2]<cr>
 
+nnoremap <leader>w @w
+
 nnoremap <F3> :cp<cr>
 nnoremap <F4> :cn<cr>
 
