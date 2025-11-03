@@ -47,6 +47,7 @@
   "editor.guides.highlightActiveBracketPair": false,
   "editor.guides.highlightActiveIndentation": false,
   "editor.guides.indentation": false,
+  "editor.lightbulb.enabled": "off",
   "editor.lineNumbers": "off",
   "editor.matchBrackets": "never",
   "editor.minimap.enabled": false,
