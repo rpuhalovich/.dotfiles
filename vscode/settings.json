@@ -1,10 +1,10 @@
 {
   "vim.leader": " ",
   "vim.normalModeKeyBindingsNonRecursive": [
-    { "before": ["<c-h>"], "after": ["<c-w>h"] },
-    { "before": ["<c-j>"], "after": ["<c-w>j"] },
-    { "before": ["<c-k>"], "after": ["<c-w>k"] },
-    { "before": ["<c-l>"], "after": ["<c-w>l"] },
+    { "before": ["<c-h>"], "after": ["<c-w>", "h"] },
+    { "before": ["<c-j>"], "after": ["<c-w>", "j"] },
+    { "before": ["<c-k>"], "after": ["<c-w>", "k"] },
+    { "before": ["<c-l>"], "after": ["<c-w>", "l"] },
     { "before": ["<leader>", "p"], "after": ["\"", "+", "p"] },
     { "before": ["<leader>", "a"], "after": [":", "%", "y", "+", "<cr>"] },
     { "before": ["<leader>", "r", "e"], "commands": ["workbench.action.reloadWindow"] },
