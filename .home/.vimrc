@@ -78,12 +78,18 @@ command! -nargs=1 Tab noautocmd set ts=<args> sw=<args>
 " SETS #########################################################################
 
 filetype on
-syntax on
+" syntax on
 
 if executable('rg')
     set grepprg=rg\ --vimgrep\ -i\ -g\ '!tags'
     set grepformat=%f:%l:%c:%m
 endif
+
+let c_no_curly_error=1
+let g:netrw_banner=0
+let g:netrw_liststyle=1
+let g:vim_json_conceal=0
+let loaded_matchparen = 1
 
 set autoindent
 set autoread
@@ -103,6 +109,7 @@ set mouse+=a
 set nobackup
 set nofixendofline
 set noshowcmd
+set noshowmatch
 set noshowmode
 set noswapfile
 set nowrap
@@ -137,11 +144,6 @@ set wildignore+=*.o.*
 set wildignore+=*.uasset
 set wildignore+=*.umap
 set wildignore+=tags
-
-let c_no_curly_error=1
-let g:vim_json_conceal=0
-let g:netrw_banner=0
-let g:netrw_liststyle=1
 
 autocmd BufNewFile,BufRead * setlocal formatoptions-=cro " disable comments on new lines
 autocmd FileType make setlocal noexpandtab

@@ -119,7 +119,7 @@
 -- prefrences
 vim.cmd([[
 so ~/.vimrc
-autocmd BufEnter * set formatoptions-=cro
-autocmd BufEnter * setlocal formatoptions-=cro
+" autocmd BufEnter * set formatoptions-=cro
+" autocmd BufEnter * setlocal formatoptions-=cro
 ]])
 
