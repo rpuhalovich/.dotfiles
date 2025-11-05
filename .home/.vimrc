@@ -78,7 +78,7 @@ command! -nargs=1 Tab noautocmd set ts=<args> sw=<args>
 " SETS #########################################################################
 
 filetype on
-" syntax on
+syntax on
 
 if executable('rg')
     set grepprg=rg\ --vimgrep\ -i\ -g\ '!tags'
