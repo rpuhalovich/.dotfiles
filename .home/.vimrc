@@ -81,7 +81,7 @@ filetype on
 syntax on
 
 if executable('rg')
-    set grepprg=rg\ --vimgrep\ -i\ -g\ '!tags'
+    set grepprg=rg\ --vimgrep\ -iF\ -g\ '!tags'
     set grepformat=%f:%l:%c:%m
 endif
 
