@@ -181,8 +181,6 @@ if has("gui_win32")
 endif
 
 if has("linux") && has("gui_running")
-    cd ~/
-
     " paste in command mode with ctrl-v (from mswin.vim)
     cmap <C-V> <C-R>+
 
