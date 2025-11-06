@@ -170,7 +170,7 @@ if has("gui_win32")
     highlight Cursor guifg=black guibg=orange
     highlight iCursor guifg=black guibg=orange
 
-    set guifont=Fixedsys:h14
+    set guifont=Consolas:h11
 
     set guioptions+=d
     set guicursor=n-v-c-i:block-Cursor
