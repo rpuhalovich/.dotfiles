@@ -33,7 +33,7 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 
 # dotnet stuff
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
-alias db="dotnet build --nologo -v q --property WarningLevel=0 /clp:ErrorsOnly"
+alias db="time dotnet build --nologo -v q --property WarningLevel=0 /clp:ErrorsOnly"
 
 # command line customization
 parse_git_branch() {
