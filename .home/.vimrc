@@ -81,7 +81,7 @@ filetype on
 syntax on
 
 if executable('rg')
-    set grepprg=rg\ --vimgrep\ -i\ -g\ '!tags'
+    set grepprg=rg\ --vimgrep\ -iF\ -g\ '!tags'
     set grepformat=%f:%l:%c:%m
 endif
 
@@ -170,7 +170,7 @@ if has("gui_win32")
     highlight Cursor guifg=black guibg=orange
     highlight iCursor guifg=black guibg=orange
 
-    set guifont=Fixedsys:h14
+    set guifont=Consolas:h11
 
     set guioptions+=d
     set guicursor=n-v-c-i:block-Cursor
@@ -181,8 +181,6 @@ if has("gui_win32")
 endif
 
 if has("linux") && has("gui_running")
-    cd ~/
-
     " paste in command mode with ctrl-v (from mswin.vim)
     cmap <C-V> <C-R>+
 
