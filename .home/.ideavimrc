@@ -1,3 +1,0 @@
-source ~/.vimrc
-set ideajoin
-nmap gi :action GotoImplementation<CR>
