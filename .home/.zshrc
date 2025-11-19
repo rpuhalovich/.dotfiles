@@ -7,6 +7,8 @@ alias rmds="find . -name .DS_Store -delete"
 alias v="nvim"
 alias nv="nvim"
 alias inst="sudo /Applications/Xcode.app/Contents/Applications/Instruments.app/Contents/MacOS/Instruments"
+alias python="python3"
+alias py="python3"
 
 # global init stuff
 bindkey -v '^?' backward-delete-char
