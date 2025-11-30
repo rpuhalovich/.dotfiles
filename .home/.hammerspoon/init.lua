@@ -12,5 +12,5 @@ hs.hotkey.bind({"cmd", "shift"}, "v", function() hs.eventtap.keyStrokes(hs.paste
 -- app shortcuts
 hs.hotkey.bind({"cmd"}, "1", function() hs.application.launchOrFocus("Firefox") end)
 hs.hotkey.bind({"cmd"}, "2", function() hs.application.launchOrFocus("Firefox Developer Edition") end)
-hs.hotkey.bind({"cmd"}, "3", function() hs.application.launchOrFocus("Alacritty") end)
+hs.hotkey.bind({"cmd"}, "3", function() hs.application.launchOrFocus("MacVim") end)
 hs.hotkey.bind({"cmd"}, "4", function() hs.application.launchOrFocus("Xcode") end)

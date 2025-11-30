@@ -164,50 +164,29 @@ endif
 if has("gui_macvim")
     " paste in command mode with ctrl-v (from mswin.vim)
     cmap <C-V> <C-R>+
-
-    " autocmd GUIEnter * simalt ~x
     set guifont=Menlo:h14
-
-    set guioptions+=d
+    set guioptions=aem
     set guicursor=n-v-c-i:block-Cursor
     set guicursor+=a:blinkon0
-    set guioptions-=T "toolbar
-    set guioptions-=m "menubar
-    set guioptions-=r "scrollbar
 endif
 
 if has("gui_win32")
     " paste in command mode with ctrl-v (from mswin.vim)
     cmap <C-V> <C-R>+
-
     autocmd GUIEnter * simalt ~x
-
-    highlight Cursor guifg=black guibg=orange
-    highlight iCursor guifg=black guibg=orange
-
     set guifont=Consolas:h11
-
-    set guioptions+=d
+    set guioptions=aem
     set guicursor=n-v-c-i:block-Cursor
     set guicursor+=a:blinkon0
-    set guioptions-=T "toolbar
-    set guioptions-=m "menubar
-    set guioptions-=r "scrollbar
 endif
 
 if has("linux") && has("gui_running")
     " paste in command mode with ctrl-v (from mswin.vim)
     cmap <C-V> <C-R>+
-
-    highlight Cursor guifg=black guibg=orange
-    highlight iCursor guifg=black guibg=orange
-
-    set guioptions+=d
+    set guifont=Consolas:h11
+    set guioptions=aem
     set guicursor=n-v-c-i:block-Cursor
     set guicursor+=a:blinkon0
-    set guioptions-=T "toolbar
-    set guioptions-=m "menubar
-    set guioptions-=r "scrollbar
 endif
 
 " COLORSCHEME ##################################################################
