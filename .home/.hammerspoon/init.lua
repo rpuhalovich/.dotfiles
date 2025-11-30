@@ -1,7 +1,7 @@
 -- maximize on new window
 local wfTerminal = hs.window.filter.new()
 wfTerminal:subscribe(hs.window.filter.windowCreated, function(window, applicationName)
-  for _,a in pairs({"Finder", "Preview", "Alacritty"}) do
+  for _,a in pairs({"Finder", "Preview", "Alacritty", "MacVim"}) do
     if a == applicationName then window:maximize() end
   end
 end)
