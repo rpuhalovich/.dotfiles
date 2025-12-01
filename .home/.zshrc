@@ -4,7 +4,7 @@ source ~/.gitrc
 
 alias ls="ls -lah"
 alias rmds="find . -name .DS_Store -delete"
-alias v="nvim"
+alias v="vim"
 alias nv="nvim"
 alias inst="sudo /Applications/Xcode.app/Contents/Applications/Instruments.app/Contents/MacOS/Instruments"
 alias python="python3"
