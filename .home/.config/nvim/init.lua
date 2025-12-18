@@ -9,11 +9,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
   end,
 })
 
-local function on_list(options)
-  vim.fn.setqflist({}, ' ', options)
-  vim.cmd.cfirst()
-end
-
 vim.cmd([[
 autocmd FileType cs nnoremap gi <cmd>lua vim.lsp.buf.implementation({})<cr>
 autocmd FileType cs nnoremap gr <cmd>lua vim.lsp.buf.references(nil, {})<cr>
