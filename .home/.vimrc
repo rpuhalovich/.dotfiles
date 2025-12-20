@@ -171,7 +171,7 @@ if has("gui_macvim")
     " paste in command mode with ctrl-v (from mswin.vim)
     cmap <C-V> <C-R>+
     set guifont=Menlo:h14
-    set guioptions=aem
+    set guioptions=ae
     set guicursor=n-v-c-i:block-Cursor
     set guicursor+=a:blinkon0
 endif
@@ -181,7 +181,7 @@ if has("gui_win32")
     cmap <C-V> <C-R>+
     autocmd GUIEnter * simalt ~x
     set guifont=Consolas:h11
-    set guioptions=aem
+    set guioptions=ae
     set guicursor=n-v-c-i:block-Cursor
     set guicursor+=a:blinkon0
 endif
@@ -190,7 +190,7 @@ if has("linux") && has("gui_running")
     " paste in command mode with ctrl-v (from mswin.vim)
     cmap <C-V> <C-R>+
     set guifont=Consolas:h11
-    set guioptions=aem
+    set guioptions=ae
     set guicursor=n-v-c-i:block-Cursor
     set guicursor+=a:blinkon0
 endif
