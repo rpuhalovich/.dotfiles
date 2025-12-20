@@ -86,7 +86,7 @@ if executable('rg')
     if has("gui_win32")
         set grepprg=rg\ --vimgrep\ -iF
     else
-        set grepprg=rg\ --vimgrep\ -iF\ -g\ 'tags'
+        set grepprg=rg\ --vimgrep\ -iF\ -g\ '!tags'
     endif
     set grepformat=%f:%l:%c:%m
 endif
