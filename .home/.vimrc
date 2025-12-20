@@ -83,7 +83,11 @@ filetype on
 syntax on
 
 if executable('rg')
-    set grepprg=rg\ --vimgrep\ -iF\ -g\ '!tags'
+    if has("gui_win32")
+        set grepprg=rg\ --vimgrep\ -iF
+    else
+        set grepprg=rg\ --vimgrep\ -iF\ -g\ 'tags'
+    endif
     set grepformat=%f:%l:%c:%m
 endif
 
