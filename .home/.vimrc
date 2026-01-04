@@ -95,7 +95,7 @@ let c_no_curly_error=1
 let g:netrw_banner=0
 let g:netrw_liststyle=1
 let g:vim_json_conceal=0
-let loaded_matchparen = 1
+let loaded_matchparen=1
 
 set autoindent
 set autoread
