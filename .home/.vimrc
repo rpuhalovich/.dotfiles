@@ -75,7 +75,7 @@ command! -nargs=0 NoSC setlocal nospell
 command! -nargs=+ Grep silent! grep <args> | cw 20 | redraw!
 command! -nargs=1 Tab noautocmd set ts=<args> sw=<args>
 command! -nargs=+ Run :cexp system(<args>) | copen
-command! -nargs=+ Build :cexp system(<args>) | cw | echo "Done"
+command! -nargs=+ Build :cexp system(<args>) | cw 20 | echo "Done"
 
 " SETS #########################################################################
 
