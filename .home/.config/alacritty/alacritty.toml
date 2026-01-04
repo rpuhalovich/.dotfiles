@@ -17,7 +17,7 @@ background = "#000000"
 foreground = "#d5c4a1"
 
 [font]
-size = 14.0
+size = 13.0
 offset.x = 0
 offset.y = -1
 
