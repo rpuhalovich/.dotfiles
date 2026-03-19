@@ -1,0 +1,2 @@
+#!/bin/sh
+time rsync -hav --size-only --delete /Volumes/hdd/media/music/ /Volumes/H2/music/

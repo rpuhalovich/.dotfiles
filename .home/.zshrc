@@ -67,3 +67,8 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 
 . "$HOME/.local/bin/env"
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/rp/.lmstudio/bin"
+# End of LM Studio CLI section
+
