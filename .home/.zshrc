@@ -1,14 +1,7 @@
-# zmodload zsh/zprof
-
 source ~/.gitrc
 
 alias ls="ls -lah"
-alias rmds="find . -name .DS_Store -delete"
 alias v="vim"
-alias nv="nvim"
-alias inst="sudo /Applications/Xcode.app/Contents/Applications/Instruments.app/Contents/MacOS/Instruments"
-alias python="python3"
-alias py="python3"
 
 # global init stuff
 bindkey -v '^?' backward-delete-char
@@ -24,30 +17,17 @@ export PATH=$PATH:$HOME/.scripts
 export PATH=$PATH:$HOME/.scripts-local
 export PATH=$PATH:$HOME/.bin
 export PATH=$PATH:$HOME/go/bin
-export PATH=$PATH:$HOME/dotnet
-export PATH=$PATH:$HOME/depot_tools
 
 # svn stuff
 export SVN_EDITOR=vim
 
-# homebrew
-export HOMEBREW_NO_AUTO_UPDATE=1
-
-# dotnet stuff
-export DOTNET_CLI_TELEMETRY_OPTOUT=1
-alias db="time dotnet build --nologo --no-restore -v q --property WarningLevel=0 /clp:ErrorsOnly"
-
 # command line customization
-parse_git_branch() {
-    git branch 2> /dev/null | sed -n -e 's/^\* \(.*\)/(\1)/p'
-}
 COLOR_DEF='%f'
 COLOR_USR='%F{243}'
 COLOR_DIR='%F{249}'
-COLOR_GIT='%F{196}'
 NEWLINE=$'\n'
 setopt PROMPT_SUBST
-export PROMPT='${COLOR_DEF}%d ${COLOR_GIT}$(parse_git_branch)${COLOR_DEF}${NEWLINE}> '
+export PROMPT='${COLOR_DEF}%d${COLOR_DEF}${NEWLINE}> '
 
 # history
 SAVEHIST=1000
@@ -58,17 +38,3 @@ setopt HIST_IGNORE_SPACE
 autoload -z edit-command-line
 zle -N edit-command-line
 bindkey "^X^E" edit-command-line
-
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-
-# zprof
-export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
-
-. "$HOME/.local/bin/env"
-
-# Added by LM Studio CLI (lms)
-export PATH="$PATH:/Users/rp/.lmstudio/bin"
-# End of LM Studio CLI section
-
