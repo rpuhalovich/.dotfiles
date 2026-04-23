@@ -1,7 +1,6 @@
 # alias
 alias ls="ls -lah"
 alias v="vim"
-alias nv="nvim"
 
 # git
 alias c="git add . && git commit && sleep 3 && git push"
