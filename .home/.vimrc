@@ -1,3 +1,5 @@
+" NVIM: ~/.config/nvim/init.lua
+
 " MAPS #########################################################################
 
 let mapleader = " "
@@ -72,15 +74,16 @@ command! -nargs=0 SpellCheck setlocal spell spelllang=en_us
 command! -nargs=0 NoSpellCheck setlocal nospell
 command! -nargs=0 SC setlocal spell spelllang=en_us
 command! -nargs=0 NoSC setlocal nospell
-command! -nargs=+ Grep silent! grep <args> | cw 20 | redraw!
 command! -nargs=1 Tab noautocmd set ts=<args> sw=<args>
-command! -nargs=+ Run :cexp system(<args>) | copen
-command! -nargs=+ Build :cexp system(<args>) | cw 20 | echo "Done"
+command! -nargs=+ Grep silent! grep <args> | botright cw 20 | redraw!
+command! -nargs=+ Run :cexp system(<args>) | botright copen
+command! -nargs=+ Build :cexp system(<args>) | botright cw 20 | echo "Done"
 
 " SETS #########################################################################
 
 filetype on
 syntax on
+" syntax off
 
 if executable('rg')
     if has("gui_win32")
@@ -89,6 +92,10 @@ if executable('rg')
         set grepprg=rg\ --vimgrep\ -iF\ -g\ '!tags'
     endif
     set grepformat=%f:%l:%c:%m
+endif
+
+if $TERM == 'alacritty'
+    set ttymouse=sgr
 endif
 
 let c_no_curly_error=1
@@ -194,6 +201,10 @@ if has("linux") && has("gui_running")
     set guicursor=n-v-c-i:block-Cursor
     set guicursor+=a:blinkon0
 endif
+
+autocmd FileType cs nnoremap <c-b> :Build 'dotnet build --no-restore --nologo -p:RunAnalyzers=false -v q --property WarningLevel=0 /clp:ErrorsOnly'<cr>
+autocmd FileType cs set colorcolumn=160
+autocmd FileType cs set errorformat=\ %#%f(%l\\\,%c):\ %m
 
 " COLORSCHEME ##################################################################
 
@@ -522,12 +533,12 @@ if has('mac') && has('nvim')
     hi! link PopupNotification Todo
     hi! link CurSearch Search
 
-    if (has('termguicolors') && &termguicolors) || has('gui_running')
-      let g:terminal_ansi_colors = ['#000000', '#cc241d', '#98971a', '#d79921', '#458588', '#b16286', '#689d6a', '#a89984', '#928374', '#fb4934', '#b8bb26', '#fabd2f', '#83a598', '#d3869b', '#8ec07c', '#ebdbb2']
-      for i in range(g:terminal_ansi_colors->len())
-        let g:terminal_color_{i} = g:terminal_ansi_colors[i]
-      endfor
-    endif
+    " if (has('termguicolors') && &termguicolors) || has('gui_running')
+    "   let g:terminal_ansi_colors = ['#000000', '#cc241d', '#98971a', '#d79921', '#458588', '#b16286', '#689d6a', '#a89984', '#928374', '#fb4934', '#b8bb26', '#fabd2f', '#83a598', '#d3869b', '#8ec07c', '#ebdbb2']
+    "   for i in range(g:terminal_ansi_colors->len())
+    "     let g:terminal_color_{i} = g:terminal_ansi_colors[i]
+    "   endfor
+    " endif
 
     hi Normal guifg=#ebdbb2 guibg=#000000 gui=NONE cterm=NONE
     hi CursorLineNr guifg=#fabd2f guibg=#303030 gui=NONE cterm=NONE
@@ -671,7 +682,7 @@ if has("mac") && !has("nvim")
     hi FoldColumn ctermfg=102 ctermbg=black cterm=NONE
     hi SignColumn ctermfg=102 ctermbg=black cterm=NONE
     hi VertSplit ctermfg=236 ctermbg=black cterm=NONE
-    hi ColorColumn ctermfg=NONE ctermbg=16 cterm=NONE
+    hi ColorColumn ctermfg=NONE ctermbg=236 cterm=NONE
     hi Comment ctermfg=102 ctermbg=NONE cterm=NONE
     hi CursorLine ctermfg=NONE ctermbg=236 cterm=NONE
     hi Error ctermfg=203 ctermbg=black cterm=bold,reverse
