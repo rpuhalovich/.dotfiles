@@ -11,8 +11,6 @@ touch ~/.hushlogin
 export HOMEBREW_NO_AUTO_UPDATE=1
 
 # path exports
-export PATH=$PATH:$HOME/.cargo/bin
-export PATH=$PATH:$HOME/.dotnet/tools
 export PATH=$PATH:$HOME/.scripts
 export PATH=$PATH:$HOME/.scripts-local
 export PATH=$PATH:$HOME/.bin
@@ -23,8 +21,6 @@ export SVN_EDITOR=vim
 
 # command line customization
 COLOR_DEF='%f'
-COLOR_USR='%F{243}'
-COLOR_DIR='%F{249}'
 NEWLINE=$'\n'
 setopt PROMPT_SUBST
 export PROMPT='${COLOR_DEF}%d${COLOR_DEF}${NEWLINE}> '
